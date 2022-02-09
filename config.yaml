@@ -1,0 +1,60 @@
+baseURL: "https://blog.scientific-python.org/"
+languageCode: "en-us"
+title: "Scientific Python blog"
+theme: ["hugo-atom-feed", "scientific-python-hugo-theme"]
+relativeURLs: true
+disableKinds: ["term", "taxonomy", "RSS"]
+
+markup:
+  highlight:
+    noClasses: false
+
+outputFormats:
+  Atom:
+    mediaType: "application/atom"
+    baseName: "atom"
+    isPlainText: false
+
+outputs:
+  home: ["HTML", "ATOM"]
+
+params:
+  description: "Posts from the Scientific Python community"
+  images:
+  - /images/logo.svg
+  navbarlogo:
+    image: logo.svg
+    text: Scientific Python Hugo Theme
+    link: /
+  hero:
+    title: Scientific Python Theme
+    image: logo.svg
+  navbar:
+   - title: Blog
+     url: https://blog.scientific-python.org
+   - title: RSS
+     url: /atom.xml
+   - title: About Scientific Python
+     url: https://scientific-python.org
+   - title: Forum
+     url: https://discuss.scientific-python.org
+  footer:
+    logo: logo.svg
+    socialmediatitle: ""
+    socialmedia:
+      - link: https://github.com/scientific-python/
+        icon: github
+    quicklinks:
+      column1:
+        title: ""
+        links:
+          - text: About
+            link: /about/
+          - text: Theme GitHub
+            link: https://github.com/scientific-python/scientific-python-hugo-theme
+      column2:
+        links:
+          - text: Scientific Python Forum
+            link: https://discuss.scientific-python.org
+      column3:
+        links:
