@@ -45,13 +45,6 @@ params:
       - link: https://github.com/scientific-python/
         icon: github
     quicklinks:
-      column1:
-        title: ""
-        links:
-          - text: About
-            link: /about/
-          - text: Theme GitHub
-            link: https://github.com/scientific-python/scientific-python-hugo-theme
       column2:
         links:
           - text: Scientific Python Forum
