@@ -3,7 +3,7 @@ languageCode: "en-us"
 title: "Scientific Python blog"
 theme: ["hugo-atom-feed", "scientific-python-hugo-theme"]
 relativeURLs: true
-disableKinds: ["term", "taxonomy", "RSS"]
+disableKinds: ["RSS"]
 
 markup:
   highlight:
@@ -24,14 +24,12 @@ params:
   - /images/logo.svg
   navbarlogo:
     image: logo.svg
-    text: Scientific Python Hugo Theme
+    text: Scientific Python Blog
     link: /
   hero:
-    title: Scientific Python Theme
+    title: Scientific Python Blog
     image: logo.svg
   navbar:
-   - title: Blog
-     url: https://blog.scientific-python.org
    - title: RSS
      url: /atom.xml
    - title: About Scientific Python
@@ -42,8 +40,12 @@ params:
     logo: logo.svg
     socialmediatitle: ""
     socialmedia:
-      - link: https://github.com/scientific-python/
+      - link: https://scientific-python.org
+        icon: home
+      - link: https://github.com/scientific-python/blog.scientific-python.org
         icon: github
+      - link: https://blog.scientific-python.org/atom.xml
+        icon: atom
     quicklinks:
       column2:
         links:
