@@ -1,0 +1,2 @@
+jupytext notebook.md -o index.ipynb
+jupyter nbconvert --execute index.ipynb --to markdown --TemplateExporter.extra_template_basedirs=.. --template=mdoutput_template
