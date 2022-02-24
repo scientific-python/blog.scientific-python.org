@@ -1,5 +1,5 @@
 ---
-author: "Stéfan van der Walt"
+author: ["Stéfan van der Walt"]
 title: How to render a notebook to the blog
 jupyter:
   jupytext:
