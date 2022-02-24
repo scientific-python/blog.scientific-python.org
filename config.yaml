@@ -26,9 +26,6 @@ params:
     image: logo.svg
     text: Scientific Python Blog
     link: /
-  hero:
-    title: Scientific Python Blog
-    image: logo.svg
   navbar:
    - title: RSS
      url: /atom.xml
