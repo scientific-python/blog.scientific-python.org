@@ -1,6 +1,6 @@
 ---
 title: This is a test blog post
-author: Stéfan van der Walt
+author: ["Stéfan van der Walt"]
 tags:
     - tag1
     - tag2
