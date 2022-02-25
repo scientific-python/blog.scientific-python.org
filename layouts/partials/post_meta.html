@@ -1,8 +1,10 @@
-<span class="post-authors">
-  {{- range .Params.author -}}
-  <div class="post-author"><span style="vertical-align: bottom;" class="icon fa fa-user"></span> {{ . }}</div>
-  {{- end -}}
-</span>
-{{ if .Date }}
-<span class="post-date"><span style="vertical-align: bottom;" class="icon fas  fa-calendar"></span> {{.Date.Format "January 2, 2006"}}</span>
-{{ end }}
+<div class="post-meta">
+  <span class="post-authors">
+    {{- range .Params.author -}}
+    <div class="post-author"><span style="vertical-align: bottom;" class="icon fa fa-user"></span> {{ . }}</div>
+    {{- end -}}
+  </span>
+  {{ if .Date }}
+  <span class="post-date"><span style="vertical-align: bottom;" class="icon fas  fa-calendar"></span> {{.Date.Format "January 2, 2006"}}</span>
+  {{ end }}
+</div>

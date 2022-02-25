@@ -1,0 +1,16 @@
+.post-author:not(:first-child):before {
+  content: "";
+}
+
+.post-date {
+  padding-left: 0.5rem;
+}
+
+.post-author:not(:first-child) {
+  padding-left: 0.5rem;
+}
+
+.post-meta {
+  color: var(--colorSecondaryDark);
+  padding-bottom: 1rem;
+}
