@@ -5,6 +5,14 @@
     {{- end -}}
   </span>
   {{ if .Date }}
-  <span class="post-date"><span style="vertical-align: bottom;" class="icon fas  fa-calendar"></span> {{.Date.Format "January 2, 2006"}}</span>
+  <span class="post-date"><span style="vertical-align: bottom;" class="icon fas fa-calendar"></span> {{.Date.Format "January 2, 2006"}}</span>
   {{ end }}
+  {{- if .Params.tags -}}
+  <div class="post-tags">
+    <span style="vertical-align: bottom;" class="icon fas fa-tag"></span>
+    {{- range .Params.tags -}}
+    <span class="post-tag"><a href="{{ path.Join "/tags/" . | relURL }}">#{{.}}</a></span>
+    {{- end -}}
+  </div>
+  {{- end -}}
 </div>

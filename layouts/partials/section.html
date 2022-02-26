@@ -1,28 +1,13 @@
 <section class="content-padding flex-row">
-<div class="shortcuts-container">
-  <div class="shortcuts-title"><img src="/images/icons/mui-icons_format-list-bulleted.svg"/>On this page</div>
-  <div id="shortcuts"></div>
-</div>
 <div class="content-container">
-  {{ if .Content }}
-  {{ .Content }}
-  {{ else }}
   {{ range .Pages }}
   <div class="post-list">
     <article>
       <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-      <div class="post-authors">
-        {{- range .Params.author -}}
-        <div class="post-author"><span style="vertical-align: bottom;" class="icon fa fa-user"></span> {{ . }}</div>
-        {{- end -}}
-      </div>
-      {{ if .Date }}
-      <div class="post-date"><span style="vertical-align: bottom;" class="icon fas  fa-calendar"></span> {{.Date.Format "January 2, 2006"}}</div>
-      {{ end }}
+      {{ partial "post_meta.html" . }}
       <div class="post-summary">{{ .Summary }}</div>
     </article>
   </div>
-  {{ end }}
   {{ end }}
 </div>
 </section>

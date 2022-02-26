@@ -6,6 +6,10 @@
   padding-left: 0.5rem;
 }
 
+.post-tag {
+  padding-left: 0.3rem;
+}
+
 .post-author:not(:first-child) {
   padding-left: 0.5rem;
 }

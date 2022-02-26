@@ -3,7 +3,8 @@ languageCode: "en-us"
 title: "Scientific Python blog"
 theme: ["hugo-atom-feed", "scientific-python-hugo-theme"]
 relativeURLs: true
-disableKinds: ["RSS"]
+disableKinds: ["RSS", "taxonomy"]
+ignoreErrors: ["error-disable-taxonomy"]
 
 markup:
   highlight:
@@ -17,6 +18,10 @@ outputFormats:
 
 outputs:
   home: ["HTML", "ATOM"]
+
+permalinks:
+  # mimic pelican permalink configuration
+  /: "/:year/:month/:day/:slug/"
 
 params:
   description: "Posts from the Scientific Python community"

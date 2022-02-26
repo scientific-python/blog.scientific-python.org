@@ -1,0 +1,20 @@
+{{ define "navbar" }}
+{{ partial "navbar.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<section class="content-padding flex-row">
+  <div class="content-container">
+    <h1 id="term-title">Posts with #{{ .Title }}</h1>
+    {{ range .Pages }}
+    <div class="post-list">
+      <article>
+        <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+        {{ partial "post_meta.html" . }}
+        <div class="post-summary">{{ .Summary }}</div>
+      </article>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
