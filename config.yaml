@@ -3,7 +3,8 @@ languageCode: "en-us"
 title: "Scientific Python blog"
 theme: ["hugo-atom-feed", "scientific-python-hugo-theme"]
 relativeURLs: true
-disableKinds: ["term", "taxonomy", "RSS"]
+disableKinds: ["RSS", "taxonomy"]
+ignoreErrors: ["error-disable-taxonomy"]
 
 markup:
   highlight:
@@ -17,6 +18,11 @@ outputFormats:
 
 outputs:
   home: ["HTML", "ATOM"]
+  term: ["HTML", "ATOM"]
+
+permalinks:
+  # mimic pelican permalink configuration
+  /: "/:year/:month/:day/:slug/"
 
 params:
   description: "Posts from the Scientific Python community"
@@ -24,14 +30,9 @@ params:
   - /images/logo.svg
   navbarlogo:
     image: logo.svg
-    text: Scientific Python Hugo Theme
+    text: Scientific Python Blog
     link: /
-  hero:
-    title: Scientific Python Theme
-    image: logo.svg
   navbar:
-   - title: Blog
-     url: https://blog.scientific-python.org
    - title: RSS
      url: /atom.xml
    - title: About Scientific Python
@@ -42,8 +43,14 @@ params:
     logo: logo.svg
     socialmediatitle: ""
     socialmedia:
-      - link: https://github.com/scientific-python/
-        icon: github
+      - link: https://scientific-python.org
+        icon: home
+      - link: https://github.com/scientific-python/blog.scientific-python.org
+        icon: fa-brands fa-github
+      - link: https://blog.scientific-python.org/atom.xml
+        icon: fa-solid fa-square-rss
+      - link: https://discuss.scientific-python.org/
+        icon: fa-brands fa-discourse
     quicklinks:
       column2:
         links:
