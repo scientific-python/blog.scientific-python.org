@@ -46,9 +46,11 @@ params:
       - link: https://scientific-python.org
         icon: home
       - link: https://github.com/scientific-python/blog.scientific-python.org
-        icon: github
+        icon: fa-brands fa-github
       - link: https://blog.scientific-python.org/atom.xml
-        icon: atom
+        icon: fa-solid fa-square-rss
+      - link: https://discuss.scientific-python.org/
+        icon: fa-brands fa-discourse
     quicklinks:
       column2:
         links:
