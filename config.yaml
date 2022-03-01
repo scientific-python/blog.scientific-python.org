@@ -18,6 +18,7 @@ outputFormats:
 
 outputs:
   home: ["HTML", "ATOM"]
+  term: ["HTML", "ATOM"]
 
 permalinks:
   # mimic pelican permalink configuration
