@@ -44,7 +44,7 @@ params:
     socialmediatitle: ""
     socialmedia:
       - link: https://scientific-python.org
-        icon: home
+        icon: fa-solid fa-house
       - link: https://github.com/scientific-python/blog.scientific-python.org
         icon: fa-brands fa-github
       - link: https://blog.scientific-python.org/atom.xml
