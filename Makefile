@@ -7,9 +7,10 @@ notebook_mds := $(patsubst %.ipynb,%.md,$(notebook_ipynbs))
 
 # Add help text after each target name starting with '\#\#'
 help:   ## Display this message
-	@echo -e "Help for this makefile\n"
-	@echo "Possible commands are:"
-	@grep -h "##" $(MAKEFILE_LIST) | grep -v grep | sed -e 's/\(.*\):.*##\(.*\)/    \1: \2/'
+help:
+	@echo -e "Usage: make TARGET\n"
+	@echo -e "where TARGET is one of\n"
+	@grep -h "^\(\S*\):[ ]*##\(.*\)" $(MAKEFILE_LIST) | awk -F ':\\s*##\\s*' '{printf "%-19s %s\n", $$1, $$2}'
 
 prepare:
 	git submodule update --init
