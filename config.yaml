@@ -44,13 +44,13 @@ params:
     socialmediatitle: ""
     socialmedia:
       - link: https://scientific-python.org
-        icon: fa-solid fa-house
-      - link: https://github.com/scientific-python/blog.scientific-python.org
-        icon: fa-brands fa-github
-      - link: https://blog.scientific-python.org/atom.xml
-        icon: fa-solid fa-square-rss
+        icon: scientific-python
       - link: https://discuss.scientific-python.org/
-        icon: fa-brands fa-discourse
+        icon: discourse
+      - link: https://github.com/scientific-python/blog.scientific-python.org
+        icon: github
+      - link: https://blog.scientific-python.org/atom.xml
+        icon: rss-feed
     quicklinks:
       column2:
         links:
