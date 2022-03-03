@@ -1,0 +1,17 @@
+# Once we are in "production", we should tell Netlify
+# not to install this file—we don't want to build posts
+# on there.
+
+jupytext
+nbconvert
+ipykernel
+
+# core packages
+# others can be installed inside of individual notebooks
+numpy
+scipy
+matplotlib
+networkx
+scikit-image
+pandas
+scikit-learn
