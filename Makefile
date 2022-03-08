@@ -21,7 +21,7 @@ html: prepare executed_notebooks
 
 serve: ## Serve site, typically on http://localhost:1313
 serve: prepare executed_notebooks
-	@hugo --i18n-warnings server
+	@hugo --printI18nWarnings server
 
 clean: ## Remove built files
 clean:
