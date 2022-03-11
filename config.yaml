@@ -33,12 +33,16 @@ params:
     text: Scientific Python Blog
     link: /
   navbar:
-   - title: RSS
-     url: /atom.xml
-   - title: About Scientific Python
-     url: https://scientific-python.org
-   - title: Forum
-     url: https://discuss.scientific-python.org
+   - title: Home
+     url: https://scientific-python.org/
+   - title: User Guide
+     url: https://learn.scientific-python.org/users/
+   - title: Contributor Guide
+     url: https://learn.scientific-python.org/contributors/
+   - title: Maintainer Guide
+     url: https://learn.scientific-python.org/maintainers/
+   - title: Community Blog
+     url: /
   footer:
     logo: logo.svg
     socialmediatitle: ""
