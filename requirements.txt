@@ -5,6 +5,7 @@
 jupytext
 nbconvert
 ipykernel
+ipython-genutils
 
 # core packages
 # others can be installed inside of individual notebooks
