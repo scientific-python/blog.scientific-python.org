@@ -1,6 +1,6 @@
 <section class="content-padding flex-row">
 <div class="content-container">
-  {{ range .Pages }}
+  {{ range $.Site.RegularPages }}
   <div class="post-list">
     <article>
       <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>

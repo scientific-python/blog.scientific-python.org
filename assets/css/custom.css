@@ -6,6 +6,11 @@
   padding-left: 0.5rem;
 }
 
+/* Reduce space between label icon and labels */
+.post-tag:nth-child(2) {
+  padding-left: 0.1rem;
+}
+
 .post-tag {
   padding-left: 0.3rem;
 }
@@ -17,4 +22,27 @@
 .post-meta {
   color: var(--colorSecondaryDark);
   padding-bottom: 1rem;
+}
+
+.post-meta .icon {
+  font-size: 1.5rem;
+}
+
+.post-meta svg {
+  fill: gray;
+}
+
+.post-content {
+  font-family: serif;
+  font-size: 130%;
+}
+
+.post-summary {
+  font-family: serif;
+  font-size: 130%;
+}
+
+div.MathJax_Display {
+  margin-top: 0;
+  margin-bottom: 0;
 }
