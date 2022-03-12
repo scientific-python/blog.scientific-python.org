@@ -1,3 +1,4 @@
+{{ $page := . }}
 <section class="content-padding flex-row">
 <div class="content-container">
   {{ range $.Site.RegularPages }}
@@ -5,7 +6,9 @@
     <article>
       <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
       {{ partial "post_meta.html" . }}
-      <div class="post-summary">{{ .Summary }}</div>
+      <div class="post-summary">
+        {{ .Summary }}
+      </div>
     </article>
   </div>
   {{ end }}
