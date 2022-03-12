@@ -3,7 +3,7 @@ title: "An Inquiry Into Matplotlib's Figures"
 date: 2019-12-24T11:25:42+05:30
 draft: false
 description: "This guide dives deep into the inner workings of Matplotlib's Figures, Axes, subplots and the very amazing GridSpec!"
-categories: ["tutorials"]
+tags: ["tutorials", "matplotlib"]
 displayInList: true
 author: ["Akash Palrecha"]
 resources:

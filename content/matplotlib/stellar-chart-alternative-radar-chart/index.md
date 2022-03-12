@@ -3,7 +3,7 @@ title: "Stellar Chart, a Type of Chart to Be on Your Radar"
 date: 2021-01-10T20:29:40Z
 draft: false
 description: "Learn how to create a simple stellar chart, an alternative to the radar chart."
-categories: ["tutorials"]
+tags: ["tutorials", "matplotlib"]
 displayInList: true
 author: ["João Palmeiro"]
 resources:

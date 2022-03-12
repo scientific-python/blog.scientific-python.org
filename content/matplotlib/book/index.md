@@ -3,7 +3,7 @@ title: "Newly released open access book"
 date: 2021-11-15T14:26:51+01:00
 draft: false
 description: "New open access book released"
-categories: ["News"]
+tags: ["News", "matplotlib"]
 displayInList: true
 author: ["Nicolas P. Rougier"]
 resources:

@@ -2,7 +2,7 @@
 title: "A New Blog"
 date: 2019-10-07T22:49:35-04:00
 description: "Matplotblog, the new blog of Matplotlib, to showcase and share great visualization stories."
-categories: ["editorial"]
+tags: ["editorial", "matplotlib"]
 displayInMenu: false
 displayInList: true
 draft: false

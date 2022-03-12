@@ -3,7 +3,7 @@ title: "Creating the Warming Stripes in Matplotlib"
 date: 2019-11-11T09:21:28+01:00
 draft: false
 description: "Ed Hawkins made this impressively simple plot to show how global temperatures have risen since 1880. Here is how to recreate it using Matplotlib."
-categories: ["tutorials", "academia"]
+tags: ["tutorials", "academia", "matplotlib"]
 displayInList: true
 author: ["Maximilian Nöthe"]
 

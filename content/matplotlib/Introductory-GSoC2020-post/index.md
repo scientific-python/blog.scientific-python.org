@@ -2,7 +2,7 @@
 title: "Sidharth Bansal joined as GSoC'20 intern"
 date: 2020-05-06T21:47:36+05:30
 draft: false
-categories: ["News", "GSoC"]
+tags: ["News", "GSoC", "matplotlib"]
 description: "Introductory post about Sidharth Bansal, Google Summer of Code 2020 Intern for Baseline Image Problem Project under Numfocus"
 displayInList: true
 author: ["Sidharth Bansal"]

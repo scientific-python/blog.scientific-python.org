@@ -3,7 +3,7 @@ title: "Create Ridgeplots in Matplotlib"
 date: 2020-02-15T09:50:16+01:00
 draft: false
 description: "This post details how to leverage gridspec to create ridgeplots in Matplotlib"
-categories: ["tutorials"]
+tags: ["tutorials", "matplotlib"]
 displayInList: true
 author: ["Peter McKeever"]
 resources:

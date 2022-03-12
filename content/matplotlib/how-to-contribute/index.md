@@ -2,7 +2,7 @@
 title: "How to Contribute"
 date: 2019-10-10T21:37:03-04:00
 description: "See how you can contribute to the matplotblog."
-categories: ["tutorials"]
+tags: ["tutorials", "matplotlib"]
 displayInList: true
 displayInMenu: true
 draft: false
@@ -64,7 +64,7 @@ description: "This is my first post contribution."
 ```
 This is a long description of the topic of your post. Modify it according to the content.
 ```
-categories: ["tutorials"]
+tags: ["tutorials", "matplotlib"]
 ```
 Pick the category you want your post to be added to. You can find the list of categories in the top right menu of matplotblog (except for Home and About).
 ```

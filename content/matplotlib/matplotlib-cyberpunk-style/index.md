@@ -3,7 +3,7 @@ title: "Matplotlib Cyberpunk Style"
 date: 2020-03-27T20:26:07+01:00
 draft: false
 description: "Futuristic neon glow for your next data visualization"
-categories: ["tutorials"]
+tags: ["tutorials", "matplotlib"]
 displayInList: true
 author: ["Dominik Haitz"]
 

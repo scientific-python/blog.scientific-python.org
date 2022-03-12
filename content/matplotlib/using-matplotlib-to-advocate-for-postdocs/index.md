@@ -5,7 +5,7 @@ description: "Advocating is all about communicating facts clearly. I used Matplo
 date: 2019-10-23T12:43:23-04:00
 draft: false
 displayInList: true
-categories: ["academia"]
+tags: ["academia", "matplotlib"]
 
 resources:
 - name: featuredImage

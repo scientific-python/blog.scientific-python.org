@@ -3,7 +3,7 @@ title: "Matplotlib for Making Diagrams"
 date: 2020-02-19T12:57:07-05:00
 draft: false
 description: "How to use Matplotlib to make diagrams."
-categories: ["tutorials"]
+tags: ["tutorials", "matplotlib"]
 displayInList: true
 author: ["Brandon Rohrer"]
 

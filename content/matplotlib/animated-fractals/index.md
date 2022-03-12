@@ -4,7 +4,7 @@ date: 2020-07-04T00:06:36+02:00
 draft: false
 description: "Discover the bizarre geometry of the fractals and learn how to make an animated visualization of these
 marvels using Python and the Matplotlib's Animation API."
-categories: ["tutorials"]
+tags: ["tutorials", "matplotlib"]
 displayInList: true
 author: ["Vladimir Ilievski"]
 resources:

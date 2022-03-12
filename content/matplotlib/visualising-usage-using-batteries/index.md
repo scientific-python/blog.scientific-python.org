@@ -3,7 +3,7 @@ title: "Battery Charts - Visualise usage rates & more"
 date: 2021-08-19T16:52:58+05:30
 draft: false
 description: A tutorial on how to show usage rates and more using batteries
-categories: ["tutorials"]
+tags: ["tutorials", "matplotlib"]
 displayInList: true
 author: ["Rithwik Rajendran"]
 resources:

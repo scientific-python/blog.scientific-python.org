@@ -5,7 +5,7 @@ draft: false
 description: |
   Many figures in the IPCC SR15 were generated using Matplotlib.
   The data and open-source notebooks were published to increase the transparency and reproducibility of the analysis.
-categories: ["academia", "tutorials"]
+tags: ["academia", "tutorials", "matplotlib"]
 displayInList: true
 author: ["Daniel Huppmann"]
 

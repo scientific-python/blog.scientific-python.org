@@ -2,7 +2,7 @@
 title: "Matplotlib in Data Driven SEO"
 date: 2019-12-04T17:23:24+01:00
 description: "At Whites Agency we analyze big unstructured data to increases client's online visibility. We share our story of how we used Matplotlib to present the complicated data in a simple and reader-friendly way."
-categories: ["industry"]
+tags: ["industry", "matplotlib"]
 draft: false
 displayInMenu: false
 displayInList: true

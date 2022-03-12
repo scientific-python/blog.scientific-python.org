@@ -2,7 +2,7 @@
 title: "GSoC Coding Phase 1 Blog 1"
 date: 2020-06-09T16:47:51+05:30
 draft: false
-categories: ["News", "GSoC"]
+tags: ["News", "GSoC", "matplotlib"]
 description: "Progress Report for the first half of the Google Summer of Code 2020 Phase 1 for the Baseline Images Problem"
 displayInList: true
 author: ["Sidharth Bansal"]

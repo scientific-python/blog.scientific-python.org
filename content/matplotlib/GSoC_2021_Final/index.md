@@ -2,7 +2,7 @@
 title: "GSoC'21: Final Report"
 date: 2021-08-17T17:36:40+05:30
 draft: false
-categories: ["News", "GSoC"]
+tags: ["News", "GSoC", "matplotlib"]
 description: "Google Summer of Code 2021: Final Report - Aitik Gupta"
 displayInList: true
 author: ["Aitik Gupta"]

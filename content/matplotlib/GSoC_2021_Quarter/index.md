@@ -2,7 +2,7 @@
 title: "GSoC'21: Quarter Progress"
 date: 2021-08-03T18:48:00+05:30
 draft: false
-categories: ["News", "GSoC"]
+tags: ["News", "GSoC", "matplotlib"]
 description: "Quarter Progress with Google Summer of Code 2021 project under NumFOCUS: Aitik Gupta"
 displayInList: true
 author: ["Aitik Gupta"]

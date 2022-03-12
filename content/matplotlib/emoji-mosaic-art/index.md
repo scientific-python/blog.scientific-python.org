@@ -3,7 +3,7 @@ title: "Emoji Mosaic Art"
 date: 2020-05-24T19:11:01+05:30
 draft: false
 description: "Applied image manipulation to create procedural art."
-categories: ["tutorials", "art"]
+tags: ["tutorials", "art", "matplotlib"]
 displayInList: true
 author: ["Abhishek Sharma"]
 resources:

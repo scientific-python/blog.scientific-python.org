@@ -3,7 +3,7 @@ title: "Art from UNC BIOL222"
 date: 2021-11-19T08:46:00-08:00
 draft: false
 description: "UNC BIOL222: Art created with Matplotlib"
-categories: ["art", "academia"]
+tags: ["art", "academia", "matplotlib"]
 displayInList: true
 author: ["Joseph Lucas"]
 resources:

@@ -3,7 +3,7 @@ title: "Create a Tesla Cybertruck That Drives"
 date: 2020-01-12T13:35:34-05:00
 draft: false
 description: "Learn how to create a Tesla Cybertruck with Matplotlib that drives via animation."
-categories: ["tutorials"]
+tags: ["tutorials", "matplotlib"]
 displayInList: true
 author: ["Ted Petrou"]
 resources:

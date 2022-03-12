@@ -2,7 +2,7 @@
 title: "Aitik Gupta joins as a Student Developer under GSoC'21"
 date: 2021-05-19T20:03:57+05:30
 draft: false
-categories: ["News", "GSoC"]
+tags: ["News", "GSoC", "matplotlib"]
 description: "Introduction about Aitik Gupta, Google Summer of Code 2021 Intern under the parent organisation: NumFOCUS"
 displayInList: true
 author: ["Aitik Gupta"]

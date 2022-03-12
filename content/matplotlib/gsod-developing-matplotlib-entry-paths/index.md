@@ -3,7 +3,7 @@ title: "GSoD: Developing Matplotlib Entry Paths"
 date: 2020-12-08T08:16:42-08:00
 draft: false
 description: "This is my first post contribution to Matplotlib."
-categories: ["GSoD"]
+tags: ["GSoD", "matplotlib"]
 displayInList: true
 author: ["Jerome Villegas"]
 ---

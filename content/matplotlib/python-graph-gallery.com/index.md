@@ -3,7 +3,7 @@ title: "The Python Graph Gallery: hundreds of python charts with reproducible co
 date: 2021-07-24T14:06:57+02:00
 draft: false
 description: "The Python Graph Gallery is a website that displays hundreds of chart examples made with python. It goes from very basic to highly customized examples and is based on common viz libraries like matplotlib, seaborn or plotly."
-categories: ["tutorials", "graphs"]
+tags: ["tutorials", "graphs", "matplotlib"]
 displayInList: true
 author: ["Yan Holtz"]
 resources:

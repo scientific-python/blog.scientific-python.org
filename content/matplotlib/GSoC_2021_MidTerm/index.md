@@ -2,7 +2,7 @@
 title: "GSoC'21: Mid-Term Progress"
 date: 2021-07-02T08:32:05+05:30
 draft: false
-categories: ["News", "GSoC"]
+tags: ["News", "GSoC", "matplotlib"]
 description: "Mid-Term Progress with Google Summer of Code 2021 project under NumFOCUS: Aitik Gupta"
 displayInList: true
 author: ["Aitik Gupta"]

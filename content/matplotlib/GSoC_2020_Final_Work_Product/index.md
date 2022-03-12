@@ -2,7 +2,7 @@
 title: "GSoC 2020 Work Product - Baseline Images Problem"
 date: 2020-08-16T09:47:51+05:30
 draft: false
-categories: ["News", "GSoC"]
+tags: ["News", "GSoC", "matplotlib"]
 description: "Final Work Product Report for the Google Summer of Code 2020 for the Baseline Images Problem"
 displayInList: true
 author: ["Sidharth Bansal"]

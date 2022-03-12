@@ -3,7 +3,7 @@ title: "Elementary Cellular Automata"
 date: 2020-07-14T15:48:23-04:00
 draft: false
 description: "A brief tour through the world of elementary cellular automata"
-categories: ["tutorials"]
+tags: ["tutorials", "matplotlib"]
 displayInList: true
 author: ["Eitan Lees"]
 resources:

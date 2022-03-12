@@ -3,7 +3,7 @@ title: "Animated polar plot with oceanographic data"
 date: 2020-06-12T09:56:36+02:00
 draft: false
 description: "This post describes how to animate some oceanographic measurements in a tweaked polar plot"
-categories: ["tutorials"]
+tags: ["tutorials", "matplotlib"]
 displayInList: true
 author: ["Kevin Balem"]
 resources:
