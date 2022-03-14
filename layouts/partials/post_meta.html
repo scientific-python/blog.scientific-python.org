@@ -1,7 +1,7 @@
 {{- $featuredImage := .Resources.GetMatch "featuredImage" -}}
 <div class="post-meta">
   {{ with $featuredImage }}
-  <img class="post-featuredImage" src="{{ .RelPermalink }}"/>
+  <img class="post-featuredImage" src="{{ .RelPermalink }}" {{ if .Params.description }}alt="{{ .Params.description }}"{{ end }}/>
   {{ end }}
   </span>
   <span class="post-authors">
