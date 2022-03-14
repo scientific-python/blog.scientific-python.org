@@ -99,7 +99,7 @@ plt.show()
 ````
 ![](basic_template.png)
 
-I won't get into more detail about what everything does here. If you are interested in learning more about figures, axes, and gridspec, Akash Palrecha has [written a very nice guide here](https://matplotlib.org/matplotblog/posts/an-inquiry-into-matplotlib-figures/).
+I won't get into more detail about what everything does here. If you are interested in learning more about figures, axes, and gridspec, Akash Palrecha has [written a very nice guide here](../an-inquiry-into-matplotlib-figures/).
 
 ### Kernel Density Estimation <a id="kde"></a>
 

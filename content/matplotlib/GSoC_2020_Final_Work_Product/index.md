@@ -41,7 +41,7 @@ We have written documentation explaining the following scenarios:
 
 - [Issue](https://github.com/matplotlib/matplotlib/issues/16447)
 - [Pull Request](https://github.com/matplotlib/matplotlib/pull/17793)
-- [Blog Posts](https://matplotlib.org/matplotblog/categories/gsoc/)
+- [Blog Posts](/tags/gsoc/)
 
 ## Mentors
 
@@ -52,4 +52,3 @@ We have written documentation explaining the following scenarios:
 I am grateful to be part of such a great community. Project is really interesting and challenging :)
 
 Thanks Thomas, Antony and Hannah for helping me to complete this project.
-  

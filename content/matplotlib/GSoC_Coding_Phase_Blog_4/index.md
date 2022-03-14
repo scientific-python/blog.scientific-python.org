@@ -12,7 +12,7 @@ Google Summer of Code 2020's second evaluation is about to complete. Now we are 
 
 ## Modular approach towards removal of matplotlib baseline images
 
-We have divided the work in two parts as discussed in the [previous blog](https://matplotlib.org/matplotblog/posts/gsoc_coding_phase_blog_3/). The first part is the generation of the baseline images discussed below. The second part is the modification of the baseline images. The modification part will be implemented in the last phase of the Google Summer of Code 2020.
+We have divided the work in two parts as discussed in the [previous blog](../gsoc_coding_phase_blog_3/). The first part is the generation of the baseline images discussed below. The second part is the modification of the baseline images. The modification part will be implemented in the last phase of the Google Summer of Code 2020.
 
 ## Generation of the matplotlib baseline images
 

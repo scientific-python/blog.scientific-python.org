@@ -16,7 +16,7 @@ resources:
 
 **<ins>Matplotlib: Revisiting Text/Font Handling</ins>**
 
-To kick things off for the final report, here's a [meme](https://user-images.githubusercontent.com/43996118/129448683-bc136398-afeb-40ac-bbb7-0576757baf3c.jpg) to nudge about the [previous blogs](https://matplotlib.org/matplotblog/categories/gsoc/).
+To kick things off for the final report, here's a [meme](https://user-images.githubusercontent.com/43996118/129448683-bc136398-afeb-40ac-bbb7-0576757baf3c.jpg) to nudge about the [previous blogs](/tags/gsoc/).
 ## About Matplotlib
 Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations, which has become a _de-facto Python plotting library_.
 
@@ -79,7 +79,7 @@ The very first (and crucial!) step is to get to a point where we have multiple f
 - [PR: [with findfont diff] Parsing all families in font_manager](https://github.com/matplotlib/matplotlib/pull/20496), or
 - [PR: [without findfont diff] Parsing all families in font_manager](https://github.com/matplotlib/matplotlib/pull/20549)
 
-Quoting one of my [previous](https://matplotlib.org/matplotblog/posts/gsoc_2021_prequarter/) blogs:
+Quoting one of my [previous](../gsoc_2021_prequarter/) blogs:
 > Don’t break, a lot at stake!
 
 My first approach was to change the existing public `findfont` API to incorporate multiple filepaths. Since Matplotlib has a _very huge_ userbase, there's a high chance it would break a chunk of people's workflow:
@@ -151,7 +151,7 @@ From learning through [Antony](https://github.com/anntzer)'s patches and pointer
 
 _Special Mentions: [Frank](https://github.com/sauerburger), [Srijan](https://github.com/srijan-paul) and [Atharva](https://github.com/tfidfwastaken) for their helping hands!_
 
-And lastly, _you_, the reader; if you've been following my [previous blogs](https://matplotlib.org/matplotblog/categories/gsoc/), or if you've landed at this one directly, I thank you nevertheless. (one last [meme](https://user-images.githubusercontent.com/43996118/126441988-5a2067fd-055e-44e5-86e9-4dddf47abc9d.png), I promise!)
+And lastly, _you_, the reader; if you've been following my [previous blogs](/tags/gsoc/), or if you've landed at this one directly, I thank you nevertheless. (one last [meme](https://user-images.githubusercontent.com/43996118/126441988-5a2067fd-055e-44e5-86e9-4dddf47abc9d.png), I promise!)
 
 I know I speak for every developer out there, when I say <ins>***it means a lot***</ins> when you choose to look at their journey or their work product; it could as well be a tiny website, or it could be as big as designing a complete library!
 

@@ -30,14 +30,14 @@ Matplotlib doesn't ship [CJK](https://en.wikipedia.org/wiki/List_of_CJK_fonts) (
 
 So if you don't have a font to render your Chinese characters, go ahead and install one! Matplotlib will find your installed fonts (after rebuilding the cache, that is).
 ### Parse the fonts
-This is where things get interesting, and what my [previous writeup](https://matplotlib.org/matplotblog/posts/gsoc_2021_prequarter/) was all about..
+This is where things get interesting, and what my [previous writeup](../gsoc_2021_prequarter/) was all about..
 
 > Parsing the whole family to get multiple fonts for given font properties
 
 ## FT2Font Magic!
 To give you an idea about how things used to work for Matplotlib:
 1. A single font was chosen _at draw time_
-		 (fixed: re [previous writeup]((https://matplotlib.org/matplotblog/posts/gsoc_2021_prequarter/)))
+		 (fixed: re [previous writeup](../gsoc_2021_prequarter/))
 2. Every character displayed in your document was rendered by only that font
 		 (partially fixed: re <ins>_this writeup_</ins>)
 

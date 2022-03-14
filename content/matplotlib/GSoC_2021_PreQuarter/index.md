@@ -16,7 +16,7 @@ resources:
 
 **“<ins>Well? Did you get it working?!</ins>”**
 
-Before I answer that question, if you're missing the context, check out my [previous blog](https://matplotlib.org/matplotblog/posts/gsoc_2021_midterm/)'s last few lines.. promise it won't take you more than 30 seconds to get the whole problem!
+Before I answer that question, if you're missing the context, check out my [previous blog](../gsoc_2021_midterm/)'s last few lines.. promise it won't take you more than 30 seconds to get the whole problem!
 
 With this short writeup, I intend to talk about _what_ we did and _why_ we did, what we did. XD
 
