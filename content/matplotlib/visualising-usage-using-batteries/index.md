@@ -160,7 +160,7 @@ def draw_battery(fig, ax, percentage=0, bat_ec="grey",
 
 ## <span style="text-decoration: underline">Reading the Data</span>
 
-Once we have created the API or function, we can now implement the same. And for that, we need to feed in required data. In our example, we have a dataset that has the list of Liverpool players and the minutes they have played in the past two seasons. The data was collected from <a href="www.fbref.com">Football Reference aka FBRef</a>.
+Once we have created the API or function, we can now implement the same. And for that, we need to feed in required data. In our example, we have a dataset that has the list of Liverpool players and the minutes they have played in the past two seasons. The data was collected from <a href="http://www.fbref.com">Football Reference aka FBRef</a>.
 
 We use the read excel function in the pandas library to read our dataset that is stored as an excel file.
 
