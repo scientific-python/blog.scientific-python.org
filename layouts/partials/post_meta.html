@@ -1,15 +1,15 @@
 <div class="post-meta">
   <span class="post-authors">
     {{- range .Params.author -}}
-    <div class="post-author"><span style="vertical-align: bottom;" class="icon fa fa-user"></span> {{ . }}</div>
+    <div class="post-author">{{ partial "svg-icon" "person" }}</span> {{ . }}</div>
     {{- end -}}
   </span>
   {{ if .Date }}
-  <span class="post-date"><span style="vertical-align: bottom;" class="icon fas fa-calendar"></span> {{.Date.Format "January 2, 2006"}}</span>
+  <span class="post-date">{{ partial "svg-icon" "calendar" }} {{.Date.Format "January 2, 2006"}}</span>
   {{ end }}
   {{- if .Params.tags -}}
   <div class="post-tags">
-    <span style="vertical-align: bottom;" class="icon fas fa-tag"></span>
+    {{ partial "svg-icon" "tag" }}
     {{- range .Params.tags -}}
     <span class="post-tag"><a href="{{ path.Join "/tags/" . | relURL }}">#{{.}}</a></span>
     {{- end -}}
