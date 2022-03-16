@@ -16,7 +16,8 @@
   <div class="post-tags">
     {{ partial "svg-icon" "tag" }}
     {{- range .Params.tags -}}
-    <span class="post-tag"><a href="{{ path.Join "/tags/" . | relURL }}">#{{.}}</a></span>
+    {{- $tag := lower . }}
+    <span class="post-tag"><a href="{{ path.Join "/tags/" $tag | relURL }}">#{{ $tag }}</a></span>
     {{- end -}}
   </div>
   {{- end -}}
