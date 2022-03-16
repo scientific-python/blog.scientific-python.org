@@ -46,3 +46,9 @@ div.MathJax_Display {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+img.post-featuredImage {
+  width: 15rem;
+  float: left;
+  padding-right: 1rem;
+}
