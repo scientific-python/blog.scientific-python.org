@@ -9,6 +9,9 @@ ignoreErrors: ["error-disable-taxonomy"]
 markup:
   highlight:
     noClasses: false
+  goldmark:
+    renderer:
+      unsafe: true
 
 outputFormats:
   Atom:
