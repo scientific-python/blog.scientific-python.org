@@ -71,9 +71,25 @@ params:
         icon: discourse
 
     quicklinks:
-      column2:
+      column1:
+        title: ""
         links:
-          - text: Scientific Python Forum
-            link: https://discuss.scientific-python.org
+          - text: About
+            link: /about/
+          - text: Roadmap
+            link: /roadmap/
+          - text: Code of Conduct
+            link: https://scientific-python.org/code_of_conduct/
+      column2:
+        title: "Maintainers"
+        links:
+          - text: SPECs
+            link: https://scientific-python.org/specs/
+          - text: Grants
+            link: https://scientific-python.org/grants/
+          - text: Calendars
+            link: https://scientific-python.org/calendars/
       column3:
         links:
+          - text: Press kit
+            link: https://scientific-python.org/press-kit/
