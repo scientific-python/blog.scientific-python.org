@@ -19,6 +19,9 @@ outputFormats:
     baseName: "atom"
     isPlainText: false
 
+frontmatter:
+  date: [":filename", ":default"]
+
 outputs:
   home: ["HTML", "ATOM"]
   term: ["HTML", "ATOM"]
