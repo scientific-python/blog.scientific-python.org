@@ -2,6 +2,8 @@
 <section class="content-padding flex-row">
 <div class="content-container">
   {{ range $.Site.RegularPages }}
+  {{/* Only list blog posts; other pages do not have inferred dates */}}
+  {{ if .Params.Date }}
   <div class="post-list">
     <article>
       <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
@@ -11,6 +13,7 @@
       </div>
     </article>
   </div>
+  {{ end }}
   {{ end }}
 </div>
 </section>
