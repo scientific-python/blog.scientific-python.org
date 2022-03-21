@@ -47,7 +47,7 @@ params:
      url: https://learn.scientific-python.org/contributors/
    - title: Maintainer Guide
      url: https://learn.scientific-python.org/maintainers/
-   - title: Community Blog
+   - title: Blog
      url: /
   footer:
     logo: logo.svg
