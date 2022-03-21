@@ -25,8 +25,8 @@ Some more content.
 
 ## Authoring using notebooks
 
-Create the blog post directory as above.  Instead of `index.md`, add a
-file called `notebook.md`.  In it, place:
+Create the blog post directory as above. Instead of `index.md`, add a
+file called `notebook.md`. In it, place:
 
 ```markdown
 ---
@@ -72,5 +72,5 @@ make serve
 The server usually appears at http://localhost:1313 (unless port 1313
 is already taken).
 
-Remember, if you are editing notebooks, you need to run `make
-executed_notebooks` before changes will appear.
+Remember, if you are editing notebooks, you need to run `make executed_notebooks`
+before changes will appear.
