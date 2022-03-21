@@ -33,22 +33,22 @@ permalinks:
 params:
   description: "Posts from the Scientific Python community"
   images:
-  - /images/logo.svg
+    - /images/logo.svg
   navbarlogo:
     image: logo.svg
     text: Scientific Python Blog
     link: /
   navbar:
-   - title: Home
-     url: https://scientific-python.org/
-   - title: User Guide
-     url: https://learn.scientific-python.org/users/
-   - title: Contributor Guide
-     url: https://learn.scientific-python.org/contributors/
-   - title: Maintainer Guide
-     url: https://learn.scientific-python.org/maintainers/
-   - title: Blog
-     url: /
+    - title: Home
+      url: https://scientific-python.org/
+    - title: User Guide
+      url: https://learn.scientific-python.org/users/
+    - title: Contributor Guide
+      url: https://learn.scientific-python.org/contributors/
+    - title: Maintainer Guide
+      url: https://learn.scientific-python.org/maintainers/
+    - title: Blog
+      url: /
   footer:
     logo: logo.svg
     socialmediatitle: ""

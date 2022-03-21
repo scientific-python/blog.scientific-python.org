@@ -18,7 +18,6 @@ This is an example notebook.
 
 It can contain code cells that get executed:
 
-
 ```python
 import numpy as np
 np.array([1, 2, 3])
