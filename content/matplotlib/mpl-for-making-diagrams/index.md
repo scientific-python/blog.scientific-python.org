@@ -8,13 +8,12 @@ displayInList: true
 author: ["Brandon Rohrer"]
 
 resources:
-- name: featuredImage
-  src: "causal.png"
-  params:
-    description: "A causal model diagram"
-    showOnTop: true
+  - name: featuredImage
+    src: "causal.png"
+    params:
+      description: "A causal model diagram"
+      showOnTop: true
 ---
-
 
 # Matplotlib for diagrams
 
@@ -31,7 +30,6 @@ a blank canvas and create diagrams
 to communicate your ideas. Here, we will walk through the process
 for setting this up. Most of these tricks are detailed in
 [this cheat sheet for laying out plots](https://e2eml.school/matplotlib_framing.html).
-
 
 ```python
 import matplotlib.pyplot as plt

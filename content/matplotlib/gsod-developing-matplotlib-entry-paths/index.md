@@ -36,7 +36,7 @@ The two sections are part of a current pull request to merge into Matplotlib’s
 
 This Season of Docs proposal began as a vision of ideals I hoped to share and work towards with an organization and has become a technical writing experience full of growth and camaraderie. I am pleased with the progress I had made and cannot thank the team enough for the leadership and mentorship they provided. It is fulfilling and rewarding to both appreciate and be appreciated within a team.
 
-In addition, the opportunity put together by the team at Google to foster collaboration among skilled contributors cannot be understated. Highlighting the accomplishments of these new teams raises the bar for the open source community. 
+In addition, the opportunity put together by the team at Google to foster collaboration among skilled contributors cannot be understated. Highlighting the accomplishments of these new teams raises the bar for the open source community.
 
 # Details
 
@@ -54,7 +54,7 @@ Special thanks to Emily Hsu, Joe McEwen, and Smriti Singh for their time and res
 
 ## About Me
 
-My name is [Jerome Villegas](https://www.linkedin.com/in/jeromefuertevillegas/) and I'm a technical writer based in Seattle. I've been in education and education-adjacent fields for several years before transitioning to the industry of technical communication. My career has taken me to Taiwan to teach English and work in publishing, then to New York City to work in higher education, and back to Seattle where I worked at a private school. 
+My name is [Jerome Villegas](https://www.linkedin.com/in/jeromefuertevillegas/) and I'm a technical writer based in Seattle. I've been in education and education-adjacent fields for several years before transitioning to the industry of technical communication. My career has taken me to Taiwan to teach English and work in publishing, then to New York City to work in higher education, and back to Seattle where I worked at a private school.
 
 Since leaving my job, I've taken to supporting my family while studying technical writing at the University of Washington and supplementing the knowledge with learning programming on the side. Along with a former classmate, the two of us have worked with the UX writing community in the Pacific Northwest. We host interview sessions, moderate sessions at conferences, and generate content analyzing trends and patterns in UX/tech writing.
 

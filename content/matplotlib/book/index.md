@@ -7,11 +7,11 @@ tags: ["News", "matplotlib"]
 displayInList: true
 author: ["Nicolas P. Rougier"]
 resources:
-- name: featuredImage
-  src: "book-cover.png"
-  params:
-    description: "Book cover"
-    showOnTop: true
+  - name: featuredImage
+    src: "book-cover.png"
+    params:
+      description: "Book cover"
+      showOnTop: true
 ---
 
 It's my great pleasure to announce that I've finished my book on matplotlib and it is now freely available at [www.labri.fr/perso/nrougier/scientific-visualization.html](https://www.labri.fr/perso/nrougier/scientific-visualization.html) while sources for the book are hosted at [github.com/rougier/scientific-visualization-book](https://github.com/rougier/scientific-visualization-book).
@@ -23,4 +23,3 @@ The Python scientific visualisation landscape is huge. It is composed of a myria
 ### Book gallery
 
 ![](book-gallery.png)
-

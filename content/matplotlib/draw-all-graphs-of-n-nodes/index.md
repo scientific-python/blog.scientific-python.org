@@ -8,10 +8,10 @@ author: ["Arseny Khakhalin"]
 displayInList: true
 
 resources:
-- name: featuredImage
-  src: "thumbnail.png"
-  params:
-    showOnTop: true
+  - name: featuredImage
+    src: "thumbnail.png"
+    params:
+      showOnTop: true
 ---
 
 The other day I was homeschooling my kids, and they asked me: "Daddy, can you draw us all possible non-isomorphic graphs of 3 nodes"? Or maybe I asked them that? Either way, we happily drew all possible graphs of 3 nodes, but already for 4 nodes it got hard, and for 5 nodes - [plain impossible](https://www.graphclasses.org/smallgraphs.html#nodes5)!
@@ -81,7 +81,7 @@ def permute(g, n):
     return list(out)
 ```
 
- Say, for an input description of `[(0, 1), (0, 2)]`, the function above returns three "synonyms":
+Say, for an input description of `[(0, 1), (0, 2)]`, the function above returns three "synonyms":
 
 ```
 ((0, 1), (1, 2))
@@ -151,7 +151,7 @@ def plot_graphs(graphs, figsize=14, dotsize=20):
     for i in range(n):
         plt.subplot(k+1,k+1,i+1)
         g = nx.Graph() # Generate a Networkx object
-        for e in graphs[i]:            
+        for e in graphs[i]:
             g.add_edge(e[0],e[1])
         nx.draw_kamada_kawai(g, node_size=dotsize)
         print('.', end='')

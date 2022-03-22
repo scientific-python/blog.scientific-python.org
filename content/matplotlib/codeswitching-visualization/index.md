@@ -8,11 +8,10 @@ displayInList: true
 draft: false
 
 resources:
-- name: featuredImage
-  src: "Image1.png"
-  params:
-    showOnTop: false
-
+  - name: featuredImage
+    src: "Image1.png"
+    params:
+      showOnTop: false
 ---
 
 ![](Image1.png)
@@ -26,9 +25,11 @@ This is something that's evident in seven-member pop boy group WayV. Aside from 
 As an independent translator who translates WayV content into English, I've become keenly aware of the true extent and rate of WayV's code-switching when communicating with each other. In a lot of their content, WayV frequently switches between three or more languages every couple of seconds, a phenomenon that can make translating quite challenging at times, but also extremely rewarding and fun. I wanted to be able to present this aspect of WayV in a way that would both highlight their linguistic skills and present this dimension of their group dynamic in a more concrete, quantitative, and visually intuitive manner, beyond just stating that "they code-switch a lot." This prompted me to make step charts - perfect for displaying data that changes at irregular intervals but remains constant between the changes - in hopes of enriching the viewer's experience and helping make a potentially abstract concept more understandable and readily consumable. With a step chart, it becomes more apparent to the viewer the extent of how a group communicates, and cross-sections of the graph allow a rudimentary look into how multilinguals influence each other in code-switching.
 
 # Tutorial
+
 This tutorial on creating step charts uses one of WayV's livestreams as an example. There were four members in this livestream and a total of eight languages/dialects spoken. I will go through the basic steps of creating a step chart that depicts the frequency of code-switching for just one member. A full code chunk that shows how to layer two or more step chart lines in one graph to depict code-switching for multiple members can be found near the end.
 
 ## Dataset
+
 First, we import the required libraries and load the data into a Pandas dataframe.
 
     import pandas as pd
@@ -41,20 +42,20 @@ This dataset includes the timestamp of every switch (in seconds) and the languag
     HENDERY = df_h.reset_index()
     HENDERY.head()
 
-
 | index | time | lang |
-| ----  |----|----|
-| 0 | 2 | ENG |
-| 1 | 3 | KOR |
-| 2 | 10 | ENG |
-| 3 | 13 | MAND|
-| 4 | 15 | ENG |
-
+| ----- | ---- | ---- |
+| 0     | 2    | ENG  |
+| 1     | 3    | KOR  |
+| 2     | 10   | ENG  |
+| 3     | 13   | MAND |
+| 4     | 15   | ENG  |
 
 ## Plotting
+
 With the dataset loaded, we can now set up our graph in terms of determining the size of the figure, dpi, font size, and axes limits. We can also play around with the aesthetics, such as modifying the colors of our plot. These few simple steps easily transform the default all-white graph into a more visually appealing one.
 
 ### Without Customization
+
     fig, ax = plt.subplots(figsize = (20,12))
 
 ![](fig1.png)
@@ -74,7 +75,6 @@ With the dataset loaded, we can now set up our graph in terms of determining the
 
 <!--     ax.step(HENDERY.time, HENDERY.index, label = "HENDERY") -->
 
-
 Following this, we can make our step chart line easily with matplotlib.pyplot.step, in which we plot the x and y values and determine the text of the legend, color of the step chart line, and width of the step chart line.
 
     ax.step(HENDERY.time, HENDERY.index, label = "HENDERY", color = "palevioletred", linewidth = 4)
@@ -82,6 +82,7 @@ Following this, we can make our step chart line easily with matplotlib.pyplot.st
 ![](fig3.png)
 
 ## Labeling
+
 Of course, we want to know not only how many switches there were and when they occurred, but also to what language the member switched. For this, we can write a for loop that labels each switch with its respective language as recorded in our dataset.
 
     for x,y,z in zip(HENDERY["time"], HENDERY["index"], HENDERY["lang"]):
@@ -96,6 +97,7 @@ Of course, we want to know not only how many switches there were and when they o
 ![](fig4.png)
 
 ## Final Touches
+
 Now add a title, save the graph, and there you have it!
 
     plt.title("WayV Livestream Code-Switching", fontsize = 35)
@@ -105,6 +107,7 @@ Now add a title, save the graph, and there you have it!
 Below is the complete code for layering step chart lines for multiple speakers in one graph. You can see how easy it is to take the code for visualizing the code-switching of one speaker and adapt it to visualizing that of multiple speakers. In addition, you can see that I've intentionally left the title blank so I can incorporate external graphic adjustments after I created the chart in Matplotlib, such as the addition of my social media handle and the use of a specific font I wanted, which you can see in the final graph. With visualizations being all about communicating information, I believe using Matplotlib in conjunction with simple elements of graphic design can be another way to make whatever you're presenting that little bit more effective and personal, especially when you're doing so on social media platforms.
 
 ## Complete Code for Step Chart of Multiple Speakers
+
 <!-- ![](fig5.png) -->
 
     # Initialize graph color and size
@@ -120,9 +123,9 @@ Below is the complete code for layering step chart lines for multiple speakers i
     plt.ylim(0, 85)
 
     # Layer step charts for each speaker
-    ax.step(YANGYANG.time, YANGYANG.index, label = "YANGYANG", color = "firebrick", linewidth = 4)         
-    ax.step(HENDERY.time, HENDERY.index, label = "HENDERY", color = "palevioletred", linewidth = 4)            
-    ax.step(TEN.time, TEN.index, label = "TEN", color = "mediumpurple", linewidth = 4)            
+    ax.step(YANGYANG.time, YANGYANG.index, label = "YANGYANG", color = "firebrick", linewidth = 4)
+    ax.step(HENDERY.time, HENDERY.index, label = "HENDERY", color = "palevioletred", linewidth = 4)
+    ax.step(TEN.time, TEN.index, label = "TEN", color = "mediumpurple", linewidth = 4)
     ax.step(KUN.time, KUN.index, label = "KUN", color = "mediumblue", linewidth = 4)
 
     # Add legend

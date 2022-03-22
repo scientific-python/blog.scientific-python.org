@@ -7,11 +7,11 @@ tags: ["tutorials", "graphs", "matplotlib"]
 displayInList: true
 author: ["Yan Holtz"]
 resources:
-- name: featuredImage
-  src: "home-page-overview.png"
-  params:
-    description: "An overview of the gallery homepage"
-    showOnTop: false
+  - name: featuredImage
+    src: "home-page-overview.png"
+    params:
+      description: "An overview of the gallery homepage"
+      showOnTop: false
 ---
 
 Data visualization is a key step in a data science pipeline. [Python](https://www.python.org) offers great possibilities when it comes to representing some data graphically, but it can be hard and time-consuming to create the appropriate chart.
@@ -53,7 +53,6 @@ Last but not least, the gallery also displays some publication ready charts. The
 Here is an example with a post inspired by [Tuo Wang](https://www.r-graph-gallery.com/web-violinplot-with-ggstatsplot.html)'s work for the tidyTuesday project. (Code translated from R available [here](https://www.python-graph-gallery.com/web-ggbetweenstats-with-matplotlib))
 
 ![python violin and boxplot example](boxplot.png)
-
 
 # Contributing
 

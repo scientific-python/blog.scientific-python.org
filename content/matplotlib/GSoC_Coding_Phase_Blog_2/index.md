@@ -14,14 +14,14 @@ Google Summer of Code 2020's first evaluation is about to complete. This post di
 
 We successfully created the demo app and uploaded it to the test.pypi. It contains the main and the secondary package. The main package is analogous to the matplotlib and secondary package is analogous to the matplotlib_baseline_images package as discussed in the previous blog.
 
-## Learning more about the Git and mpl workflow 
+## Learning more about the Git and mpl workflow
 
-I came across another way to merge the master into the branch to resolve conflicts is by rebasing the master. I understood how to create modular commits inside a pull request for easy reviewal process and better understandability of the code.  
+I came across another way to merge the master into the branch to resolve conflicts is by rebasing the master. I understood how to create modular commits inside a pull request for easy reviewal process and better understandability of the code.
 
 ## Creation of the matplotlib_baseline_images package
 
-Then, we implemented the similar changes to create the `matplotlib_baseline_images` package. Finally, we were successful in uploading it to the [test.pypi](https://test.pypi.org/project/matplotlib.baseline-images/3.3.0rc1/#history). This package is involved in the `sub-wheels` directory so that more packages can be added in the same directory, if needed in future.  The `matplotlib_baseline_images` package contain baseline images for both `matplotlib` and `mpl_toolkits`.
-Some changes were required in the main `matplotlib` package's setup.py so that it will not take information from the packages present in the `sub-wheels` directory. 
+Then, we implemented the similar changes to create the `matplotlib_baseline_images` package. Finally, we were successful in uploading it to the [test.pypi](https://test.pypi.org/project/matplotlib.baseline-images/3.3.0rc1/#history). This package is involved in the `sub-wheels` directory so that more packages can be added in the same directory, if needed in future. The `matplotlib_baseline_images` package contain baseline images for both `matplotlib` and `mpl_toolkits`.
+Some changes were required in the main `matplotlib` package's setup.py so that it will not take information from the packages present in the `sub-wheels` directory.
 
 ## Symlinking the baseline images
 
@@ -43,5 +43,4 @@ Once the [current PR](https://github.com/matplotlib/matplotlib/pull/17557) is me
 
 Everyday meeting initiated at [11:00pm IST](https://everytimezone.com/) via Zoom. Meeting notes are present at HackMD.
 
-I am grateful to be part of such a great community. Project is really interesting and challenging :) Thanks Antony and Hannah for helping me so far.  
-  
+I am grateful to be part of such a great community. Project is really interesting and challenging :) Thanks Antony and Hannah for helping me so far.

@@ -7,11 +7,11 @@ tags: ["matplotlib"]
 author: ["Tejas Sanap"]
 displayInList: true
 resources:
-- name: featuredImage
-  src: "figure/distance-and-velocity-different-axes-finished.png"
-  params:
-    description: "Finished graph"
-    showOnTop: true
+  - name: featuredImage
+    src: "figure/distance-and-velocity-different-axes-finished.png"
+    params:
+      description: "Finished graph"
+      showOnTop: true
 ---
 
 ## Generating the data points
@@ -48,6 +48,7 @@ The above code gives us two `numpy` arrays populated with the distance and veloc
 ## Pyplot vs. Object-Oriented interface
 
 When using `matplotlib` we have two approaches:
+
 1. `pyplot` interface / functional interface.
 2. Object-Oriented interface (OO).
 
@@ -71,6 +72,7 @@ plt.grid(True)
 The plot shows how much distance was covered by the free-falling object with each passing second.
 
 ![png](figure/just-distance.png)
+
 <div class="image-caption">
 <b>Fig. 1.1</b> The amount of distance travelled in each second is increasing, which is a direct result of increasing velocity due to the gravitational acceleration.
 </div>
@@ -87,6 +89,7 @@ plt.grid(True)
 The plot below shows us how the velocity is increasing.
 
 ![png](figure/just-velocity.png)
+
 <div class="image-caption">
 <b>Fig. 1.2</b> Velocity is increasing in fixed steps, due to a "constant" acceleration.
 </div>
@@ -116,7 +119,8 @@ When using the OO interface, it helps to know how the `matplotlib` structures it
 ![png](figure/anatomy-of-a-figure.png)
 
 Things to note about the anatomy of a figure are:
-1. All of the items labelled in *blue* are `Artists`. `Artists` are basically all the elements that are rendered onto the figure. This can include text, patches (like arrows and shapes), etc. Thus, all the following `Figure`, `Axes` and `Axis` objects are also Artists.
+
+1. All of the items labelled in _blue_ are `Artists`. `Artists` are basically all the elements that are rendered onto the figure. This can include text, patches (like arrows and shapes), etc. Thus, all the following `Figure`, `Axes` and `Axis` objects are also Artists.
 2. Each plot that we see in a figure, is an `Axes` object. The `Axes` object holds the actual data that we are going to display. It will also contain X- and Y-axis labels, a title. Each `Axes` object will contain two or more `Axis` objects.
 3. The `Axis` objects set the data limits. It also contains the ticks and ticks labels. `ticks` are the marks that we see on a axis.
 
@@ -176,6 +180,7 @@ plt.show()
 ```
 
 The command `ax1.set_yticks(np.linspace(*ax1.get_ybound(), 10))` calculates the tick values for us. Let's break this down to see what is happening:
+
 1. The `np.linspace` command will create a set of `n` no. of partitions between a specified upper and lower limit.
 2. The method `ax1.get_ybound()` returns a list which contains the maximum and minimum limits for that particular axis (which in our case is the Y-axis).
 3. In python, the operator `*` acts as an unpacking operator when prepended before a `list` or `tuple`. Thus, it will convert a list `[1, 2, 3, 4]` into seperate values `1, 2, 3, 4`. This is an immensely powerful feature.
@@ -191,14 +196,17 @@ The same process is repeated for the second axis.
 In this part, we covered some basics of `matplotlib` plotting, covering the basic two approaches of how to make plots. In the next part, we will cover how to make simple animations. If you like the content of this blog post, or you have any suggestions or comments, drop me an email or tweet or ping me on IRC. Nowadays, you will find me hanging around #matplotlib on Freenode. Thanks!
 
 ## After-thoughts
+
 This post is part of a series I'm doing on my personal [blog](http://whereistejas.me). This series is basically going to be about how to animate stuff using python's `matplotlib` library. `matplotlib` has an excellent [documentation](https://matplotlib.org/3.2.1/contents.html) where you can find a detailed documentation on each of the methods I have used in this blog post. Also, I will be publishing each part of this series in the form of a jupyter notebook, which can be found [here](https://github.com/whereistejas/whereistejas.github.io/blob/master/assets/jupyter-nb/Part-1-basics-of-plotting.ipynb).
 
 The series will have three posts which will cover:
+
 1. Part 1 - How to make plots using `matplotlib`.
 2. Part 2 - Basic animation using `FuncAnimation`.
 3. Part 3 - Optimizations to make animations faster (blitting).
 
 I would like to say a few words about the methodology of these series:
+
 1. Each part will have a list of references at the end of the post, mostly leading to appropriate pages of the documentation and helpful blogs written by other people. **THIS IS THE MOST IMPORTANT PART**. The sooner you get used to reading the documentation, the better.
 2. The code written here, is meant to show you how you can piece everything together. I will try my best to describe the nuances of my implementations and the tiny lessons I learned.
 
@@ -206,5 +214,5 @@ I would like to say a few words about the methodology of these series:
 
 1. [Python Generators (YouTube)](https://youtu.be/bD05uGo_sVI)
 1. [Matplotlib: An Introduction to its Object-Oriented Interface](https://medium.com/@kapil.mathur1987/matplotlib-an-introduction-to-its-object-oriented-interface-a318b1530aed)
-2. [Lifecycle of a Plot](https://matplotlib.org/3.2.1/tutorials/introductory/lifecycle.html)
-3. [Basic Concepts](https://matplotlib.org/faq/usage_faq.html)
+1. [Lifecycle of a Plot](https://matplotlib.org/3.2.1/tutorials/introductory/lifecycle.html)
+1. [Basic Concepts](https://matplotlib.org/faq/usage_faq.html)

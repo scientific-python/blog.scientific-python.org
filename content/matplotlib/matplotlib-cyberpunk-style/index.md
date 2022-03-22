@@ -8,14 +8,16 @@ displayInList: true
 author: ["Dominik Haitz"]
 
 resources:
-- name: featuredImage
-  src: "figures/5.png"
-  params:
-    showOnTop: false
+  - name: featuredImage
+    src: "figures/5.png"
+    params:
+      showOnTop: false
 ---
+
 ![](figures/5.png)
 
 ## 1 - The Basis
+
 Let's make up some numbers, put them in a Pandas dataframe and plot them:
 
     import pandas as pd
@@ -58,13 +60,11 @@ It looks more interesting now, but we need our colors to shine more against the 
     ]
     df.plot(marker='o', ax=ax, color=colors)
 
-
 ![](figures/3.png)
 
 ## 4 - The Glow
 
-Now, how to get that neon look? To make it shine, we *redraw the lines multiple times*, with low alpha value and slighty increasing linewidth. The overlap creates the glow effect.
-
+Now, how to get that neon look? To make it shine, we _redraw the lines multiple times_, with low alpha value and slighty increasing linewidth. The overlap creates the glow effect.
 
     n_lines = 10
     diff_linewidth = 1.05
@@ -78,7 +78,6 @@ Now, how to get that neon look? To make it shine, we *redraw the lines multiple 
                 legend=False,
                 ax=ax,
                 color=colors)
-
 
 ![](figures/4.png)
 
@@ -144,7 +143,6 @@ Here's the full code:
 
     plt.show()
 
-
 ![](figures/5.png)
 
-If this helps you or if you have constructive criticism, I'd be happy to hear about it! Please contact me via [here](https://dhaitz.github.io) or  [here](https://twitter.com/d_haitz). Thanks!
+If this helps you or if you have constructive criticism, I'd be happy to hear about it! Please contact me via [here](https://dhaitz.github.io) or [here](https://twitter.com/d_haitz). Thanks!

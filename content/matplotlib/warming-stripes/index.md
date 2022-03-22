@@ -8,12 +8,11 @@ displayInList: true
 author: ["Maximilian Nöthe"]
 
 resources:
-- name: featuredImage
-  src: "thumbnail.png"
-  params:
-    showOnTop: false
+  - name: featuredImage
+    src: "thumbnail.png"
+    params:
+      showOnTop: false
 ---
-
 
 ![Warming Stripes](warming-stripes.png)
 
@@ -31,7 +30,7 @@ The dataset used for the warming stripes is the annual global average.
 
 First, let's import everything we are going to use.
 The plot will consist of a bar for each year, colored using a custom
-color map. 
+color map.
 
 ```python
 import matplotlib.pyplot as plt
@@ -54,10 +53,10 @@ LAST_REFERENCE = 2000
 LIM = 0.7 # degrees
 ```
 
-
-Here we use pandas to read the fixed width text file, only the 
+Here we use pandas to read the fixed width text file, only the
 first two columns, which are the year and the deviation from the
 mean from 1961 to 1990.
+
 ```python
 # data from
 # https://www.metoffice.gov.uk/hadobs/hadcrut4/data/current/time_series/HadCRUT.4.6.0.0.annual_ns_avg.txt
@@ -73,9 +72,9 @@ anomaly = df.loc[FIRST:LAST, 'anomaly'].dropna()
 reference = anomaly.loc[FIRST_REFERENCE:LAST_REFERENCE].mean()
 ```
 
-
 This is our custom colormap, we could also use one of
 the [colormaps](https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html) that come with `matplotlib`, e.g. `coolwarm` or `RdBu`.
+
 ```python
 # the colors in this colormap come from http://colorbrewer2.org
 # the 8 more saturated colors from the 9 blues / 9 reds
@@ -89,6 +88,7 @@ cmap = ListedColormap([
 
 We create a figure with a single axes object that fills the full area
 of the figure and does not have any axis ticks or labels.
+
 ```python
 fig = plt.figure(figsize=(10, 1))
 
@@ -98,6 +98,7 @@ ax.set_axis_off()
 
 Finally, we create bars for each year, assign the
 data, colormap and color limits and add it to the axes.
+
 ```python
 # create a collection with a rectangle for each year
 col = PatchCollection([
@@ -112,8 +113,8 @@ col.set_clim(reference - LIM, reference + LIM)
 ax.add_collection(col)
 ```
 
-
 Make sure the axes limits are correct and save the figure.
+
 ```python
 ax.set_ylim(0, 1)
 ax.set_xlim(FIRST, LAST + 1)

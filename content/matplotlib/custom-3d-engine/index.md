@@ -8,10 +8,10 @@ author: ["Nicolas P. Rougier"]
 displayInList: true
 
 resources:
-- name: featuredImage
-  src: "thumbnail.png"
-  params:
-    showOnTop: false
+  - name: featuredImage
+    src: "thumbnail.png"
+    params:
+      showOnTop: false
 ---
 
 ![](bunny.jpg)
@@ -26,10 +26,9 @@ that, we'll render the bunny above with 60 lines of Python and one Matplotlib
 call. That is, without using the 3D axis.
 
 **Advertisement**: This post comes from an upcoming open access book on
-  scientific visualization using Python and Matplotlib. If you want to
-  support my work and have an early access to the book, go to
-  https://github.com/rougier/scientific-visualization-book.
-
+scientific visualization using Python and Matplotlib. If you want to
+support my work and have an early access to the book, go to
+https://github.com/rougier/scientific-visualization-book.
 
 # Loading the bunny
 
@@ -90,7 +89,6 @@ plt.show()
 You should obtain something like this ([bunny-1.py](bunny-1.py)):
 
 ![](bunny-1.png)
-
 
 # Perspective Projection
 
@@ -221,6 +219,7 @@ MVP   = proj  @ view  @ model
 ```
 
 and we now write:
+
 ```
 V = np.c_[V, np.ones(len(V))] @ MVP.T
 V /= V[:,3].reshape(-1,1)
@@ -234,7 +233,6 @@ Let's now play a bit with the aperture such that you can see the difference.
 Note that we also have to adapt the distance to the camera in order for the bunnies to have the same apparent size ([bunny-5.py](bunny-5.py)):
 
 ![](bunny-5.png)
-
 
 # Depth sorting
 
@@ -279,7 +277,6 @@ T, C = T[I,:], C[I,:]
 And now everything is rendered right ([bunny-8.py](bunny-8.py)):
 
 ![](bunny-8.png)
-
 
 The final script is 57 lines (but hardly readable):
 

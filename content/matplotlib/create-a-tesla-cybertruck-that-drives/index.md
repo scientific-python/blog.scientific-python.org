@@ -7,11 +7,11 @@ tags: ["tutorials", "matplotlib"]
 displayInList: true
 author: ["Ted Petrou"]
 resources:
-- name: featuredImage
-  src: "output_18_0.png"
-  params:
-    description: "Completed Tesla Cybertruck in Matplotlib"
-    showOnTop: true
+  - name: featuredImage
+    src: "output_18_0.png"
+    params:
+      description: "Completed Tesla Cybertruck in Matplotlib"
+      showOnTop: true
 ---
 
 My name is [Ted Petrou][0], founder of [Dunder Data][1], and in this tutorial you will learn how to create the new [Tesla Cybertruck][2] using Matplotlib. I was inspired by the image below which was originally created by [Lynn Fisher][3] (without Matplotlib).
@@ -31,10 +31,10 @@ Before going into detail, let's jump to the results. Here is the completed recre
 
 A tutorial now follows containing all the steps that creates a Tesla Cybertruck that drives. It covers the following topics:
 
-* Figure and Axes setup
-* Adding shapes
-* Color gradients
-* Animation
+- Figure and Axes setup
+- Adding shapes
+- Color gradients
+- Animation
 
 Understanding these topics should give you enough to start animating your own figures in Matplotlib. This tutorial is not suited for those with no Matplotlib experience. You need to understand the relationship between the Figure and Axes and how to use the object-oriented interface of Matplotlib.
 

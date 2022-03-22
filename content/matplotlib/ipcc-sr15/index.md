@@ -10,12 +10,11 @@ displayInList: true
 author: ["Daniel Huppmann"]
 
 resources:
-- name: featuredImage
-  src: "IPCC-SR15-cover.jpg"
-  params:
-    description: "Cover page of the IPCC SR15"
-    showOnTop: false
-
+  - name: featuredImage
+    src: "IPCC-SR15-cover.jpg"
+    params:
+      description: "Cover page of the IPCC SR15"
+      showOnTop: false
 ---
 
 ## Background
@@ -27,9 +26,9 @@ resources:
   Cover of the IPCC SR15</figcaption></a>
 </figure>
 
-The IPCC's *Special Report on Global Warming of 1.5°C* (SR15), published in October 2018,
+The IPCC's _Special Report on Global Warming of 1.5°C_ (SR15), published in October 2018,
 presented the latest research on anthropogenic climate change.
-It was written in response to the 2015 UNFCCC's "Paris Agreement" of 
+It was written in response to the 2015 UNFCCC's "Paris Agreement" of
 
 > holding the increase in the global average temperature to well below 2 °C
 > above pre-industrial levels and to pursue efforts to limit the temperature increase to 1.5 °C [...]".
@@ -44,7 +43,7 @@ are based on this scenario ensemble, including the finding that
 > global net anthropogenic CO2 emissions decline by ~45% from 2010 levels by 2030
 
 in all pathways limiting global warming to 1.5°C  
-(cf. [statement C.1](https://www.ipcc.ch/sr15/chapter/spm/) in the *Summary For Policymakers*).
+(cf. [statement C.1](https://www.ipcc.ch/sr15/chapter/spm/) in the _Summary For Policymakers_).
 
 ## Open-source notebooks for transparency and reproducibility of the assessment
 
@@ -52,11 +51,11 @@ When preparing the SR15, the authors wanted to go beyond previous reports
 not just regarding the scientific rigor and scope of the analysis,
 but also establish new standards in terms of openness, transparency and reproducibility.
 
-The scenario ensemble was made accessible via an interactive *IAMC 1.5°C Scenario Explorer*
+The scenario ensemble was made accessible via an interactive _IAMC 1.5°C Scenario Explorer_
 ([link](http://data.ene.iiasa.ac.at/iamc-1.5c-explorer/#/workspaces)) in line with the
 [FAIR principles for scientific data management and stewardship](https://www.go-fair.org/fair-principles/).
 The process for compiling, validating and analyzing the scenario ensemble
-was described in an open-access manuscript published in *Nature Climate Change*  
+was described in an open-access manuscript published in _Nature Climate Change_  
 (doi: [10.1038/s41558-018-0317-4](https://doi.org/10.1038/s41558-018-0317-4)).
 
 In addition, the Jupyter notebooks generating many of the headline statements,

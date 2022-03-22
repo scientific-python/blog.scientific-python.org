@@ -14,7 +14,8 @@ I Sidharth Bansal, was waiting for the coding period to start from the March end
 
 Initially, we thought of creating a [mpl-test and mpl package](https://github.com/matplotlib/matplotlib/pull/17434). Mpl-test package would contain the test suite and baseline images while the other package would contain parts of repository other than test and baseline-images related files and folders.
 We changed our decision to creation of [mpl and mpl-baseline-images packages](https://github.com/matplotlib/matplotlib/pull/17557) as we don't need to create separate package for entire test suite. Our main aim was to eliminate baseline_images from the repository. Mpl-baseline-images package will contain the data[/baseline images] and related information. The other package will contain files and folders other than baseline images.
-We are now trying to create the following structure for the repository: 
+We are now trying to create the following structure for the repository:
+
 ```
 mpl/
   setup.py
@@ -24,7 +25,9 @@ mpl/
     setup.py
     data/...  [contains the image files]
 ```
+
 It will involve:
+
 - Symlinking baseline images out.
 - Creating a wheel/sdist with just the baseline images; uploading it to testpypi (so that one can do `pip install mpl-baseline-images`).
 
@@ -32,6 +35,7 @@ It will involve:
 
 I am creating a prototype first with two packages - main package and sub-wheel package. Once the demo app works well on [Test PyPi](https://test.pypi.org/), we can do similar changes to the main mpl repository.
 The structure of demo app is analogous to the work needed for separation of baseline-images to a new package mpl-baseline-images as given below:
+
 ```
 testrepo/
   setup.py
@@ -39,6 +43,7 @@ testrepo/
   baseline_images/setup.py
   baseline_images/testdata.txt
 ```
+
 This will also include related MANIFEST files and setup.cfg.template files. The setup.py will also contain logic for exclusion of baseline-images folder from the main mpl-package.
 
 ## Following Enhancements over iterations
@@ -49,6 +54,4 @@ After the [current PR](https://github.com/matplotlib/matplotlib/pull/17557) is m
 
 Every Tuesday and every Friday meeting is initiated at [8:30pm IST](https://everytimezone.com/) via [Zoom](https://zoom.us/j/95996536871). Meeting notes are present at [HackMD](https://hackmd.io/pY25bSkCSRymk_7nX68xtw).
 
-
-I am grateful to be part of such a great community. Project is really interesting and challenging :) Thanks Antony and Hannah for helping me so far.  
-  
+I am grateful to be part of such a great community. Project is really interesting and challenging :) Thanks Antony and Hannah for helping me so far.

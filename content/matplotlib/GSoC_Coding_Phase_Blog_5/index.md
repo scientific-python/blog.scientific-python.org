@@ -12,9 +12,9 @@ Google Summer of Code 2020's second evaluation is completed. I passed!!! Hurray!
 
 ## Completion of the modification logic for the matplotlib_baseline_images package
 
-We successfully created the `matplotlib_baseline_image_generation` command line flag for baseline image generation for `matplotlib` and `mpl_toolkits` in the previous months. It was generating the matplotlib and the matplotlib toolkit baseline images successfully. Now, we modified the existing flow to generate any missing baseline images, which would be fetched from the `master` branch on doing `git pull` or `git checkout -b feature_branch`. 
+We successfully created the `matplotlib_baseline_image_generation` command line flag for baseline image generation for `matplotlib` and `mpl_toolkits` in the previous months. It was generating the matplotlib and the matplotlib toolkit baseline images successfully. Now, we modified the existing flow to generate any missing baseline images, which would be fetched from the `master` branch on doing `git pull` or `git checkout -b feature_branch`.
 
-We initially thought of creating a command line flag `generate_baseline_images_for_test "test_a,test_b"`, but later on analysis of the approach, we came to the conclusion that the developer will not know about the test names to be given along with the flag. So, we tried to generate the missing images by `generate_missing` without the test names. This worked successfully. 
+We initially thought of creating a command line flag `generate_baseline_images_for_test "test_a,test_b"`, but later on analysis of the approach, we came to the conclusion that the developer will not know about the test names to be given along with the flag. So, we tried to generate the missing images by `generate_missing` without the test names. This worked successfully.
 
 ## Adopting reusability and Do not Repeat Yourself (DRY) Principles
 
@@ -23,9 +23,10 @@ Later, we refactored the `matplot_baseline_image_generation` and `generate_missi
 ## Writing the documentation
 
 We have written documentation explaining the following scenarios:
+
 1. How to generate the baseline images on a fresh install of matplotlib?
 2. How to generate the missing baseline images on fetching changes from master?
-3. How to install the `matplotlib_baseline_images_package` to be used for testing by the developer? 
+3. How to install the `matplotlib_baseline_images_package` to be used for testing by the developer?
 4. How to intentionally change an image?
 
 ## Refactoring and improving the code quality before merging
@@ -36,5 +37,4 @@ Right now, we are trying to refactor the code and maintain git clean history. Th
 
 Monday to Thursday meeting initiated at [11:00pm IST](https://everytimezone.com/) via Zoom. Meeting notes are present at HackMD.
 
-I am grateful to be part of such a great community. Project is really interesting and challenging :) Thanks Thomas, Antony and Hannah for helping me so far.  
-  
+I am grateful to be part of such a great community. Project is really interesting and challenging :) Thanks Thomas, Antony and Hannah for helping me so far.

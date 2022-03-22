@@ -7,11 +7,11 @@ tags: ["art", "academia", "matplotlib"]
 displayInList: true
 author: ["Joseph Lucas"]
 resources:
-- name: featuredImage
-  src: "fox.png"
-  params:
-    description: "Emily Foster's Fox"
-    showOnTop: true
+  - name: featuredImage
+    src: "fox.png"
+    params:
+      description: "Emily Foster's Fox"
+      showOnTop: true
 ---
 
 As part of the University of North Carolina BIOL222 class, [Dr. Catherine Kehl](https://twitter.com/tylikcat) asked her students to "use `matplotlib.pyplot` to make art." BIOL222 is Introduction to Programming, aimed at students with no programming background. The emphasis is on practical, hands-on active learning.
@@ -20,11 +20,12 @@ The students completed the assignment with festive enthusiasm around Halloween. 
 
 Harris Davis showed an affinity for pumpkins, opting to go 3D!
 ![3D Pumpkin](pumpkin.png)
+
 ```python
 # get library for 3d plotting
 from mpl_toolkits.mplot3d import Axes3D
 
-# make a pumpkin :) 
+# make a pumpkin :)
 rho = np.linspace(0, 3*np.pi,32)
 theta, phi = np.meshgrid(rho, rho)
 r, R = .5, .5
@@ -55,6 +56,7 @@ plt.show()
 
 Bryce Desantis stuck to the biological theme and demonstrated [fractal](https://en.wikipedia.org/wiki/Fractal) art.
 ![Bryce Fern](leaf.png)
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -100,13 +102,14 @@ ax.set_facecolor("#d8d7bf")
 
 Grace Bell got a little trippy with this rotationally semetric art. It's pretty cool how she captured mouse events. It reminds us of a flower. What do you see?
 ![Rotations](rotations.png)
+
 ```python
 import matplotlib.pyplot as plt
 from matplotlib.tri import Triangulation
 from matplotlib.patches import Polygon
 import numpy as np
 
-#I found this sample code online and manipulated it to make the art piece! 
+#I found this sample code online and manipulated it to make the art piece!
 #was interested in because it combined what we used for functions as well as what we used for plotting with (x,y)
 def update_polygon(tri):
     if tri == -1:
@@ -125,10 +128,10 @@ def on_mouse_move(event):
     update_polygon(tri)
     ax.set_title(f'In triangle {tri}')
     event.canvas.draw()
-#this is the info that creates the angles 
+#this is the info that creates the angles
 n_angles = 14
 n_radii = 7
-min_radius = 0.1 #the radius of the middle circle can move with this variable 
+min_radius = 0.1 #the radius of the middle circle can move with this variable
 radii = np.linspace(min_radius, 0.95, n_radii)
 angles = np.linspace(0, 2 * np.pi, n_angles, endpoint=False)
 angles = np.repeat(angles[..., np.newaxis], n_radii, axis=1)
@@ -143,7 +146,7 @@ triang.set_mask(np.hypot(x[triang.triangles].mean(axis=1),
 trifinder = triang.get_trifinder()
 
 fig, ax = plt.subplots(subplot_kw={'aspect': 'equal'})
-ax.triplot(triang, 'y+-') #made the color of the plot yellow and there are "+" for the data points but you can't really see them because of the lines crossing 
+ax.triplot(triang, 'y+-') #made the color of the plot yellow and there are "+" for the data points but you can't really see them because of the lines crossing
 polygon = Polygon([[0, 0], [0, 0]], facecolor='y')
 update_polygon(-1)
 ax.add_patch(polygon)
@@ -152,6 +155,7 @@ plt.show()
 ```
 
 As a bonus, did you like that fox in the banner? That was created (and well documented) by Emily Foster!
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt

@@ -7,19 +7,18 @@ tags: ["tutorials", "matplotlib"]
 displayInList: true
 author: ["Rithwik Rajendran"]
 resources:
--   name: featuredImage
+  - name: featuredImage
     src: "Liverpool_Usage_Chart.png"
     params:
-        description: "my image description"
-        showOnTop: true
-
+      description: "my image description"
+      showOnTop: true
 ---
 
 # Introduction
 
 I have been creating common visualisations like scatter plots, bar charts, beeswarms etc. for a while and thought about doing something different. Since I'm an avid football fan, I thought of ideas to represent players' usage or involvement over a period (a season, a couple of seasons). I have seen some cool visualisations like donuts which depict usage and I wanted to make something different and simple to understand. I thought about representing batteries as a form of player usage and it made a lot of sense.
 
-For players who have been barely used (played fewer minutes) show a ***large amount of battery*** present since they have enough energy left in the tank. And for heavily used players, do the opposite i.e. show ***drained or less amount of battery***
+For players who have been barely used (played fewer minutes) show a **_large amount of battery_** present since they have enough energy left in the tank. And for heavily used players, do the opposite i.e. show **_drained or less amount of battery_**
 
 So, what is the purpose of a battery chart? You can use it to show usage, consumption, involvement, fatigue etc. (anything usage related).
 
@@ -34,10 +33,9 @@ Before jumping on to the tutorial, I would like to make it known that the functi
 1. Outlining what we are going to plot
 2. Import necessary libraries
 3. Write a function to draw the battery
-    - This is the function that will be called to plot the battery chart
+   - This is the function that will be called to plot the battery chart
 4. Read the data and plot the chart accordingly
-    - We will demonstrate it with an example
-
+   - We will demonstrate it with an example
 
 ## <span style="text-decoration: underline">Plot Outline</span>
 
@@ -61,11 +59,11 @@ The functions imported from `matplotlib.path` and `matplotlib.patches` will be u
 
 ## <span style="text-decoration: underline">Drawing the Battery - A function</span>
 
-The next part is to define a function named `draw_battery()`,  which will be used to draw the battery. Later on, we will call this function by specifying certain parameters to build the figure as we require. The following below is the code to build the battery -
+The next part is to define a function named `draw_battery()`, which will be used to draw the battery. Later on, we will call this function by specifying certain parameters to build the figure as we require. The following below is the code to build the battery -
 
 ```python
 def draw_battery(fig, ax, percentage=0, bat_ec="grey",
-                 tip_fc="none", tip_ec="grey", 
+                 tip_fc="none", tip_ec="grey",
                  bol_fc="#fdfdfd", bol_ec="grey", invert_perc=False):
     '''
     Parameters
@@ -102,29 +100,29 @@ def draw_battery(fig, ax, percentage=0, bat_ec="grey",
             percentage = 100 - percentage
         # color options - #fc3d2e red & #53d069 green & #f5c54e yellow
         bat_fc = "#fc3d2e" if percentage <= 20 else "#53d069" if percentage >= 80 else "#f5c54e"
-        
+
         '''
         Static battery and tip of battery
         '''
-        battery = FancyBboxPatch((5, 2.1), 10, 0.8, 
+        battery = FancyBboxPatch((5, 2.1), 10, 0.8,
                                  "round, pad=0.2, rounding_size=0.5",
                                  fc="none", ec=bat_ec, fill=True,
                                  ls="-", lw=1.5)
-        tip = Wedge((15.35, 2.5), 0.2, 270, 90, fc="none", 
+        tip = Wedge((15.35, 2.5), 0.2, 270, 90, fc="none",
                     ec=bat_ec, fill=True,
                     ls="-", lw=3)
         ax.add_artist(battery)
         ax.add_artist(tip)
-        
+
         '''
         Filling the battery cell with the data
         '''
-        filler = FancyBboxPatch((5.1, 2.13), (percentage/10)-0.2, 0.74, 
-                                "round, pad=0.2, rounding_size=0.5", 
+        filler = FancyBboxPatch((5.1, 2.13), (percentage/10)-0.2, 0.74,
+                                "round, pad=0.2, rounding_size=0.5",
                                 fc=bat_fc, ec=bat_fc, fill=True,
                                 ls="-", lw=0)
         ax.add_artist(filler)
-        
+
         '''
         Adding a lightning bolt in the centre of the cell
         '''
@@ -133,7 +131,7 @@ def draw_battery(fig, ax, percentage=0, bat_ec="grey",
             (8.5, 2.4), #left
             (9.5, 2.4), #left mid
             (9, 1.9), #bottom
-            (11, 2.6), #right 
+            (11, 2.6), #right
             (10, 2.6), #right mid
             (10.5, 3.1), #top
         ]
@@ -173,6 +171,7 @@ Now, let us have a look at how the data looks by listing out the first five rows
 ```python
 data.head()
 ```
+
 ![The first 5 rows of our dataset](head_data.PNG)
 
 ## <span style="text-decoration: underline">Plotting our data</span>
@@ -187,7 +186,7 @@ fig.text(0.35, 0.95, "Liverpool: Player Usage/Involvement", color="white", size=
 fig.text(0.25, 0.92, "Data from 19/20 and 20/21 | Battery percentage indicate usage | less battery = played more/ more involved", color="white", size=12, fontname="Libre Baskerville")
 ```
 
-We have now now filled in appropriate headers, figure size etc. The next step is to plot all the axes i.e. batteries for each and every player. `p` is the variable used to iterate through the dataframe and fetch each players data. The `draw_battery()` function call will obviously plot the battery. We also add the required labels along with that - player name and usage rate/percentage in this case. 
+We have now now filled in appropriate headers, figure size etc. The next step is to plot all the axes i.e. batteries for each and every player. `p` is the variable used to iterate through the dataframe and fetch each players data. The `draw_battery()` function call will obviously plot the battery. We also add the required labels along with that - player name and usage rate/percentage in this case.
 
 ```python
 p = 0 #The variable that'll iterate through each row of the dataframe (for every player)
