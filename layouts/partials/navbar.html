@@ -27,6 +27,7 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             {{ .title }}
+            {{ if .is_external }}{{ partial "svg-icon" "launch" }}{{ end }} 
           </a>
 
           <div class="navbar-dropdown">
@@ -41,11 +42,13 @@
         <a href="{{ .url }}" class="navbar-item">
           <span class="button signup-button rounded secondary-btn raised">
             {{ .title }}
+            {{ if .is_external }}{{ partial "svg-icon" "launch" }}{{ end }} 
           </span>
         </a>
         {{- else }}
         <a href="{{ .url }}" class="navbar-item is-secondary">
           {{ .title }}
+          {{ if .is_external }}{{ partial "svg-icon" "launch" }}{{ end }} 
         </a>
         {{- end }}
         {{- end }}
