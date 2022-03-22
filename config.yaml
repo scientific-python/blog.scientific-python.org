@@ -19,6 +19,9 @@ outputFormats:
     baseName: "atom"
     isPlainText: false
 
+frontmatter:
+  date: [":filename", ":default"]
+
 outputs:
   home: ["HTML", "ATOM"]
   term: ["HTML", "ATOM"]
@@ -30,22 +33,24 @@ permalinks:
 params:
   description: "Posts from the Scientific Python community"
   images:
-  - /images/logo.svg
+    - /images/logo.svg
   navbarlogo:
     image: logo.svg
     text: Scientific Python Blog
     link: /
   navbar:
-   - title: Home
-     url: https://scientific-python.org/
-   - title: User Guide
-     url: https://learn.scientific-python.org/users/
-   - title: Contributor Guide
-     url: https://learn.scientific-python.org/contributors/
-   - title: Maintainer Guide
-     url: https://learn.scientific-python.org/maintainers/
-   - title: Community Blog
-     url: /
+    - title: Home
+      url: https://scientific-python.org/
+    - title: Blog
+      url: /
+    - title: User Guide
+      url: https://learn.scientific-python.org/users/
+    - title: Contributor Guide
+      url: https://learn.scientific-python.org/contributors/
+    - title: Maintainer Guide
+      url: https://learn.scientific-python.org/maintainers/
+    - title: "Discussion Forum \u2197"
+      url: https://discuss.scientific-python.org/
   footer:
     logo: logo.svg
     socialmediatitle: ""
@@ -71,9 +76,25 @@ params:
         icon: discourse
 
     quicklinks:
-      column2:
+      column1:
+        title: ""
         links:
-          - text: Scientific Python Forum
-            link: https://discuss.scientific-python.org
+          - text: About
+            link: /about/
+          - text: Roadmap
+            link: /roadmap/
+          - text: Code of Conduct
+            link: https://scientific-python.org/code_of_conduct/
+      column2:
+        title: "Maintainers"
+        links:
+          - text: SPECs
+            link: https://scientific-python.org/specs/
+          - text: Grants
+            link: https://scientific-python.org/grants/
+          - text: Calendars
+            link: https://scientific-python.org/calendars/
       column3:
         links:
+          - text: Press kit
+            link: https://scientific-python.org/press-kit/
