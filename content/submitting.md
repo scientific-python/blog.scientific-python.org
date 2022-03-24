@@ -9,6 +9,13 @@ We publish quality blog posts covering packages part of the Scientific Python
 Ecosystem. While we focus on showcasing great use of the packages, we are also
 interested in the non-coding or technical side of projects.
 
+We love code examples. While a fair quality is expected, we focus more on the
+story than on the code and are less nitpicky that what you would expect
+when submitting code to a major library. Still, best practices are to be
+observed (both in terms of general Python construction, style and also
+in terms of good practices using libraries) and the reviewers make sure of
+this point.
+
 We do not accept any sponsored or promotional article. It is accepted to
 mention your organization, but it must not be the focus of the article.
 
@@ -17,8 +24,9 @@ At a bare minimum, submissions must:
 - The main subject relates to at least one project affiliated to the
   Scientific Python Ecosystem.
 - Authors have the right to publish the content under BSD 3-Clause
-  License for the code and Creative Common CC-BY-4 License for the text.
-- Respect our code of conduct.
+  License for the code and Creative Common CC-BY-4.0 License for the text.
+- Respect our
+  [code of conduct](https://scientific-python.org/code_of_conduct/).
 - Be written in English.
 
 ## Submit a Post
@@ -29,9 +37,11 @@ knowledge is required.
 We use GitHub to manage post submissions. To create a submission, open a pull
 request (PR) on our Git repository:
 
-https://github.com/scientific-python/blog.scientific-python.org
+https://github.com/scientific-python/blog.scientific-python.org/pulls
 
-If you are new to GitHub, see **here** for more information on how to make a PR.
+If you are new to GitHub, see
+[here](https://learn.scientific-python.org/contributors/setup/git-intro/)
+for more information on how to make a PR.
 
 A few extra notes.
 
@@ -86,7 +96,7 @@ draft: true
 
 Specify if the post is a draft or not.
 
-```markdown
+```
 description: "This is my first post contribution."
 ```
 
