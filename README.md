@@ -1,38 +1,14 @@
-## Authoring blog posts
+# Blog of the Scientific Python community
 
-Add a new directory to `./content` names as follows `2022-02-28-topic-of-your-choice`.
+An open source, _community_ driven blog for the Scientific Python community.
 
-Use YYYY-MM-DD. The post will appear on the blog at:
+## Call for Contributions
 
-```
-/2022/02/28/topic-of-your-choice/
-```
+We appreciate and welcome contributions. Head over to our website for more
+information on how you can help make a difference!
 
-Inside the new folder, place an `index.md`:
+- For authors:
+  https://blog.scientific-python.org/submitting/
 
-```markdown
----
-title: This is a test blog post
-author: ["Your name here"]
----
-
-Write your content here.
-
-## A Heading
-
-Some more content.
-```
-
-## Previewing posts
-
-While editing your posts, you can preview the results by running:
-
-```
-make serve
-```
-
-The server usually appears at http://localhost:1313 (unless port 1313
-is already taken).
-
-Remember, if you are editing notebooks, you need to run `make executed_notebooks`
-before changes will appear.
+- To help review content:
+  https://blog.scientific-python.org/reviewing/
