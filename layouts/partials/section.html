@@ -1,19 +1,16 @@
 {{ $page := . }}
 <section class="content-padding flex-row">
+Recent Posts
 <div class="content-container">
-  {{ range $.Site.RegularPages }}
-  {{/* Only list blog posts; other pages do not have inferred dates */}}
-  {{ if .Params.Date }}
+  <!-- this section is populated by pulling posts from the site -->
+  {{ range first 5 (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts") }}
   <div class="post-list">
-    <article>
-      <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-      {{ partial "post_meta.html" . }}
-      <div class="post-summary">
-        {{ .Summary }}
-      </div>
-    </article>
+    <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+    {{ partial "post_synopsis.html" . }}
   </div>
   {{ end }}
-  {{ end }}
+  <footer>
+    <a href="{{ "posts/" | absURL }}">All posts...</a>
+  </footer>
 </div>
 </section>
