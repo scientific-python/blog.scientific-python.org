@@ -3,12 +3,10 @@
 {{ end }}
 
 {{ define "main" }}
-{{ $page := . }}
 <section class="content-padding flex-row">
 <div class="content-container">
-  {{ range $.Site.RegularPages }}
-  {{/* Only list blog posts; other pages do not have inferred dates */}}
-  {{ if .Params.Date }}
+  {{ $paginator := .Paginate (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts") }}
+  {{ range $paginator.Pages }}
   <div class="post-list">
     <article>
       <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
@@ -19,7 +17,7 @@
     </article>
   </div>
   {{ end }}
-  {{ end }}
+  {{ template "_internal/pagination.html" . }}
 </div>
 </section>
 {{ end }}
