@@ -32,9 +32,3 @@ The review timeline is the following:
 4. Once the review is done and a reviewer approves the PR, editors make
    a final pass.
 5. After an editor approval, the PR can be scheduled for publication.
-
----
-
-Some random ideas:
-
-Could use a review board to plan the publication of articles
