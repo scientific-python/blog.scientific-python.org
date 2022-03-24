@@ -5,7 +5,9 @@ url: /reviewing
 
 The review process is entirely conduced on GitHub using Pull Requests (PR).
 It is a transparent process and anyone can participate in the evaluation new
-content. At anytime, our code of conduct must be observed by all parties.
+content. At anytime, our
+[code of conduct](https://scientific-python.org/code_of_conduct/)
+must be observed by all parties.
 
 We distinguish contributors with 3 roles:
 
