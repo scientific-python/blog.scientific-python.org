@@ -15,7 +15,7 @@ html: prepare
 	hugo
 
 serve: ## Serve site, typically on http://localhost:1313
-serve: prepare executed_notebooks
+serve: prepare
 	@hugo --printI18nWarnings server
 
 clean: ## Remove built files
