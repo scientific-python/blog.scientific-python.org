@@ -37,7 +37,7 @@ knowledge is required.
 We use GitHub to manage post submissions. To create a submission, open a pull
 request (PR) on our Git repository:
 
-https://github.com/scientific-python/blog.scientific-python.org
+https://github.com/scientific-python/blog.scientific-python.org/pulls
 
 If you are new to GitHub, see
 [here](https://learn.scientific-python.org/contributors/setup/git-intro/)

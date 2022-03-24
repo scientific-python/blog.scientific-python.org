@@ -3,7 +3,10 @@ title: "Reviewing Posts"
 url: /reviewing
 ---
 
-The review process is entirely conduced on GitHub using Pull Requests (PR).
+The review process is entirely conduced on GitHub using Pull Requests (PR):
+
+https://github.com/scientific-python/blog.scientific-python.org/pulls
+
 It is a transparent process and anyone can participate in the evaluation new
 content. At anytime, our
 [code of conduct](https://scientific-python.org/code_of_conduct/)
