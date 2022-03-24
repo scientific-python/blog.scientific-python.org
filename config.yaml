@@ -52,6 +52,16 @@ params:
     - title: "Discussion Forum"
       url: https://discuss.scientific-python.org/
       is_external: true
+  panel:
+    title: Posts from the Scientific Python community
+    subtitle: by the community, for the community
+    tiles:
+      - buttonText: Submit a post
+        url: /submitting/
+        text: We welcome contributions from all community members.
+      - buttonText: Volunteer to review
+        url: /reviewing/
+        text: Learn how you can help the community grow and become a member of the team.
   footer:
     logo: logo.svg
     socialmediatitle: ""
