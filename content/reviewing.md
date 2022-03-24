@@ -1,5 +1,6 @@
 ---
 title: "Reviewing Posts"
+url: /reviewing
 ---
 
 The review process is entirely conduced on GitHub using Pull Requests (PR).

@@ -1,5 +1,6 @@
 ---
 title: "Submitting a Post"
+url: /submitting
 ---
 
 ## Scope
