@@ -1,4 +1,4 @@
-.PHONY: help prepare html serve clean
+.PHONY: help prepare teams teams-clean html serve clean
 .DEFAULT_GOAL := help
 
 # Add help text after each target name starting with '\#\#'
@@ -9,6 +9,24 @@ help:   ## show this help
 
 prepare:
 	git submodule update --init
+
+TEAMS_DIR = static/teams
+TEAMS = blog-editor-in-chief blog-editors blog-reviewers
+TEAMS_QUERY = python themes/scientific-python-hugo-theme/tools/team_query.py
+
+$(TEAMS_DIR):
+	mkdir -p $(TEAMS_DIR)
+
+$(TEAMS_DIR)/%.md: $(TEAMS_DIR)
+	$(TEAMS_QUERY) --org scientific-python --team "$*"  >  $(TEAMS_DIR)/$*.html
+
+teams-clean:
+	for team in $(TEAMS); do \
+	  rm -f $(TEAMS_DIR)/$${team}.html ;\
+	done
+
+teams: ## generates team gallery pages
+teams: | teams-clean $(patsubst %,$(TEAMS_DIR)/%.md,$(TEAMS))
 
 html: ## Build site in `./public`
 html: prepare

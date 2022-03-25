@@ -20,9 +20,10 @@ We distinguish contributors with 3 roles:
 3. Editors: are responsible for publishing the content. (They can merge PR.)
 
 Contributors are promoted from one status to the other at the discretion of the
-editorial board.
+editorial board. For more information, see our
+[governance and decision making process]({{< relref "/about/governance" >}}).
 
-The content must follow our scope.
+The content must follow our [scope]({{< relref "/submitting#scope" >}}).
 As we thrive for quality posts, some submissions will not meet the bar.
 Please try to give clear feedback on how authors could revise their
 submission. It should also be clear if a submission would not be accepted.
