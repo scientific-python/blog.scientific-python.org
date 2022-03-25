@@ -155,16 +155,16 @@ rows:
 
 The Scientific Python project is a new initiative, and this is our first time
 participating in Google Season of Docs.
-However, the people involved are established members of the Python community,
-with a vast collective experience in mentoring, managing and maintaining large
-open source projects.
+However, both Jarrod Millman and Ross Barnowski are established members of the
+Python community, with a vast collective experience in mentoring, managing and
+maintaining large open source projects.
 
 Jarrod cofounded the Neuroimaging in Python project. He was the NumPy and SciPy
 release manager from 2007 to 2009. He cofounded NumFOCUS and served on its board
 from 2011 to 2015. Currently, he is the release manager of NetworkX and cofounder
 of the Scientific Python project.
 
-Both mentors Jarrod Millman and Ross Barnowski have mentored many new
+Both mentors Jarrod and Ross have mentored many new
 contributors on multiple projects including NumPy, SciPy, and NetworkX.
 Ross has served as a co-mentor for three former GSoD students on the NumPy
 project, largely related to generating new content for tutorials, as well as
