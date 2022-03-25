@@ -2,10 +2,6 @@
 title: "Governance and Decision Making"
 ---
 
-{{< notice warning >}}
-This is a draft document.
-{{< /notice >}}
-
 # Abstract
 
 The Scientific Python Blog is a consensus-based community project.
