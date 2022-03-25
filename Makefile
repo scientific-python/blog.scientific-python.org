@@ -33,7 +33,7 @@ html: prepare
 	hugo
 
 serve: ## Serve site, typically on http://localhost:1313
-serve: prepare
+serve: prepare 
 	@hugo --printI18nWarnings server
 
 clean: ## Remove built files
