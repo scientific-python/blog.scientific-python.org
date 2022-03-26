@@ -54,6 +54,9 @@ img.post-featuredImage {
 }
 
 .tag-cloud {
+  position: sticky;
+  align-self: flex-start;
+  top: 6rem;
   margin: 0;
   padding: 0;
   line-height: 1.3em;
