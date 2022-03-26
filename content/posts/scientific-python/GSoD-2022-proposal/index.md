@@ -2,7 +2,7 @@
 title: "Scientific Python GSoD 2022 Proposal"
 date: 2022-03-25
 draft: false
-tags: ["News", "GSoD", "Scientific-Python", "proposal"]
+tags: ["GSoD", "Scientific-Python", "proposal"]
 description: "Create educational content for the Scientific Python Blog"
 displayInList: true
 author: ["Jarrod Millman"]
