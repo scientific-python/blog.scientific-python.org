@@ -64,7 +64,7 @@ This project aims to:
 
 To ensure this project is successful, it is recommended that the technical
 writer has some familiarity with at least a few of Scientific Python's
-core projects (see https://scientific-python.org/specs/core-projects/ ).
+[core projects](https://scientific-python.org/specs/core-projects).
 
 ### Measuring your project’s success
 
