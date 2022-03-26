@@ -204,7 +204,7 @@ Thus, I believe that the iterator is working well.
 The iterator code is [here](https://github.com/mjschwenne/networkx/blob/bothTSP/networkx/algorithms/tree/branchings.py) and starts around line 783.
 It can be used in the same way as the spanning tree iterator.
 
-[Attached](https://blog.scientific-python.org/posts/networkx/iterator-output.pdf) is a sample output from the iterator detailing all 680 arborescences of the test graph.
+[Attached](https://mjschwenne.github.io/assets/iterator-output.pdf) is a sample output from the iterator detailing all 680 arborescences of the test graph.
 Since Jekyll will not let me put up the txt file I had to convert it into a pdf which is 127 pages to show the 6800 lines of output from displaying all of the arborescences.
 
 ## References
