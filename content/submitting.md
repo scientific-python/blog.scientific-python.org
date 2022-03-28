@@ -66,10 +66,10 @@ Type the following to create a new post, where `[library]` is one of the
 affiliated project (see existing content for example):
 
 ```bash
-hugo new content/[library]/index.md
+hugo new content/posts/[library]/index.md
 ```
 
-This command will create a new folder under `folder_repository/content/[library]`.
+This command will create a new folder under `folder_repository/content/posts/[library]`.
 This will be your working directory for the post. If you want to add external
 content to your post (e.g., images), you will add it to this folder.
 
