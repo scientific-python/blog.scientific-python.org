@@ -16,7 +16,7 @@ resources:
 ---
 
 I have now completed my implementation of the ascent and the branch and bound method detailed in the 1970 paper _The Traveling-Salesman Problem and Minimum Spanning Trees_ by Micheal Held and Richard M. Karp.
-In my last post, titled [_Understanding the Ascent Method_](https://blog.scientific-python.org/posts/networkx/understanding-the-ascent-method), I completed the first iteration of the ascent method and found an important bug in the `find_epsilon()` method and found a more efficient way to determine substitutes in the graph.
+In my last post, titled [Understanding the Ascent Method]({{< relref "understanding-the-ascent-method" >}}), I completed the first iteration of the ascent method and found an important bug in the `find_epsilon()` method and found a more efficient way to determine substitutes in the graph.
 However the solution being given was still not the optimal solution.
 
 After discussing my options with my GSoC mentors, I decided to move onto the branch and bound method anyways with the hope that because the method is more human-computable and an example was given in the paper by Held and Karp that I would be able to find the remaining flaws.

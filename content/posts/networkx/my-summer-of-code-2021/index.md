@@ -40,14 +40,14 @@ Also note that for the commits I listed in each section, this is an incomplete l
 For the complete list, please reference the pull request or the `bothTSP` GitHub branch on my fork of NetworkX.
 
 My contributions to NetworkX this summer consist predominantly of the following functions and classes, each of which I will discuss in their own sections of this blog post.
-Functions and classes which are front-facing are also linked to the [developer documentation](https://networkx.org/documentation/latest/index.html) for NetworkX in the list below and for their section headers.
+Functions and classes which are front-facing are also linked to the [developer documentation](https://networkx.org/documentation/networkx-2.7.1/index.html) for NetworkX in the list below and for their section headers.
 
-- [`SpanningTreeIterator`](https://networkx.org/documentation/latest/reference/algorithms/generated/networkx.algorithms.tree.mst.SpanningTreeIterator.html)
-- [`ArborescenceIterator`](https://networkx.org/documentation/latest/reference/algorithms/generated/networkx.algorithms.tree.branchings.ArborescenceIterator.html)
+- [`SpanningTreeIterator`](https://networkx.org/documentation/networkx-2.7.1/reference/algorithms/generated/networkx.algorithms.tree.mst.SpanningTreeIterator.html)
+- [`ArborescenceIterator`](https://networkx.org/documentation/networkx-2.7.1/reference/algorithms/generated/networkx.algorithms.tree.branchings.ArborescenceIterator.html)
 - `held_karp_ascent`
 - `spanning_tree_distribution`
 - `sample_spanning_tree`
-- [`asadpour_atsp`](https://networkx.org/documentation/latest/reference/algorithms/generated/networkx.algorithms.approximation.traveling_salesman.asadpour_atsp.html)
+- [`asadpour_atsp`](https://networkx.org/documentation/networkx-2.7.1/reference/algorithms/generated/networkx.algorithms.approximation.traveling_salesman.asadpour_atsp.html)
 
 These functions have also been unit tested, and those tests will be integrated into NetworkX once the pull request is merged.
 
@@ -65,7 +65,7 @@ The following papers are where all of these algorithms originate form and they w
 
 [5] V. G. Kulkarni, _Generating random combinatorial objects_, Journal of algorithms, 11 (1990), p. 185–207.
 
-## [`SpanningTreeIterator`](https://networkx.org/documentation/latest/reference/algorithms/generated/networkx.algorithms.tree.mst.SpanningTreeIterator.html)
+## [`SpanningTreeIterator`](https://networkx.org/documentation/networkx-2.7.1/reference/algorithms/generated/networkx.algorithms.tree.mst.SpanningTreeIterator.html)
 
 The `SpanningTreeIterator` was the first contribution I completed as part of my GSoC project.
 This class takes a graph and returns every spanning tree in it in order of increasing cost, which makes it a direct implementation of [4].
@@ -81,9 +81,9 @@ This class I'm sure will be useful to the other users of NetworkX and provided a
 
 **Blog Posts about `SpanningTreeIterator`**
 
-5 Jun 2021 - _[Finding All Minimum Arborescences](fhttps://blog.scientific-python.org/posts/networkx/inding-all-minimum-arborescences.html)_
+5 Jun 2021 - [Finding All Minimum Arborescences]({{< relref "finding-all-minimum-arborescences" >}})
 
-10 Jun 2021 - _[Implementing The Iterators](https://blog.scientific-python.org/posts/networkx/implementing-the-iterators.html)_
+10 Jun 2021 - [Implementing The Iterators]({{< relref "implementing-the-iterators" >}})
 
 **Commits about `SpanningTreeIterator`**
 
@@ -108,7 +108,7 @@ I have not changed the commit messages here, so that you may be assumed by my tr
 
 [Implement suggestions from boothby](https://github.com/mjschwenne/networkx/commit/aef90dfcbb8b8424c6ed887311b4825559d0a398)
 
-## [`ArborescenceIterator`](https://networkx.org/documentation/latest/reference/algorithms/generated/networkx.algorithms.tree.branchings.ArborescenceIterator.html)
+## [`ArborescenceIterator`](https://networkx.org/documentation/networkx-2.7.1/reference/algorithms/generated/networkx.algorithms.tree.branchings.ArborescenceIterator.html)
 
 The `ArborescenceIterator` is a modified version of the algorithm discussed in [4] so that it iterates over the spanning arborescences.
 
@@ -124,9 +124,9 @@ This was used as part of the branch and bound method, but is no longer a part of
 
 **Blog Posts about `ArborescenceIterator`**
 
-5 Jun 2021 - _[Finding All Minimum Arborescences](https://blog.scientific-python.org/posts/networkx/finding-all-minimum-arborescences)_
+5 Jun 2021 - [Finding All Minimum Arborescences]({{< relref "finding-all-minimum-arborescences" >}})
 
-10 Jun 2021 - _[Implementing The Iterators](https://blog.scientific-python.org/posts/networkx/implementing-the-iterators)_
+10 Jun 2021 - [Implementing The Iterators]({{< relref "implementing-the-iterators" >}})
 
 **Commits about `ArborescenceIterator`**
 
@@ -190,21 +190,21 @@ All of this is detailed in the (many) blog posts I wrote on this topic, which ar
 
 My first two posts were about the `scipy` solution and the ellipsoid algorithm.
 
-11 Apr 2021 - _[Held Karp Relaxation](https://blog.scientific-python.org/posts/networkx/held-karp-relaxation)_
+11 Apr 2021 - [Held Karp Relaxation]({{< relref "held-karp-relaxation" >}})
 
-8 May 2021 - _[Held Karp Separation Oracle](https://blog.scientific-python.org/posts/networkx/held-karp-separation-oracle)_
+8 May 2021 - [Held Karp Separation Oracle]({{< relref "held-karp-separation-oracle" >}})
 
 This next post discusses the merits of each algorithm presenting in the original Held and Karp paper [3].
 
-3 Jun 2021 - _[A Closer Look At Held Karp](https://blog.scientific-python.org/posts/networkx/a-closer-look-at-held-karp)_
+3 Jun 2021 - [A Closer Look At Held Karp]({{< relref "a-closer-look-at-held-karp" >}})
 
 And finally, the last three Held Karp related posts are about the debugging of the algorithms I did implement.
 
-22 Jun 2021 - _[Understanding The Ascent Method](https://blog.scientific-python.org/posts/networkx/understanding-the-ascent-method)_
+22 Jun 2021 - [Understanding The Ascent Method]({{< relref "understanding-the-ascent-method" >}})
 
-28 Jun 2021 - _[Implementing The Held Karp Relaxation](https://blog.scientific-python.org/posts/networkx/implementing-the-held-karp-relaxation)_
+28 Jun 2021 - [Implementing The Held Karp Relaxation]({{< relref "implementing-the-held-karp-relaxation" >}})
 
-7 Jul 2021 - _[Finalizing Held Karp](https://blog.scientific-python.org/posts/networkx/finalizing-held-karp)_
+7 Jul 2021 - [Finalizing Held Karp]({{< relref "finalizing-held-karp" >}})
 
 **Commits about the Held Karp relaxation**
 
@@ -278,9 +278,9 @@ Multiplying my original value of \\(q_e(\gamma)\\) by \\(\exp(\gamma_e)\\) prove
 
 **Blog posts about `spanning_tree_distribution`**
 
-13 Jul 2021 - _[Entropy Distribution Setup](https://blog.scientific-python.org/posts/networkx/entropy-distribution-setup)_
+13 Jul 2021 - [Entropy Distribution Setup]({{< relref "entropy-distribution-setup" >}})
 
-20 Jul 2021 - _[The Entropy Distribution](https://blog.scientific-python.org/posts/networkx/the-entropy-distribution)_
+20 Jul 2021 - [The Entropy Distribution]({{< relref "entropy-distribution" >}})
 
 **Commits about `spanning_tree_distribution`**
 
@@ -336,9 +336,9 @@ Unfortunately, the test would still fail 1% of the time until I added the `@py_r
 
 **Blog posts about `sample_spanning_tree`**
 
-21 Jul 2021 - _[Preliminaries For Sampling A Spanning Tree](https://blog.scientific-python.org/posts/networkx/preliminaries-for-sampling-a-spanning-tree)_
+21 Jul 2021 - [Preliminaries For Sampling A Spanning Tree]({{< relref "preliminaries-for-sampling-a-spanning-tree" >}})
 
-28 Jul 2021 - _[Sampling A Spanning Tree](https://blog.scientific-python.org/posts/networkx/sampling-a-spanning-tree)_
+28 Jul 2021 - [Sampling A Spanning Tree]({{< relref "sampling-a-spanning-tree" >}})
 
 **Commits about `sample_spanning_tree`**
 
@@ -354,7 +354,7 @@ Unfortunately, the test would still fail 1% of the time until I added the `@py_r
 
 [Review suggestions from dshult](https://github.com/mjschwenne/networkx/commit/5f97de07821e49cc9ba4f9996ec6d1495eb268b7) - _Implemented code review suggestions from one of my mentors_
 
-## [`asadpour_atsp`](https://networkx.org/documentation/latest/reference/algorithms/generated/networkx.algorithms.approximation.traveling_salesman.asadpour_atsp.html)
+## [`asadpour_atsp`](https://networkx.org/documentation/networkx-2.7.1/reference/algorithms/generated/networkx.algorithms.approximation.traveling_salesman.asadpour_atsp.html)
 
 This function was the last piece of the puzzle, connecting all of the others together and producing the final result!
 
@@ -373,9 +373,9 @@ A brief overview of the whole algorithm is given below:
 
 **Blog posts about `asadpour_atsp`**
 
-29 Jul 2021 - _[Looking At The Big Picture](https://blog.scientific-python.org/posts/networkx/looking-at-the-big-picture.html)_
+29 Jul 2021 - [Looking At The Big Picture]({{< relref "looking-at-the-big-picture" >}})
 
-10 Aug 2021 - _[Completing The Asadpour Algorithm](https://blog.scientific-python.org/posts/networkx/completing-the-asadpour-algorithm.html)_
+10 Aug 2021 - [Completing The Asadpour Algorithm]({{< relref "completing-the-asadpour-algorithm" >}})
 
 **Commits about `asadpour_atsp`**
 

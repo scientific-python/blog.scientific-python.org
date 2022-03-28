@@ -82,7 +82,7 @@ The code for the spanning tree iterator can be found [here](https://github.com/m
 ## Arborescence Iterator
 
 The arborescence iterator is what I actually need for my GSoC project, and as expected was more complicated to implement.
-In my original post titled [Finding All Minimum Arborescences](https://blog.scientific-python.org/posts/networkx/finding-all-minimum-arborescences), I discussed cases that Edmond's algorithm [1] would need to handle and proposed a change to the `desired_edge` method.
+In my original post titled [Finding All Minimum Arborescences]({{< relref "finding-all-minimum-arborescences" >}}), I discussed cases that Edmond's algorithm [1] would need to handle and proposed a change to the `desired_edge` method.
 
 These changes where easy to make, but were not the extent of the changes that needed to be made as I originally thought.
 The original graph from Edmonds' 1967 paper is below

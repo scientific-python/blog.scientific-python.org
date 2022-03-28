@@ -16,7 +16,7 @@ resources:
 ---
 
 This _should_ be my final post about the Held-Karp relaxation!
-Since my last post titled [_Implementing The Held Karp Relaxation_](https://blog.scientific-python.org/posts/networkx/implementing-the-held-karp-relaxation.html), I have been testing both the ascent method as well as the branch and bound method.
+Since my last post titled [Implementing The Held Karp Relaxation]({{< relref "implementing-the-held-karp-relaxation" >}}), I have been testing both the ascent method as well as the branch and bound method.
 
 My first test was to use a truly asymmetric graph rather than a directed graph where the cost in each direction happened to be the same.
 In order to create such a test, I needed to know the solution to any such proposed graphs.

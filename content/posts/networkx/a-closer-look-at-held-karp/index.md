@@ -22,7 +22,7 @@ After talking with my GSoC mentors about what we all believe to be the most diff
   An example of this would be the ellipsoid algorithm versus the simplex algorithm.
   While the simplex algorithm is exponential, in practice it is almost always faster than the ellipsoid algorithm.
 - Our interest in the ellipsoid algorithm was not based on performance, but rather the ability for the ellipsoid algorithm to be able to handle a linear program with an exponential number of constraints.
-  This was done with a separation oracle, see my post [here](https://blog.scientific-python.org/posts/networkx/held-karp-separation-oracle) for more information about the oracle.
+  This was done with a separation oracle, see my post [here]({{< relref "held-karp-separation-oracle" >}}) for more information about the oracle.
 - Implementing a robust ellipsoid algorithm solver (something notable missing from the scientific python ecosystem) was a GSoC project onto itself and beyond the scope of this project for NetworkX.
 
 Thus, alternative methods for solving the Held-Karp relaxation needed to be investigated.

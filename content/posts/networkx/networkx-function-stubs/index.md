@@ -120,7 +120,7 @@ def asadpour_tsp(G, weight="weight"):
     pass
 ```
 
-Following my GSoC proposal, the next function is `held_karp`, which will solve the Held-Karp relaxation on the complete digraph using the ellipsoid method (See my last two posts [here](/https://blog.scientific-python.org/posts/networkx/held-karp-relaxation) and [here](https://blog.scientific-python.org/posts/networkx/held-karp-separation-oracle) for my thoughts on why and how to accomplish this).
+Following my GSoC proposal, the next function is `held_karp`, which will solve the Held-Karp relaxation on the complete digraph using the ellipsoid method (See my last two posts [here]({{< relref "held-karp-relaxation" >}}) and [here]({{< relref "held-karp-separation-oracle" >}}) for my thoughts on why and how to accomplish this).
 Solving the Held-Karp relaxation is the first step in the algorithm.
 
 Recall that the Held-Karp relaxation is defined as the following linear program:
