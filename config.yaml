@@ -38,6 +38,9 @@ params:
     image: logo.svg
     text: Scientific Python Blog
     link: /
+  hero:
+    title: Scientific Python Blog
+    image: logo.svg
   navbar:
     - title: Home
       url: https://scientific-python.org/
@@ -54,7 +57,7 @@ params:
       is_external: true
   panel:
     title: Posts from the Scientific Python community
-    subtitle: by the community, for the community
+    subtitle: Open source, community driven blog for the Scientific Python community.
     tiles:
       - buttonText: Submit a post
         url: /submitting/
