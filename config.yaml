@@ -26,10 +26,6 @@ outputs:
   home: ["HTML", "ATOM"]
   term: ["HTML", "ATOM"]
 
-permalinks:
-  # mimic pelican permalink configuration
-  /: "/:year/:month/:day/:slug/"
-
 params:
   description: "Posts from the Scientific Python community"
   images:
@@ -56,8 +52,6 @@ params:
       url: https://discuss.scientific-python.org/
       is_external: true
   panel:
-    title: Posts from the Scientific Python community
-    subtitle: Open source, community driven blog for the Scientific Python community.
     tiles:
       - buttonText: Submit a post
         url: /submitting/
