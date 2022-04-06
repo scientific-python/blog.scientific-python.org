@@ -2,10 +2,10 @@
 title: "How to create custom tables"
 date: 2022-03-11T11:10:06Z
 draft: false
-description: A tutorial on how to create custom tables in Matplotlib which allow for flexible design and customization.
-categories: ["tutorials"]
+description: "A tutorial on how to create custom tables in Matplotlib which allow for flexible design and customization."
+categories: ["tutorials", "matplotlib"]
 displayInList: true
-author: Tim Bayer
+author: ["Tim Bayer"]
 resources:
   - name: featuredImage
     src: "header.jpeg"
