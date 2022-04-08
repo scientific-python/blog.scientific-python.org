@@ -66,7 +66,7 @@ Type the following to create a new post, where `[library]` is one of the
 affiliated project (see existing content for example):
 
 ```bash
-hugo new content/posts/[library]/index.md
+hugo new content/posts/[library]/[title]/index.md
 ```
 
 This command will create a new folder under `folder_repository/content/posts/[library]`.
@@ -74,7 +74,11 @@ This will be your working directory for the post. If you want to add external
 content to your post (e.g., images), you will add it to this folder.
 
 You can now open the file _index.md_ in your post folder with your favorite
-text editor. You will see a header section delimited by ---. Let us go through
+text editor. It is filled with some basics to help you get started.
+
+### Preamble
+
+You will see a header section delimited by ---. Let us go through
 all the headings you can configure:
 
 ```
@@ -126,16 +130,18 @@ Add your name as author. Multiple authors are separated by commas.
 ```
 resources:
 - name: featuredImage
-  src: "my-image.jpg"
+  src: "my-image.png"
   params:
     description: "my image description"
     showOnTop: true
 ```
 
 Select an image to be associated to your post, which will appear aside the
-title in the homepage. Make sure to add _my-image.jpg_ to your post folder.
-The parameter _showOnTop_ decides whether or not the image will also be shown
+title in the homepage. Make sure to add _my-image.png_ to your post folder.
+The parameter _showOnTop_ decides whether the image will also be shown
 at the top of your post.
+
+### Write!
 
 Now, you can write the main text of your post. We fully support
 [markdown](https://markdown-guide.readthedocs.io/en/latest/basics.html),
