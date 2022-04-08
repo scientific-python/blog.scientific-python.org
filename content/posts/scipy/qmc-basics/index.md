@@ -240,7 +240,7 @@ But, QMC methods have better rates of convergence and achieve $O(n^{-1})$
 for this function–and even better rates on very smooth functions.
 
 This means that using $2^8=256$ points from _Sobol'_ leads to a lower
-error than using $2^12=4096 points from MC! When the function evaluation
+error than using $2^12=4096$ points from MC! When the function evaluation
 is costly, it can bring huge computational savings.
 
 ## Sampling from any distribution (advanced)
