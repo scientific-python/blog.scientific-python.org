@@ -132,7 +132,7 @@ sample.
 
 ## Quality?
 
-Past the visual improvement of _quality_, there are metrics to assess the
+Beyond the visual improvement of _quality_, there are metrics to assess the
 quality of a sample. Geometrical criteria are commonly used, one can
 compute the distance (L1, L2, etc.) between all pairs of points. But there
 are also statistical criteria such as: the
@@ -240,7 +240,7 @@ But, QMC methods have better rates of convergence and achieve $O(n^{-1})$
 for this function–and even better rates on very smooth functions.
 
 This means that using $2^8=256$ points from _Sobol'_ leads to a lower
-error than using $2^12=4096$ points from MC! When the function evaluation
+error than using $2^{12}=4096$ points from MC! When the function evaluation
 is costly, it can bring huge computational savings.
 
 ## Sampling from any distribution (advanced)
@@ -248,7 +248,7 @@ is costly, it can bring huge computational savings.
 But there is more! Another great use of QMC is to sample arbitrary
 distributions. In SciPy 1.8, there are new classes of
 [samplers](https://scipy.github.io/devdocs/reference/stats.sampling.html)
-that allow to sample from any custom distribution. And it happens that some of
+that allow you to sample from any custom distribution. And some of
 these methods can use QMC with a `qrvs` method:
 
 - [NumericalInversePolynomial](https://scipy.github.io/devdocs/reference/generated/scipy.stats.sampling.NumericalInversePolynomial.html)
