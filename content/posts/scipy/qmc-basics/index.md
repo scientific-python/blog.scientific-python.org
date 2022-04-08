@@ -2,7 +2,7 @@
 title: "A quick tour of QMC with SciPy"
 date: 2022-04-04
 draft: false
-tags: ["scipy", "tutorial", "random numbers"]
+tags: ["scipy", "tutorial", "random-numbers"]
 description: "
 Do you need to use random numbers? Use Quasi-Monte Carlo (QMC) methods instead.
 QMC, what is it? Why you should care? And how to use it?
