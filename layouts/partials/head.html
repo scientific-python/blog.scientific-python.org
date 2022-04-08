@@ -1,4 +1,4 @@
-{{ if eq .Section "posts" }}
+{{ if  or (eq .Section "posts") (eq .Section "tags") }}
     <script>
       MathJax = {
         tex: {
