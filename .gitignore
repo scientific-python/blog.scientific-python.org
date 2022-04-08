@@ -2,3 +2,7 @@
 *~
 resources/
 public/
+
+.idea
+.vscode
+.DS_Store
