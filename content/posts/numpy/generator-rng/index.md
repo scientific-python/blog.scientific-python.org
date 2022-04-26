@@ -10,12 +10,6 @@ tags: ["NumPy", "tutorials", "random-numbers"]
 displayInList: true
 author: ["Pamphile Roy"]
 
-resources:
-- name: featuredImage
-  src: "my-image.png"
-  params:
-    description: "my image description"
-    showOnTop: true
 ---
 
 Do you need random numbers? You use NumPy? NumPy has a canonical way to
