@@ -134,7 +134,32 @@ Now you might have read that `np.random.RandomState` is deprecated and
 as we will see. What is true though is that in any case, a global state
 generator must not be used.
 
-So why this new interface `np.random.Generator`?
+So why this new interface `np.random.Generator`? The main reason is to break
+away from backward compatibilities concerns. `np.random.RandomState` was
+advertised as providing a constant bit-stream for a given seed. The problem
+is that this is extremely hard to guarantee for a wide range of
+platform/architecture. Even more if you want to change underlying methods,
+improve speed, fix bugs, etc. This is why NumPy decided with the policy
+described in
+[NEP19](https://numpy.org/neps/nep-0019-rng-policy.html)
+to create a new interface.
+
+> Did you know? `rand`, `randn`, etc. were just added to accommodate Matlab
+> users. These names match similar functions from Matlab to help code porting.
+
+Hence, for new code, `np.random.Generator` should be
+used. It does not provide a strong guarantee of reproducibility across
+different versions. But it's fine as we will see in the next section about
+[seed](#seed-id). To create a new instance of `np.random.Generator`, the
+canonical way is to use:
+
+```python
+rng = np.random.default_rng()
+```
+
+When you have to write tests `np.random.RandomState` is still recommended.
+Yes it's slower and has known issues, but it guarantees the bit-stream.
+Something you might need if you have sensitive tests.
 
 For more details have a look at the documentation of
 [`np.random`](https://numpy.org/doc/stable/reference/random/index.html)
@@ -265,6 +290,9 @@ print(np.random.SeedSequence().entropy)
 Use this snippet to generate seed values for your tests.
 
 ## Conclusion
+
+Use `np.random.Generator`: it is better in every way. If you see code using
+the global state, spread the word and help us move forward.
 
 ```python
 # this is right!
