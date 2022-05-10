@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="content-padding flex-row">
 
-<div class="tag-cloud">
+<div class="tag-cloud is-hidden-mobile">
   <h2 class="tag-cloud-title">{{ i18n "tags" }}</h2>
   {{ if not (eq (len $.Site.Taxonomies.tags) 0) }}
     {{ $fontUnit := "rem" }}
