@@ -22,45 +22,45 @@ Most of the work for this project will happen in `netowrkx.algorithms.approximat
 
 ```python
 def traveling_salesman_problem(G, weight="weight", nodes=None, cycle=True, method=None):
-	"""
-	...
+    """
+    ...
 
-	Parameters
-    	----------
-	G : NetworkX graph
-	    Undirected possibly weighted graph
+    Parameters
+    ----------
+    G : NetworkX graph
+        Undirected possibly weighted graph
 
-	nodes : collection of nodes (default=G.nodes)
-	    collection (list, set, etc.) of nodes to visit
+    nodes : collection of nodes (default=G.nodes)
+        collection (list, set, etc.) of nodes to visit
 
-	weight : string, optional (default="weight")
-	    Edge data key corresponding to the edge weight.
-	    If any edge does not have this attribute the weight is set to 1.
+    weight : string, optional (default="weight")
+        Edge data key corresponding to the edge weight.
+        If any edge does not have this attribute the weight is set to 1.
 
-	cycle : bool (default: True)
-	    Indicates whether a cycle should be returned, or a path.
-	    Note: the cycle is the approximate minimal cycle.
-	    The path simply removes the biggest edge in that cycle.
+    cycle : bool (default: True)
+        Indicates whether a cycle should be returned, or a path.
+        Note: the cycle is the approximate minimal cycle.
+        The path simply removes the biggest edge in that cycle.
 
-	method : function (default: None)
-	    A function that returns a cycle on all nodes and approximates
-	    the solution to the traveling salesman problem on a complete
-	    graph. The returned cycle is then used to find a corresponding
-	    solution on `G`. `method` should be callable; take inputs
-	    `G`, and `weight`; and return a list of nodes along the cycle.
+    method : function (default: None)
+        A function that returns a cycle on all nodes and approximates
+        the solution to the traveling salesman problem on a complete
+        graph. The returned cycle is then used to find a corresponding
+        solution on `G`. `method` should be callable; take inputs
+        `G`, and `weight`; and return a list of nodes along the cycle.
 
-	    Provided options include :func:`christofides`, :func:`greedy_tsp`,
-	    :func:`simulated_annealing_tsp` and :func:`threshold_accepting_tsp`.
+        Provided options include :func:`christofides`, :func:`greedy_tsp`,
+        :func:`simulated_annealing_tsp` and :func:`threshold_accepting_tsp`.
 
-	    If `method is None`: use :func:`christofides` for undirected `G` and
-	    :func:`threshold_accepting_tsp` for directed `G`.
+        If `method is None`: use :func:`christofides` for undirected `G` and
+        :func:`threshold_accepting_tsp` for directed `G`.
 
-	    To specify parameters for these provided functions, construct lambda
-	    functions that state the specific value. `method` must have 2 inputs.
-	    (See examples).
+        To specify parameters for these provided functions, construct lambda
+        functions that state the specific value. `method` must have 2 inputs.
+        (See examples).
 
-	...
-	"""
+    ...
+    """
 ```
 
 All user calls to find an approximation to the traveling salesman problem will go through this function.
@@ -186,6 +186,7 @@ def _held_karp(G, weight="weight"):
        traveling salesman problem, Operations research, 65 (2017),
        pp. 1043–1061
     """
+
     def sep_oracle(point):
         """
         The separation oracle used in the ellipsoid algorithm to solve the
@@ -216,6 +217,7 @@ def _held_karp(G, weight="weight"):
             was farthest from, None if no constraints are violated.
         """
         pass
+
     pass
 ```
 

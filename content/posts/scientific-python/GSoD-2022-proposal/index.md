@@ -109,7 +109,7 @@ rows:
     - Update contributor guide
 
   - columns:
-    - August--October 
+    - August--October
     - Create and edit content
 
   - columns:
@@ -133,7 +133,7 @@ rows:
     - Technical writers (5)
     - $15,000.00
     - $15,000.00
-    - $3,000 / writer 
+    - $3,000 / writer
 
   - columns:
     - TOTAL

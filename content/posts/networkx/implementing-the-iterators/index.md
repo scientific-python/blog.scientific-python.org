@@ -31,6 +31,7 @@ Now, I needed to tweak the implementation of the algorithm because I wanted to i
 
 ```python
 for tree in nx.SpanningTreeIterator(G):
+    pass
 ```
 
 and that loop would return spanning trees starting with the ones of minimum cost and climbing to the ones of maximum cost.
@@ -73,6 +74,7 @@ The iterator also works backwards, so calling
 
 ```python
 for tree in nx.SpanningTreeIterator(G, minimum=False):
+    pass
 ```
 
 starts with the maximum spanning tree and works down to the minimum spanning tree.
@@ -175,7 +177,7 @@ edgelist = [
     (6, 8),
     (7, 3),
     (7, 6),
-    (8, 7)
+    (8, 7),
 ]
 
 combo_count = 0
@@ -187,8 +189,10 @@ for combo in combinations(edgelist, 8):
     if nx.is_arborescence(combo_test):
         arbor_count += 1
 
-print(f"There are {combo_count} possible combinations of eight edges which "
-      f"could be an arboresecnce.")
+print(
+    f"There are {combo_count} possible combinations of eight edges which "
+    f"could be an arboresecnce."
+)
 print(f"Of those {combo_count} combinations, {arbor_count} are arborescences.")
 ```
 

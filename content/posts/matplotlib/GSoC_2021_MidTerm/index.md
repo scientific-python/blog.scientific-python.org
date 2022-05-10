@@ -72,18 +72,18 @@ Easily enough, this can be done by Python's `tempfile.NamedTemporaryFile`:
 
 ```python
 with tempfile.NamedTemporaryFile(suffix=".ttf") as tmp:
-	# fontdata is the subsetted buffer
-	# returned from fontTools
-	tmp.write(fontdata.getvalue())
+    # fontdata is the subsetted buffer
+    # returned from fontTools
+    tmp.write(fontdata.getvalue())
 
-	# TODO: allow convert_ttf_to_ps
-	# to input file objects (BytesIO)
-	convert_ttf_to_ps(
-		os.fsencode(tmp.name),
-		fh,
-		fonttype,
-		glyph_ids,
-	)
+    # TODO: allow convert_ttf_to_ps
+    # to input file objects (BytesIO)
+    convert_ttf_to_ps(
+        os.fsencode(tmp.name),
+        fh,
+        fonttype,
+        glyph_ids,
+    )
 ```
 
 **_But this is far from a clean API; in terms of separation of \*reading\* the file from \*parsing\* the data._**

@@ -143,18 +143,17 @@ If you're making a collection of diagrams,
 you can make a convenient template for your blank canvas.
 
 ```python
-def blank_diagram(fig_width=16, fig_height=9,
-                  bg_color="antiquewhite", color="midnightblue"):
+def blank_diagram(
+    fig_width=16, fig_height=9, bg_color="antiquewhite", color="midnightblue"
+):
     fig = plt.figure(figsize=(fig_width / 2.54, fig_height / 2.54))
     ax = fig.add_axes((0, 0, 1, 1))
     ax.set_xlim(0, fig_width)
     ax.set_ylim(0, fig_height)
     ax.set_facecolor(bg_color)
 
-    ax.tick_params(bottom=False, top=False,
-                   left=False, right=False)
-    ax.tick_params(labelbottom=False, labeltop=False,
-                   labelleft=False, labelright=False)
+    ax.tick_params(bottom=False, top=False, left=False, right=False)
+    ax.tick_params(labelbottom=False, labeltop=False, labelleft=False, labelright=False)
 
     ax.spines["top"].set_color(color)
     ax.spines["bottom"].set_color(color)
@@ -173,7 +172,7 @@ Then you can take that canvas and add arbitrary text, shapes, and lines.
 ```python
 fig, ax = blank_diagram()
 
-for x0 in np.arange(-3, 16, .5):
+for x0 in np.arange(-3, 16, 0.5):
     ax.plot([x0, x0 + 3], [0, 9], color="black")
 
 fig.savefig("stripes.png", dpi=300)
@@ -205,7 +204,8 @@ for i, center in enumerate(centers):
         color="midnightblue",
     )
     ax.text(
-        x, y,
+        x,
+        y,
         texts[i],
         horizontalalignment="center",
         verticalalignment="center",
@@ -218,25 +218,25 @@ ax.annotate(
     "",
     (centers[1][0] - radii, centers[1][1]),
     (centers[0][0] + radii, centers[0][1]),
-    arrowprops=dict(arrowstyle = "-|>"),
+    arrowprops=dict(arrowstyle="-|>"),
 )
 ax.annotate(
     "",
     (centers[2][0] - radii, centers[2][1]),
     (centers[1][0] + radii, centers[1][1]),
-    arrowprops=dict(arrowstyle = "-|>"),
+    arrowprops=dict(arrowstyle="-|>"),
 )
 ax.annotate(
     "",
-    (centers[3][0] - .7 * radii, centers[3][1] + .7 * radii),
-    (centers[0][0] + .7 * radii, centers[0][1] - .7 * radii),
-    arrowprops=dict(arrowstyle = "-|>"),
+    (centers[3][0] - 0.7 * radii, centers[3][1] + 0.7 * radii),
+    (centers[0][0] + 0.7 * radii, centers[0][1] - 0.7 * radii),
+    arrowprops=dict(arrowstyle="-|>"),
 )
 ax.annotate(
     "",
-    (centers[3][0] + .7 * radii, centers[3][1] + .7 * radii),
-    (centers[2][0] - .7 * radii, centers[2][1] - .7 * radii),
-    arrowprops=dict(arrowstyle = "-|>"),
+    (centers[3][0] + 0.7 * radii, centers[3][1] + 0.7 * radii),
+    (centers[2][0] - 0.7 * radii, centers[2][1] - 0.7 * radii),
+    arrowprops=dict(arrowstyle="-|>"),
 )
 
 fig.savefig("causal.png", dpi=300)
