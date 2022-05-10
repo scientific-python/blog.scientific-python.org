@@ -42,7 +42,7 @@ are based on this scenario ensemble, including the finding that
 
 > global net anthropogenic CO2 emissions decline by ~45% from 2010 levels by 2030
 
-in all pathways limiting global warming to 1.5°C  
+in all pathways limiting global warming to 1.5°C
 (cf. [statement C.1](https://www.ipcc.ch/sr15/chapter/spm/) in the _Summary For Policymakers_).
 
 ## Open-source notebooks for transparency and reproducibility of the assessment
@@ -55,7 +55,7 @@ The scenario ensemble was made accessible via an interactive _IAMC 1.5°C Scenar
 ([link](http://data.ene.iiasa.ac.at/iamc-1.5c-explorer/#/workspaces)) in line with the
 [FAIR principles for scientific data management and stewardship](https://www.go-fair.org/fair-principles/).
 The process for compiling, validating and analyzing the scenario ensemble
-was described in an open-access manuscript published in _Nature Climate Change_  
+was described in an open-access manuscript published in _Nature Climate Change_
 (doi: [10.1038/s41558-018-0317-4](https://doi.org/10.1038/s41558-018-0317-4)).
 
 In addition, the Jupyter notebooks generating many of the headline statements,

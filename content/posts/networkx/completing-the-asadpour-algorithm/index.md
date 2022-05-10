@@ -167,6 +167,7 @@ From here, I wrap the complete `asadpour_atsp` parameters I want in another func
 def fixed_asadpour(G, weight):
     return nx_app.asadpour_atsp(G, weight, 56)
 
+
 path = nx_app.traveling_salesman_problem(
     G, weight="weight", cycle=False, method=fixed_asadpour
 )
@@ -194,6 +195,7 @@ Access it by wrapping the method, just be sure that the source vertex is in the 
 ```python
 def fixed_asadpour(G, weight):
     return nx_app.asadpour_atsp(G, weight, source=0)
+
 
 path = nx_app.traveling_salesman_problem(
     G, weight="weight", cycle=False, method=fixed_asadpour

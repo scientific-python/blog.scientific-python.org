@@ -45,20 +45,21 @@ We first create a Matplotlib Figure without any Axes (the plotting surface). The
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
 
 fig = plt.Figure(figsize=(16, 8))
+
 
 def create_axes(draft=True):
     ax = fig.add_subplot()
     ax.grid(True)
     ax.set_ylim(0, 1)
     ax.set_xlim(0, 2)
-    ax.fill_between(x=[0, 2], y1=.36, y2=1, color='black')
-    ax.fill_between(x=[0, 2], y1=0, y2=.36, color='#101115')
+    ax.fill_between(x=[0, 2], y1=0.36, y2=1, color="black")
+    ax.fill_between(x=[0, 2], y1=0, y2=0.36, color="#101115")
     if not draft:
         ax.grid(False)
-        ax.axis('off')
+        ax.axis("off")
+
 
 create_axes()
 fig
@@ -77,26 +78,65 @@ Notice how the Axes is retrieved as the first line of the function. This is used
 ```python
 from matplotlib.patches import Polygon, Rectangle, Circle
 
+
 def create_body():
     ax = fig.axes[0]
-    top = Polygon([[.62, .51], [1, .66], [1.6, .56]], color='#DCDCDC')
-    windows = Polygon([[.74, .54], [1, .64], [1.26, .6], [1.262, .57]], color='black')
-    windows_bottom = Polygon([[.8, .56], [1, .635], [1.255, .597],
-                              [1.255, .585]], color='#474747')
-    base = Polygon([[.62, .51], [.62, .445], [.67, .5], [.78, .5], [.84, .42],
-                    [1.3, .423], [1.36, .51], [1.44, .51], [1.52, .43], [1.58, .44],
-                    [1.6, .56]], color="#1E2329")
-    left_rim = Polygon([[.62, .445], [.67, .5], [.78, .5], [.84, .42],
-                        [.824, .42], [.77, .49],[.674, .49], [.633, .445]], color='#373E48')
-    right_rim = Polygon([[1.3, .423], [1.36, .51], [1.44, .51], [1.52, .43],
-                         [1.504, .43], [1.436, .498], [1.364, .498],
-                         [1.312, .423]], color='#4D586A')
+    top = Polygon([[0.62, 0.51], [1, 0.66], [1.6, 0.56]], color="#DCDCDC")
+    windows = Polygon(
+        [[0.74, 0.54], [1, 0.64], [1.26, 0.6], [1.262, 0.57]], color="black"
+    )
+    windows_bottom = Polygon(
+        [[0.8, 0.56], [1, 0.635], [1.255, 0.597], [1.255, 0.585]], color="#474747"
+    )
+    base = Polygon(
+        [
+            [0.62, 0.51],
+            [0.62, 0.445],
+            [0.67, 0.5],
+            [0.78, 0.5],
+            [0.84, 0.42],
+            [1.3, 0.423],
+            [1.36, 0.51],
+            [1.44, 0.51],
+            [1.52, 0.43],
+            [1.58, 0.44],
+            [1.6, 0.56],
+        ],
+        color="#1E2329",
+    )
+    left_rim = Polygon(
+        [
+            [0.62, 0.445],
+            [0.67, 0.5],
+            [0.78, 0.5],
+            [0.84, 0.42],
+            [0.824, 0.42],
+            [0.77, 0.49],
+            [0.674, 0.49],
+            [0.633, 0.445],
+        ],
+        color="#373E48",
+    )
+    right_rim = Polygon(
+        [
+            [1.3, 0.423],
+            [1.36, 0.51],
+            [1.44, 0.51],
+            [1.52, 0.43],
+            [1.504, 0.43],
+            [1.436, 0.498],
+            [1.364, 0.498],
+            [1.312, 0.423],
+        ],
+        color="#4D586A",
+    )
     ax.add_patch(top)
     ax.add_patch(windows)
     ax.add_patch(windows_bottom)
     ax.add_patch(base)
     ax.add_patch(left_rim)
     ax.add_patch(right_rim)
+
 
 create_body()
 fig
@@ -111,14 +151,14 @@ I used three `Circle` patches for each of the tires. You must provide the center
 ```python
 def create_tires():
     ax = fig.axes[0]
-    left_tire = Circle((.724, .39), radius=.075, color="#202328")
-    right_tire = Circle((1.404, .39), radius=.075, color="#202328")
-    left_inner_tire = Circle((.724, .39), radius=.052, color="#15191C")
-    right_inner_tire = Circle((1.404, .39), radius=.052, color="#15191C")
-    left_spoke = Circle((.724, .39), radius=.019, color="#202328", zorder=99)
-    right_spoke = Circle((1.404, .39), radius=.019, color="#202328", zorder=99)
-    left_inner_spoke = Circle((.724, .39), radius=.011, color="#131418", zorder=99)
-    right_inner_spoke = Circle((1.404, .39), radius=.011, color="#131418", zorder=99)
+    left_tire = Circle((0.724, 0.39), radius=0.075, color="#202328")
+    right_tire = Circle((1.404, 0.39), radius=0.075, color="#202328")
+    left_inner_tire = Circle((0.724, 0.39), radius=0.052, color="#15191C")
+    right_inner_tire = Circle((1.404, 0.39), radius=0.052, color="#15191C")
+    left_spoke = Circle((0.724, 0.39), radius=0.019, color="#202328", zorder=99)
+    right_spoke = Circle((1.404, 0.39), radius=0.019, color="#202328", zorder=99)
+    left_inner_spoke = Circle((0.724, 0.39), radius=0.011, color="#131418", zorder=99)
+    right_inner_spoke = Circle((1.404, 0.39), radius=0.011, color="#131418", zorder=99)
 
     ax.add_patch(left_tire)
     ax.add_patch(right_tire)
@@ -128,6 +168,7 @@ def create_tires():
     ax.add_patch(right_spoke)
     ax.add_patch(left_inner_spoke)
     ax.add_patch(right_inner_spoke)
+
 
 create_tires()
 fig
@@ -142,15 +183,24 @@ I used the `Rectangle` patch to represent the two 'axles' (this isn't the correc
 ```python
 def create_axles():
     ax = fig.axes[0]
-    left_left_axle = Rectangle((.687, .427), width=.104, height=.005, angle=315, color='#202328')
-    left_right_axle = Rectangle((.761, .427), width=.104, height=.005, angle=225, color='#202328')
-    right_left_axle = Rectangle((1.367, .427), width=.104, height=.005, angle=315, color='#202328')
-    right_right_axle = Rectangle((1.441, .427), width=.104, height=.005, angle=225, color='#202328')
+    left_left_axle = Rectangle(
+        (0.687, 0.427), width=0.104, height=0.005, angle=315, color="#202328"
+    )
+    left_right_axle = Rectangle(
+        (0.761, 0.427), width=0.104, height=0.005, angle=225, color="#202328"
+    )
+    right_left_axle = Rectangle(
+        (1.367, 0.427), width=0.104, height=0.005, angle=315, color="#202328"
+    )
+    right_right_axle = Rectangle(
+        (1.441, 0.427), width=0.104, height=0.005, angle=225, color="#202328"
+    )
 
     ax.add_patch(left_left_axle)
     ax.add_patch(left_right_axle)
     ax.add_patch(right_left_axle)
     ax.add_patch(right_right_axle)
+
 
 create_axles()
 fig
@@ -166,29 +216,45 @@ The front bumper, head light, tail light, door and window lines are added below.
 def create_other_details():
     ax = fig.axes[0]
     # other details
-    front = Polygon([[.62, .51], [.597, .51], [.589, .5], [.589, .445], [.62, .445]], color='#26272d')
-    front_bottom = Polygon([[.62, .438], [.58, .438], [.58, .423], [.62, .423]], color='#26272d')
-    head_light = Polygon([[.62, .51], [.597, .51], [.589, .5], [.589, .5], [.62, .5]], color='aqua')
-    step = Polygon([[.84, .39], [.84, .394], [1.3, .397], [1.3, .393]], color='#1E2329')
+    front = Polygon(
+        [[0.62, 0.51], [0.597, 0.51], [0.589, 0.5], [0.589, 0.445], [0.62, 0.445]],
+        color="#26272d",
+    )
+    front_bottom = Polygon(
+        [[0.62, 0.438], [0.58, 0.438], [0.58, 0.423], [0.62, 0.423]], color="#26272d"
+    )
+    head_light = Polygon(
+        [[0.62, 0.51], [0.597, 0.51], [0.589, 0.5], [0.589, 0.5], [0.62, 0.5]],
+        color="aqua",
+    )
+    step = Polygon(
+        [[0.84, 0.39], [0.84, 0.394], [1.3, 0.397], [1.3, 0.393]], color="#1E2329"
+    )
 
     # doors
-    ax.plot([.84, .84], [.42, .523], color='black', lw=.5)
-    ax.plot([1.02, 1.04], [.42, .53], color='black', lw=.5)
-    ax.plot([1.26, 1.26], [.42, .54], color='black', lw=.5)
-    ax.plot([.84, .85], [.523, .547], color='black', lw=.5)
-    ax.plot([1.04, 1.04], [.53, .557], color='black', lw=.5)
-    ax.plot([1.26, 1.26], [.54, .57], color='black', lw=.5)
+    ax.plot([0.84, 0.84], [0.42, 0.523], color="black", lw=0.5)
+    ax.plot([1.02, 1.04], [0.42, 0.53], color="black", lw=0.5)
+    ax.plot([1.26, 1.26], [0.42, 0.54], color="black", lw=0.5)
+    ax.plot([0.84, 0.85], [0.523, 0.547], color="black", lw=0.5)
+    ax.plot([1.04, 1.04], [0.53, 0.557], color="black", lw=0.5)
+    ax.plot([1.26, 1.26], [0.54, 0.57], color="black", lw=0.5)
 
     # window lines
-    ax.plot([.87, .88], [.56, .59], color='black', lw=1)
-    ax.plot([1.03, 1.04], [.56, .63], color='black', lw=.5)
+    ax.plot([0.87, 0.88], [0.56, 0.59], color="black", lw=1)
+    ax.plot([1.03, 1.04], [0.56, 0.63], color="black", lw=0.5)
 
     # tail light
-    tail_light = Circle((1.6, .56), radius=.007, color='red', alpha=.6)
-    tail_light_center = Circle((1.6, .56), radius=.003, color='yellow', alpha=.6)
-    tail_light_up = Polygon([[1.597, .56], [1.6, .6], [1.603, .56]], color='red', alpha=.4)
-    tail_light_right = Polygon([[1.6, .563], [1.64, .56], [1.6, .557]], color='red', alpha=.4)
-    tail_light_down = Polygon([[1.597, .56], [1.6, .52], [1.603, .56]], color='red', alpha=.4)
+    tail_light = Circle((1.6, 0.56), radius=0.007, color="red", alpha=0.6)
+    tail_light_center = Circle((1.6, 0.56), radius=0.003, color="yellow", alpha=0.6)
+    tail_light_up = Polygon(
+        [[1.597, 0.56], [1.6, 0.6], [1.603, 0.56]], color="red", alpha=0.4
+    )
+    tail_light_right = Polygon(
+        [[1.6, 0.563], [1.64, 0.56], [1.6, 0.557]], color="red", alpha=0.4
+    )
+    tail_light_down = Polygon(
+        [[1.597, 0.56], [1.6, 0.52], [1.603, 0.56]], color="red", alpha=0.4
+    )
 
     ax.add_patch(front)
     ax.add_patch(front_bottom)
@@ -199,6 +265,7 @@ def create_other_details():
     ax.add_patch(tail_light_up)
     ax.add_patch(tail_light_right)
     ax.add_patch(tail_light_down)
+
 
 create_other_details()
 fig
@@ -219,14 +286,16 @@ The `extent` parameter defines the rectangular region where the image will be sh
 ```python
 import matplotlib.colors as mcolors
 
+
 def create_headlight_beam():
     ax = fig.axes[0]
     z = np.empty((1, 100, 4), dtype=float)
-    rgb = mcolors.colorConverter.to_rgb('aqua')
+    rgb = mcolors.colorConverter.to_rgb("aqua")
     alphas = np.linspace(0, 1, 100)
     z[:, :, :3] = rgb
     z[:, :, -1] = alphas
-    im = ax.imshow(z, extent=[.3, .589, .501, .505], zorder=1)
+    im = ax.imshow(z, extent=[0.3, 0.589, 0.501, 0.505], zorder=1)
+
 
 create_headlight_beam()
 fig
@@ -242,15 +311,16 @@ The cloud of points surrounding the headlight beam is even more challenging to c
 def create_headlight_cloud():
     ax = fig.axes[0]
     z2 = np.empty((100, 100, 4), dtype=float)
-    rgb = mcolors.colorConverter.to_rgb('aqua')
+    rgb = mcolors.colorConverter.to_rgb("aqua")
     z2[:, :, :3] = rgb
     for j, x in enumerate(np.linspace(0, 1, 100)):
-        for i, y in enumerate(np.abs(np.linspace(-.2, .2, 100))):
-            if x * .2 > y:
-                z2[i, j, -1] = 1 - (y + .8) ** 2
+        for i, y in enumerate(np.abs(np.linspace(-0.2, 0.2, 100))):
+            if x * 0.2 > y:
+                z2[i, j, -1] = 1 - (y + 0.8) ** 2
             else:
                 z2[i, j, -1] = 0
-    im2 = ax.imshow(z2, extent=[.3, .65, .45, .55], zorder=1)
+    im2 = ax.imshow(z2, extent=[0.3, 0.65, 0.45, 0.55], zorder=1)
+
 
 create_headlight_cloud()
 fig
@@ -273,6 +343,7 @@ def draw_car():
     create_headlight_beam()
     create_headlight_beam()
 
+
 draw_car()
 fig
 ```
@@ -291,6 +362,7 @@ Finally, the `FuncAnimation` class from the animation module is used to construc
 
 ```python
 from matplotlib.animation import FuncAnimation
+
 
 def update(frame_number, x_delta, radius, angle):
     if frame_number == 0:
@@ -325,8 +397,10 @@ def update(frame_number, x_delta, radius, angle):
         extent[0] -= x_delta
         extent[1] -= x_delta
 
-animation = FuncAnimation(fig, update, init_func=draw_car, frames=110,
-                          repeat=False, fargs=(.015, .052, 4))
+
+animation = FuncAnimation(
+    fig, update, init_func=draw_car, frames=110, repeat=False, fargs=(0.015, 0.052, 4)
+)
 ```
 
 ### Save animation
@@ -334,7 +408,7 @@ animation = FuncAnimation(fig, update, init_func=draw_car, frames=110,
 Finally, we can save the animation as an mp4 file (you must have ffmpeg installed for this to work). We set the frames-per-second (`fps`) to 30. From above, the total number of frames is 110 (enough to move the truck off the screen) so the video will last nearly four seconds (110 / 30).
 
 ```python
-animation.save('tesla_animate.mp4', fps=30, bitrate=3000)
+animation.save("tesla_animate.mp4", fps=30, bitrate=3000)
 ```
 
 <video width="700" height="500" controls>

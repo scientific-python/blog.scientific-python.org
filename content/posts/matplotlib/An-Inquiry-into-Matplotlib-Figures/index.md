@@ -17,8 +17,6 @@ resources:
 # Preliminaries
 
 ```python
-# This is specific to Jupyter Notebooks
-%matplotlib inline
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
@@ -36,7 +34,7 @@ Although a beginner can follow along with this guide, it is primarily meant for 
 
 Essentially, if you know how to take 2 NumPy arrays and plot them (using an appropriate type of graph) on 2 different axes in a single figure and give it basic styling, you're good to go for the purposes of this guide.
 
-If you feel you need some introduction to basic Matplotlib plotting, here's a great guide that can help you get a feel for introductory plotting using Matplotlib : https://matplotlib.org/devdocs/gallery/subplots_axes_and_figures/subplots_demo.html
+If you feel you need some introduction to basic Matplotlib plotting, here's a great guide that can help you get a feel for [introductory plotting using Matplotlib](https://matplotlib.org/devdocs/gallery/subplots_axes_and_figures/subplots_demo.html)
 
 From here on, I will be assuming that you have gained sufficient knowledge to follow along this guide.
 
@@ -89,7 +87,7 @@ plt.style.available
 We shall use `seaborn`. This is done like so:
 
 ```python
-plt.style.use('seaborn')
+plt.style.use("seaborn")
 ```
 
 Let's get started!
@@ -97,10 +95,10 @@ Let's get started!
 ```python
 # Creating some fake data for plotting
 xs = np.linspace(0, 2 * np.pi, 400)
-ys = np.sin(xs ** 2)
+ys = np.sin(xs**2)
 
 xc = np.linspace(0, 2 * np.pi, 600)
-yc = np.cos(xc ** 2)
+yc = np.cos(xc**2)
 ```
 
 # Exploration
@@ -144,9 +142,9 @@ A [`Figure`](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html?hi
 You can define a figure like so (both statements are equivalent):
 
 ```python
-fig = mpl.figure.Figure(figsize=(10,10))
+fig = mpl.figure.Figure(figsize=(10, 10))
 # OR
-fig = plt.figure(figsize=(10,10))
+fig = plt.figure(figsize=(10, 10))
 ```
 
 Notice the word _imaginary_ above. What this means is that a Figure by itself does not have any place for you to plot. You need to attach/add an [`Axes`](https://matplotlib.org/api/axes_api.html?highlight=matplotlib.axes.axes#matplotlib.axes.Axes) to it to do any kind of plotting. You can put as many `Axes` objects as you want inside of any `Figure` you have created.
@@ -161,9 +159,9 @@ An `Axes`:
 You can create an `Axes` like so (both statements are equivalent):
 
 ```python
-ax1 = mpl.axes.Axes(fig=fig, rect=[0,0,0.8,0.8], facecolor='red')
-#OR
-ax1 = plt.Axes(fig=fig, rect=[0,0,0.8,0.8], facecolor='red')
+ax1 = mpl.axes.Axes(fig=fig, rect=[0, 0, 0.8, 0.8], facecolor="red")
+# OR
+ax1 = plt.Axes(fig=fig, rect=[0, 0, 0.8, 0.8], facecolor="red")
 #
 ```
 
@@ -179,7 +177,7 @@ We will go into some of these design decisions in a few moments'
 We will try and recreate the below plot using Matplotlib primitives as a way to understand them better. We'll try and be a slightly creative by deviating a bit though.
 
 ```python
-fig, ax = plt.subplots(2,2)
+fig, ax = plt.subplots(2, 2)
 fig.suptitle("2x2 Grid")
 ```
 
@@ -191,10 +189,10 @@ fig.suptitle("2x2 Grid")
 
 ```python
 # We first need a figure, an imaginary canvas to put things on
-fig = plt.Figure(figsize=(6,6))
+fig = plt.Figure(figsize=(6, 6))
 # Let's start with two Axes with an arbitrary position and size
-ax1 = plt.Axes(fig=fig, rect=[0.3, 0.3, 0.4, 0.4], facecolor='red')
-ax2 = plt.Axes(fig=fig, rect=[0, 0, 1, 1], facecolor='blue')
+ax1 = plt.Axes(fig=fig, rect=[0.3, 0.3, 0.4, 0.4], facecolor="red")
+ax2 = plt.Axes(fig=fig, rect=[0, 0, 1, 1], facecolor="blue")
 ```
 
 Now you need to add the `Axes` to `fig`. You should stop right here and think about why would there be a need to do this when `fig` is already a parent of `ax1` and `ax2`? Let's do this anyway and we'll go into the details afterwards.
@@ -218,14 +216,15 @@ That means you can do this now:
 > Remark: Notice the `ax.reverse()` call in the snippet below. If I hadn't done that, the biggest plot would be placed in the end on top of every other plot and you would just see a single, blank 'cyan' colored plot.
 
 ```python
-fig = plt.figure(figsize=(6,6))
+fig = plt.figure(figsize=(6, 6))
 ax = []
 sizes = np.linspace(0.02, 1, 50)
 for i in range(50):
     color = str(hex(int(sizes[i] * 255)))[2:]
-    if len(color) == 1: color = '0' + color
-    color = '#99' + 2 * color
-    ax.append(plt.Axes(fig=fig, rect=[0,0, sizes[i], sizes[i]], facecolor=color))
+    if len(color) == 1:
+        color = "0" + color
+    color = "#99" + 2 * color
+    ax.append(plt.Axes(fig=fig, rect=[0, 0, sizes[i], sizes[i]], facecolor=color))
 
 ax.reverse()
 for axes in ax:
@@ -252,13 +251,14 @@ This should now make sense. We can now create our original `plt.subplots(2, 2)` 
 (Although, this is definitely not the most convenient way to do this)
 
 ```python
-fig = mpl.figure.Figure(); fig
+fig = mpl.figure.Figure()
+fig
 
 fig.suptitle("Recreating plt.subplots(2, 2)")
 
-ax1 = mpl.axes.Axes(fig=fig, rect=[0,0,0.42,0.42])
+ax1 = mpl.axes.Axes(fig=fig, rect=[0, 0, 0.42, 0.42])
 ax2 = mpl.axes.Axes(fig=fig, rect=[0, 0.5, 0.42, 0.42])
-ax3 = mpl.axes.Axes(fig=fig, rect=[0.5,0,0.42,0.42])
+ax3 = mpl.axes.Axes(fig=fig, rect=[0.5, 0, 0.42, 0.42])
 ax4 = mpl.axes.Axes(fig=fig, rect=[0.5, 0.5, 0.42, 0.42])
 
 fig.add_axes(ax1)
@@ -292,7 +292,7 @@ gs = plt.GridSpec(nrows, ncols, width_ratios, height_ratios)
 More specifically:
 
 ```python
-gs = plt.GridSpec(nrows=3, ncols=3, width_ratios=[1,2,3], height_ratios[3,2,1])
+gs = plt.GridSpec(nrows=3, ncols=3, width_ratios=[1, 2, 3], height_ratios[3, 2, 1])
 ```
 
 `nrows` and `ncols` are pretty self explanatory. `width_ratios` determines the relative width of each column. `height_ratios` follows along the same lines.
@@ -301,10 +301,10 @@ The whole `grid` will always distribute itself using all the space available to 
 ```python
 def annotate_axes(fig):
     """Taken from https://matplotlib.org/gallery/userdemo/demo_gridspec03.html#sphx-glr-gallery-userdemo-demo-gridspec03-py
-       takes a figure and puts an 'axN' label in the center of each Axes
+    takes a figure and puts an 'axN' label in the center of each Axes
     """
     for i, ax in enumerate(fig.axes):
-        ax.text(0.5, 0.5, "ax%d" % (i+1), va="center", ha="center")
+        ax.text(0.5, 0.5, "ax%d" % (i + 1), va="center", ha="center")
         ax.tick_params(labelbottom=False, labelleft=False)
 ```
 
@@ -322,10 +322,12 @@ Notice how the sizes of the `Axes` relates to the ratios we defined when creatin
 
 ```python
 fig.clear()
-ax1, ax2, ax3, ax4 = [fig.add_subplot(gs[0]),
-                     fig.add_subplot(gs[1]),
-                     fig.add_subplot(gs[2]),
-                     fig.add_subplot(gs[3])]
+ax1, ax2, ax3, ax4 = [
+    fig.add_subplot(gs[0]),
+    fig.add_subplot(gs[1]),
+    fig.add_subplot(gs[2]),
+    fig.add_subplot(gs[3]),
+]
 
 annotate_axes(fig)
 fig
@@ -338,7 +340,8 @@ Doing the same thing in a simpler way
 ```python
 def add_gs_to_fig(fig, gs):
     "Adds all `SubplotSpec`s in `gs` to `fig`"
-    for g in gs: fig.add_subplot(g)
+    for g in gs:
+        fig.add_subplot(g)
 ```
 
 ```python
@@ -354,10 +357,14 @@ That means you can now do this:<br>
 (Notice how the `Axes` sizes increase from top-left to bottom-right)
 
 ```python
-fig = plt.figure(figsize=(14,10))
+fig = plt.figure(figsize=(14, 10))
 length = 6
-gs = plt.GridSpec(nrows=length, ncols=length,
-                  width_ratios=list(range(1, length+1)), height_ratios=list(range(1, length+1)))
+gs = plt.GridSpec(
+    nrows=length,
+    ncols=length,
+    width_ratios=list(range(1, length + 1)),
+    height_ratios=list(range(1, length + 1)),
+)
 
 add_gs_to_fig(fig, gs)
 annotate_axes(fig)
@@ -391,13 +398,13 @@ gs[0], gs[1], gs[2], gs[3]
      <matplotlib.gridspec.SubplotSpec at 0x129fc6a50>)
 
 ```python
-print(gs[0,0], gs[0,1], gs[1, 0], gs[1, 1])
+print(gs[0, 0], gs[0, 1], gs[1, 0], gs[1, 1])
 ```
 
     <matplotlib.gridspec.SubplotSpec object at 0x12951a610> <matplotlib.gridspec.SubplotSpec object at 0x12951a890> <matplotlib.gridspec.SubplotSpec object at 0x12951ac10> <matplotlib.gridspec.SubplotSpec object at 0x12951a150>
 
 ```python
-print(gs[0,0], gs[0,1], gs[1, 0], gs[1, 1])
+print(gs[0, 0], gs[0, 1], gs[1, 0], gs[1, 1])
 ```
 
     <matplotlib.gridspec.SubplotSpec object at 0x128fad4d0> <matplotlib.gridspec.SubplotSpec object at 0x1291ebbd0> <matplotlib.gridspec.SubplotSpec object at 0x1294f9850> <matplotlib.gridspec.SubplotSpec object at 0x128106250>
@@ -407,7 +414,7 @@ print(gs[0,0], gs[0,1], gs[1, 0], gs[1, 1])
 _Notice how a group of `gs` objects indexed into at the same time also produces just one object instead of multiple objects_
 
 ```python
-gs[:,:], gs[:, 0]
+gs[:, :], gs[:, 0]
 # both output just one object each
 ```
 
@@ -417,15 +424,17 @@ gs[:,:], gs[:, 0]
 ```python
 # Lets try another `gs` object, this time a little more crowded
 # I chose the ratios randomly
-gs = mpl.gridspec.GridSpec(nrows=3, ncols=3, width_ratios=[1, 2, 1], height_ratios=[4, 1, 3])
+gs = mpl.gridspec.GridSpec(
+    nrows=3, ncols=3, width_ratios=[1, 2, 1], height_ratios=[4, 1, 3]
+)
 ```
 
 _All these operations print just one object. What is going on here?_
 
 ```python
-print(gs[:,0])
-print(gs[1:,:2])
-print(gs[:,:])
+print(gs[:, 0])
+print(gs[1:, :2])
+print(gs[:, :])
 ```
 
     <matplotlib.gridspec.SubplotSpec object at 0x12a075fd0>
@@ -436,7 +445,7 @@ Let's try and add subplots to our `Figure` to `see` what's going on.<br>
 We'll do a few different permutations to get an exact idea.
 
 ```python
-fig = plt.figure(figsize=(5,5))
+fig = plt.figure(figsize=(5, 5))
 ax1 = fig.add_subplot(gs[:2, 0])
 ax2 = fig.add_subplot(gs[2, 0])
 ax3 = fig.add_subplot(gs[:, 1:])
@@ -446,7 +455,7 @@ annotate_axes(fig)
 ![png](output_54_0.png)
 
 ```python
-fig = plt.figure(figsize=(5,5))
+fig = plt.figure(figsize=(5, 5))
 # ax1 = fig.add_subplot(gs[:2, 0])
 ax2 = fig.add_subplot(gs[2, 0])
 ax3 = fig.add_subplot(gs[:, 1:])
@@ -456,7 +465,7 @@ annotate_axes(fig)
 ![png](output_55_0.png)
 
 ```python
-fig = plt.figure(figsize=(5,5))
+fig = plt.figure(figsize=(5, 5))
 # ax1 = fig.add_subplot(gs[:2, 0])
 # ax2 = fig.add_subplot(gs[2, 0])
 ax3 = fig.add_subplot(gs[:, 1:])
@@ -466,14 +475,14 @@ annotate_axes(fig)
 ![png](output_56_0.png)
 
 ```python
-fig = plt.figure(figsize=(5,5))
+fig = plt.figure(figsize=(5, 5))
 # ax1 = fig.add_subplot(gs[:2, 0])
 # ax2 = fig.add_subplot(gs[2, 0])
 ax3 = fig.add_subplot(gs[:, 1:])
 
 # Notice the line below : You can overlay Axes using `GridSpec` too
 ax4 = fig.add_subplot(gs[2:, 1:])
-ax4.set_facecolor('orange')
+ax4.set_facecolor("orange")
 annotate_axes(fig)
 ```
 

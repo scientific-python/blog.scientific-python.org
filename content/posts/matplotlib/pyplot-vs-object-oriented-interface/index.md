@@ -29,7 +29,7 @@ We will assume an initial velocity of zero.
 ```python
 import numpy as np
 
-time = np.arange(0., 10., 0.2)
+time = np.arange(0.0, 10.0, 0.2)
 velocity = np.zeros_like(time, dtype=float)
 distance = np.zeros_like(time, dtype=float)
 ```
@@ -37,7 +37,7 @@ distance = np.zeros_like(time, dtype=float)
 We know that under free-fall, all objects move with the constant acceleration of $$g = 9.8~m/s^2$$
 
 ```python
-g = 9.8 	# m/s^2
+g = 9.8  # m/s^2
 
 velocity = g * time
 distance = 0.5 * g * np.power(time, 2)
@@ -61,8 +61,8 @@ This interface shares a lot of similarities in syntax and methodology with MATLA
 ```python
 import matplotlib.pyplot as plt
 
-plt.figure(figsize=(9,7), dpi=100)
-plt.plot(time,distance,'bo-')
+plt.figure(figsize=(9, 7), dpi=100)
+plt.plot(time, distance, "bo-")
 plt.xlabel("Time")
 plt.ylabel("Distance")
 plt.legend(["Distance"])
@@ -78,8 +78,8 @@ The plot shows how much distance was covered by the free-falling object with eac
 </div>
 
 ```python
-plt.figure(figsize=(9,7), dpi=100)
-plt.plot(time, velocity,'go-')
+plt.figure(figsize=(9, 7), dpi=100)
+plt.plot(time, velocity, "go-")
 plt.xlabel("Time")
 plt.ylabel("Velocity")
 plt.legend(["Velocity"])
@@ -97,9 +97,9 @@ The plot below shows us how the velocity is increasing.
 Let's try to see what kind of plot we get when we plot both distance and velocity in the same plot.
 
 ```python
-plt.figure(figsize=(9,7), dpi=100)
-plt.plot(time, velocity,'g-')
-plt.plot(time, distance,'b-')
+plt.figure(figsize=(9, 7), dpi=100)
+plt.plot(time, velocity, "g-")
+plt.plot(time, distance, "b-")
 plt.ylabel("Distance and Velocity")
 plt.xlabel("Time")
 plt.legend(["Distance", "Velocity"])
@@ -135,13 +135,13 @@ ax1.set_ylabel("distance (m)")
 ax1.set_xlabel("time")
 ax1.plot(time, distance, "blue")
 
-ax2 = ax1.twinx() # create another y-axis sharing a common x-axis
+ax2 = ax1.twinx()  # create another y-axis sharing a common x-axis
 
 ax2.set_ylabel("velocity (m/s)")
 ax2.set_xlabel("time")
 ax2.plot(time, velocity, "green")
 
-fig.set_size_inches(7,5)
+fig.set_size_inches(7, 5)
 fig.set_dpi(100)
 
 plt.show()
@@ -164,7 +164,7 @@ ax1.tick_params(axis="y", labelcolor="blue")
 ax1.xaxis.grid()
 ax1.yaxis.grid()
 
-ax2 = ax1.twinx() # create another y-axis sharing a common x-axis
+ax2 = ax1.twinx()  # create another y-axis sharing a common x-axis
 
 ax2.set_ylabel("velocity (m/s)", color="green")
 ax2.set_xlabel("time")
@@ -173,7 +173,7 @@ ax2.tick_params(axis="y", labelcolor="green")
 ax2.plot(time, velocity, "green")
 ax2.set_yticks(np.linspace(*ax2.get_ybound(), 10))
 
-fig.set_size_inches(7,5)
+fig.set_size_inches(7, 5)
 fig.set_dpi(100)
 fig.legend(["Distance", "Velocity"])
 plt.show()
