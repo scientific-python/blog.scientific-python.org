@@ -182,7 +182,7 @@ dress_axes(ax)
 plt.show()
 ```
 
-![axesFrame](axes_empty.png)
+![ axesFrame](axes_empty.png)
 
 Then it's finally time to plot our data. Since we want to animated the plot, we'll build a function that will be called in `FuncAnimation` later on. Since the state of the plot changes on every time stamp, we have to redress the axes for each frame, easy with our `dress_axes` function. Then we plot our temperature data using basic `plot()`: thin lines for historical measurements, thicker lines for the current year.
 
@@ -239,7 +239,7 @@ draw_data(322)
 plt.show()
 ```
 
-![oneplot](thumbnail.png)
+![ oneplot](thumbnail.png)
 
 Finally it's time to animate, using `FuncAnimation`. Then we save it as a mp4 file or we display it in our notebook with `HTML(anim.to_html5_video())`.
 
@@ -251,4 +251,4 @@ anim = FuncAnimation(
 HTML(anim.to_html5_video())
 ```
 
-![animation](animatedpolar.gif)
+![ animation](animatedpolar.gif)
