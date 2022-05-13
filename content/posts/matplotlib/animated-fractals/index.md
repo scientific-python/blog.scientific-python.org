@@ -44,7 +44,7 @@ is symmetrical.
 
 In mathematics, this phenomenon is known as [self-similarity](https://en.wikipedia.org/wiki/Self-similarity). It means
 a given object is similar (completely or to some extent) to some smaller part of itself. One remarkable example is the
-[Koch Snowflake](https://isquared.digital/visualizations/2020-06-15-koch-curve/) as shown in the image below:
+[Koch Snowflake ](https://isquared.digital/visualizations/2020-06-15-koch-curve/) as shown in the image below:
 
 ![Koch Snowflake](snowflake.png)
 
@@ -155,7 +155,7 @@ In the end, we _interpolate_ the values in `X` and assign them a color drawn fro
 
 After cranking the `animate` function multiple times we get a stunning animation as depicted below:
 
-![Mandelbrot set animation](mandelbrot.gif)
+![Mandelbrot set animation ](mandelbrot.gif)
 
 # Animated Julia Set
 
@@ -253,7 +253,7 @@ of the frame number. Based on that we estimate the convergence of all complex nu
 fixed `threshold` of allowed iterations. Same as before, we save the results in an initially empty matrix `X` and
 associate them to a color relative to the maximum number of iterations. The resulting animation is illustrated below:
 
-![Julia Set Animation](julia_set.gif)
+![Julia Set Animation ](julia_set.gif)
 
 # Summary
 

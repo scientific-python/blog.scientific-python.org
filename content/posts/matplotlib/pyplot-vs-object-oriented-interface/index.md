@@ -71,7 +71,7 @@ plt.grid(True)
 
 The plot shows how much distance was covered by the free-falling object with each passing second.
 
-![png](figure/just-distance.png)
+![png ](figure/just-distance.png)
 
 <div class="image-caption">
 <b>Fig. 1.1</b> The amount of distance travelled in each second is increasing, which is a direct result of increasing velocity due to the gravitational acceleration.
@@ -88,7 +88,7 @@ plt.grid(True)
 
 The plot below shows us how the velocity is increasing.
 
-![png](figure/just-velocity.png)
+![png ](figure/just-velocity.png)
 
 <div class="image-caption">
 <b>Fig. 1.2</b> Velocity is increasing in fixed steps, due to a "constant" acceleration.
@@ -106,7 +106,7 @@ plt.legend(["Distance", "Velocity"])
 plt.grid(True)
 ```
 
-![png](figure/distance-and-velocity-same-axes.png)
+![png ](figure/distance-and-velocity-same-axes.png)
 
 Here, we run into some obvious and serious issues. We can see that since both the quantities share the same axis but have very different magnitudes, the graph looks disproportionate. What we need to do is separate the two quantities on two different axes. This is where the second approach to making plot comes into play.
 
@@ -116,7 +116,7 @@ Also, the `pyplot` approach doesn't really scale when we are required to make mu
 
 When using the OO interface, it helps to know how the `matplotlib` structures its plots. The final plot that we see as the output is a 'Figure' object. The `Figure` object is the top level container for all the other elements that make up the graphic image. These "other" elements are called `Artists`. The `Figure` object can be thought of as a canvas, upon which different artists act to create the final graphic image. This `Figure` can contain any number of various artists.
 
-![png](figure/anatomy-of-a-figure.png)
+![png ](figure/anatomy-of-a-figure.png)
 
 Things to note about the anatomy of a figure are:
 
@@ -147,7 +147,7 @@ fig.set_dpi(100)
 plt.show()
 ```
 
-![png](figure/distance-and-velocity-different-axes-unfinished.png)
+![png ](figure/distance-and-velocity-different-axes-unfinished.png)
 
 This plot is still not very intuitive. We should add a grid and a legend. Perhaps, we can also change the color of the axis labels and tick labels to the color of the lines.
 
@@ -189,7 +189,7 @@ The command `ax1.set_yticks(np.linspace(*ax1.get_ybound(), 10))` calculates the 
 
 The same process is repeated for the second axis.
 
-![png](figure/distance-and-velocity-different-axes-finished.png)
+![png ](figure/distance-and-velocity-different-axes-finished.png)
 
 ## Conclusion
 
