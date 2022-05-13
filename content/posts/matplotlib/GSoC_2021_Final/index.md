@@ -73,7 +73,7 @@ It might seem like an _outdated_ approach for text rendering, now that we have t
 
 This was primarily because of the lack of **any standardization** for representation of fonts (Adobe had their own font representation, and so did Apple, Microsoft, etc.)
 
-| ![Previous](https://user-images.githubusercontent.com/43996118/128605750-9d76fa4a-ce57-45c6-af23-761334d48ef7.png) | ![After](https://user-images.githubusercontent.com/43996118/128605746-9f79ebeb-c03d-407e-9e27-c3203a210908.png) |
+| ![Previous ](https://user-images.githubusercontent.com/43996118/128605750-9d76fa4a-ce57-45c6-af23-761334d48ef7.png) | ![After ](https://user-images.githubusercontent.com/43996118/128605746-9f79ebeb-c03d-407e-9e27-c3203a210908.png) |
 | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
 
 <p align="middle">
@@ -96,7 +96,7 @@ Quoting one of my [previous](../gsoc_2021_prequarter/) blogs:
 My first approach was to change the existing public `findfont` API to incorporate multiple filepaths. Since Matplotlib has a _very huge_ userbase, there's a high chance it would break a chunk of people's workflow:
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/43996118/129636132-47b141b3-f149-49b7-b0c0-67c256bd6ee1.png" alt="FamilyParsingFlowChart" width="60%" />
+  <img src="https://user-images.githubusercontent.com/43996118/129636132-47b141b3-f149-49b7-b0c0-67c256bd6ee1.png" alt="FamilyParsingFlowChart " width="60%" />
   First PR (left), Second PR (right)
 </p>
 
@@ -107,7 +107,7 @@ Once we get a list of font paths, we need to change the internal representation 
 But that is not the case anymore, here's a flowchart to explain what happens now:
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/43996118/129720023-14f5d67f-f279-433f-ad78-e5eccb6c784a.png" alt="FamilyParsingFlowChart" width="100%" />
+  <img src="https://user-images.githubusercontent.com/43996118/129720023-14f5d67f-f279-433f-ad78-e5eccb6c784a.png" alt="FamilyParsingFlowChart " width="100%" />
   Font-Fallback Algorithm
 </p>
 

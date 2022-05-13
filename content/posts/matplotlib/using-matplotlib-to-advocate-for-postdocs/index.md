@@ -36,7 +36,7 @@ I have used [Matplotlib](https://matplotlib.org) to plot the NIH stipend levels
 (y axis) for each year of postdoctoral experience (x axis) for the past 4 years
 of NIH guidelines (color). I have also looked at the inflation of years 2017--2019
 and increased the salaries of the previous year by that percentage (dashed lines).
-![Postdoc salary in the past 4 years.](gross_salary.png)
+![Postdoc salary in the past 4 years. ](gross_salary.png)
 
 The data revealed that the salaries of 2017 were just increased by the
 inflation rate for the most senior postdocs, while junior postdocs (up to 1 year
@@ -51,7 +51,7 @@ looking at the postdoc salaries, I subtracted from each salary the average rent
 for a one-bedroom apartment in Boston.
 Of course, it also increases every year, but, unfortunately for postdocs, **rent
 increases way more than the inflation**. The results are below.
-![Postdoc salary in the past 4 years minus the average rent in Boston.](gross_salary_minus_rent.png)
+![Postdoc salary in the past 4 years minus the average rent in Boston. ](gross_salary_minus_rent.png)
 
 It turns out that the best year for postdocs with at least one year of experience
 was actually 2016. In the subsequent years, the real estate has eaten larger and

@@ -35,7 +35,7 @@ I quickly got involved in Matplotlib’s community; it was very welcoming and be
 ## First Contributions
 
 We all mess up, my [very first PR](https://github.com/opencv/opencv/pull/18440) to an organisation like OpenCV went horrible, till date, it looks like this:
-![OpenCV_PR](https://user-images.githubusercontent.com/43996118/118848259-35d6e300-b8ec-11eb-8cdc-387e9f5a37a3.png)
+![OpenCV_PR ](https://user-images.githubusercontent.com/43996118/118848259-35d6e300-b8ec-11eb-8cdc-387e9f5a37a3.png)
 
 In all honesty, I added a single commit with only a few lines of diff.
 

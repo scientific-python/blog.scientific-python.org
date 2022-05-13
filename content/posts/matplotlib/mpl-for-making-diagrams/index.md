@@ -178,7 +178,7 @@ for x0 in np.arange(-3, 16, 0.5):
 fig.savefig("stripes.png", dpi=300)
 ```
 
-![png](stripes.png)
+![png ](stripes.png)
 
 Or more intricately:
 
@@ -242,7 +242,7 @@ ax.annotate(
 fig.savefig("causal.png", dpi=300)
 ```
 
-![png](causal.png)
+![png ](causal.png)
 
 Once you get started on this path, you can start making
 extravagantly annotated plots. It can elevate your data

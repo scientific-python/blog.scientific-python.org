@@ -14,7 +14,7 @@ resources:
       showOnTop: false
 ---
 
-![Warming Stripes](warming-stripes.png)
+![Warming Stripes ](warming-stripes.png)
 
 Earth's temperatures are rising and nothing shows this in a simpler,
 more approachable graphic than the “Warming Stripes”.

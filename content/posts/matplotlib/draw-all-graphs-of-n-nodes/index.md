@@ -168,23 +168,23 @@ def plot_graphs(graphs, figsize=14, dotsize=20):
 
 Here are the results. To build the anticipation, let's start with something trivial: all graphs of 3 nodes:
 
-![](3nodes.png)
+![ ](3nodes.png)
 
 All graphs of 4 nodes:
 
-![](4nodes.png)
+![ ](4nodes.png)
 
 All graphs of 5 nodes:
 
-![](5nodes.png)
+![ ](5nodes.png)
 
 Generating figures above is of course all instantaneous on a decent computer, but for 6 nodes (below) it takes a few seconds:
 
-![](6nodes.png)
+![ ](6nodes.png)
 
 For 7 nodes (below) it takes about 5-10 minutes. It's easy to see why: the brute-force approach generates all \\(2^{\frac{n(n-1)}{2}}\\) possible graphs, which means that the number of operations grows exponentially! Every increase of \\(n\\) by one, gives us \\(n-1\\) new edges to consider, which means that the time to run the program increases by \\(~2^{n-1}\\). For \\(n=7\\) it brought me from seconds to minutes, for \\(n=8\\) it would have shifted me from minutes to hours, and for \\(n=9\\), from hours, to months of computation. Isn't it fun? We are all specialists in exponential growth these days, so here you are :)
 
-![](7nodes.png)
+![ ](7nodes.png)
 
 The code is available as a [Jupyter Notebook on my GitHub](https://github.com/khakhalin/Sketches/blob/master/classic/generate_all_graphs.ipynb). I hope you enjoyed the pictures, and the read! Which of those charms above would bring most luck? Which ones seem best for divination? Let me know what you think! :)
 
