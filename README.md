@@ -1,5 +1,7 @@
 # Blog of the Scientific Python community
 
+Test
+
 An open source, _community_ driven blog for the Scientific Python community.
 
 ## Call for Contributions
