@@ -155,7 +155,7 @@ In the end, we _interpolate_ the values in `X` and assign them a color drawn fro
 
 After cranking the `animate` function multiple times we get a stunning animation as depicted below:
 
-![Mandelbrot set animation. The first few frames show only show a few outlines of the Mandelbrot shape. The middle frames show a more defined shape. The last few frames show the characteristic Mandelbrot shape in a very clear way](mandelbrot.gif)
+![Mandelbrot set animation. The first few frames show only show a few outlines of the Mandelbrot shape. The middle frames show a more defined shape. The last few frames show the characteristic Mandelbrot shape in a very clear way.](mandelbrot.gif)
 
 # Animated Julia Set
 
@@ -253,7 +253,7 @@ of the frame number. Based on that we estimate the convergence of all complex nu
 fixed `threshold` of allowed iterations. Same as before, we save the results in an initially empty matrix `X` and
 associate them to a color relative to the maximum number of iterations. The resulting animation is illustrated below:
 
-![Julia Set Animation ](julia_set.gif)
+![Julia Set Animation](julia_set.gif)
 
 # Summary
 

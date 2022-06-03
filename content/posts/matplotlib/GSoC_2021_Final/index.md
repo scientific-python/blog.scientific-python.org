@@ -73,7 +73,7 @@ It might seem like an _outdated_ approach for text rendering, now that we have t
 
 This was primarily because of the lack of **any standardization** for representation of fonts (Adobe had their own font representation, and so did Apple, Microsoft, etc.)
 
-| ![Previous ](https://user-images.githubusercontent.com/43996118/128605750-9d76fa4a-ce57-45c6-af23-761334d48ef7.png) | ![After ](https://user-images.githubusercontent.com/43996118/128605746-9f79ebeb-c03d-407e-9e27-c3203a210908.png) |
+| ![Previous](https://user-images.githubusercontent.com/43996118/128605750-9d76fa4a-ce57-45c6-af23-761334d48ef7.png) | ![After](https://user-images.githubusercontent.com/43996118/128605746-9f79ebeb-c03d-407e-9e27-c3203a210908.png) |
 | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
 
 <p align="middle">

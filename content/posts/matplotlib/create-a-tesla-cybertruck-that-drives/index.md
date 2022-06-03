@@ -65,7 +65,7 @@ create_axes()
 fig
 ```
 
-![png ](output_4_0.png)
+![png](output_4_0.png)
 
 ### Shapes in Matplotlib
 
@@ -142,7 +142,7 @@ create_body()
 fig
 ```
 
-![png ](output_6_0.png)
+![png](output_6_0.png)
 
 #### Tires
 
@@ -174,7 +174,7 @@ create_tires()
 fig
 ```
 
-![png ](output_8_0.png)
+![png](output_8_0.png)
 
 #### Axles
 
@@ -271,7 +271,7 @@ create_other_details()
 fig
 ```
 
-![png ](output_12_0.png)
+![png](output_12_0.png)
 
 #### Color gradients for the head light beam
 
@@ -301,7 +301,7 @@ create_headlight_beam()
 fig
 ```
 
-![png ](output_14_0.png)
+![png](output_14_0.png)
 
 #### Headlight Cloud
 
@@ -326,7 +326,7 @@ create_headlight_cloud()
 fig
 ```
 
-![png ](output_16_0.png)
+![png](output_16_0.png)
 
 ### Creating a Function to Draw the Car
 
@@ -348,7 +348,7 @@ draw_car()
 fig
 ```
 
-![png ](output_18_0.png)
+![png](output_18_0.png)
 
 ## Animation
 

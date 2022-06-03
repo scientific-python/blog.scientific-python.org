@@ -156,7 +156,7 @@ V /= V[:,3].reshape(-1,1)
 
 Now we can display the result again ([bunny-2.py](bunny-2.py)):
 
-![ ](bunny-2.png)
+![](bunny-2.png)
 
 Oh, weird result. What's wrong? What is wrong is that the camera is actually
 inside the bunny. To have a proper rendering, we need to move the bunny away
@@ -174,7 +174,7 @@ V /= V[:,3].reshape(-1,1)
 
 An now you should obtain ([bunny-3.py](bunny-3.py)):
 
-![ ](bunny-3.png)
+![](bunny-3.png)
 
 # Model, view, projection (MVP)
 
@@ -227,18 +227,18 @@ V /= V[:,3].reshape(-1,1)
 
 You should obtain ([bunny-4.py](bunny-4.py)):
 
-![ ](bunny-4.png)
+![](bunny-4.png)
 
 Let's now play a bit with the aperture such that you can see the difference.
 Note that we also have to adapt the distance to the camera in order for the bunnies to have the same apparent size ([bunny-5.py](bunny-5.py)):
 
-![ ](bunny-5.png)
+![](bunny-5.png)
 
 # Depth sorting
 
 Let's try now to fill the triangles ([bunny-6.py](bunny-6.py)):
 
-![ ](bunny-6.png)
+![](bunny-6.png)
 
 As you can see, the result is "interesting" and totally wrong. The problem is
 that the PolyCollection will draw the triangles in the order they are given
@@ -259,7 +259,7 @@ T = T[I,:]
 
 And now everything is rendered right ([bunny-7.py](bunny-7.py)):
 
-![ ](bunny-7.png)
+![](bunny-7.png)
 
 Let's add some colors using the depth buffer. We'll color each triangle
 according to it depth. The beauty of the PolyCollection object is that you can
@@ -276,7 +276,7 @@ T, C = T[I,:], C[I,:]
 
 And now everything is rendered right ([bunny-8.py](bunny-8.py)):
 
-![ ](bunny-8.png)
+![](bunny-8.png)
 
 The final script is 57 lines (but hardly readable):
 
@@ -343,8 +343,8 @@ plt.show()
 Now it's your turn to play. Starting from this simple script, you can achieve
 interesting results:
 
-![ ](checkered-sphere.png)
-![ ](platonic-solids.png)
-![ ](surf.png)
-![ ](bar.png)
-![ ](contour.png)
+![](checkered-sphere.png)
+![](platonic-solids.png)
+![](surf.png)
+![](bar.png)
+![](contour.png)
