@@ -39,8 +39,8 @@ accessibility: describe the image based on its context.
 
 ![The team behind the alt text. Listed from left to right in Zoom, they are.]()
 
-During this event, thirteen people wrote ## of image descriptions to improve ## 
-of blog posts in one hour (plus the time for post-event feedback 😉). Wow! The 
+During this event, thirteen people wrote 23 image descriptions to improve 11 
+blog posts in one hour (plus the time for post-event feedback 😉). Wow! The 
 images covered range from illustrative additions, to creative tutorials, to 
 charts that carry the message of the blog post, so it provides great set of 
 examples on how to consider 
@@ -56,7 +56,7 @@ number, but a taste of our less quantifiable wins can be found on
 If you want to further explore the experience and relive the joy, you can find 
 resources on the [event agenda](https://hackmd.io/bfhftUCiTRqx2S8CTGUt6g?view), 
 discussions on the [working pull request](https://github.com/MarsBarLee/blog.scientific-python.org/pull/1), 
-and the final steps needed to make change on the [contributing pull request]().
+and the final steps needed to make change on the [contributing pull request](https://github.com/scientific-python/blog.scientific-python.org/pull/71).
 
 But wait, there's more! While the community made great progress on improving 
 the blog, the work to add or imporve alt text on Scientific Python's blog, 
