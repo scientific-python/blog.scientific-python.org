@@ -206,7 +206,7 @@ create_axles()
 fig
 ```
 
- ![png](output_10_0.png)
+![png](output_10_0.png)
 
 #### Other details
 
