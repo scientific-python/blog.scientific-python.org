@@ -3,7 +3,7 @@ title: "NumPy Contributor Spotlight: Mukulika Pahari"
 date: 2022-04-12
 draft: false
 description: "An interview with Mukulika Pahari, a NumPy contributor."
-categories: ["contributor spotlight", "numpy"]
+tags: ["contributor-spotlight", "numpy"]
 displayInList: true
 author: ["Danuta Dzierżanowska"]
 ---
