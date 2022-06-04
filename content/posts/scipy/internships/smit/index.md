@@ -8,8 +8,6 @@ displayInList: true
 author: ["Smit Lunagariya"]
 ---
 
-# SciPy Internship: 2021 - 2022
-
 I was [selected as an intern](https://mail.python.org/archives/list/scipy-dev@python.org/message/4S43BYHDQIPQENNJ6EMQY5QZDZK3ZT5I/) to work on SciPy build system. In this blog post, I will be describing my journey of this 10-months long internship at SciPy. I worked on a variety of topics starting from migrating the SciPy build system to [Meson](https://mesonbuild.com/index.html), cleaning up the public API namespaces and adding [Uarray](https://uarray.org/en/latest/) support to SciPy submodules.
 
 
