@@ -155,7 +155,7 @@ In the end, we _interpolate_ the values in `X` and assign them a color drawn fro
 
 After cranking the `animate` function multiple times we get a stunning animation as depicted below:
 
-![Mandelbrot set animation. The first few frames show only show a few outlines of the Mandelbrot shape. The middle frames show a more defined shape. The last few frames show the characteristic Mandelbrot shape in a very clear way.](mandelbrot.gif)
+![Mandelbrot set animation. The first few frames only show a few outlines of the Mandelbrot shape. The middle frames show a more defined shape. The last few frames show the characteristic Mandelbrot shape in a very clear way.](mandelbrot.gif)
 
 # Animated Julia Set
 
