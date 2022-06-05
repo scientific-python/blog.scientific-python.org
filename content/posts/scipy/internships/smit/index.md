@@ -10,7 +10,6 @@ author: ["Smit Lunagariya"]
 
 I was [selected as an intern](https://mail.python.org/archives/list/scipy-dev@python.org/message/4S43BYHDQIPQENNJ6EMQY5QZDZK3ZT5I/) to work on SciPy build system. In this blog post, I will be describing my journey of this 10-months long internship at SciPy. I worked on a variety of topics starting from migrating the SciPy build system to [Meson](https://mesonbuild.com/index.html), cleaning up the public API namespaces and adding [Uarray](https://uarray.org/en/latest/) support to SciPy submodules.
 
-
 # Experience
 
 ## Meson Build System
@@ -25,7 +24,6 @@ The main reasons for switching to Meson include (in addition to `distutils` bein
 
 _For more details on the initial proposal to switch to Meson, see [scipy-13615](https://github.com/scipy/scipy/issues/13615)_
 
-
 I was initially selected to work on the migrating the SciPy build system to [meson](https://mesonbuild.com/index.html). I started by adding Meson build support
 for [scipy.misc](https://github.com/rgommers/scipy/pull/35) and [scipy.signal](https://github.com/rgommers/scipy/pull/37). While working on this, we came across many [build warnings](https://github.com/rgommers/scipy/issues/42) which we wanted to fix, since they unnecessarily increased the build log and might point to some hidden bugs. I fixed these warnings, the majority of which came from [deprecated NumPy C API calls](https://github.com/rgommers/scipy/issues/30).
 
@@ -37,12 +35,12 @@ for [scipy.misc](https://github.com/rgommers/scipy/pull/35) and [scipy.signal](h
 
 Meson build support including all the above work was merged into SciPy's `main` branch around Christmas 2021. Meson will now become the default build in the upcoming 1.9.0 release.
 
-
 ## Making cleaner public namespaces
 
 #### What's the issue?
 
 _"A basic API design principle is: a public object should only be available from one namespace. Having any function in two or more places is just extra technical debt, and with things like dispatching on an API or another library implementing a mirror API, the cost goes up."_
+
 ```py
 >>> from scipy import ndimage
 >>> ndimage.filters.gaussian_filter is ndimage.gaussian_filter  # :(
@@ -63,15 +61,16 @@ True
 
 ## Adding Uarray support
 
-
 _"SciPy adopted uarray to support a multi-dispatch mechanism with the goal being: allow writing backends for public APIs that execute in parallel, distributed or on GPU."_
 
 For about the last four months, I worked on adding [Uarray support](https://github.com/scipy/scipy/issues/14353) to SciPy submobules. I do recommend reading [this blog post](https://labs.quansight.org/blog/2021/10/array-libraries-interoperability/) by Anirudh Dagar covering the motivation and actual usage of `uarray`. I picked up the following submodules for adding `uarray` compatibility:
+
 - [signal](https://github.com/rgommers/scipy/pull/101)
 - [linalg](https://github.com/scipy/scipy/pull/15610)
 - [special](https://github.com/scipy/scipy/pull/15665)
 
 At the same time, in order to show a working prototype, I also added `uarray` backends in CuPy to the following submodules:
+
 - `cupyx.scipy.ndimage` ([PR #6403](https://github.com/cupy/cupy/pull/6403))
 - `cupyx.scipy.linalg` ([PR #6460](https://github.com/cupy/cupy/pull/6460))
 - `cupyx.scipy.special` ([PR #6564](https://github.com/cupy/cupy/pull/6564))
