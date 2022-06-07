@@ -1,0 +1,5 @@
+baseURL = 'http://blog.scientific-python.org'
+languageCode = 'en-us'
+title = 'GSoC 2022'
+
+theme="solar-theme-hugo"
