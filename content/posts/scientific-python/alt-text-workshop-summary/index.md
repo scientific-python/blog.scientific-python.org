@@ -68,4 +68,4 @@ website, and documentation is ongoing. You can continue these efforts by
 
 ---
 
-*This image description event has been run across multiple open-source projects in the scientific computing ecosystem. [Reach out via issue](https://github.com/Quansight-Labs/jupyter-a11y-mgmt/issues/new/choose) if you are interested in running a similar event on a project you are part of.* ❤️
+*This image description event has been run across multiple open-source projects in the scientific computing ecosystem. [Reach out via issue](https://github.com/alt-text-task-force) if you are interested in running a similar event on a project you are part of.* ❤️
