@@ -1,7 +1,7 @@
 ---
 title: "Hello World"
 date: 2022-06-09
-draft: true
+draft: false
 description: "Getting started"
 tags: ["gsoc", "networkx"]
 displayInList: true
