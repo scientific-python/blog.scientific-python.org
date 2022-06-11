@@ -1,15 +1,15 @@
 ---
 title: "Hello World"
 date: 2022-06-09
-draft: true
-description: "Exploring an algoritm to generate arborescences in ascending order"
+draft: false
+description: "Getting started"
 tags: ["gsoc", "networkx"]
 displayInList: true
-author: ["mjschwenne"]
+author: ["kpetridis24"]
 
 resources:
   - name: featuredImage
-    src: "mjschwenne_GSoc.png"
+    src: "GSoC_logo.png"
     params:
       description: "Google Summer of Code Logo with NetworkX logo"
       showOnTop: true
