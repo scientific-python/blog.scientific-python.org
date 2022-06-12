@@ -15,6 +15,12 @@ resources:
       showOnTop: true
 ---
  
-I got accepted as a GSoC contributor, and I am so excited to spend the summer working on 
+# Intro
+I got accepted as a **GSoC** contributor, and I am so excited to spend the summer working on 
 such an incredibly interesting project. The mentors are very welcoming, communicative, fun 
-to be around, and I really look forward to collaborate with them.
+to be around, and I really look forward to collaborating with them. My application for GSoC 2022 
+can be [found here](https://summerofcode.withgoogle.com/programs/2022/projects/V1hY83XG).
+
+# Project
+The project I'll be working on, is the implementation of **VF2++**, a state-of-the-art algorithm used for the 
+**Graph Isomorphism** problem.
