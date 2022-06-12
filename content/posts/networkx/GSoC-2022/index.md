@@ -9,7 +9,7 @@ author: ["kpetridis24"]
 
 resources:
   - name: featuredImage
-    src: "mjschwenne_GSoC.png"
+    src: "GSoC_networkx_logo.png"
     params:
       description: "Google Summer of Code Logo with NetworkX logo"
       showOnTop: true
