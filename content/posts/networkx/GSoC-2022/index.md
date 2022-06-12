@@ -14,9 +14,6 @@ resources:
       description: "Google Summer of Code Logo with NetworkX logo"
       showOnTop: true
 ---
- 
-
-
 
 # Intro
 I got accepted as a **GSoC** contributor, and I am so excited to spend the summer working on 
