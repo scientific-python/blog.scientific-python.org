@@ -23,4 +23,5 @@ can be [found here](https://summerofcode.withgoogle.com/programs/2022/projects/V
 
 # Project
 The project I'll be working on, is the implementation of **VF2++**, a state-of-the-art algorithm used for the 
-**Graph Isomorphism** problem.
+**Graph Isomorphism** problem. More details about the algorithm can be found 
+[here](https://www.sciencedirect.com/science/article/abs/pii/S0166218X18300829).
