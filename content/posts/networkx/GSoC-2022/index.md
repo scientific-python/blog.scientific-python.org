@@ -1,5 +1,5 @@
 ---
-title: "Hello World"
+title: "GSoC 2022"
 date: 2022-06-09
 draft: false
 description: "Getting started"
@@ -9,12 +9,15 @@ author: ["kpetridis24"]
 
 resources:
   - name: featuredImage
-    src: "GSoC_logo.png"
+    src: "mjschwenne_GSoC.png"
     params:
       description: "Google Summer of Code Logo with NetworkX logo"
       showOnTop: true
 ---
  
+
+
+
 # Intro
 I got accepted as a **GSoC** contributor, and I am so excited to spend the summer working on 
 such an incredibly interesting project. The mentors are very welcoming, communicative, fun 
