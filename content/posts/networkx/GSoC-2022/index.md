@@ -23,5 +23,19 @@ can be [found here](https://summerofcode.withgoogle.com/programs/2022/projects/V
 
 # Project
 The project I'll be working on, is the implementation of **VF2++**, a state-of-the-art algorithm used for the 
-**Graph Isomorphism** problem. More details about the algorithm can be found 
-[here](https://www.sciencedirect.com/science/article/abs/pii/S0166218X18300829).
+**Graph Isomorphism** problem, which lies in the complexity class **NP**. The functionality of the algorithm reminds a 
+regular, but more complex form of a **DFS**, but performed on the possible solutions rather than the graph nodes. In order 
+to verify/reject the isomorphism between two graphs, we examine every possible candidate pair of nodes (one from the first
+and one from the second graph) and check whether going deeper into the DFS tree is feasible using specific rules. In case 
+of feasibility establishment, the DFS tree is expanded, investigating deeper pairs. When one pair is not feasible, we 
+go up the tree and follow a different brach, just like in a regular **DFS**. More details about the algorithm can be 
+found [here](https://www.sciencedirect.com/science/article/abs/pii/S0166218X18300829). 
+
+# Motivation
+The major reasons I chose this project emanate from both my love for **Graph Theory**, and the fascinating nature of 
+this individual project. The algorithm itself is so recent, that **NetworkX** is possibly going to hold one of the first
+implementations of it. This might become a reference that is going to help to further develop and optimize future 
+implementations of the algorithm by other organisations. Regarding my personal gain, I will become more familiar with 
+the open source communities and their philosophy, I will collaborate with highly skilled individuals and cultivate a 
+significant ammount of experience on researching, working as a team, getting feedback and help when needed, contributing 
+to an actual scientific library. 
