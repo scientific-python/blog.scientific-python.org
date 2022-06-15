@@ -1,12 +1,15 @@
 ---
 title: "GSoC 2022: NetworkX VF2++ Implementation"
-date: 2022-06-09 draft: false description: "Getting started"
+date: 2022-06-09 
+draft: false 
+description: "Getting started"
 tags: ["gsoc", "networkx"]
-displayInList: true author: ["Konstantinos Petridis"]
+displayInList: true 
+author: ["Konstantinos Petridis"]
 
 resources:
-
-- name: featuredImage src: "GSoC_networkx_logo.png"
+- name: featuredImage 
+  src: "GSoC_networkx_logo.png"
   params:
   description: "Google Summer of Code Logo with NetworkX logo"
   showOnTop: true
