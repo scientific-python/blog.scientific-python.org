@@ -137,7 +137,7 @@ document or presentation you're working on
 fig.savefig("blank_diagram.png", dpi=300)
 ```
 
-![Blank diagram example](blank_diagram.png)
+![Blank diagram example.](blank_diagram.png)
 
 If you're making a collection of diagrams,
 you can make a convenient template for your blank canvas.
@@ -178,7 +178,7 @@ for x0 in np.arange(-3, 16, 0.5):
 fig.savefig("stripes.png", dpi=300)
 ```
 
-![png](stripes.png)
+![White rectangle with black stripes.](stripes.png)
 
 Or more intricately:
 
@@ -242,7 +242,7 @@ ax.annotate(
 fig.savefig("causal.png", dpi=300)
 ```
 
-![png](causal.png)
+![A joke flow chart. The top level goes from left to right, and then both left and right edges lead to the bottom level. The top level is: 1. My roommate is a Philistine and a boor. 2. My roommate ate the last of the cold cereal. 3. I am really really hungry. The bottom level is: I’m annoyed at my roommate.](causal.png)
 
 Once you get started on this path, you can start making
 extravagantly annotated plots. It can elevate your data

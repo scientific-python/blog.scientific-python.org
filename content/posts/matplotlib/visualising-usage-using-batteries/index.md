@@ -282,4 +282,4 @@ plt.show()
 
 So, we have the plot below. You can customise the design as you want in the `draw_battery()` function - change size, colours, shapes etc
 
-![Usage_Chart_Liverpool](Liverpool_Usage_Chart.png)
+![Usage Chart Liverpool](Liverpool_Usage_Chart.png)

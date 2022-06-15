@@ -71,7 +71,7 @@ plt.grid(True)
 
 The plot shows how much distance was covered by the free-falling object with each passing second.
 
-![png](figure/just-distance.png)
+![Fig. 1.1](figure/just-distance.png)
 
 <div class="image-caption">
 <b>Fig. 1.1</b> The amount of distance travelled in each second is increasing, which is a direct result of increasing velocity due to the gravitational acceleration.
@@ -88,7 +88,7 @@ plt.grid(True)
 
 The plot below shows us how the velocity is increasing.
 
-![png](figure/just-velocity.png)
+![Fig. 1.2](figure/just-velocity.png)
 
 <div class="image-caption">
 <b>Fig. 1.2</b> Velocity is increasing in fixed steps, due to a "constant" acceleration.

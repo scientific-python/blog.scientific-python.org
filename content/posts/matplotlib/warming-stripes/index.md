@@ -14,7 +14,7 @@ resources:
       showOnTop: false
 ---
 
-![Warming Stripes](warming-stripes.png)
+![A horizontal bar divided into stripes with colors ranging from white to shades of blue and shades of red. There is a clear tendency of shades of blue on the left side of the bar, and shades of red on the right side of the bar.](warming-stripes.png)
 
 Earth's temperatures are rising and nothing shows this in a simpler,
 more approachable graphic than the “Warming Stripes”.

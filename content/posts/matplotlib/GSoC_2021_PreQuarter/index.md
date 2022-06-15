@@ -102,6 +102,6 @@ One last thing to note: Even if we do complete the first milestone, we wouldn't 
 We still need to migrate the library's internal implementation from **font-first** to **text-first**!
 
 But that's for later, for now:
-![OnceAgainThankingYou](https://user-images.githubusercontent.com/43996118/126441988-5a2067fd-055e-44e5-86e9-4dddf47abc9d.png)
+![Bernie Sanders with text that read 'I am once again thanking you for reading.'](https://user-images.githubusercontent.com/43996118/126441988-5a2067fd-055e-44e5-86e9-4dddf47abc9d.png)
 
 #### NOTE: This blog post is also available at my [personal website](https://aitikgupta.github.io/gsoc-pre-quarter/).

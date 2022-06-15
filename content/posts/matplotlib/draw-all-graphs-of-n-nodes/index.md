@@ -168,19 +168,19 @@ def plot_graphs(graphs, figsize=14, dotsize=20):
 
 Here are the results. To build the anticipation, let's start with something trivial: all graphs of 3 nodes:
 
-![](3nodes.png)
+![Two non isomorphic graphs with 3 nodes, the first graph connects all 3 nodes and creates a triangle. The second graph is a path graph with 3 nodes connected as a single path.](3nodes.png)
 
 All graphs of 4 nodes:
 
-![](4nodes.png)
+![All six possible non isomorphic graphs with 4 nodes. The first graph is a complete graph with all 4 nodes connected to each other. The second one is a complete graph with one edge removed. The third graph is a triangle graph with one node attached with one of the nodes in the graph. The fourth graph is a star graph, with one central node connected to the other 3 nodes. The fifth one is a graph where the edges form a square. The sixth one is a path graph which connects all 4 nodes as a single path](4nodes.png)
 
 All graphs of 5 nodes:
 
-![](5nodes.png)
+![All 21 possibilities of non isomorphic graphs with 5 nodes. The different graphs show multiple possible structures from a complete graph of 5 nodes to a path graph of 5 nodes. Other structures present in this collection of graphs show a pentagon shaped graph, a star graph and others.](5nodes.png)
 
 Generating figures above is of course all instantaneous on a decent computer, but for 6 nodes (below) it takes a few seconds:
 
-![](6nodes.png)
+![All 112 possibilities of non isomorphic graphs with 6 nodes. The different graphs show multiple possible structures from a complete graph of 6 nodes to a path graph of 6 nodes. Other structures present in this collection of graphs show a hexagon shaped graph, a star graph, two complete graphs with 4 nodes stacked on top of each other with the two complete 4 graphs sharing an edge and 107 other structures!](6nodes.png)
 
 For 7 nodes (below) it takes about 5-10 minutes. It's easy to see why: the brute-force approach generates all \\(2^{\frac{n(n-1)}{2}}\\) possible graphs, which means that the number of operations grows exponentially! Every increase of \\(n\\) by one, gives us \\(n-1\\) new edges to consider, which means that the time to run the program increases by \\(~2^{n-1}\\). For \\(n=7\\) it brought me from seconds to minutes, for \\(n=8\\) it would have shifted me from minutes to hours, and for \\(n=9\\), from hours, to months of computation. Isn't it fun? We are all specialists in exponential growth these days, so here you are :)
 
