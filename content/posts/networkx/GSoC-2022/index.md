@@ -2,7 +2,8 @@
 title: "GSoC 2022: NetworkX VF2++ Implementation"
 date: 2022-06-09 
 draft: false 
-description: "Getting started"
+description: "This is the first blog of my GSoC-2022 journey. It includes general information about me, and a superficial 
+description of the project."
 tags: ["gsoc", "networkx"]
 displayInList: true 
 author: ["Konstantinos Petridis"]
