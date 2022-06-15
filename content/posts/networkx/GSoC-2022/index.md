@@ -26,7 +26,7 @@ My name is Konstantinos Petridis, and I am an **Electrical Engineering** student
 Thessaloniki. I am currently on my 5th year of studies, with a **Major in Electronics & Computer Science**. Although a 
 wide range of scientific fields fascinate me, I have a strong passion for **Computer Science**, **Physics** and **Space**.
 I love to study, learn new things and don't hesitate to express my curiosity by asking a bunch of questions to the point 
-of being annoying :).  
+of being annoying. You can find me on GitHub, [here](https://github.com/kpetridis24).
 
 # Project
 The project I'll be working on, is the implementation of **VF2++**, a state-of-the-art algorithm used for the 
@@ -38,7 +38,7 @@ nodes. In order to verify/reject the isomorphism between two graphs, we examine 
 (one from the first and one from the second graph) and check whether going deeper into the DFS tree is feasible using 
 specific rules. In case of feasibility establishment, the DFS tree is expanded, investigating deeper pairs. When one pair 
 is not feasible, we go up the tree and follow a different branch, just like in a regular **DFS**. More details about the 
-algorithm can be found [here](https://www.sciencedirect.com/science/article/abs/pii/S0166218X18300829). 
+algorithm can be found [here](https://doi.org/10.1016/j.dam.2018.02.018). 
 
 # Motivation
 The major reasons I chose this project emanate from both my love for **Graph Theory**, and the fascinating nature of 
