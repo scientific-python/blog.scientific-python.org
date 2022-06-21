@@ -1,15 +1,15 @@
 ---
 title: "GSoC 2022: NetworkX VF2++ Implementation"
-date: 2022-06-09 
-draft: false 
-description: "This is the first blog of my GSoC-2022 journey. It includes general information about me, and a superficial 
+date: 2022-06-09
+draft: false
+description: "This is the first blog of my GSoC-2022 journey. It includes general information about me, and a superficial
 description of the project."
 tags: ["gsoc", "networkx"]
-displayInList: true 
+displayInList: true
 author: ["Konstantinos Petridis"]
 
 resources:
-- name: featuredImage 
+- name: featuredImage
   src: "GSoC_networkx_logo.png"
   params:
   description: "Google Summer of Code Logo with NetworkX logo"
@@ -22,7 +22,7 @@ resources:
 I got accepted as a **GSoC** contributor, and I am so excited to spend the summer working on such an incredibly
 interesting project. The mentors are very welcoming, communicative, fun to be around, and I really look forward to
 collaborating with them. My application for GSoC 2022 can
-be [found here](https://summerofcode.withgoogle.com/programs/2022/projects/V1hY83XG).
+be found [here](https://summerofcode.withgoogle.com/programs/2022/projects/V1hY83XG).
 
 # About me
 
@@ -36,7 +36,7 @@ to the point of being annoying. You can find me on GitHub [@kpetridis24](https:/
 
 The project I'll be working on, is the implementation of **VF2++**, a state-of-the-art algorithm used for the
 [**Graph Isomorphism**](https://en.wikipedia.org/wiki/Graph_isomorphism) problem, which lies in the
-[complexity class](https://en.wikipedia.org/wiki/Complexity_class) [**NP**](https://en.wikipedia.org/wiki/NP_(complexity)). 
+[complexity class](https://en.wikipedia.org/wiki/Complexity_class) [**NP**](<https://en.wikipedia.org/wiki/NP_(complexity)>).
 The functionality of the algorithm is similar to a regular, but
 more complex form of a
 [**DFS**](https://en.wikipedia.org/wiki/Depth-first_search), but performed on the possible solutions rather than the
@@ -55,4 +55,4 @@ implementations of it. This might become a reference that is going to help to fu
 implementations of the algorithm by other organisations. Regarding my personal gain, I will become more familiar with
 the open source communities and their philosophy, I will collaborate with highly skilled individuals and cultivate a
 significant amount of experience on researching, working as a team, getting feedback and help when needed, contributing
-to an actual scientific library. 
+to an actual scientific library.
