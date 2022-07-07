@@ -11,9 +11,9 @@ author: ["Konstantinos Petridis"]
 
 ---
 
-This post includes all the major updates since the last post about VF2++. Each section is dedicated to a different
-sub-problem and presents the progress on it so far. General progress, milestones and related issues can be
-[found here](https://github.com/kpetridis24/networkx/milestone/1).
+This post includes all the major updates since the [last post]({{< relref "../GSoC-2022" >}}) about VF2++. Each section
+is dedicated to a different sub-problem and presents the progress on it so far. General progress, milestones and related
+issues can be [found here](https://github.com/kpetridis24/networkx/milestone/1).
 
 ## Node ordering
 
@@ -89,3 +89,67 @@ observations to implement an incremental computation of $T_i$ and $\tilde{T_i}$ 
 
 We can conclude that in every step, $T_i$ and $\tilde{T_i}$ can be incrementally updated. This method avoids a ton of
 redundant operations and results in significant performance improvement.
+
+![Performance comparison between brute force Ti computing and incremental updating.](acceleration.png)
+
+The above graph shows the difference in performance between using the exhaustive brute force and incrementally updating
+$T_i$ and $\tilde{T_i}$. The graph used to obtain these measurements was a regular
+[GNP Graph](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model) with a probability for an edge equal to
+$0.7$. It is directly observed that the increase in time when using the brute force method, follows an exponential rate,
+while in our method, it's not significantly affected by incrementing the number of nodes. Let's talk time complexity.
+The brute force method looks like this:
+
+```python
+def compute_Ti(G1, G2, mapping, reverse_mapping):
+    T1 = {nbr for node in mapping for nbr in G1[node] if nbr not in mapping}
+    T2 = {
+        nbr
+        for node in reverse_mapping
+        for nbr in G2[node]
+        if nbr not in reverse_mapping
+    }
+
+    T1_out = {n1 for n1 in G1.nodes() if n1 not in mapping and n1 not in T1}
+    T2_out = {n2 for n2 in G2.nodes() if n2 not in reverse_mapping and n2 not in T2}
+    return T1, T2, T1_out, T2_out
+```
+
+If we assume that G1 and G2 have the same number of nodes (N), the average number of nodes in the mapping is $N_m$, and
+the average node degree of the graphs is $D$, then the time complexity of this function is:
+
+$$O(2N_mD + 2N) = O(N_mD + N)$$
+
+in which we have excluded the lookup times in $T_i$, $mapping$ and $reverse#_mapping$ as they are all $O(1)$. Our
+incremental method works like this:
+
+```python
+def update_Tinout(
+    G1, G2, T1, T2, T1_out, T2_out, new_node1, new_node2, mapping, reverse_mapping
+):
+    # This function should be called right after the feasibility is established and node1 is mapped to node2.
+    uncovered_neighbors_G1 = {nbr for nbr in G1[new_node1] if nbr not in mapping}
+    uncovered_neighbors_G2 = {
+        nbr for nbr in G2[new_node2] if nbr not in reverse_mapping
+    }
+
+    # Add the uncovered neighbors of node1 and node2 in T1 and T2 respectively
+    T1.discard(new_node1)
+    T2.discard(new_node2)
+    T1 = T1.union(uncovered_neighbors_G1)
+    T2 = T2.union(uncovered_neighbors_G2)
+
+    # todo: maybe check this twice just to make sure
+    T1_out.discard(new_node1)
+    T2_out.discard(new_node2)
+    T1_out = T1_out - uncovered_neighbors_G1
+    T2_out = T2_out - uncovered_neighbors_G2
+
+    return T1, T2, T1_out, T2_out
+```
+
+which based on the previous notation, is:
+
+$$O(2D + 2(D + M_{T_1}) + 2D) = O(D + M_{T_1})$$
+
+where $M_{T_1}$ is the expected (average) number of elements in $T_1$. Certainly, the complexity is much better in this
+case, as $D$ and $M_{T_1}$ are significantly smaller than $N_mD$ and $N$.
