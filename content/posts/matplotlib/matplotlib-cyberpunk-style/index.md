@@ -14,7 +14,7 @@ resources:
       showOnTop: false
 ---
 
-![](figures/5.png)
+![ ](figures/5.png)
 
 ## 1 - The Basis
 
@@ -29,7 +29,7 @@ Let's make up some numbers, put them in a Pandas dataframe and plot them:
     df.plot(marker='o')
     plt.show()
 
-![](figures/1.png)
+![ ](figures/1.png)
 
 ## 2 - The Darkness
 
@@ -45,7 +45,7 @@ Not bad, but somewhat ordinary. Let's customize it by using Seaborn's dark style
 
     ax.grid(color='#2A3459')  # bluish dark grey, but slightly lighter than background
 
-![](figures/2.png)
+![ ](figures/2.png)
 
 ## 3 - The Light
 
@@ -60,7 +60,7 @@ It looks more interesting now, but we need our colors to shine more against the 
     ]
     df.plot(marker='o', ax=ax, color=colors)
 
-![](figures/3.png)
+![ ](figures/3.png)
 
 ## 4 - The Glow
 
@@ -79,7 +79,7 @@ Now, how to get that neon look? To make it shine, we _redraw the lines multiple 
                 ax=ax,
                 color=colors)
 
-![](figures/4.png)
+![ ](figures/4.png)
 
 ## 5 - The Finish
 
@@ -143,6 +143,6 @@ Here's the full code:
 
     plt.show()
 
-![](figures/5.png)
+![ ](figures/5.png)
 
 If this helps you or if you have constructive criticism, I'd be happy to hear about it! Please contact me via [here](https://dhaitz.github.io) or [here](https://twitter.com/d_haitz). Thanks!
