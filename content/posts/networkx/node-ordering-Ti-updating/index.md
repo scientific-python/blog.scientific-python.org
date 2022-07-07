@@ -69,7 +69,7 @@ $$\tilde{T_1}=\(V_1 \setminus m \setminus T_1\)$$
 
 The following figure is meant to provide some visual explanation of what exactly $T_i$ is.
 
-<center><img src="Ti.png" alt="Illustration of $T_i$"/></center>
+![Illustration of $T_i$.](Ti.png)
 
 The blue nodes 1,2,3 are nodes from graph G1 and the green nodes A,B,C belong to the graph G2. The grey lines connecting
 those two indicate that in this current state, node 1 is mapped to node A, node 2 is mapped to node B etc. The yellow
