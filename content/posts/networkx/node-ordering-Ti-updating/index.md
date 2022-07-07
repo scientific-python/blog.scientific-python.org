@@ -151,5 +151,7 @@ which based on the previous notation, is:
 
 $$O(2D + 2(D + M_{T_1}) + 2D) = O(D + M_{T_1})$$
 
-where $M_{T_1}$ is the expected (average) number of elements in $T_1$. Certainly, the complexity is much better in this
+where $M_{T_1}$ is the expected (average) number of elements in $T_1$.
+
+Certainly, the complexity is much better in this
 case, as $D$ and $M_{T_1}$ are significantly smaller than $N_mD$ and $N$.
