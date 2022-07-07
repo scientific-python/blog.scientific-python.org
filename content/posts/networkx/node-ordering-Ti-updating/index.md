@@ -119,7 +119,7 @@ the average node degree of the graphs is $D$, then the time complexity of this f
 
 $$O(2N_mD + 2N) = O(N_mD + N)$$
 
-in which we have excluded the lookup times in $T_i$, $mapping$ and $reverse#_mapping$ as they are all $O(1)$. Our
+in which we have excluded the lookup times in $T_i$, $mapping$ and $reverse\_mapping$ as they are all $O(1)$. Our
 incremental method works like this:
 
 ```python
