@@ -1,6 +1,6 @@
 ---
 title: "GSoC 2022: NetworkX VF2++ Implementation"
-date: 2022-07-07
+date: 2022-06-09
 draft: false
 description: "
 This is the first blog of my GSoC-2022 journey. It includes general information about me, and a superficial
