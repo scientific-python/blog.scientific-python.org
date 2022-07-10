@@ -17,8 +17,8 @@ issues can be [found here](https://github.com/kpetridis24/networkx/milestone/1).
 
 ## Node ordering
 
-The node ordering is one major modification that **VF2++** proposes. Basically the nodes are examined in an order that
-makes the matching faster, by firstly examining nodes that are more likely to match. This part of the algorithm has been
+The node ordering is one major modification that **VF2++** proposes. Basically, the nodes are examined in an order that
+makes the matching faster by first examining nodes that are more likely to match. This part of the algorithm has been
 implemented, however there is an issue. The existence of detached nodes (not connected to the rest of the graph) causes
 the code to crash. Fixing this bug will be a top priority during the next steps. The ordering implementation is described
 by the following pseudocode.
@@ -72,10 +72,10 @@ The following figure is meant to provide some visual explanation of what exactly
 ![Illustration of $T_i$.](Ti.png)
 
 The blue nodes 1,2,3 are nodes from graph G1 and the green nodes A,B,C belong to the graph G2. The grey lines connecting
-those two indicate that in this current state, node 1 is mapped to node A, node 2 is mapped to node B etc. The yellow
+those two indicate that in this current state, node 1 is mapped to node A, node 2 is mapped to node B, etc. The yellow
 edges are just the neighbors of the covered (mapped) nodes. Here, $T_1$ contains the red nodes (4,5,6) which are
 neighbors of the covered nodes 1,2,3, and $T_2$ contains the grey ones (D,E,F). None of the nodes depicted would be
-included in $\tilde{T_1}$ or $\tilde{T_2}$. The latters would contain all the remaining nodes from the two graphs.
+included in $\tilde{T_1}$ or $\tilde{T_2}$. The latter sets would contain all the remaining nodes from the two graphs.
 
 Regarding the computation of these sets, it's not practical to use the brute force method and iterate over all nodes in
 every step of the algorithm to find the desired nodes and compute $T_i$ and $\tilde{T_i}$. We use the following
@@ -119,7 +119,7 @@ the average node degree of the graphs is $D$, then the time complexity of this f
 
 $$O(2N_mD + 2N) = O(N_mD + N)$$
 
-in which we have excluded the lookup times in $T_i$, $mapping$ and $reverse\_mapping$ as they are all $O(1)$. Our
+in which we have excluded the lookup times in $T_i$, $mapping$ and $reverse\\_mapping$ as they are all $O(1)$. Our
 incremental method works like this:
 
 ```python
