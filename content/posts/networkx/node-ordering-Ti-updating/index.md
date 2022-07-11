@@ -95,8 +95,9 @@ redundant operations and results in significant performance improvement.
 The above graph shows the difference in performance between using the exhaustive brute force and incrementally updating
 $T_i$ and $\tilde{T_i}$. The graph used to obtain these measurements was a regular
 [GNP Graph](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model) with a probability for an edge equal to
-$0.7$. It is directly observed that the increase in time when using the brute force method, follows an exponential rate,
-while in our method, it's not significantly affected by incrementing the number of nodes. Let's talk time complexity.
+$0.7$. It can clearly be seen that execution time of the brute force
+method increases much more rapidly with the number of nodes/edges than
+the incremental update method, as expected.
 The brute force method looks like this:
 
 ```python
