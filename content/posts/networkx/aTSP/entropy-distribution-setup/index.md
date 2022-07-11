@@ -3,7 +3,7 @@ title: "Entropy Distribution Setup"
 date: 2020-07-13
 draft: false
 description: "Preliminaries for the entropy distribution over spanning trees"
-tags: ["gsoc", "networkx"]
+tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
 author: ["mjschwenne"]
 

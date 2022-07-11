@@ -3,7 +3,7 @@ title: "implementing the Iterators"
 date: 2020-06-10
 draft: false
 description: "Implementation details about SpanningTreeIterator and ArborescenceIterator"
-tags: ["gsoc", "networkx"]
+tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
 author: ["mjschwenne"]
 

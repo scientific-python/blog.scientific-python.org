@@ -3,7 +3,7 @@ title: "Finding all Minimum Arborescences"
 date: 2020-06-05
 draft: false
 description: "Exploring an algoritm to generate arborescences in ascending order"
-tags: ["gsoc", "networkx"]
+tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
 author: ["mjschwenne"]
 

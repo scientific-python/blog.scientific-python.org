@@ -3,7 +3,7 @@ title: "Sampling a Spanning Tree"
 date: 2020-07-28
 draft: false
 description: "Implementation details for sample_spanning_tree"
-tags: ["gsoc", "networkx"]
+tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
 author: ["mjschwenne"]
 

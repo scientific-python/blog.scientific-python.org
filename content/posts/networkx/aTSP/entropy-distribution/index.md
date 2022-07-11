@@ -3,7 +3,7 @@ title: "The Entropy Distribution"
 date: 2020-07-20
 draft: false
 description: "Details on implementing the entropy distribution"
-tags: ["gsoc", "networkx"]
+tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
 author: ["mjschwenne"]
 

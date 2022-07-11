@@ -3,7 +3,7 @@ title: "Held-Karp Seperation Oracle"
 date: 2020-05-08
 draft: false
 description: "Considering creating a seperation oracle for the Held-Karp relaxation"
-tags: ["gsoc", "networkx"]
+tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
 author: ["mjschwenne"]
 

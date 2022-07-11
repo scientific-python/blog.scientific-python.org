@@ -3,7 +3,7 @@ title: "A Closer Look at the Held-Karp Relaxation"
 date: 2020-06-03
 draft: false
 description: "Looking for a new method to solve the Held-Karp relaxation from the original Held and Karp paper"
-tags: ["gsoc", "networkx"]
+tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
 author: ["mjschwenne"]
 

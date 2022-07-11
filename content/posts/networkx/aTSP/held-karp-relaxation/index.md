@@ -3,7 +3,7 @@ title: "Held-Karp Relaxation"
 date: 2020-04-21
 draft: false
 description: "Brief explanation of the Held-Karp relaxation and why it cannot be solved directly"
-tags: ["gsoc", "networkx"]
+tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
 author: ["mjschwenne"]
 
