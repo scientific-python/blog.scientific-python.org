@@ -21,3 +21,9 @@ If you are working on a new mentored project (e.g. GSoC) that will have
 multiple posts, please create a new directory (e.g. `mkdir <my-project-name>`).
 All the posts related to the project should then be created within that
 directory.
+Don't forget to add a project-specific tag to the `tags` field for your posts,
+e.g.
+
+```yaml
+tags: ["gsoc", "networkx", "<my-project-name>"]
+```
