@@ -156,3 +156,12 @@ where $M_{T_1}$ is the expected (average) number of elements in $T_1$.
 
 Certainly, the complexity is much better in this
 case, as $D$ and $M_{T_1}$ are significantly smaller than $N_mD$ and $N$.
+
+In this post we investigated how node ordering works at a high level, and also
+how we are able to calculate some important parameters so that the space and
+time complexity are reduced.
+The next post will continue with examining two more significant components of
+the VF2++ algorith: the **candidate node pair selection** and the
+**cutting/consistency** rules that decide when the mapping should or shouldn't
+be extended.
+Stay tuned!
