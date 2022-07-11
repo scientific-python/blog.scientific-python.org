@@ -5,7 +5,7 @@ draft: false
 description: "
 Summary of the progress on VF2++
 "
-tags: ["gsoc", "networkx"]
+tags: ["gsoc", "networkx", "vf2++"]
 displayInList: true
 author: ["Konstantinos Petridis"]
 

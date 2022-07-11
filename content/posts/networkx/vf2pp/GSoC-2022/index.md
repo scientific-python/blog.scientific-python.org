@@ -6,7 +6,7 @@ description: "
 This is the first blog of my GSoC-2022 journey. It includes general information about me, and a superficial
 description of the project.
 "
-tags: ["gsoc", "networkx"]
+tags: ["gsoc", "networkx", "vf2++"]
 displayInList: true
 author: ["Konstantinos Petridis"]
 
