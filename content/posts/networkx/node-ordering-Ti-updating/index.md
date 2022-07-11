@@ -20,8 +20,7 @@ issues can be [found here](https://github.com/kpetridis24/networkx/milestone/1).
 The node ordering is one major modification that **VF2++** proposes. Basically, the nodes are examined in an order that
 makes the matching faster by first examining nodes that are more likely to match. This part of the algorithm has been
 implemented, however there is an issue. The existence of detached nodes (not connected to the rest of the graph) causes
-the code to crash. Fixing this bug will be a top priority during the next steps. The ordering implementation is
-described
+the code to crash. Fixing this bug will be a top priority during the next steps. The ordering implementation is described
 by the following pseudocode.
 
 > ---
@@ -33,18 +32,11 @@ by the following pseudocode.
 > 1. **Set** $M = \varnothing$.
 > 2. **Set** $\bar{V1}$ : nodes not in order yet
 > 3. **while** $\bar{V1}$ not empty **do**
-     >
-
-- $rareNodes=\[$nodes from $V_1$ with the rarest labels$\]$
-
-> - $maxNode=argmax_{degree}\(rareNodes\)$
-    >
-- $T=$ BFSTree with $maxNode$ as root
+>    - $rareNodes=\[$nodes from $V_1$ with the rarest labels$\]$
+>    - $maxNode=argmax_{degree}\(rareNodes\)$
+>    - $T=$ BFSTree with $maxNode$ as root
 >    - **for** every level in $T$ **do**
-       >
-
-- $V_d=\[$nodes of the $d^{th}$ level$\]$
-
+>      - $V_d=\[$nodes of the $d^{th}$ level$\]$
 >      - $\bar{V_1} \setminus V_d$
 >      - $ProcessLevel(V_d)$
 > 4. Output $M$: the matching order of the nodes.
@@ -56,13 +48,9 @@ by the following pseudocode.
 > ---
 >
 > 1. **while** $V_d$ not empty **do**
-     >
-
-- $S=\[$nodes from $V_d$ with the most neighbors in M$\]$
-
-> - $maxNodes=argmax_{degree}\(S\)$
-    >
-- $rarestNode=\[$node from $maxNodes$ with the rarest label$\]$
+>    - $S=\[$nodes from $V_d$ with the most neighbors in M$\]$
+>    - $maxNodes=argmax_{degree}\(S\)$
+>    - $rarestNode=\[$node from $maxNodes$ with the rarest label$\]$
 >    - $V_d \setminus m$
 >    - Append m to M
 
@@ -137,7 +125,7 @@ incremental method works like this:
 
 ```python
 def update_Tinout(
-        G1, G2, T1, T2, T1_out, T2_out, new_node1, new_node2, mapping, reverse_mapping
+    G1, G2, T1, T2, T1_out, T2_out, new_node1, new_node2, mapping, reverse_mapping
 ):
     # This function should be called right after the feasibility is established and node1 is mapped to node2.
     uncovered_neighbors_G1 = {nbr for nbr in G1[new_node1] if nbr not in mapping}
@@ -168,7 +156,3 @@ where $M_{T_1}$ is the expected (average) number of elements in $T_1$.
 
 Certainly, the complexity is much better in this
 case, as $D$ and $M_{T_1}$ are significantly smaller than $N_mD$ and $N$.
-In this post we investigated how the node ordering works in high level, and also how we are able to calculate some
-important algorithm-related parameters so that the space and time complexity are reduced. The next post will continue
-with examine two more significant components, the **candidate node pair selection** and the **cutting/consistency**
-rules that decide when the mapping should or shouldn't be extended. Stay tuned! 
