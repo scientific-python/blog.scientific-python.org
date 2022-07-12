@@ -29,14 +29,14 @@ In order to check if the graphs $G_1$, $G_2$ are isomorphic, we check every cand
 feasible, we extend the mapping and go deeper into the tree of pairs. If it's not feasible, we climb up and follow a
 different branch, until the mapping is extended to its full. In our example, we start by examining node 0 from G1, with
 node 0 of G2. After some checks that are skipped for simplicity (but can be perceived by observation), we decide that the
-pair 0-0 are indeed candidates, so we go deeper to map the remaining nodes. The next pair is 1-1, which fails the
+nodes 0 and 0 are matching, so we go deeper to map the remaining nodes. The next pair is 1-1, which fails the
 feasibility check, so we have to examine a different branch as shown. The new branch is 1-2, which is feasible, so we
 continue on using the same logic until all the nodes are mapped.
 
 ## Candidate Pair Selection
 
 Although in our example we use a random candidate pair of nodes, in the actual implementation we are able to target
-specific pairs that are more likely to be matched, hence boosting the performance of the algorithm. The idea is that, in
+specific pairs that are more likely to be matched, hence boost the performance of the algorithm. The idea is that, in
 every step of the algorithm, **given a candidate**
 
 $$u\in V_1$$
@@ -104,12 +104,12 @@ that belong in the mapping, should map to neighbors of $v$ (and backwards). This
 as:
 
 ```python
-for neighbor in G1[node1]:
+for neighbor in G1[u]:
     if neighbor in mapping:
-        if mapping[neighbor] not in G2[node2]:
+        if mapping[neighbor] not in G2[v]:
             return False
-        elif G1.number_of_edges(node1, neighbor) != G2.number_of_edges(
-            node2, mapping[neighbor]
+        elif G1.number_of_edges(u, neighbor) != G2.number_of_edges(
+            v, mapping[neighbor]
         ):
             return False
 ```
@@ -131,14 +131,24 @@ Notice that in order for $u-v$ to be feasible to match, $u$ should have the same
 as $v$ in $T_2$. In every other case, the two graphs are not isomorphic, which can be verified visually. For this
 example, both nodes have 2 of their neighbors (4,6 and C,E) in $T_1$ and $T_2$ respectively. Careful! If we delete the
 $V-E$ edge and connect $V$ to $D$, the cutting condition is still satisfied. However, the feasibility is going to fail,
-by the consistency checks of the previous section.
+by the consistency checks of the previous section. A simple code to apply the cutting check would be:
+
+```python
+if len(T1.intersection(G1[u])) != len(T2.intersection(G2[v])) or len(
+    T1out.intersection(G1[u])
+) != len(T2out.intersection(G2[v])):
+    return False
+```
+
+where $T1out$ and $T2out$ correspond to $\tilde{T_1}$ and $\tilde{T_2}$ respectively. And yes, we have to check for
+those as well, however we skipped them in the above explanation for simplicity.
 
 ## Conclusion
 
 At this point, we have successfully implemented and tested all the major components of the algorithm **VF2++**,
 
 - **Node Ordering**
-- **$T_i/\tilde{T_i} Updating$**
+- **$T_i/\tilde{T_i}$ Updating**
 - **Feasibility Rules**
 - **Candidate Selection**
 
