@@ -22,7 +22,7 @@ So instead of going through the process of installing Rust, I decided to take th
 
 In this post, I'll try to explain my process as we attempt to recreate similar mosaics as this one below. I've aimed this post at people who've worked with _some_ sort of image data before; but really, anyone can follow along.
 
-![alt text](./warhol.png "Emosaic by Will Dady")
+![Emoji mosaic by Will Dady based on Andy Warhol's Multiple Marilyns.](./warhol.png)
 
 ## Packages
 
@@ -53,7 +53,7 @@ dim = img.shape[0] ##we'll need this later
 plt.imshow(img)
 ```
 
-![Naomi Watts Cannes 2014](./save_100.png "Licensed under Creative Commons attributed to Georges Biard")
+![Naomi Watts Cannes (2014) Licensed under Creative Commons attributed to Georges Biard](./save_100.png)
 
 **Note**: _The image displayed above is 100x100 but we'll use a 32x32 from here on since that's gonna suffice all our needs._
 

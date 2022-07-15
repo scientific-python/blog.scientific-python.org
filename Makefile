@@ -9,6 +9,8 @@ help:   ## show this help
 
 prepare:
 	git submodule update --init
+	pre-commit install || echo "Install 'pre-commit' in a Python environment with: 'pip install pre-commit'"
+	hugo version || echo "Install Hugo from: https://gohugo.io"
 
 TEAMS_DIR = static/teams
 TEAMS = blog-editor-in-chief blog-editors blog-reviewers
