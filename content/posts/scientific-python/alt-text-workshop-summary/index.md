@@ -37,7 +37,7 @@ responsible for.
 Fortunately, missing alt text has a clear fix even for those new to with 
 accessibility: describe the image based on its context.
 
-![The team behind the alt text. Listed from left to right in Zoom, they are.]()
+![Some of the team behind the alt text. Listed from left to right in Zoom, they are Mars Lee, Jarrod Millman, Isabela Presedo-Floyd, Jan-Hendrik Müller, Mridul Seth, Maxwell Grover, Noa Tamir, Pamphile Roy, and Saranjeet Kaur. Several event participants are not pictured per their request.](group.png)
 
 During this event, thirteen people wrote 23 image descriptions to improve 11 
 blog posts in one hour (plus the time for post-event feedback 😉). Wow! The 
@@ -49,7 +49,7 @@ examples on how to consider
 That's not even counting the many questions, discussions, and ephiphanies that 
 happened during out work time. Learning can't be captured as easily by a 
 number, but a taste of our less quantifiable wins can be found on 
-[the workshop recording]().
+[the workshop recording](https://youtu.be/Zn-zyU2lS0k).
 
 ## Want to learn more?
 
