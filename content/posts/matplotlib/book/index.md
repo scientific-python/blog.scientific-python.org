@@ -22,4 +22,4 @@ The Python scientific visualisation landscape is huge. It is composed of a myria
 
 ### Book gallery
 
-![ ](book-gallery.png)
+![Image consisting of a grid of multiple plots showing how data may be visualized.](book-gallery.png)

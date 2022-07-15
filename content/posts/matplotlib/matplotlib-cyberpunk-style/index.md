@@ -14,7 +14,7 @@ resources:
       showOnTop: false
 ---
 
-![ ](figures/5.png)
+![A line graph styled with a dark background and neon glowing lines in the style of Cyberpunk.](figures/5.png)
 
 ## 1 - The Basis
 
@@ -29,7 +29,7 @@ Let's make up some numbers, put them in a Pandas dataframe and plot them:
     df.plot(marker='o')
     plt.show()
 
-![ ](figures/1.png)
+![A simple chart consisted of two lines, one blue line, and one orange line. With white background.](figures/1.png)
 
 ## 2 - The Darkness
 
@@ -45,7 +45,7 @@ Not bad, but somewhat ordinary. Let's customize it by using Seaborn's dark style
 
     ax.grid(color='#2A3459')  # bluish dark grey, but slightly lighter than background
 
-![ ](figures/2.png)
+![A simple chart with a dark background consisted of two lines: A is the blue line and B is the orange line. ](figures/2.png)
 
 ## 3 - The Light
 
@@ -60,7 +60,7 @@ It looks more interesting now, but we need our colors to shine more against the 
     ]
     df.plot(marker='o', ax=ax, color=colors)
 
-![ ](figures/3.png)
+![A simple chart with a dark background consisted of two lines: A is the blue line and B is the purple line.  ](figures/3.png)
 
 ## 4 - The Glow
 
@@ -79,7 +79,7 @@ Now, how to get that neon look? To make it shine, we _redraw the lines multiple 
                 ax=ax,
                 color=colors)
 
-![ ](figures/4.png)
+![A simple chart with a dark background consisted of two lines: A is the blue line and B is the purple line.  However, they have a neon look and are both glowing](figures/4.png)
 
 ## 5 - The Finish
 
@@ -143,6 +143,6 @@ Here's the full code:
 
     plt.show()
 
-![ ](figures/5.png)
+![A simple chart with a dark background consisted of two lines: A is the blue line and B is the purple line. However they are neon, both glow, and the area below them glows as well. ](figures/5.png)
 
 If this helps you or if you have constructive criticism, I'd be happy to hear about it! Please contact me via [here](https://dhaitz.github.io) or [here](https://twitter.com/d_haitz). Thanks!

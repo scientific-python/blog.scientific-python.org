@@ -14,7 +14,7 @@ resources:
       showOnTop: false
 ---
 
-![ ](Image1.png)
+![ The figure shows a plot of 'cumulative number of times of code-switching' against the 'duration of Instagram Live (in seconds)'. There are four members in the livestream: Yangyang (represented with a dark red line), Hendery (represented with a pink line), Ten (represented with a light blue line), Kun (represented with a dark blue line)](Image1.png)
 
 # Introduction
 
@@ -58,7 +58,7 @@ With the dataset loaded, we can now set up our graph in terms of determining the
 
     fig, ax = plt.subplots(figsize = (20,12))
 
-![ ](fig1.png)
+![An all-white graph with the x and y axis defined on the range [0, 1].](fig1.png)
 
 ### With Customization
 
@@ -71,7 +71,7 @@ With the dataset loaded, we can now set up our graph in terms of determining the
     plt.xlim(0, 570)
     plt.ylim(0, 85)
 
- (fig2.png)
+![A blank graph with the 'cumulative number of times of code-switching' values on the y-axis and the 'duration of Instagram Live (in seconds)' values on the x-axis](fig2.png)
 
 <!--     ax.step(HENDERY.time, HENDERY.index, label = "HENDERY") -->
 
@@ -79,7 +79,7 @@ Following this, we can make our step chart line easily with matplotlib.pyplot.st
 
     ax.step(HENDERY.time, HENDERY.index, label = "HENDERY", color = "palevioletred", linewidth = 4)
 
-![ ](fig3.png)
+![A graph with the 'cumulative number of times of code-switching' values on the y-axis and the 'duration of Instagram Live (in seconds)' values on the x-axis showing a step chart line (in pale violet red colour) for the user named Hendery](fig3.png)
 
 ## Labeling
 
