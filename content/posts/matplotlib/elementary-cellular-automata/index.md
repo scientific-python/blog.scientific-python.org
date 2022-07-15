@@ -18,7 +18,7 @@ resources:
 
 In this post we will be looking at a one dimensional example known as [elementary cellular automaton](https://en.wikipedia.org/wiki/Elementary_cellular_automaton), popularized by [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) in the 1980s.
 
-![A row of cells, arranged side by side, each of which is colored black or white.  The first few cells are white, then one black cell, and alternates in a similar pattern.](./ca-bar.png)
+![A row of cells, arranged side by side, each of which is colored black or white. The first few cells are white, then one black cell, and alternates in a similar pattern.](./ca-bar.png)
 
 Imagine a row of cells, arranged side by side, each of which is colored black or white. We label black cells 1 and white cells 0, resulting in an array of bits. As an example lets consider a random array of 20 bits.
 

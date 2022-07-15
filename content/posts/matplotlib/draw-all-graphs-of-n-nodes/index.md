@@ -172,7 +172,7 @@ Here are the results. To build the anticipation, let's start with something triv
 
 All graphs of 4 nodes:
 
-![All six possible non isomorphic graphs with 4 nodes. The first graph is a complete graph with all 4 nodes connected to each other. The second one is a complete graph with one edge removed. The third graph is a triangle graph with one node attached with one of the nodes in the graph. The fourth graph is a star graph, with one central node connected to the other 3 nodes. The fifth one is a graph where the edges form a square. The sixth one is a path graph which connects all 4 nodes as a single path](4nodes.png)
+![All six possible non isomorphic graphs with 4 nodes. The first graph is a complete graph with all 4 nodes connected to each other. The second one is a complete graph with one edge removed. The third graph is a triangle graph with one node attached with one of the nodes in the graph. The fourth graph is a star graph, with one central node connected to the other 3 nodes. The fifth one is a graph where the edges form a square. The sixth one is a path graph which connects all 4 nodes as a single path.](4nodes.png)
 
 All graphs of 5 nodes:
 
@@ -184,7 +184,7 @@ Generating figures above is of course all instantaneous on a decent computer, bu
 
 For 7 nodes (below) it takes about 5-10 minutes. It's easy to see why: the brute-force approach generates all \\(2^{\frac{n(n-1)}{2}}\\) possible graphs, which means that the number of operations grows exponentially! Every increase of \\(n\\) by one, gives us \\(n-1\\) new edges to consider, which means that the time to run the program increases by \\(~2^{n-1}\\). For \\(n=7\\) it brought me from seconds to minutes, for \\(n=8\\) it would have shifted me from minutes to hours, and for \\(n=9\\), from hours, to months of computation. Isn't it fun? We are all specialists in exponential growth these days, so here you are :)
 
-![ ](7nodes.png)
+![ALL 853 possibilities of non isomorphic graphs with 7 nodes. The different graphs show multiple possible structures from a complete graph of 7 nodes to a path graph of 7 nodes. Other structures present in this collection show many star and kite-shaped graphs.](7nodes.png)
 
 The code is available as a [Jupyter Notebook on my GitHub](https://github.com/khakhalin/Sketches/blob/master/classic/generate_all_graphs.ipynb). I hope you enjoyed the pictures, and the read! Which of those charms above would bring most luck? Which ones seem best for divination? Let me know what you think! :)
 
