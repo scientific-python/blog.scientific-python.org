@@ -94,7 +94,7 @@ Of course, we want to know not only how many switches there were and when they o
                      ha = "center", #alignment
                      fontsize = 8.5) #font size of text
 
-![Language labels for each step on the graph. Languages include English, Korean, Mandarin, and German. The graph has the 'cumulative number of times of code-switching' values on the y-axis and the 'duration of Instagram Live (in seconds)' values on the x-axis showing a step chart line (in pink) for Hendery.(fig4.png)
+![Language labels for each step on the graph. Languages include English, Korean, Mandarin, and German. The graph has the 'cumulative number of times of code-switching' values on the y-axis and the 'duration of Instagram Live (in seconds)' values on the x-axis showing a step chart line (in pink) for Hendery.](fig4.png)
 
 ## Final Touches
 
