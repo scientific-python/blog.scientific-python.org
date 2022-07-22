@@ -50,13 +50,13 @@ specific knowledge on graphs or the algorithm itself. Keep up with me, and you w
 be the mapping so far, which includes all the "covered nodes" until this point. There are actually **three** different
 types of $u$ nodes that we might encounter.
 
-# Case 1
+### Case 1
 
 Node $u$ has no neighbors (degree of $u$ equals to zero). It can directly be realized that it would be redundant to test
 as candidates for $u$, nodes from $G_2$ that have more than zero neighbors. That said, we eliminate most of the possible
 candidates and keep those that have the same degree as $u$ (in this case, zero). Pretty easy right?
 
-# Case 2
+### Case 2
 
 Node $u$ has neighbors, but none of them belong to the mapping. This situation is illustrated in the following figure.
 
@@ -67,7 +67,7 @@ the mapping. Again, given $u$, we make the observation that candidates $v$ of u,
 mapping, and also have the same degree as $u$ (as in the figure). Notice how if we add a neighbor to $v$, or if we place
 one of its neighbors inside the mapping, there is no point examining the pair $u-v$ for matching.
 
-# Case 3
+### Case 3
 
 Node $u$ has neighbors and some of them belong to the mapping. This scenario is also depicted in the below figure.
 
@@ -86,7 +86,7 @@ At this point, the **Feasibility Rules** are going to determine whether the mapp
 or if we should try another candidate. The **feasibility** of a pair $u-v$ is examined by **consistency** and
 **cutting** checks.
 
-# Consistency rules
+### Consistency rules
 
 At, first I am going to present the mathematical expression of the consistency check. It may seem complicated at first,
 but it's going to be made simple by using a visual illustration. Using the notation $nbh_i(u)$ for the neighborhood of u
@@ -118,7 +118,7 @@ where the final two lines also check the number of edges between node $u$ and it
 the same as those between $v$ and its neihbor which $\tilde{u}$ maps to. In very high level, we could describe this
 check as a 1-look-ahead check.
 
-# Cutting rules
+### Cutting rules
 
 We have previously discussed what $T_i$ and $\tilde{T_i}$ represent (see previous post). These sets are used in the
 cutting checks as follows: the number of neighbors of $u$ that belong to $T_1$, should be equal to the number of
