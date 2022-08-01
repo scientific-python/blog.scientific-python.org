@@ -87,7 +87,7 @@ We can define a function which maps the input cell information with the associat
 ```python
 def rule_index(triplet):
     L, C, R = triplet
-    index = 7 - (4*L + 2*C + R)
+    index = 7 - (4 * L + 2 * C + R)
     return int(index)
 ```
 
@@ -102,11 +102,7 @@ rule[rule_index((1, 0, 1))]
 Finally, we can use Numpy to create a data structure containing all the triplets for our state array and apply the function across the appropriate axis to determine our new state.
 
 ```python
-all_triplets = np.stack([
-    np.roll(data, 1),
-    data,
-    np.roll(data, -1)]
-)
+all_triplets = np.stack([np.roll(data, 1), data, np.roll(data, -1)])
 new_data = rule[np.apply_along_axis(rule_index, 0, all_triplets)]
 print(new_data)
 ```
@@ -162,14 +158,15 @@ For larger simulations, interesting patterns start to emerge. To visualize our s
 
 ```python
 import matplotlib.pyplot as plt
-plt.rcParams['image.cmap'] = 'binary'
+
+plt.rcParams["image.cmap"] = "binary"
 
 rng = np.random.RandomState(0)
 data = CA_run(rng.randint(0, 2, 300), 150, 30)
 
 fig, ax = plt.subplots(figsize=(16, 9))
 ax.matshow(data)
-ax.axis(False);
+ax.axis(False)
 ```
 
 ![png](output_18_0.png)
@@ -181,12 +178,14 @@ With the code set up to produce the simulation, we can now start to explore the 
 ```python
 def plot_CA_class(rule_list, class_label):
     rng = np.random.RandomState(seed=0)
-    fig, axs = plt.subplots(1, len(rule_list),figsize=(10, 3.5), constrained_layout=True)
+    fig, axs = plt.subplots(
+        1, len(rule_list), figsize=(10, 3.5), constrained_layout=True
+    )
     initial = rng.randint(0, 2, 100)
 
     for i, ax in enumerate(axs.ravel()):
         data = CA_run(initial, 100, rule_list[i])
-        ax.set_title(f'Rule {rule_list[i]}')
+        ax.set_title(f"Rule {rule_list[i]}")
         ax.matshow(data)
         ax.axis(False)
 
@@ -200,7 +199,7 @@ def plot_CA_class(rule_list, class_label):
 Cellular automata which rapidly converge to a uniform state
 
 ```python
-_ = plot_CA_class([4, 32, 172], 'Class One')
+_ = plot_CA_class([4, 32, 172], "Class One")
 ```
 
 ![png](output_22_0.png)
@@ -210,7 +209,7 @@ _ = plot_CA_class([4, 32, 172], 'Class One')
 Cellular automata which rapidly converge to a repetitive or stable state
 
 ```python
-_ = plot_CA_class([50, 108, 173], 'Class Two')
+_ = plot_CA_class([50, 108, 173], "Class Two")
 ```
 
 ![png](output_24_0.png)
@@ -220,7 +219,7 @@ _ = plot_CA_class([50, 108, 173], 'Class Two')
 Cellular automata which appear to remain in a random state
 
 ```python
-_ = plot_CA_class([60, 106, 150], 'Class Three')
+_ = plot_CA_class([60, 106, 150], "Class Three")
 ```
 
 ![png](output_26_0.png)
@@ -230,7 +229,7 @@ _ = plot_CA_class([60, 106, 150], 'Class Three')
 Cellular automata which form areas of repetitive or stable states, but also form structures that interact with each other in complicated ways.
 
 ```python
-_ = plot_CA_class([54, 62, 110], 'Class Four')
+_ = plot_CA_class([54, 62, 110], "Class Four")
 ```
 
 ![png](output_28_0.png)
@@ -241,12 +240,12 @@ In all the examples above a random initial state was used, but another interesti
 
 ```python
 initial = np.zeros(300)
-initial[300//2] = 1
+initial[300 // 2] = 1
 data = CA_run(initial, 150, 30)
 
 fig, ax = plt.subplots(figsize=(10, 5))
 ax.matshow(data)
-ax.axis(False);
+ax.axis(False)
 ```
 
 ![png](output_31_0.png)

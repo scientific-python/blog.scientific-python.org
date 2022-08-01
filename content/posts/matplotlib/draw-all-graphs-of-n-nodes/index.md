@@ -34,13 +34,13 @@ def make_graphs(n=2, i=None, j=None):
     """Make a graph recursively, by either including, or skipping each edge.
     Edges are given in lexicographical order by construction."""
     out = []
-    if i is None: # First call
-        out  = [[(0,1)]+r for r in make_graphs(n=n, i=0, j=1)]
-    elif j<n-1:
-        out += [[(i,j+1)]+r for r in make_graphs(n=n, i=i, j=j+1)]
-        out += [          r for r in make_graphs(n=n, i=i, j=j+1)]
-    elif i<n-1:
-        out = make_graphs(n=n, i=i+1, j=i+1)
+    if i is None:  # First call
+        out = [[(0, 1)] + r for r in make_graphs(n=n, i=0, j=1)]
+    elif j < n - 1:
+        out += [[(i, j + 1)] + r for r in make_graphs(n=n, i=i, j=j + 1)]
+        out += [r for r in make_graphs(n=n, i=i, j=j + 1)]
+    elif i < n - 1:
+        out = make_graphs(n=n, i=i + 1, j=i + 1)
     else:
         out = [[]]
     return out
@@ -62,9 +62,11 @@ To continue with the plan, we now need to make a function that for every graph w
 ```python
 def perm(n, s=None):
     """All permutations of n elements."""
-    if s is None: return perm(n, tuple(range(n)))
-    if not s: return [[]]
-    return [[i]+p for i in s for p in perm(n, tuple([k for k in s if k!=i]))]
+    if s is None:
+        return perm(n, tuple(range(n)))
+    if not s:
+        return [[]]
+    return [[i] + p for i in s for p in perm(n, tuple([k for k in s if k != i]))]
 ```
 
 Now, for any given graph description, we can permute its nodes, sort the \\(i,j\\) within each edge, sort the edges themselves, remove duplicate alt-descriptions, and remember the list of potential impostors:
@@ -76,8 +78,9 @@ def permute(g, n):
     ps = perm(n)
     out = set([])
     for p in ps:
-        out.add(tuple(sorted([(p[i],p[j]) if p[i]<p[j]
-                              else (p[j],p[i]) for i,j in g])))
+        out.add(
+            tuple(sorted([(p[i], p[j]) if p[i] < p[j] else (p[j], p[i]) for i, j in g]))
+        )
     return list(out)
 ```
 
@@ -100,16 +103,21 @@ def connected(g):
     roots = {node: node for node in nodes}
 
     def _root(node, depth=0):
-        if node==roots[node]: return (node, depth)
-        else: return _root(roots[node], depth+1)
+        if node == roots[node]:
+            return (node, depth)
+        else:
+            return _root(roots[node], depth + 1)
 
-    for i,j in g:
-        ri,di = _root(i)
-        rj,dj = _root(j)
-        if ri==rj: continue
-        if di<=dj: roots[ri] = rj
-        else:      roots[rj] = ri
-    return len(set([_root(node)[0] for node in nodes]))==1
+    for i, j in g:
+        ri, di = _root(i)
+        rj, dj = _root(j)
+        if ri == rj:
+            continue
+        if di <= dj:
+            roots[ri] = rj
+        else:
+            roots[rj] = ri
+    return len(set([_root(node)[0] for node in nodes])) == 1
 ```
 
 Now we can finally generate the "overkill" list of graphs, filter it, and plot the pics:
@@ -131,6 +139,7 @@ def filter(gs, target_nv):
             mem |= set(permute(g, target_nv))
     return gs2
 
+
 # Main body
 NV = 6
 gs = make_graphs(NV)
@@ -145,37 +154,37 @@ def plot_graphs(graphs, figsize=14, dotsize=20):
     """Utility to plot a lot of graphs from an array of graphs.
     Each graphs is a list of edges; each edge is a tuple."""
     n = len(graphs)
-    fig = plt.figure(figsize=(figsize,figsize))
-    fig.patch.set_facecolor('white') # To make copying possible (white background)
+    fig = plt.figure(figsize=(figsize, figsize))
+    fig.patch.set_facecolor("white")  # To make copying possible (white background)
     k = int(np.sqrt(n))
     for i in range(n):
-        plt.subplot(k+1,k+1,i+1)
-        g = nx.Graph() # Generate a Networkx object
+        plt.subplot(k + 1, k + 1, i + 1)
+        g = nx.Graph()  # Generate a Networkx object
         for e in graphs[i]:
-            g.add_edge(e[0],e[1])
+            g.add_edge(e[0], e[1])
         nx.draw_kamada_kawai(g, node_size=dotsize)
-        print('.', end='')
+        print(".", end="")
 ```
 
 Here are the results. To build the anticipation, let's start with something trivial: all graphs of 3 nodes:
 
-![](3nodes.png)
+![Two non isomorphic graphs with 3 nodes, the first graph connects all 3 nodes and creates a triangle. The second graph is a path graph with 3 nodes connected as a single path.](3nodes.png)
 
 All graphs of 4 nodes:
 
-![](4nodes.png)
+![All six possible non isomorphic graphs with 4 nodes. The first graph is a complete graph with all 4 nodes connected to each other. The second one is a complete graph with one edge removed. The third graph is a triangle graph with one node attached with one of the nodes in the graph. The fourth graph is a star graph, with one central node connected to the other 3 nodes. The fifth one is a graph where the edges form a square. The sixth one is a path graph which connects all 4 nodes as a single path](4nodes.png)
 
 All graphs of 5 nodes:
 
-![](5nodes.png)
+![All 21 possibilities of non isomorphic graphs with 5 nodes. The different graphs show multiple possible structures from a complete graph of 5 nodes to a path graph of 5 nodes. Other structures present in this collection of graphs show a pentagon shaped graph, a star graph and others.](5nodes.png)
 
 Generating figures above is of course all instantaneous on a decent computer, but for 6 nodes (below) it takes a few seconds:
 
-![](6nodes.png)
+![All 112 possibilities of non isomorphic graphs with 6 nodes. The different graphs show multiple possible structures from a complete graph of 6 nodes to a path graph of 6 nodes. Other structures present in this collection of graphs show a hexagon shaped graph, a star graph, two complete graphs with 4 nodes stacked on top of each other with the two complete 4 graphs sharing an edge and 107 other structures!](6nodes.png)
 
 For 7 nodes (below) it takes about 5-10 minutes. It's easy to see why: the brute-force approach generates all \\(2^{\frac{n(n-1)}{2}}\\) possible graphs, which means that the number of operations grows exponentially! Every increase of \\(n\\) by one, gives us \\(n-1\\) new edges to consider, which means that the time to run the program increases by \\(~2^{n-1}\\). For \\(n=7\\) it brought me from seconds to minutes, for \\(n=8\\) it would have shifted me from minutes to hours, and for \\(n=9\\), from hours, to months of computation. Isn't it fun? We are all specialists in exponential growth these days, so here you are :)
 
-![](7nodes.png)
+![All non-isomorphic graphs with 7 nodes](7nodes.png)
 
 The code is available as a [Jupyter Notebook on my GitHub](https://github.com/khakhalin/Sketches/blob/master/classic/generate_all_graphs.ipynb). I hope you enjoyed the pictures, and the read! Which of those charms above would bring most luck? Which ones seem best for divination? Let me know what you think! :)
 

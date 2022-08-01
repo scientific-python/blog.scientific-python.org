@@ -62,10 +62,18 @@ The functions imported from `matplotlib.path` and `matplotlib.patches` will be u
 The next part is to define a function named `draw_battery()`, which will be used to draw the battery. Later on, we will call this function by specifying certain parameters to build the figure as we require. The following below is the code to build the battery -
 
 ```python
-def draw_battery(fig, ax, percentage=0, bat_ec="grey",
-                 tip_fc="none", tip_ec="grey",
-                 bol_fc="#fdfdfd", bol_ec="grey", invert_perc=False):
-    '''
+def draw_battery(
+    fig,
+    ax,
+    percentage=0,
+    bat_ec="grey",
+    tip_fc="none",
+    tip_ec="grey",
+    bol_fc="#fdfdfd",
+    bol_ec="grey",
+    invert_perc=False,
+):
+    """
     Parameters
     ----------
     fig : figure
@@ -91,49 +99,69 @@ def draw_battery(fig, ax, percentage=0, bat_ec="grey",
     -------
     None.
 
-    '''
+    """
     try:
-        fig.set_size_inches((15,15))
+        fig.set_size_inches((15, 15))
         ax.set(xlim=(0, 20), ylim=(0, 5))
         ax.axis("off")
         if invert_perc == True:
             percentage = 100 - percentage
         # color options - #fc3d2e red & #53d069 green & #f5c54e yellow
-        bat_fc = "#fc3d2e" if percentage <= 20 else "#53d069" if percentage >= 80 else "#f5c54e"
+        bat_fc = (
+            "#fc3d2e"
+            if percentage <= 20
+            else "#53d069"
+            if percentage >= 80
+            else "#f5c54e"
+        )
 
-        '''
+        """
         Static battery and tip of battery
-        '''
-        battery = FancyBboxPatch((5, 2.1), 10, 0.8,
-                                 "round, pad=0.2, rounding_size=0.5",
-                                 fc="none", ec=bat_ec, fill=True,
-                                 ls="-", lw=1.5)
-        tip = Wedge((15.35, 2.5), 0.2, 270, 90, fc="none",
-                    ec=bat_ec, fill=True,
-                    ls="-", lw=3)
+        """
+        battery = FancyBboxPatch(
+            (5, 2.1),
+            10,
+            0.8,
+            "round, pad=0.2, rounding_size=0.5",
+            fc="none",
+            ec=bat_ec,
+            fill=True,
+            ls="-",
+            lw=1.5,
+        )
+        tip = Wedge(
+            (15.35, 2.5), 0.2, 270, 90, fc="none", ec=bat_ec, fill=True, ls="-", lw=3
+        )
         ax.add_artist(battery)
         ax.add_artist(tip)
 
-        '''
+        """
         Filling the battery cell with the data
-        '''
-        filler = FancyBboxPatch((5.1, 2.13), (percentage/10)-0.2, 0.74,
-                                "round, pad=0.2, rounding_size=0.5",
-                                fc=bat_fc, ec=bat_fc, fill=True,
-                                ls="-", lw=0)
+        """
+        filler = FancyBboxPatch(
+            (5.1, 2.13),
+            (percentage / 10) - 0.2,
+            0.74,
+            "round, pad=0.2, rounding_size=0.5",
+            fc=bat_fc,
+            ec=bat_fc,
+            fill=True,
+            ls="-",
+            lw=0,
+        )
         ax.add_artist(filler)
 
-        '''
+        """
         Adding a lightning bolt in the centre of the cell
-        '''
+        """
         verts = [
-            (10.5, 3.1), #top
-            (8.5, 2.4), #left
-            (9.5, 2.4), #left mid
-            (9, 1.9), #bottom
-            (11, 2.6), #right
-            (10, 2.6), #right mid
-            (10.5, 3.1), #top
+            (10.5, 3.1),  # top
+            (8.5, 2.4),  # left
+            (9.5, 2.4),  # left mid
+            (9, 1.9),  # bottom
+            (11, 2.6),  # right
+            (10, 2.6),  # right mid
+            (10.5, 3.1),  # top
         ]
 
         codes = [
@@ -146,14 +174,13 @@ def draw_battery(fig, ax, percentage=0, bat_ec="grey",
             Path.CLOSEPOLY,
         ]
         path = Path(verts, codes)
-        bolt = PathPatch(path, fc=bol_fc,
-                         ec=bol_ec, lw=1.5)
+        bolt = PathPatch(path, fc=bol_fc, ec=bol_ec, lw=1.5)
         ax.add_artist(bolt)
     except Exception as e:
         import traceback
+
         print("EXCEPTION FOUND!!! SAFELY EXITING!!! Find the details below:")
         traceback.print_exc()
-
 ```
 
 ## <span style="text-decoration: underline">Reading the Data</span>
@@ -182,38 +209,77 @@ Now that everything is ready, we go ahead and plot the data. We have 25 players 
 fig, ax = plt.subplots(5, 5, figsize=(5, 5))
 facecolor = "#00001a"
 fig.set_facecolor(facecolor)
-fig.text(0.35, 0.95, "Liverpool: Player Usage/Involvement", color="white", size=18, fontname="Libre Baskerville", fontweight="bold")
-fig.text(0.25, 0.92, "Data from 19/20 and 20/21 | Battery percentage indicate usage | less battery = played more/ more involved", color="white", size=12, fontname="Libre Baskerville")
+fig.text(
+    0.35,
+    0.95,
+    "Liverpool: Player Usage/Involvement",
+    color="white",
+    size=18,
+    fontname="Libre Baskerville",
+    fontweight="bold",
+)
+fig.text(
+    0.25,
+    0.92,
+    "Data from 19/20 and 20/21 | Battery percentage indicate usage | less battery = played more/ more involved",
+    color="white",
+    size=12,
+    fontname="Libre Baskerville",
+)
 ```
 
 We have now now filled in appropriate headers, figure size etc. The next step is to plot all the axes i.e. batteries for each and every player. `p` is the variable used to iterate through the dataframe and fetch each players data. The `draw_battery()` function call will obviously plot the battery. We also add the required labels along with that - player name and usage rate/percentage in this case.
 
 ```python
-p = 0 #The variable that'll iterate through each row of the dataframe (for every player)
+p = 0  # The variable that'll iterate through each row of the dataframe (for every player)
 for i in range(0, 5):
     for j in range(0, 5):
-        ax[i, j].text(10, 4, str(data.iloc[p, 0]), color="white", size=14, fontname="Lora", va='center', ha='center')
+        ax[i, j].text(
+            10,
+            4,
+            str(data.iloc[p, 0]),
+            color="white",
+            size=14,
+            fontname="Lora",
+            va="center",
+            ha="center",
+        )
         ax[i, j].set_facecolor(facecolor)
         draw_battery(fig, ax[i, j], round(data.iloc[p, 8]), invert_perc=True)
-        '''
+        """
         Add the battery percentage as text if a label is required
-        '''
-        ax[i, j].text(5, 0.9, "Usage - "+ str(int(100 - round(data.iloc[p, 8]))) + "%", fontsize=12, color="white")
+        """
+        ax[i, j].text(
+            5,
+            0.9,
+            "Usage - " + str(int(100 - round(data.iloc[p, 8]))) + "%",
+            fontsize=12,
+            color="white",
+        )
         p += 1
 ```
 
 Now that everything is almost done, we do some final touchup and this is a completely optional part anyway. Since the visualisation is focused on Liverpool players, I add Liverpool's logo and also add my watermark. Also, crediting the data source/provider is more of an ethical habit, so we go ahead and do that as well before displaying the plot.
 
 ```python
-liv = Image.open('Liverpool.png', 'r')
+liv = Image.open("Liverpool.png", "r")
 liv = liv.resize((80, 80))
 liv = np.array(liv).astype(np.float) / 255
 fig.figimage(liv, 30, 890)
-fig.text(0.11, 0.08, "viz: Rithwik Rajendran/@rithwikrajendra", color="lightgrey", size=14, fontname="Lora")
-fig.text(0.8, 0.08, "data: FBRef/Statsbomb", color="lightgrey", size=14, fontname="Lora")
+fig.text(
+    0.11,
+    0.08,
+    "viz: Rithwik Rajendran/@rithwikrajendra",
+    color="lightgrey",
+    size=14,
+    fontname="Lora",
+)
+fig.text(
+    0.8, 0.08, "data: FBRef/Statsbomb", color="lightgrey", size=14, fontname="Lora"
+)
 plt.show()
 ```
 
 So, we have the plot below. You can customise the design as you want in the `draw_battery()` function - change size, colours, shapes etc
 
-![Usage_Chart_Liverpool](Liverpool_Usage_Chart.png)
+![Usage Chart Liverpool](Liverpool_Usage_Chart.png)

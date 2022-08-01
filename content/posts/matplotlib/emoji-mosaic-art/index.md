@@ -22,7 +22,7 @@ So instead of going through the process of installing Rust, I decided to take th
 
 In this post, I'll try to explain my process as we attempt to recreate similar mosaics as this one below. I've aimed this post at people who've worked with _some_ sort of image data before; but really, anyone can follow along.
 
-![alt text](./warhol.png "Emosaic by Will Dady")
+![Emoji mosaic by Will Dady based on Andy Warhol's Multiple Marilyns.](./warhol.png)
 
 ## Packages
 
@@ -53,7 +53,7 @@ dim = img.shape[0] ##we'll need this later
 plt.imshow(img)
 ```
 
-![Naomi Watts Cannes 2014](./save_100.png "Licensed under Creative Commons attributed to Georges Biard")
+![Naomi Watts Cannes (2014) Licensed under Creative Commons attributed to Georges Biard](./save_100.png)
 
 **Note**: _The image displayed above is 100x100 but we'll use a 32x32 from here on since that's gonna suffice all our needs._
 
@@ -64,7 +64,6 @@ If anything is unclear so far, I'd strongly suggest going through a post like [t
 To prove my point, let's look at `img` a little.
 
 ```python
-
 ## Let's check the type of img
 print(type(img))
 # <class 'numpy.ndarray'>
@@ -79,7 +78,7 @@ print(img[0][0])
 
 ## Let's view the color of the first pixel
 fig, ax = plt.subplots()
-color=img[0][0]/255.0 ##RGBA only accepts values in the 0-1 range
+color = img[0][0] / 255.0  ##RGBA only accepts values in the 0-1 range
 ax.fill([0, 1, 1, 0], [0, 0, 1, 1], color=color)
 ```
 
@@ -131,7 +130,9 @@ print(emoji_array.shape)
 We've seen the formula above; here's the numpy code for it. We're gonna iterate over all all the 1506 emojis and create an array `emoji_mean_array` out of them.
 
 ```python
-emoji_mean_array = np.array([ar.mean(axis=(0,1)) for ar in emoji_array]) ##`np.median(ar, axis=(0,1))` for median instead of mean
+emoji_mean_array = np.array(
+    [ar.mean(axis=(0, 1)) for ar in emoji_array]
+)  ##`np.median(ar, axis=(0,1))` for median instead of mean
 ```
 
 ### Step I.3 - finding closest emoji match for all pixels
@@ -139,16 +140,15 @@ emoji_mean_array = np.array([ar.mean(axis=(0,1)) for ar in emoji_array]) ##`np.m
 The easiest way to do that would be use Scipy's **`KDTree`** to create a `tree` object of all average RGBA values we calculated in #2. This enables us to perform fast lookup for every pixel using the `query` method. Here's how the code for that looks -
 
 ```python
-
 tree = spatial.KDTree(emoji_mean_array)
 
 indices = []
-flattened_img = img.reshape(-1, img.shape[-1]) ##shape = [1024, 16, 16, 4]
+flattened_img = img.reshape(-1, img.shape[-1])  ##shape = [1024, 16, 16, 4]
 for pixel in tqdm(flattened_img, desc="Matching emojis"):
-    _, index=tree.query(pixel) ##returns distance and index of closest match.
+    _, index = tree.query(pixel)  ##returns distance and index of closest match.
     indices.append(index)
 
-emoji_matches = emoji_array[indices] ##our emoji_matches
+emoji_matches = emoji_array[indices]  ##our emoji_matches
 ```
 
 ### Step II.1
@@ -156,14 +156,16 @@ emoji_matches = emoji_array[indices] ##our emoji_matches
 The final step is to reshape the array a little more to enable us to plot it using the imshow function. As you can see above, to loop over the pixels we had to flatten the image out into the `flattened_img`. Now we have to sort of un-flatten it back; to make sure it's back in the form of an image. Fortunately, using numpy's `reshape` function makes this easy.
 
 ```python
-resized_ar = emoji_matches.reshape((dim, dim, 16, 16, 4)) ##dim is what we got earlier when we read in the image
+resized_ar = emoji_matches.reshape(
+    (dim, dim, 16, 16, 4)
+)  ##dim is what we got earlier when we read in the image
 ```
 
 ### Step II.2
 
 The last bit is the trickiest. The problem with the output we've got so far is that it's too nested. Or in simpler terms, what we have is a image where every individual pixel is itself an image. That's all fine but it's not valid input for imshow and if we try to pass it in, it tells us exactly that.
 
-```python
+```pycon
 TypeError: Invalid shape (32, 32, 16, 16, 4) for image data
 ```
 
@@ -181,8 +183,9 @@ Don't worry though, we have Stack Overflow to the rescue! This excellent [answer
 
 ```python
 def np_block_2D(chops):
-    """ Converts list of chopped images to one single image"""
+    """Converts list of chopped images to one single image"""
     return np.block([[[x] for x in row] for row in chops])
+
 
 final_img = np_block_2D(resized_ar)
 
@@ -217,12 +220,22 @@ def canvas(gray_scale_img):
     fig, axes = plt.subplots(nrows=3, ncols=3, figsize=(13, 8))
     axes = axes.flatten()
 
-    cmaps = ["BuPu_r", "bone", "CMRmap", "magma", "afmhot", "ocean", "inferno", "PuRd_r", "gist_gray"]
+    cmaps = [
+        "BuPu_r",
+        "bone",
+        "CMRmap",
+        "magma",
+        "afmhot",
+        "ocean",
+        "inferno",
+        "PuRd_r",
+        "gist_gray",
+    ]
     for cmap, ax in zip(cmaps, axes):
         cmapper = cm.get_cmap(cmap)
         rgba_image = cmapper(gray_scale_img)
         single_plot(rgba_image, ax)
-        #ax.imshow(rgba_image) ##try this if you just want to plot the plain image in different color spaces, comment the single_plot call above
+        # ax.imshow(rgba_image) ##try this if you just want to plot the plain image in different color spaces, comment the single_plot call above
         ax.set_axis_off()
 
     plt.subplots_adjust(hspace=0.0, wspace=-0.2)

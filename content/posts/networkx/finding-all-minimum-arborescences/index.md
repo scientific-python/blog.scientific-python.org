@@ -177,7 +177,7 @@ def desired_edge(v):
     for u, _, key, data in G.in_edges(v, data=True, keys=True):
         new_weight = data[attr]
         if data[partition]:
-        	return edge, data[attr]
+            return edge, data[attr]
         if new_weight > weight and not data[partition]:
             weight = new_weight
             edge = (u, v, key, new_weight)
@@ -198,7 +198,7 @@ def desired_edge(v):
     for u, _, key, data in G.in_edges(v, data=True, keys=True):
         new_weight = data[attr]
         if data[partition] is Partition.INCLUDED:
-        	return edge, data[attr]
+            return edge, data[attr]
         if new_weight > weight and data[partition] is not Partition.EXCLUDED:
             weight = new_weight
             edge = (u, v, key, new_weight)

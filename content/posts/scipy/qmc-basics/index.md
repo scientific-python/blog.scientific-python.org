@@ -164,7 +164,7 @@ $\mu = 5/3+5(5-1)/4$. By sampling points, we can compute that mean numerically.
 
 ```python
 dim = 5
-ref = 5/3 + 5*(5 - 1)/4
+ref = 5 / 3 + 5 * (5 - 1) / 4
 n_conv = 99
 ns_gen = 2 ** np.arange(4, 13)
 
@@ -206,29 +206,29 @@ sample_sobol_rmse = np.array(sample_sobol_rmse)
 
 # Plot
 fig, ax = plt.subplots(figsize=(4, 4))
-ax.set_aspect('equal')
+ax.set_aspect("equal")
 
 # MC
-ratio = sample_mc_rmse[0] / ns_gen[0]**(-1/2)
-ax.plot(ns_gen, ns_gen**(-1/2) * ratio, ls='-', c='k')
+ratio = sample_mc_rmse[0] / ns_gen[0] ** (-1 / 2)
+ax.plot(ns_gen, ns_gen ** (-1 / 2) * ratio, ls="-", c="k")
 
 ax.scatter(ns_gen, sample_mc_rmse, label="MC: np.random")
 
 # Sobol'
-ratio = sample_sobol_rmse[0] / ns_gen[0]**(-2/2)
-ax.plot(ns_gen, ns_gen**(-2/2) * ratio, ls='-', c='k')
+ratio = sample_sobol_rmse[0] / ns_gen[0] ** (-2 / 2)
+ax.plot(ns_gen, ns_gen ** (-2 / 2) * ratio, ls="-", c="k")
 
 ax.scatter(ns_gen, sample_sobol_rmse, label="QMC: qmc.Sobol")
 
-ax.set_xlabel(r'$N_s$')
-ax.set_xscale('log')
+ax.set_xlabel(r"$N_s$")
+ax.set_xscale("log")
 ax.set_xticks(ns_gen)
-ax.set_xticklabels([fr'$2^{{{ns}}}$' for ns in np.arange(4, 13)])
+ax.set_xticklabels([rf"$2^{{{ns}}}$" for ns in np.arange(4, 13)])
 
-ax.set_ylabel(r'$\log (\epsilon)$')
-ax.set_yscale('log')
+ax.set_ylabel(r"$\log (\epsilon)$")
+ax.set_yscale("log")
 
-ax.legend(loc='upper right')
+ax.legend(loc="upper right")
 fig.tight_layout()
 plt.show()
 ```
@@ -290,25 +290,22 @@ x = np.linspace(dist.ppf(0.01), dist.ppf(0.99), 100)
 pdf = dist.pdf(x)
 delta = np.max(pdf) * 5e-2
 
-samples = {
-    "MC: np.random": sample_mc,
-    "QMC: qmc.Sobol": sample_qmc
-}
+samples = {"MC: np.random": sample_mc, "QMC: qmc.Sobol": sample_qmc}
 
 for ax, sample in zip(axs, samples):
     ax.set_title(sample)
-    ax.plot(x, pdf, '-', lw=3, label="fisk PDF")
+    ax.plot(x, pdf, "-", lw=3, label="fisk PDF")
     ax.plot(samples[sample], -delta - delta * np.random.random(128), "+k")
 
     kde = stats.gaussian_kde(samples[sample])
-    ax.plot(x, kde(x), '-.', lw=3, label="empirical PDF")
+    ax.plot(x, kde(x), "-.", lw=3, label="empirical PDF")
     # or use a histogram
     # ax.hist(sample, density=True, histtype='stepfilled', alpha=0.2)
     ax.set_xlim([0, 3])
 
-axs[0].legend(loc='best')
-fig.supylabel('Density')
-fig.supxlabel('Sample value')
+axs[0].legend(loc="best")
+fig.supylabel("Density")
+fig.supxlabel("Sample value")
 fig.tight_layout()
 plt.show()
 ```

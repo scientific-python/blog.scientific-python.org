@@ -14,7 +14,7 @@ resources:
       showOnTop: false
 ---
 
-![](bunny.jpg)
+![A colourful outline of a bunny.](bunny.jpg)
 
 Matplotlib has a really nice [3D
 interface](https://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html) with many
@@ -88,7 +88,7 @@ plt.show()
 
 You should obtain something like this ([bunny-1.py](bunny-1.py)):
 
-![](bunny-1.png)
+![A black and white outline of a bunny facing left side.](bunny-1.png)
 
 # Perspective Projection
 
@@ -96,7 +96,7 @@ The rendering we've just made is actually an [orthographic
 projection](https://en.wikipedia.org/wiki/Orthographic_projection) while the
 top bunny uses a [perspective projection](https://en.wikipedia.org/wiki/3D_projection#Perspective_projection):
 
-![](projections.png)
+![Difference in perspective projection and orthographic projection. The near clip plane appears smaller in the perspective projective than in the orthographic projection.](projections.png)
 
 In both cases, the proper way of defining a projection is first to define a
 viewing volume, that is, the volume in the 3D space we want to render on the

@@ -14,7 +14,7 @@ resources:
       showOnTop: false
 ---
 
-![Warming Stripes](warming-stripes.png)
+![A horizontal bar divided into stripes with colors ranging from white to shades of blue and shades of red. There is a clear tendency of shades of blue on the left side of the bar, and shades of red on the right side of the bar.](warming-stripes.png)
 
 Earth's temperatures are rising and nothing shows this in a simpler,
 more approachable graphic than the “Warming Stripes”.
@@ -50,7 +50,7 @@ LAST = 2018  # inclusive
 # Reference period for the center of the color scale
 FIRST_REFERENCE = 1971
 LAST_REFERENCE = 2000
-LIM = 0.7 # degrees
+LIM = 0.7  # degrees
 ```
 
 Here we use pandas to read the fixed width text file, only the
@@ -61,14 +61,14 @@ mean from 1961 to 1990.
 # data from
 # https://www.metoffice.gov.uk/hadobs/hadcrut4/data/current/time_series/HadCRUT.4.6.0.0.annual_ns_avg.txt
 df = pd.read_fwf(
-    'HadCRUT.4.6.0.0.annual_ns_avg.txt',
+    "HadCRUT.4.6.0.0.annual_ns_avg.txt",
     index_col=0,
     usecols=(0, 1),
-    names=['year', 'anomaly'],
+    names=["year", "anomaly"],
     header=None,
 )
 
-anomaly = df.loc[FIRST:LAST, 'anomaly'].dropna()
+anomaly = df.loc[FIRST:LAST, "anomaly"].dropna()
 reference = anomaly.loc[FIRST_REFERENCE:LAST_REFERENCE].mean()
 ```
 
@@ -78,12 +78,26 @@ the [colormaps](https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html) th
 ```python
 # the colors in this colormap come from http://colorbrewer2.org
 # the 8 more saturated colors from the 9 blues / 9 reds
-cmap = ListedColormap([
-    '#08306b', '#08519c', '#2171b5', '#4292c6',
-    '#6baed6', '#9ecae1', '#c6dbef', '#deebf7',
-    '#fee0d2', '#fcbba1', '#fc9272', '#fb6a4a',
-    '#ef3b2c', '#cb181d', '#a50f15', '#67000d',
-])
+cmap = ListedColormap(
+    [
+        "#08306b",
+        "#08519c",
+        "#2171b5",
+        "#4292c6",
+        "#6baed6",
+        "#9ecae1",
+        "#c6dbef",
+        "#deebf7",
+        "#fee0d2",
+        "#fcbba1",
+        "#fc9272",
+        "#fb6a4a",
+        "#ef3b2c",
+        "#cb181d",
+        "#a50f15",
+        "#67000d",
+    ]
+)
 ```
 
 We create a figure with a single axes object that fills the full area
@@ -101,10 +115,7 @@ data, colormap and color limits and add it to the axes.
 
 ```python
 # create a collection with a rectangle for each year
-col = PatchCollection([
-    Rectangle((y, 0), 1, 1)
-    for y in range(FIRST, LAST + 1)
-])
+col = PatchCollection([Rectangle((y, 0), 1, 1) for y in range(FIRST, LAST + 1)])
 
 # set data, colormap and color limits
 col.set_array(anomaly)
@@ -119,7 +130,7 @@ Make sure the axes limits are correct and save the figure.
 ax.set_ylim(0, 1)
 ax.set_xlim(FIRST, LAST + 1)
 
-fig.savefig('warming-stripes.png')
+fig.savefig("warming-stripes.png")
 ```
 
 ![Warming Stripes](warming-stripes.png)

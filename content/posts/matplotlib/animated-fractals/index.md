@@ -44,7 +44,7 @@ is symmetrical.
 
 In mathematics, this phenomenon is known as [self-similarity](https://en.wikipedia.org/wiki/Self-similarity). It means
 a given object is similar (completely or to some extent) to some smaller part of itself. One remarkable example is the
-[Koch Snowflake](https://isquared.digital/visualizations/2020-06-15-koch-curve/) as shown in the image below:
+[An orange Koch Snowflake. It has 6 bulges which themselves have 3 sub-bulges. These sub-bulges have another 3 sub-sub bulges. ](https://isquared.digital/visualizations/2020-06-15-koch-curve/) as shown in the image below:
 
 ![Koch Snowflake](snowflake.png)
 
@@ -77,7 +77,7 @@ def mandelbrot(x, y, threshold):
 
     for i in range(threshold):
         z = z**2 + c
-        if abs(z) > 4.:  # it diverged
+        if abs(z) > 4.0:  # it diverged
             return i
 
     return threshold - 1  # it didn't diverge
@@ -107,11 +107,12 @@ width, height = 3, 3  # for 3 units up and right
 density_per_unit = 250  # how many pixles per unit
 
 # real and imaginary axis
-re = np.linspace(x_start, x_start + width, width * density_per_unit )
+re = np.linspace(x_start, x_start + width, width * density_per_unit)
 im = np.linspace(y_start, y_start + height, height * density_per_unit)
 
 fig = plt.figure(figsize=(10, 10))  # instantiate a figure to draw
 ax = plt.axes()  # create an axes object
+
 
 def animate(i):
     ax.clear()  # clear axes object
@@ -119,7 +120,7 @@ def animate(i):
     ax.set_yticks([], [])  # clear y-axis ticks
 
     X = np.empty((len(re), len(im)))  # re-initialize the array-like image
-    threshold = round(1.15**(i + 1))  # calculate the current threshold
+    threshold = round(1.15 ** (i + 1))  # calculate the current threshold
 
     # iterations for the current threshold
     for i in range(len(re)):
@@ -127,11 +128,12 @@ def animate(i):
             X[i, j] = mandelbrot(re[i], im[j], threshold)
 
     # associate colors to the iterations with an iterpolation
-    img = ax.imshow(X.T, interpolation="bicubic", cmap='magma')
+    img = ax.imshow(X.T, interpolation="bicubic", cmap="magma")
     return [img]
 
+
 anim = animation.FuncAnimation(fig, animate, frames=45, interval=120, blit=True)
-anim.save('mandelbrot.gif',writer='imagemagick')
+anim.save("mandelbrot.gif", writer="imagemagick")
 ```
 
 We make animations in _Matplotlib_ using the `FuncAnimation` function from the _Animation_ API. We need to specify
@@ -153,7 +155,7 @@ In the end, we _interpolate_ the values in `X` and assign them a color drawn fro
 
 After cranking the `animate` function multiple times we get a stunning animation as depicted below:
 
-![Mandelbrot set animation](mandelbrot.gif)
+![Mandelbrot set animation. The first few frames only show a few outlines of the Mandelbrot shape. The middle frames show a more defined shape. The last few frames show the characteristic Mandelbrot shape in a very clear way.](mandelbrot.gif)
 
 # Animated Julia Set
 
@@ -181,7 +183,7 @@ def julia_quadratic(zx, zy, cx, cy, threshold):
 
     for i in range(threshold):
         z = z**2 + c
-        if abs(z) > 4.:  # it diverged
+        if abs(z) > 4.0:  # it diverged
             return i
 
     return threshold - 1  # it didn't diverge
@@ -210,7 +212,7 @@ width, height = 4, 4  # for 4 units up and right
 density_per_unit = 200  # how many pixles per unit
 
 # real and imaginary axis
-re = np.linspace(x_start, x_start + width, width * density_per_unit )
+re = np.linspace(x_start, x_start + width, width * density_per_unit)
 im = np.linspace(y_start, y_start + height, height * density_per_unit)
 
 
@@ -219,10 +221,11 @@ frames = 100  # number of frames in the animation
 
 # we represent c as c = r*cos(a) + i*r*sin(a) = r*e^{i*a}
 r = 0.7885
-a = np.linspace(0, 2*np.pi, frames)
+a = np.linspace(0, 2 * np.pi, frames)
 
 fig = plt.figure(figsize=(10, 10))  # instantiate a figure to draw
 ax = plt.axes()  # create an axes object
+
 
 def animate(i):
     ax.clear()  # clear axes object
@@ -237,11 +240,12 @@ def animate(i):
         for j in range(len(im)):
             X[i, j] = julia_quadratic(re[i], im[j], cx, cy, threshold)
 
-    img = ax.imshow(X.T, interpolation="bicubic", cmap='magma')
+    img = ax.imshow(X.T, interpolation="bicubic", cmap="magma")
     return [img]
 
+
 anim = animation.FuncAnimation(fig, animate, frames=frames, interval=50, blit=True)
-anim.save('julia_set.gif', writer='imagemagick')
+anim.save("julia_set.gif", writer="imagemagick")
 ```
 
 The logic in the `animate` function is very similar to the previous example. We update the number **c** as a function
