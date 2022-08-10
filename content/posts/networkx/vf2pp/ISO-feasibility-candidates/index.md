@@ -62,7 +62,7 @@ Node $u$ has neighbors, but none of them belong to the mapping. This situation i
 
 <center><img src="c2.png" alt="candidates"/></center>
 
-The grey lines indicate that the nodes of G1 (left 1,2) are mapped to the nodes of G2 (right 1,2). They are basically
+The grey lines indicate that the nodes of $G_1$ (left 1,2) are mapped to the nodes of $G_2$ (right 1,2). They are basically
 the mapping. Again, given $u$, we make the observation that candidates $v$ of u, should also have no neighbors in the
 mapping, and also have the same degree as $u$ (as in the figure). Notice how if we add a neighbor to $v$, or if we place
 one of its neighbors inside the mapping, there is no point examining the pair $u-v$ for matching.
