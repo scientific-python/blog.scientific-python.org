@@ -11,14 +11,14 @@ author: ["Konstantinos Petridis"]
 
 ---
 
-The previous post can be found [here]({{< relref "../node-ordering-Ti-updating" >}}), be sure to check it out, so you
+The previous post can be found [here]({{< relref "../node-ordering-Ti-updating" >}}), be sure to check it out so you
 can
 follow the process step by step. Since then, another two very significant features of the algorithm have been
 implemented and tested.
 
 ## Introduction
 
-As it was previously mentioned, in the ISO problem we are basically trying to create a **mapping** such that, every node
+As previously described, in the ISO problem we are basically trying to create a **mapping** such that, every node
 from the first graph is matched to a node from the second graph. This searching for "feasible pairs" can be visualized
 by a tree, where each node is the candidate pair that we should examine. This can become much clearer if we take a look
 at the below figure.
@@ -115,7 +115,7 @@ for neighbor in G1[u]:
 ```
 
 where the final two lines also check the number of edges between node $u$ and its neighbor $\tilde{u}$, which should be
-the same as those between $v$ and its neihbor which $\tilde{u}$ maps to. In very high level, we could describe this
+the same as those between $v$ and its neighbor which $\tilde{u}$ maps to. At a very high level, we could describe this
 check as a 1-look-ahead check.
 
 ### Cutting rules
@@ -127,7 +127,7 @@ neighbors of $v$ that belong to $T_2$. Take a moment to observe the below figure
 <center><img src="cut.png" alt="cutting check scenario"/></center>
 
 Once again, node 1 maps to A and 2 to B. The red nodes (4,5,6) are basically $T_1$ and the yellow ones (C,D,E) are $T_2$.
-Notice that in order for $u-v$ to be feasible to match, $u$ should have the same number of its neighbors, inside $T_1$,
+Notice that in order for $u-v$ to be feasible, $u$ should have the same number of neighbors, inside $T_1$,
 as $v$ in $T_2$. In every other case, the two graphs are not isomorphic, which can be verified visually. For this
 example, both nodes have 2 of their neighbors (4,6 and C,E) in $T_1$ and $T_2$ respectively. Careful! If we delete the
 $V-E$ edge and connect $V$ to $D$, the cutting condition is still satisfied. However, the feasibility is going to fail,
@@ -140,7 +140,7 @@ if len(T1.intersection(G1[u])) != len(T2.intersection(G2[v])) or len(
     return False
 ```
 
-where $T1out$ and $T2out$ correspond to $\tilde{T_1}$ and $\tilde{T_2}$ respectively. And yes, we have to check for
+where `T1out` and `T2out` correspond to $\tilde{T_1}$ and $\tilde{T_2}$ respectively. And yes, we have to check for
 those as well, however we skipped them in the above explanation for simplicity.
 
 ## Conclusion
