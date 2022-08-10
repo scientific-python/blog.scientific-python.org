@@ -52,7 +52,7 @@ types of $u$ nodes that we might encounter.
 
 ### Case 1
 
-Node $u$ has no neighbors (degree of $u$ equals to zero). It can directly be realized that it would be redundant to test
+Node $u$ has no neighbors (degree of $u$ equals to zero). It would be redundant to test
 as candidates for $u$, nodes from $G_2$ that have more than zero neighbors. That said, we eliminate most of the possible
 candidates and keep those that have the same degree as $u$ (in this case, zero). Pretty easy right?
 
