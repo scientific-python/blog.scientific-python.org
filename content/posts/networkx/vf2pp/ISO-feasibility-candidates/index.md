@@ -74,9 +74,9 @@ Node $u$ has neighbors and some of them belong to the mapping. This scenario is 
 <center><img src="c3.png" alt="candidates"/></center>
 
 In this case, to obtain the candidates for $u$, we must look into the neighborhoods of nodes from $G_2$, which map back
-to the covered neighbors of $u$. In our example, $u$ has one covered neighbor (1), and 1 from G1 maps to 1 from G2,
+to the covered neighbors of $u$. In our example, $u$ has one covered neighbor (1), and 1 from $G_1$ maps to 1 from $G_2$,
 which has $v$ as neighbor. Also, for v to be considered as candidate, it should have the same degree as $u$, obviously.
-Notice how every node that is not in the neighborhood of 1 (in G2) cannot be matched to $u$ without breaking the
+Notice how every node that is not in the neighborhood of 1 (in $G_2$) cannot be matched to $u$ without breaking the
 isomorphism.
 
 ## ISO Feasibility Rules
