@@ -29,7 +29,7 @@ In order to check if the graphs $G_1$, $G_2$ are isomorphic, we check every cand
 feasible, we extend the mapping and go deeper into the tree of pairs. If it's not feasible, we climb up and follow a
 different branch, until every node in $G_1$ is mapped to a node $G_2$. In our example, we start by examining node 0 from G1, with
 node 0 of G2. After some checks (details below), we decide that the
-nodes 0 and 0 are matching, so we go deeper to map the remaining nodes. The next pair is 1-1, which fails the
+nodes 0 and 0 are matching, so we go deeper to map the remaining nodes. The next pair is 1-3, which fails the
 feasibility check, so we have to examine a different branch as shown. The new branch is 1-2, which is feasible, so we
 continue on using the same logic until all the nodes are mapped.
 
