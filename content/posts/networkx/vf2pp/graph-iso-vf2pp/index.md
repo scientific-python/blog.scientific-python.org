@@ -13,13 +13,13 @@ author: ["Konstantinos Petridis"]
 
 The last and final post discussing the **VF2++ helpers** can be found [here]({{< relref "../ISO-feasibility-candidates" >}}).
 Now that we've figured out how to solve all the sub-problems that **VF2++** consists of, we are ready to combine our
-implemented functionalities to create the final solver, for the **Graph Isomorphism** problem.
+implemented functionalities to create the final solver for the **Graph Isomorphism** problem.
 
 ## Introduction
 
 We should quickly remind at this point, that the individual functionalities already implemented are:
 
-- **Node ordering** which finds the optimal order to access the nodes, such that those that are more likely to match, are placed first in the order. This reduces the possibility of infeasible searches taking place first.
+- **Node ordering** which finds the optimal order to access the nodes, such that those that are more likely to match are placed first in the order. This reduces the possibility of infeasible searches taking place first.
 - **Candidate selection** such that, given a node $u$ from $G_1$, we obtain the candidate nodes $v$ from $G_2$.
 - **Feasibility rules** introducing easy-to-check cutting and consistency conditions which, if satisfied by a candidate pair of nodes $u$ from $G_1$ and $v$ from $G_2$, the mapping is extended.
 - **$T_i$ updating** which updates the $T_i$ and $\tilde{T}_i$, $i=1,2$ parameters in case that a new pair is added to the mapping, and restores them when a pair is popped from it.
@@ -83,7 +83,7 @@ to those presented in the original **VF2++ paper**, verifying the theoretical an
 
 The achieved boost is due to some key improvements and optimizations, and more specifically:
 
-- **Optimal node ordering**, which avoids following unfruitful branches that will result in infeasible states. We make sure that the nodes that have the biggest possibility to match, are accessed first.
+- **Optimal node ordering**, which avoids following unfruitful branches that will result in infeasible states. We make sure that the nodes that have the biggest possibility to match are accessed first.
 - **Implementation in a non-recursive manner**, which saves both time and space.
 - **Caching** of both node degrees and nodes per degree in the beginning, so that we don't have to access those features in every degree check. For example, instead of doing
 
@@ -102,7 +102,7 @@ res = G2_nodes_of_degree[G1.degree[u]]
 # do stuff with res ...
 ```
 
-where "G2_nodes_of_degree" stores set of nodes for a given degree. Same happend with node labels.
+where "G2_nodes_of_degree" stores set of nodes for a given degree. The same is done with node labels.
 
 - **Extra shrinking of the candidate set for each node** by adding more checks in the candidate selection method and removing some from the feasibility checks. In simple terms, instead of checking a lot of conditions on a larger set of candidates, we check fewer conditions but on a more targeted and significantly smaller set of candidates.
   For example, in this code:
