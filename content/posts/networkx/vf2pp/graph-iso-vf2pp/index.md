@@ -81,7 +81,7 @@ to those presented in the original **VF2++ paper**, verifying the theoretical an
 
 ## Optimizations
 
-The achieved boost is due to some key improvements and optimizations, and more specifically:
+The achieved boost is due to some key improvements and optimizations, specifically:
 
 - **Optimal node ordering**, which avoids following unfruitful branches that will result in infeasible states. We make sure that the nodes that have the biggest possibility to match are accessed first.
 - **Implementation in a non-recursive manner**, which saves both time and space.
