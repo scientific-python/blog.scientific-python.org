@@ -74,7 +74,7 @@ in the two following diagrams.
 <center><img src="times.png" alt="vf2++ and vf2 times"/></center>
 <center><img src="speedup.png" alt="speedup"/></center>
 
-We notice that the maximum speedup achieved is **14x**, and it keeps increasing gradually, as the number of nodes increase.
+We notice that the maximum speedup achieved is **14x**, and continues to increase as the number of nodes increase.
 It is also highly prominent that the increase in number of nodes, doesn't seem to affect the performance of **VF2++** to
 a significant extent, when compared to the drastic impact on the performance of **VF2**. Our results are almost identical
 to those presented in the original **VF2++ paper**, verifying the theoretical analysis and premises of the literature.
