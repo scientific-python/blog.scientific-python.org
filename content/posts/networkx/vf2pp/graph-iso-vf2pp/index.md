@@ -17,7 +17,7 @@ implemented functionalities to create the final solver for the **Graph Isomorphi
 
 ## Introduction
 
-We should quickly remind at this point, that the individual functionalities already implemented are:
+We should quickly review the individual functionalities used in the VF2++ algorithm:
 
 - **Node ordering** which finds the optimal order to access the nodes, such that those that are more likely to match are placed first in the order. This reduces the possibility of infeasible searches taking place first.
 - **Candidate selection** such that, given a node $u$ from $G_1$, we obtain the candidate nodes $v$ from $G_2$.
