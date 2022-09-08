@@ -121,14 +121,14 @@ in the two following diagrams.
 We notice that the maximum speedup achieved is **14x**, and continues to increase as the number of nodes increase.
 It is also highly prominent that the increase in number of nodes, doesn't seem to affect the performance of **VF2++** to
 a significant extent, when compared to the drastic impact on the performance of **VF2**. Our results are almost identical
-to those presented in the original **VF2++ paper**, verifying the theoretical analysis and premises of the literature.
+to those presented in the original **[VF2++ paper](https://www.sciencedirect.com/science/article/pii/S0166218X18300829)**, verifying the theoretical analysis and premises of the literature.
 
 ## Optimizations
 
 The achieved boost is due to some key improvements and optimizations, specifically:
 
 - **Optimal node ordering**, which avoids following unfruitful branches that will result in infeasible states. We make sure that the nodes that have the biggest possibility to match are accessed first.
-- **Implementation in a non-recursive manner**, which saves both time and space.
+- **Implementation in a non-recursive manner**, avoiding Python's maximum recursion limit while also reducing function call overhead.
 - **Caching** of both node degrees and nodes per degree in the beginning, so that we don't have to access those features in every degree check. For example, instead of doing
 
 ```python
@@ -174,3 +174,74 @@ for candidate in candidates:
 ```
 
 Immediately we have drastically reduced the number of checks performed and calls to the function, as now we only apply them to nodes of the same degree and label as $u$. This is a simplification for demonstration purposes. In the actual implementation there are more checks and extra shrinking of the candidate set.
+
+## Demo
+
+Let's demonstrate our **VF2++** solver on a real graph. We are going to use the graph from the Graph Isomorphism wikipedia.
+
+<p float="center">
+  <img src="G1.png" width="200" height="200">
+  <img src="G2.png" width="395" height="250">
+</p>
+
+To use VF2++, we can do the following.
+
+```python
+import networkx as nx
+
+# edges of the graph
+edges = [
+    (1, 2),
+    (1, 5),
+    (1, 4),
+    (4, 8),
+    (2, 3),
+    (2, 6),
+    (3, 4),
+    (3, 7),
+    (5, 6),
+    (5, 8),
+    (6, 7),
+    (7, 8),
+]
+
+# map the nodes between the two graphs
+mapped_nodes = {1: "a", 2: "h", 3: "d", 4: "i", 5: "g", 6: "b", 7: "j", 8: "c"}
+
+# create the two networkx graphs
+G1 = nx.Graph(edges)
+G2 = nx.relabel_nodes(G1, mapped_nodes)
+
+# use the VF2++ without taking labels into consideration
+res = nx.vf2pp_is_isomorphic(G1, G2, node_label=None)
+# res: True
+res = nx.vf2pp_isomorphism(G1, G2, node_label=None)
+# res: {1: "a", 2: "h", 3: "d", 4: "i", 5: "g", 6: "b", 7: "j", 8: "c"}
+```
+
+Now if we wanted to take labels into consideration as well, we could do something like:
+
+```python
+import itertools
+
+labels = ["blue", "green", "yellow", "red", "brown", "black", "purple", "white"]
+# create the two networkx graphs
+G1 = nx.Graph(edges)
+G2 = nx.relabel_nodes(G1, mapped_nodes)
+
+# assign labels to the graphs (same label to mapped nodes)
+nx.set_node_attributes(G1, dict(zip(G1, itertools.cycle(labels))), "label")
+nx.set_node_attributes(
+    G2,
+    dict(zip([mapped_nodes[n] for n in G1.nodes()], itertools.cycle(labels))),
+    "label",
+)
+
+res = nx.vf2pp_is_isomorphic(G1, G2, node_label="label")
+# res: True
+res = nx.vf2pp_isomorphism(G1, G2, node_label="label")
+# res: {1: "a", 2: "h", 3: "d", 4: "i", 5: "g", 6: "b", 7: "j", 8: "c"}
+```
+
+Notice how in the first case, our solver may return a different mapping every time, since the absence of labels results in nodes that can map to more than one others. For example, node 1 can map to both a and h, since the graph is symmetrical.
+On the second case though, the existence of a single, unique label per node imposes that there's only one match for each node, so the mapping returned is deterministic.
