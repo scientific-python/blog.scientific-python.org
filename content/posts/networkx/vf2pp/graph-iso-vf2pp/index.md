@@ -180,8 +180,8 @@ Immediately we have drastically reduced the number of checks performed and calls
 Let's demonstrate our **VF2++** solver on a real graph. We are going to use the graph from the Graph Isomorphism wikipedia.
 
 <p float="center">
-  <img src="G1.png" width="200" height="200">
-  <img src="G2.png" width="395" height="250">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Graph_isomorphism_a.svg" width="200" height="200">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Graph_isomorphism_b.svg" width="395" height="250">
 </p>
 
 To use VF2++, we can do the following.
