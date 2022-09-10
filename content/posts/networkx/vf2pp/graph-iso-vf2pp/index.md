@@ -235,20 +235,29 @@ res = nx.vf2pp_isomorphism(G1, G2, node_label=None)
 Now if we wanted to take labels into consideration as well, we could do something like:
 
 ```python
-import itertools
+G_nattrs = {
+    "a": "blue",
+    "g": "green",
+    "b": "pink",
+    "h": "red",
+    "c": "yellow",
+    "i": "orange",
+    "d": "cyan",
+    "j": "purple",
+}
+nx.set_node_attributes(G, G_nattrs, name="color")
 
-labels = ["blue", "green", "yellow", "red", "brown", "black", "purple", "white"]
-# create the two networkx graphs
-G1 = nx.Graph(edges)
-G2 = nx.relabel_nodes(G1, mapped_nodes)
-
-# assign labels to the graphs (same label to mapped nodes)
-nx.set_node_attributes(G1, dict(zip(G1, itertools.cycle(labels))), "label")
-nx.set_node_attributes(
-    G2,
-    dict(zip([mapped_nodes[n] for n in G1.nodes()], itertools.cycle(labels))),
-    "label",
-)
+H_nattrs = {
+    1: "blue",
+    2: "red",
+    3: "cyan",
+    4: "orange",
+    5: "green",
+    6: "pink",
+    7: "purple",
+    8: "yellow",
+}
+nx.set_node_attributes(H, H_nattrs, name="color")
 
 res = nx.vf2pp_is_isomorphic(G1, G2, node_label="label")
 # res: True
