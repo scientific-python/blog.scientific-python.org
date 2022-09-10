@@ -225,17 +225,24 @@ H = nx.Graph(
 )
 ```
 
-# use the VF2++ without taking labels into consideration
-res = nx.vf2pp_is_isomorphic(G1, G2, node_label=None)
-# res: True
-res = nx.vf2pp_isomorphism(G1, G2, node_label=None)
-# res: {1: "a", 2: "h", 3: "d", 4: "i", 5: "g", 6: "b", 7: "j", 8: "c"}
-```
-
-Now if we wanted to take labels into consideration as well, we could do something like:
+### use the VF2++ without taking labels into consideration
 
 ```python
-G_nattrs = {
+res = nx.vf2pp_is_isomorphic(G, H, node_label=None)
+# res: True
+
+res = nx.vf2pp_isomorphism(G, H, node_label=None)
+# res: {1: "a", 2: "h", 3: "d", 4: "i", 5: "g", 6: "b", 7: "j", 8: "c"}
+
+res = list(nx.vf2pp_all_isomorphisms(G, H, node_label=None))
+# res: all isomorphic mappings (there might be more than one). This function is a generator.
+```
+
+### use the VF2++ taking labels into consideration
+
+```python
+# Assign some label to each node
+G_node_attributes = {
     "a": "blue",
     "g": "green",
     "b": "pink",
@@ -245,9 +252,10 @@ G_nattrs = {
     "d": "cyan",
     "j": "purple",
 }
-nx.set_node_attributes(G, G_nattrs, name="color")
 
-H_nattrs = {
+nx.set_node_attributes(G, G_node_attributes, name="color")
+
+H_node_attributes = {
     1: "blue",
     2: "red",
     3: "cyan",
@@ -257,13 +265,19 @@ H_nattrs = {
     7: "purple",
     8: "yellow",
 }
-nx.set_node_attributes(H, H_nattrs, name="color")
 
-res = nx.vf2pp_is_isomorphic(G1, G2, node_label="label")
+nx.set_node_attributes(H, H_node_attributes, name="color")
+
+res = nx.vf2pp_is_isomorphic(G, H, node_label="color")
 # res: True
-res = nx.vf2pp_isomorphism(G1, G2, node_label="label")
+
+res = nx.vf2pp_isomorphism(G, H, node_label="color")
+# res: {1: "a", 2: "h", 3: "d", 4: "i", 5: "g", 6: "b", 7: "j", 8: "c"}
+
+res = list(nx.vf2pp_all_isomorphisms(G, H, node_label="color"))
 # res: {1: "a", 2: "h", 3: "d", 4: "i", 5: "g", 6: "b", 7: "j", 8: "c"}
 ```
 
 Notice how in the first case, our solver may return a different mapping every time, since the absence of labels results in nodes that can map to more than one others. For example, node 1 can map to both a and h, since the graph is symmetrical.
-On the second case though, the existence of a single, unique label per node imposes that there's only one match for each node, so the mapping returned is deterministic.
+On the second case though, the existence of a single, unique label per node imposes that there's only one match for each node, so the mapping returned is deterministic. This is easily observed from
+output of `list(nx.vf2pp_all_isomorphisms)` which, in the first case, returns all possible mappings while in the latter, returns a single, unique isomorphic mapping.
