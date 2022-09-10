@@ -184,33 +184,46 @@ Let's demonstrate our **VF2++** solver on a real graph. We are going to use the 
   <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Graph_isomorphism_b.svg" width="395" height="250">
 </p>
 
-To use VF2++, we can do the following.
+Let's start by constructing the graphs from the image above. We'll call
+the graph on the left `G` and the graph on the left `H`:
 
 ```python
 import networkx as nx
 
-# edges of the graph
-edges = [
-    (1, 2),
-    (1, 5),
-    (1, 4),
-    (4, 8),
-    (2, 3),
-    (2, 6),
-    (3, 4),
-    (3, 7),
-    (5, 6),
-    (5, 8),
-    (6, 7),
-    (7, 8),
-]
+G = nx.Graph(
+    [
+        ("a", "g"),
+        ("a", "h"),
+        ("a", "i"),
+        ("g", "b"),
+        ("g", "c"),
+        ("b", "h"),
+        ("b", "j"),
+        ("h", "d"),
+        ("c", "i"),
+        ("c", "j"),
+        ("i", "d"),
+        ("d", "j"),
+    ]
+)
 
-# map the nodes between the two graphs
-mapped_nodes = {1: "a", 2: "h", 3: "d", 4: "i", 5: "g", 6: "b", 7: "j", 8: "c"}
-
-# create the two networkx graphs
-G1 = nx.Graph(edges)
-G2 = nx.relabel_nodes(G1, mapped_nodes)
+H = nx.Graph(
+    [
+        (1, 2),
+        (1, 5),
+        (1, 4),
+        (2, 6),
+        (2, 3),
+        (3, 7),
+        (3, 4),
+        (4, 8),
+        (5, 6),
+        (5, 8),
+        (6, 7),
+        (7, 8),
+    ]
+)
+```
 
 # use the VF2++ without taking labels into consideration
 res = nx.vf2pp_is_isomorphic(G1, G2, node_label=None)
