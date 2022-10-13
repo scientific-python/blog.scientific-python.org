@@ -22,6 +22,9 @@ outputFormats:
 frontmatter:
   date: [":filename", ":default"]
 
+permalinks:
+  posts: "/:sections[1:]/:filename"
+
 outputs:
   home: ["HTML", "ATOM"]
   term: ["HTML", "ATOM"]
@@ -40,6 +43,8 @@ params:
   navbar:
     - title: Home
       url: https://scientific-python.org/
+      sublinks:
+        - title: One
     - title: Blog
       url: /
     #    - title: User Guide
@@ -54,10 +59,10 @@ params:
   panel:
     tiles:
       - buttonText: Submit a post
-        url: /submitting/
+        url: /about/submit/
         text: We welcome contributions from all community members.
       - buttonText: Volunteer to review
-        url: /reviewing/
+        url: /about/review/
         text: Learn how you can help the community grow and become a member of the team.
   footer:
     logo: logo.svg
@@ -92,7 +97,7 @@ params:
           - text: About
             link: /about/
           - text: Roadmap
-            link: /roadmap/
+            link: /about/roadmap/
           - text: Code of Conduct
             link: https://scientific-python.org/code_of_conduct/
       column2:

@@ -1,6 +1,5 @@
 ---
 title: "Roadmap"
-url: /roadmap
 ---
 
 ## Roadmap section 1
