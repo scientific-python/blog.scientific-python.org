@@ -53,9 +53,8 @@ params:
     #      url: https://learn.scientific-python.org/contributors/
     #    - title: Maintainer Guide
     #      url: https://learn.scientific-python.org/maintainers/
-    - title: "Discussion Forum"
-      url: https://discuss.scientific-python.org/
-      is_external: true
+    - title: SPECs
+      url: https://scientific-python.org/specs
   panel:
     tiles:
       - buttonText: Submit a post
@@ -103,12 +102,12 @@ params:
       column2:
         title: "Maintainers"
         links:
-          - text: SPECs
-            link: https://scientific-python.org/specs/
-          - text: Grants
-            link: https://scientific-python.org/grants/
+          - text: Community
+            link: https://scientific-python.org/community/
           - text: Calendars
             link: https://scientific-python.org/calendars/
+          - text: Summits
+            link: https://scientific-python.org/summits/
       column3:
         links:
           - text: Press kit
