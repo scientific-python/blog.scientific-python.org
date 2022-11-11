@@ -43,16 +43,8 @@ params:
   navbar:
     - title: Home
       url: https://scientific-python.org/
-      sublinks:
-        - title: One
     - title: Blog
       url: /
-    #    - title: User Guide
-    #      url: https://learn.scientific-python.org/users/
-    #    - title: Contributor Guide
-    #      url: https://learn.scientific-python.org/contributors/
-    #    - title: Maintainer Guide
-    #      url: https://learn.scientific-python.org/maintainers/
     - title: SPECs
       url: https://scientific-python.org/specs
   panel:
