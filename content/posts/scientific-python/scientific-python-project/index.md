@@ -2,8 +2,11 @@
 title: "Scientific Python: Community developed, community owned"
 date: 2022-08-14
 draft: false
-tags: ["Community", "Scientific-Python"]
-description: "Learn about the Scientific Python project."
+tags: ["community", "scientific-python"]
+description: |
+  Introducing the Scientific Python project: why it is necessary,
+  what it hopes to achieve, and the various mechanisms by which
+  it will operate.
 displayInList: true
 author: ["Juanita Gómez"]
 
@@ -15,47 +18,73 @@ resources:
       showOnTop: true
 ---
 
-The Scientific Python project started as an initiative from Stéfan van der Walt and Jarrod Millman, to help coordinate the Scientific Python ecosystem and grow the community. Their idea is to improve communication between projects in the ecosystem, (get projects talking to one another) to plan strategies about their joint future, and to make that future a reality.
+The Scientific Python project is an initiative to better coordinate and support the scientific Python ecosystem of libraries and to grow the surrounding community.
+It aims to improve communication between ecosystem projects, to better plan for their joint future, and to make that future a reality.
 
 ## Why is this important?
 
-Initially, the Scientific Python developer community was small and it was easy to organize meetings to discuss important aspects of the ecosystem and take joint decisions. However, over the years the community has grown quickly and it has become harder, if not impossible, to have these meetings with all the members of the ecosystem and take decisions together. Each project now has their own community and there has been a lack of coordination that impacts negatively the users of the different tools. In the end, it is a fact that the different projects depend on one another, so it just makes sense to have some sort of coordination between them.
+Initially, the Scientific Python developer community was small, so that it was easy to discuss important ecosystem-wide decisions at events like the annual SciPy conference.
+But with the rapid growth of the community, number of libraries, as well as geographical diversification, this was no longer possible.
+Scientific Python is a loose federation of somewhat independent community projects, and while this configuration is robust, it also tends to favor reinvention of the wheel and decisions that focus on project needs, instead of being strategically aligned with the entire ecosystem.
+Ultimately, the different projects depend on one another, so that it makes sense to have close coordination between them.
 
 ## How are we doing this?
 
 ### SPECs
 
-The first aim of the project, is to have a mechanism through which the community can establish cross-project policies. These policy documents are called [SPECs](https://scientific-python.org/specs/): Scientific Python Ecosystem Coordination documents. And they function similarly to PEPs, NEPs, SKIPs, or any of the other enhancement proposals—except that they will be relevant to multiple projects in the ecosystem.
+The [SPECs](https://scientific-python.org/specs/), or Scientific Python Ecosystem Coordination documents, provide a mechanism through which the community can establish cross-project policies.
+They function similarly to PEPs, NEPs, SKIPs, or any of the other enhancement proposals—except that they are relevant to multiple projects in the ecosystem.
 
 These documents will be recommendations written up by the community, and their authority will derive from endorsement by popular libraries. Some of them are already in progress and many are on the way!
 
+SPECs are short and concise, and are endorsed by core projects in the ecosystem once they are adopted.
+
 ### Shared infrastructure
 
-The project also aims to provide a common engineering infrastructure to help maintainers. Some of the tools that are part of this are a [theme](https://github.com/scientific-python/scientific-python-hugo-theme) for the project websites, which is already been used by some of the projects (NumPy and SciPy), a self-hosted privacy-friendly web analytics platform, a shared [discussions forum](https://discuss.scientific-python.org), a [Scientific Python blog](https://blog.scientific-python.org), and [project development statistics](https://devstats.scientific-python.org).
+We provide common engineering infrastructure to help maintainers.
+Some tools we currently work on include
+[a Hugo web theme](https://github.com/scientific-python/scientific-python-hugo-theme) for project websites,
+a self-hosted privacy-friendly web analytics platform,
+a [shared discussion forum](https://discuss.scientific-python.org),
+the [devpy](https://github.com/scientific-python/devpy) developer CLI,
+[this blog](https://blog.scientific-python.org),
+and a [project development statistics dashboard](https://devstats.scientific-python.org).
 
 ### Developer events
 
-Another idea of the project is to organize events where developers can meet to discuss relevant topics of interest across several packages. They will be recorded and shared on our [YouTube channel](https://www.youtube.com/scientificpythonorg) so that everyone has access to them. Up to the moment, there has been two of these events, the first involved API dispatching for core projects and the second involved alt-text for improved accessibility. There are two more coming soon, a Domain Stacks summit and a Sparse Array summit but we hope to have a lot more of these throughout the year.
+We organize virtual "domain summits" where developers can meet to discuss relevant cross-project topics.
+These will be recorded and shared on our [YouTube channel](https://www.youtube.com/scientific-python-org).
+Thus far, we've organized four such events on: API dispatching, alt-text for improved accessibility, domain stacks, and sparse arrays.
+
+We also organize an annual in-person developer summit: a week of intense collaboration, with work scheduled ahead of time, during which we address as many cross-project concerns as we can.
 
 ### Documentation
 
-Documentation is a key aspect of every Python software project. Thus, we want to have a central landing place for information that will help users and contributors better understand the ecosystem. The [scientific-python.org](https://scientific-python.org) website contains resources that we hope will be used and adopted by many of the projects. These include videos that orient newcomers to the ecosystem, interviews that introduce some of the members of our community and how they contribute, and demos, which give an overview of the problem solving workflow in the Scientific Python ecosystem.
+We work on documentation for new contributors and maintainers.
+Our YouTube channel hosts onboarding videos, that show how to get started contributing to a scientific Python project, as well as developer interviews.
+Over the next year, we also plan to unify several disparate community resources into a maintainer guide.
 
 ### Community outreach
 
-Outreach and engagement are also important ways of growing our community. Nowadays, [Facebook](https://www.facebook.com/scientific.python), [Twitter](https://twitter.com/scientific_py), [Instagram](https://www.instagram.com/scientific.python), and [TikTok](https://www.tiktok.com/@scientific.python) are a big part of people's lives. In order to stay connected, we are using social media to share our content and interact directly with users and developers. We have released content in every social media channel and achieved great engagement from the community.
+We love to reach out to and connect with our growing community of users and developers!
+Platforms we are present on include
+[Twitter](https://twitter.com/scientific_py), [Facebook](https://www.facebook.com/scientific.python), [Instagram](https://www.instagram.com/scientific.python), and [TikTok](https://www.tiktok.com/@scientific.python).
 
 ## Who is behind this?
 
-The short answer: Anyone who wants to be. The long answer: We are a community of volunteers from different Scientific Python packages of the ecosystem. There are several teams in place working on the different aspects of the project and though it is leaded by Jarrod Millman and Stéfan van der Walt, there has been a lot of people involved in making this possible from [content creators](https://blog.scientific-python.org/about/), to content reviewers and [community managers](https://scientific-python.org/about/).
+The short answer: anyone who wants to be.
+The long answer: we are a community of volunteers from different scientific Python ecosystem packages.
+There are several teams working on the different aspects of the project, such as our [community managers & leaders](https://scientific-python.org/about/), the [SPEC steering committee](https://scientific-python.org/about/), and [blog content reviewers and editors](https://blog.scientific-python.org/about/).
+The project is led by Jarrod Millman and Stéfan van der Walt, both long-term community members who care deeply about the success of the ecosystem and its developers.
 
-Currently there are eight [projects](https://scientific-python.org/specs/core-projects/) endorsing the SPECs: IPython, Matplotlib, NetworkX, NumPy, pandas, scikit-image, scikit-learn, and SciPy. However there are people from many more projects participating in our discussion forum, writing blogs or contributing to the community somehow. We welcome everyone to be part of the community and contribute their bit however they can.
+Currently there are eight [projects](https://scientific-python.org/specs/core-projects/) that endorse the SPECs: IPython, Matplotlib, NetworkX, NumPy, pandas, scikit-image, scikit-learn, and SciPy. However, contributors from many more projects participate on our discussion forum, write blogs, and contribute to the community in other ways.
+We welcome everyone to become part of the community and to contribute however they can!
 
 ![Picture of the Scientific Python Community](community.png)
 
 ## What am I doing here?
 
-For the past couple of months I have been a community manager of the project. This includes recording docummentation videos for the website, recording developer interviews for our YouTube channel, presenting talks in conferences, hosting developer events, creating content for our Instagram, Facebook, TikTok and Twitter and many other things that I never thought I would do.
+For the past couple of months I have been a community manager for the project. This includes recording documentation videos for the website, recording developer interviews for our YouTube channel, presenting talks at conferences, hosting developer events, creating content for our Instagram, Facebook, TikTok, and Twitter channels, and many other things that I never thought I would do.
 
 Why? Because I believe in this. Jarrod and Stefan reached out to me last year, inviting me to be part of this amazing idea and I was honored and very grateful. I wasn't sure that I could do it, but now I find myself here and I know that this is the right place for me. Not because I have a lot of experience in these things (I had actually never even used TikTok before joining the project), but because I care. I have learned the importance of building community and while the Scientific Python tools are amazing, what makes the difference is the community around them and I'm greatful to be able to help make this community great.
 
