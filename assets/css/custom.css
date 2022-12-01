@@ -34,7 +34,10 @@
 
 .post-content {
   font-family: serif;
-  font-size: 130%;
+}
+
+.post-content p:not(:last-child) {
+  margin-bottom: 0.25rem;
 }
 
 .post-summary {
