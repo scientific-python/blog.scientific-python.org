@@ -35,7 +35,8 @@ Ultimately, the different projects depend on one another, so that it makes sense
 The [SPECs](https://scientific-python.org/specs/), or Scientific Python Ecosystem Coordination documents, provide a mechanism through which the community can establish cross-project policies.
 They function similarly to PEPs, NEPs, SKIPs, or any of the other enhancement proposals—except that they are relevant to multiple projects in the ecosystem.
 
-These documents will be recommendations written up by the community, and their authority will derive from endorsement by popular libraries. Some of them are already in progress and many are on the way!
+These documents will be recommendations written up by the community, and their authority will derive from endorsement by popular libraries.
+Some of them are already in progress and many are on the way!
 
 SPECs are short and concise, and are endorsed by core projects in the ecosystem once they are adopted.
 
@@ -77,15 +78,23 @@ The long answer: we are a community of volunteers from different scientific Pyth
 There are several teams working on the different aspects of the project, such as our [community managers & leaders](https://scientific-python.org/about/), the [SPEC steering committee](https://scientific-python.org/about/), and [blog content reviewers and editors](https://blog.scientific-python.org/about/).
 The project is led by Jarrod Millman and Stéfan van der Walt, both long-term community members who care deeply about the success of the ecosystem and its developers.
 
-Currently there are eight [projects](https://scientific-python.org/specs/core-projects/) that endorse the SPECs: IPython, Matplotlib, NetworkX, NumPy, pandas, scikit-image, scikit-learn, and SciPy. However, contributors from many more projects participate on our discussion forum, write blogs, and contribute to the community in other ways.
+Currently there are eight [projects](https://scientific-python.org/specs/core-projects/) that endorse the SPECs: IPython, Matplotlib, NetworkX, NumPy, pandas, scikit-image, scikit-learn, and SciPy.
+However, contributors from many more projects participate on our discussion forum, write blogs, and contribute to the community in other ways.
 We welcome everyone to become part of the community and to contribute however they can!
 
 ![Picture of the Scientific Python Community](community.png)
 
 ## What am I doing here?
 
-For the past couple of months I have been a community manager for the project. This includes recording documentation videos for the website, recording developer interviews for our YouTube channel, presenting talks at conferences, hosting developer events, creating content for our Instagram, Facebook, TikTok, and Twitter channels, and many other things that I never thought I would do.
+For the past couple of months I have been a community manager for the project.
+This includes recording documentation videos for the website, recording developer interviews for our YouTube channel, presenting talks at conferences, hosting developer events, creating content for our Instagram, Facebook, TikTok, and Twitter channels, and many other things that I never thought I would do.
 
-Why? Because I believe in this. Jarrod and Stefan reached out to me last year, inviting me to be part of this amazing idea and I was honored and very grateful. I wasn't sure that I could do it, but now I find myself here and I know that this is the right place for me. Not because I have a lot of experience in these things (I had actually never even used TikTok before joining the project), but because I care. I have learned the importance of building community and while the Scientific Python tools are amazing, what makes the difference is the community around them and I'm greatful to be able to help make this community great.
+Why? Because I believe in this.
+Jarrod and Stefan reached out to me last year, inviting me to be part of this amazing idea and I was honored and very grateful.
+I wasn't sure that I could do it, but now I find myself here and I know that this is the right place for me.
+Not because I have a lot of experience in these things (I had actually never even used TikTok before joining the project), but because I care.
+I have learned the importance of building community and while the Scientific Python tools are amazing, what makes the difference is the community around them and I'm greatful to be able to help make this community great.
 
-I have learned a lot from the Scientific Python ecosystem by being a community manager, I have met a lot of wonderful people and I have seen what people can do with the tools that the ecosystem offers. So, my take: The Scientific Python project is a great bet. Open source Scientific Python is about much more than coding, it is about collaborating, teaching, and communicating so unifying the community and promoting the integration of the projects sounds like the perfect path to follow in order to get the most out of the ecosystem.
+I have learned a lot from the Scientific Python ecosystem by being a community manager, I have met a lot of wonderful people and I have seen what people can do with the tools that the ecosystem offers.
+So, my take: The Scientific Python project is a great bet.
+Open source Scientific Python is about much more than coding, it is about collaborating, teaching, and communicating so unifying the community and promoting the integration of the projects sounds like the perfect path to follow in order to get the most out of the ecosystem.
