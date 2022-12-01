@@ -48,9 +48,7 @@ the next 12 months, we'd like to see Sayed focus on the following:
 - and wherever else Sayed's interests take him.
 
 "I'm both happy and nervous: this is a great opportunity, but also a
-great responsibility," said Sayed, who has written a
-blog post further detailing his interests and new Developer in
-Residence role **TODO LINK**.
+great responsibility," said Sayed in response to his appointment.
 
 The funds for the NumPy fellowship come from a partnership with
 Tidelift as well as from individual donations. We sincerely thank both
