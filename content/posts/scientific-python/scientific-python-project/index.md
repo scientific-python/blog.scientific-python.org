@@ -31,7 +31,7 @@ These documents will be recommendations written up by the community, and their a
 
 ### Shared infrastructure
 
-The project also aims to provide a common engineering infrastructure to help maintainers. Some of the tools that are part of this are a [theme](https://github.com/scientific-python/scientific-python-hugo-theme) for the project websites, which is already been used by some of the projects (numpy and scipy), a self-hosted privacy-friendly web analytics platform, a shared [discussions forum](https://discuss.scientific-python.org), a [Scientific Python blog](https://blog.scientific-python.org), and project development statistics.
+The project also aims to provide a common engineering infrastructure to help maintainers. Some of the tools that are part of this are a [theme](https://github.com/scientific-python/scientific-python-hugo-theme) for the project websites, which is already been used by some of the projects (NumPy and SciPy), a self-hosted privacy-friendly web analytics platform, a shared [discussions forum](https://discuss.scientific-python.org), a [Scientific Python blog](https://blog.scientific-python.org), and [project development statistics](https://devstats.scientific-python.org).
 
 ### Developer events
 
