@@ -50,8 +50,8 @@ the next 12 months, we'd like to see Sayed focus on the following:
 "I'm both happy and nervous: this is a great opportunity, but also a
 great responsibility," said Sayed in response to his appointment.
 
-The funds for the NumPy fellowship come from a partnership with
-Tidelift as well as from individual donations. We sincerely thank both
+The funds for the NumPy Fellowship Program come from a partnership with
+Tidelift and from individual donations. We sincerely thank both
 Tidelift and everyone who donated to the project---without you, this
 program would not be possible! We also acknowledge the CPython
 Developer-in-Residence and the Django Fellowship programs, which
