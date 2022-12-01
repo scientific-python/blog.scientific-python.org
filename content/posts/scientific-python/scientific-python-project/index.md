@@ -53,7 +53,7 @@ and a [project development statistics dashboard](https://devstats.scientific-pyt
 ### Developer events
 
 We organize virtual "domain summits" where developers can meet to discuss relevant cross-project topics.
-These will be recorded and shared on our [YouTube channel](https://www.youtube.com/scientific-python-org).
+These will be recorded and shared on our [YouTube channel](https://www.youtube.com/@scientific-python).
 Thus far, we've organized four such events on: API dispatching, alt-text for improved accessibility, domain stacks, and sparse arrays.
 
 We also organize an annual in-person developer summit: a week of intense collaboration, with work scheduled ahead of time, during which we address as many cross-project concerns as we can.
