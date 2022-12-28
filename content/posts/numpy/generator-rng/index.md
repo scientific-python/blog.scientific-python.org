@@ -81,7 +81,7 @@ for _ in range(5):
 ```
 
 As you can see, although we started with the same state, this program is not
-deterministic anymore. This is what we mean by thread safety.
+deterministic anymore.
 
 NumPy came up with a solution: `np.random.RandomState`. The idea is,
 knowing random number generators have a state, let's define them as
