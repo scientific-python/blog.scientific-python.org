@@ -34,7 +34,10 @@
 
 .post-content {
   font-family: serif;
-  font-size: 130%;
+}
+
+.post-content p:not(:last-child) {
+  margin-bottom: 0.25rem;
 }
 
 .post-summary {
@@ -69,10 +72,10 @@ img.post-featuredImage {
 }
 
 .hero-title-content {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    max-width: 1200px;
-    margin: 2vh auto;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2vh auto;
+  justify-content: space-around;
 }

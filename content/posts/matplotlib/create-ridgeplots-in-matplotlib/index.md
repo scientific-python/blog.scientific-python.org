@@ -89,7 +89,7 @@ for ax_obj in ax_objs:
 plt.show()
 ```
 
-![](basic_template.png)
+![This is a chart with 3 subplot labeled ax, ax1, and ax2. It was created using GridSpec.](basic_template.png)
 
 I won't get into more detail about what everything does here. If you are interested in learning more about figures, axes, and gridspec, Akash Palrecha has [written a very nice guide here](../an-inquiry-into-matplotlib-figures/).
 
@@ -140,7 +140,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![](grid_spec_distro.png)
+![6 kernel density estimate (KDE) charts, each with different shades ranging from blue to blood red.](grid_spec_distro.png)
 
 We're not quite at ridge plots yet, but let's look at what's going on here. You'll notice instead of setting an explicit number of rows, we've set it to the length of our countries list - `gs = (grid_spec.GridSpec(len(countries),1))`. This gives us flexibility for future plotting with the ability to plot more or less countries without needing to adjust the code.
 
@@ -158,7 +158,7 @@ Once again using GridSpec, we can adjust the spacing between each of the subplot
 gs.update(hspace= -0.5)
 ```
 
-![](grid_spec_distro_overlap_1.png)
+![6 kernel density estimate (KDE) charts, each with different shades ranging from blue to blood red. However, the y axis object are overlapping.](grid_spec_distro_overlap_1.png)
 
 Now our axes objects are overlapping! Great-ish. Each axes object is hiding the one layered below it. We _could_ just add `ax_objs[-1].axis("off")` to our for loop, but if we do that we will lose our xticklabels. Instead we will create a variable to access the background of each axes object, and we will loop through each line of the border (spine) to turn them off. As we _only_ need the xticklabels for the final plot, we will add an if statement to handle that. We will also add in our country labels here. In our for loop we add:
 
@@ -185,7 +185,7 @@ ax_objs[-1].text(-0.02,0,country,fontweight="bold",fontsize=14,ha="center")
 
 ```
 
-![](grid_spec_distro_overlap_2.png)
+![6 kernel density estimate (KDE) charts each representing 6 countries. France is blue, Germany is dark blue, Ireland is purple, Italy is a lighter shade of purple, Spain is red, and the United Kingdom is blood red.  The x-axis shows the distribution of children in each county listed.](grid_spec_distro_overlap_2.png)
 
 As an alternative to the above, we can use the `KernelDensity` module from `sklearn.neighbors` to create our distribution. This gives us a bit more control over our bandwidth. The method here is taken from Jake VanderPlas's fantastic _Python Data Science Handbook_, you can read his full excerpt [here](https://jakevdp.github.io/PythonDataScienceHandbook/05.13-kernel-density-estimation.html). We can reuse most of the above code, but need to make a couple of changes. Rather than repeat myself, I'll add the full snippet here and you can see the changes and minor additions (added title, label to xaxis).
 
@@ -253,11 +253,11 @@ plt.tight_layout()
 plt.show()
 ```
 
-![](grid_spec_distro_overlap_3.png)
+![6 kernel density estimate (KDE) charts each representing 6 countries. France is blue, Germany is dark blue, Ireland is purple, Italy is a lighter shade of purple, Spain is red, and the United Kingdom is blood red.  The x-axis shows the distribution of aptitude test results from 18 to 24 years old in each county listed.](grid_spec_distro_overlap_3.png)
 
 I'll finish this off with a little project to put the above code into practice. The data provided also contains information on whether the test taker was male or female. Using the above code as a template, see how you get on creating something like this:
 
-![](split_ridges.png)
+![Each of two sets of six kernel density estimate (KDE) charts shows six different countries. France is blue, Germany is dark blue, Ireland is purple, Italy is a lighter shade of purple, Spain is red, and the United Kingdom is blood red. The x-axis displays the distribution of 18 to 24 year olds' aptitude test scores in each county presented. The distribution of the results of the aptitude test among boys aged 18 to 24 in each county is shown on one of the two 6-kennel charts, while the distribution of females is shown on the other.](split_ridges.png)
 
 For those more ambitious, this could be turned into a split violin plot with males on one side and females on the other. Is there a way to combine the ridge and violin plot?
 
