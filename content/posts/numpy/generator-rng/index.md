@@ -90,7 +90,8 @@ on a global one. This API is more explicit and prevents any "contamination"
 of state. See this example.
 
 ```python
-# the following is wrong and only exists for demonstration purposes!
+# value of the seed only for illustrative purposes
+# see bellow to use SeedSequence
 seed = 123456
 
 # reference value
