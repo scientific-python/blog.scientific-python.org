@@ -207,7 +207,7 @@ They are compared with the underlying distributions and a poor match.
 ](distributions_seeded.png)
 
 Does that look good to you? It is not. If you need to have a determined
-sequence of points, there are other technics that would generate almost
+sequence of points, there are other techniques that would generate almost
 perfect histograms only using a fraction of the number of points which is used
 here. See [this article]({{< relref "../../scipy/qmc-basics" >}})
 for more information on this.
