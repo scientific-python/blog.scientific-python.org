@@ -147,8 +147,10 @@ to create a new interface.
 
 Hence, for new code, `np.random.Generator` should be
 used. It does not provide a strong guarantee of reproducibility across
-different versions. But it's fine as we will see in the next section about
-[seed](#seed-id). To create a new instance of `np.random.Generator`, the
+different versions. But it offers many benefits such as state-of-the-art
+algorithms (which you can choose), parallel capabilities and performance.
+
+To create a new instance of `np.random.Generator`, the
 canonical way is to use:
 
 ```python
@@ -238,8 +240,9 @@ backward compatibility concerns, `np.random.RandomState` is still present in
 NumPy for testing.
 
 ```python
+# not guaranteed to be stable
 rng = np.random.default_rng()
-# or
+# guaranteed to be stable
 rng = np.random.RandomState()
 ```
 
