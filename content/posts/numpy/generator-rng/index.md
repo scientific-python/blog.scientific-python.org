@@ -36,9 +36,10 @@ np.random.seed(123456)
 sample = np.random.random(1_024)
 ```
 
-Aoutch! Two lines of codes and both are wrong. This is a simple snippet to
-generate 1024 points using NumPy's random number generator that is very common
-in codes and tutorials online. Sadly/surprisingly even on famous blogs.
+Aoutch! Two lines of codes and things can be said on both. This is a simple
+snippet to generate 1024 points using NumPy's random number generator that is
+very common in codes and tutorials online. Sadly/surprisingly even on famous
+blogs.
 
 There are 2 problems I want to talk about:
 
