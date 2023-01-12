@@ -63,6 +63,7 @@ import matplotlib.pyplot as plt
 
 # Barnsley's Fern - Fractal; en.wikipedia.org/wiki/Barnsley_…
 
+
 # functions for each part of fern:
 # stem
 def stem(x, y):
@@ -116,6 +117,7 @@ import matplotlib.pyplot as plt
 from matplotlib.tri import Triangulation
 from matplotlib.patches import Polygon
 import numpy as np
+
 
 # I found this sample code online and manipulated it to make the art piece!
 # was interested in because it combined what we used for functions as well as what we used for plotting with (x,y)
