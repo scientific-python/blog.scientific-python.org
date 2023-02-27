@@ -29,7 +29,7 @@ For more information about Outreachy go to: <https://www.outreachy.org/>
 
 ## My experience at NetworkX during the contribution phase
 
-If this is your first time contributing to an open-source project you may feel overwhelmed. Understanding an almost 20-year-old project like NetworkX can feel like it's gonna take forever but don't worry I have some tips that may be handy for you during the contribution phase.
+If this is your first time contributing to an open-source project you may feel overwhelmed. Understanding an almost 20-year-old project like NetworkX can feel like it's going to take forever but don't worry I have some tips that may be handy for you during the contribution phase.
 
 - _Learn about the project:_ Understanding the project is a process that may take some time. Don’t rush it! You don’t need to understand all codebase in a day. The most important things that you need to know only will take you a few hours to go through: Learn about the project mission and values,
   community rules, and contribution process. In NetworkX all you need to know is here: <https://networkx.org/documentation/stable/developer/index.html>
