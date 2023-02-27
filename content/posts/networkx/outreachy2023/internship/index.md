@@ -1,5 +1,5 @@
 ---
-title: "Outreachy Internships: Internship Guide "
+title: "Outreachy Part II: Internship Guide "
 date: 2023-02-26T22:16:12-03:00
 draft: false
 description: "
@@ -9,6 +9,8 @@ tags: ["outreachy", "networkx", "first-time-contributor"]
 displayInList: true
 author: ["Paula Pérez Bianchi"]
 ---
+
+This is the second part of a blog series where I talk about my experience during my Outreachy internship at NetworkX. If you haven’t read the first part you can find it [here]({{< relref "../contribution-phase" >}}).
 
 As you advance through the contribution phase you may wonder how your internship is gonna be in case you get selected. Here is my experience as a **NetworkX** intern and some tips that could help you through the internship.
 
@@ -25,8 +27,10 @@ I started my internship in December. I was almost done with my assignments at sc
 - _The repository is an incredible source of information about the project._ If you are struggling with something, you can look at all related issues and PRs. There, you will be able to find discussions and explanations that can give you a better sense of why things are a certain way.
 - _Learn about the project structure._ A Python package is not just a lot of Python code together, there are a lot of other packages used in order to make documentation and testing work. Learning how everything works underneath will usually make your work easier but also it is a great skill to gain. For me, understanding how a project like this comes to life was extremely interesting because It was something I have never paid attention to before.
 - _You will understand things as you go._ So don’t overstress if you don’t understand everything. With time, some details will click. But it’s also important not to immediately give up when you don’t get something. The key is to keep your confidence even when you are feeling a bit lost.
-- _Organize your work and learn how to work remotely._ If this is your first time working remotely it’s important that you find your own way to organize your time. There are many strategies that can help you figure out how to organize your work throughout the day. Try different techniques until you find whatever suits you best. If you are a college student you may want to use the same system that works for you at school, but working it’s different so you may need to explore other options.
+- _Organize your work and learn how to work remotely._ If this is your first time working remotely it’s important that you find your own way to organize your time. There are many strategies that can help you figure out how to organize your work throughout the day. Try different techniques until you find whatever suits you best. If you are a college student you may want to use the same system that works for you at school, but working it’s different so you may need to explore other options. For me, it was useful to have two lists: a _to-do list_ because it was motivating to track my progress and an _ideas list_ with things I want to do, usually smaller contributions that I can do when I’m tired of the bigger tasks. I also tried the Pomodoro technique but for me was more effective to work on tasks until I finish and then take a break if I want to.
+
 - As part of your Outreachy internship, you will need to write blogs, turn in feedback and attend informal chats. Be aware of that and organize all the deadlines so you and your mentor don’t miss any of them.
-- _Make a cheat sheet with all the useful commands and links._ That way you don’t have to go through the process of finding that information again every time you need it. If there is a series of commands that you use a lot try writing a bash script.
+- _Make a cheat sheet with all the useful commands and links._ That way you don’t have to go through the process of finding that information again every time you need it. If there is a series of commands that you use a lot try writing a bash script. Here is a repository with my cheat sheet:
+  <https://github.com/paulitapb/Outreachy2023>
 
 Overall my experience as a **NetworkX** intern was amazing! Not only did I gain many different skills but also now I am more confident in my abilities to work in tech. I discovered Open-Source communities and I realized I am able to contribute in valuable ways. Furthermore, I now have a better sense of what I want my future in tech to look like and what are my options.

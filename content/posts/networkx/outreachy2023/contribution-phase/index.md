@@ -1,5 +1,5 @@
 ---
-title: "Outreachy internships: My experience as a first-time contributor in Open-Source"
+title: "Outreachy Part I: My experience as a first-time contributor in Open-Source"
 date: 2023-02-26T22:15:58-03:00
 draft: false
 description: "
@@ -34,10 +34,12 @@ If this is your first time contributing to an open-source project you may feel o
 - _Learn about the project:_ Understanding the project is a process that may take some time. Don’t rush it! You don’t need to understand the entire codebase in a day. The most important things that you need to know only will take you a few hours to go through: Learn about the project mission and values,
   community rules, and contribution process. In NetworkX all you need to know is here: <https://networkx.org/documentation/stable/developer/index.html>
 
-- _Start contributing right away:_ You don't need to understand every part of the project to make valuable contributions. Start small and use that experience to level up your contributions. At the beginning of the contribution phase, some good first issues are added. Work on them first and then start opening your own issues (Don’t forget to link your PR with the issues so they can be automagically closed). Also, record your contributions on the Outreachy website as you submit them. I only recorded all contributions at the end and that took me a lot of time.
+- _Start contributing right away:_ You don't need to understand every part of the project to make valuable contributions. Start small and use that experience to level up your contributions. At the beginning of the contribution phase, some good first issues are added. Work on them first and then start opening your own issues (Don’t forget to link your PR with the issues so they can be automagically closed). Also, record your contributions on the Outreachy website as you submit them. I only recorded all contributions at the end and that took me a lot of time. If you struggle to find issues or ideas for contributions here are my contributions at NetworkX: <https://github.com/networkx/networkx/pulls?q=is%3Apr+paulitapb>
 
 - _It’s not just about writing code._ What's great about big projects is that you can explore many different things. Making contributions to different parts of the project shows that you understand the project on a general level and can be a valuable member of the community.
 
 - _Don’t be afraid of the community!_ As a beginner, you may worry about the technical side of the project but understanding the community review process is key. Usually, communities want to grow and that means teaching new contributors about the project. It’s fine if your contributions are not perfect or if you need to ask questions. That’s the beauty of Open-Source communities! Also, don’t be discouraged if a contribution is not merged into the project. Maybe that was already suggested, tested, or deprecated. Take that as a learning experience and even that can give you some ideas for future contributions.
 
 I hope this information helps you to start your Open-Source journey! The NetworkX team is waiting for your great contributions!
+
+If you are interested in my experience during the internship you can find the second part of this blog [here]({{< relref "../internship" >}}).
