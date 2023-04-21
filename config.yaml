@@ -31,6 +31,9 @@ outputs:
 
 params:
   description: "Posts from the Scientific Python community"
+  analytics:
+    plausible:
+      dataDomain: blog.scientific-python.org
   images:
     - /images/logo.svg
   navbarlogo:
