@@ -30,7 +30,7 @@ Prior to the summit we held several hour-long planning meetings:
 
 ## Summit execution
 
-At the summit, we had a brief check-in and then split into several groups based on each developers time and interests.
+At the summit, we had a brief check-in and then split into several groups based on each developers time and interests. Raw work progress and log have been collected in a [document](https://hackmd.io/iEtdfbxfSbGwOAJTXmqyIQ?both), we list some of the highlights below:
 
 ### Sparse arrays
 
@@ -52,7 +52,7 @@ We made significant progress on several SPECs, which had been drafted during pre
 
 ### Community building
 
-### Documentation
+### Developer Workflow Documentation
 
 Henry Schreiner from scikit-hep and Dan Allan from Brookhaven National Laboratory
 contributed a [development guide](https://learn.scientific-python.org/development/),
@@ -67,7 +67,17 @@ One of the fun things that happens at summits like these are the chance encounte
 
 ### Pytest plugins/Sphinx extensions
 
-- [pytest-doctestplus](https://github.com/scientific-python/pytest-doctestplus)
+- [pytest-regex](https://github.com/tylerjereddy/pytest-regex) was created to support selecting tests with regular expressions.
+
+- [pytest-doctestplus](https://github.com/scientific-python/pytest-doctestplus) was moved upstream into the Scientific Python organization. The summit provided new momentum to develop new features (e.g. produce updated docstring), and to use it for the numpy documentation testing.
+
+
+
+- sphinx-scientific-python, a new extension as a home for various features from the ecosystem, e.g. we aggreed on bringing existing extensions from MNE tools to this extension.
+
+- pydata-sphinx-theme updates
+
+
 
 ### SciPy release management progress
 
