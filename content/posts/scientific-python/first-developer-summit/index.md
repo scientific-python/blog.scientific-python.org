@@ -21,7 +21,7 @@ The first [Scientific Python Developer Summit](https://scientific-python.org/sum
 
 Prior to the summit we held several hour-long planning meetings:
 
-- [General (2023-02-27)](general-planning)
+- [General (2023-02-27)](https://scientific-python.org/summits/developer/2023/general-planning/)
 - [May 15, Package metrics, DevStats](https://hackmd.io/UNwG2BjJSxOUJ0M1iWI-nQ)
 - [May 15, SPECs](https://hackmd.io/MmbP4VTATyG129_U56xdJQ)
 - [May 18, Community & Documentation](https://hackmd.io/YL5DNtsaSsS-1ZU3Pxkrxg)
