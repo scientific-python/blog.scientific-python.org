@@ -1,4 +1,5 @@
 ---
+
 title: "May 2023 Developer Summit"
 date: 2023-07-09T10:07:40-04:00
 draft: false
@@ -8,13 +9,6 @@ Sparse Arrays at the May Developer Summit in Seattle
 tags: ["summits", "scipy.sparse"]
 displayInList: true
 author: ["Dan Schult", "Stéfan van der Walt"]
-
-resources:
-- name: featuredImage
-  src: "group-photo.png"
-  params:
-    description: "Developers in Red Square"
-    showOnTop: true
 ---
 
 ## Scientific-Python Developer Summit
