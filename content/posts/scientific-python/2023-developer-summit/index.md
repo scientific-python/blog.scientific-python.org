@@ -35,7 +35,7 @@ Related notes/sites:
 One of the projects in focus at the summit was SciPy Sparse Arrays.
 This blog attempts to recap what happened with "sparse" at the summit
 and a glimpse of plans for our continuing work. The Sparse Array Group
-holds [open follow-up meetings currently scheduled every two weeks](~/SPorgBlog/content/posts/scientific-python/2023-developer-summit)
+holds [open follow-up meetings currently scheduled every two weeks](https://scientific-python.org/calendars)
 to continue the momentum and move this project forward.
 
 At the Summit, we focused on converting Sparse Matrix capabilities
@@ -86,7 +86,7 @@ deprecated sparse matrix interfaces in favor of the array interface. For this
 to happen we will need most downstream users to shift to the sparse array api.
 We intend to help them do that.
 
-Our work continues with a community call every [two weeks on Fridays.](~/SPorgBlog/content/posts/scientific-python/2023-developer-summit)
+Our work continues with a community call every [two weeks on Fridays.](https://scientific-python.org/calendars)
 Our immediate near term work involves:
 
 - Continue improving sparse creation functions: diags, eye, random and others.
