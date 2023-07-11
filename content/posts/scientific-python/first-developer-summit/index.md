@@ -9,7 +9,7 @@ author: ["Jarrod Millman"]
 
 resources:
   - name: featuredImage
-    src: "my-image.png"
+    src: "group.png"
     params:
       description: "Group picture of summit attendees."
       showOnTop: true
