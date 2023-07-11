@@ -93,3 +93,5 @@ Our immediate near term work involves:
 - Deprecate some matrix-specific functionality
 - General performance improvements
 - Adapting scikit-learn to support sparse arrays (to be discussed with scikit-learn's maintainers)
+
+This blog was largely composed based on the [scipy-sparse report hackmd document](https://hackmd.io/1Q2832LDR_2Uv_-cV-wnYg).
