@@ -60,7 +60,9 @@ a [new project template](https://github.com/scientific-python/cookie),
 and [existing project review](https://learn.scientific-python.org/development/guides/repo-review/).
 
 ### Serendipitous Collaboration
+One of the fun things that happens at summits like these are the chance encounters of people from different projects. Jim Pivarski from Scikit-HEP and Mridul Seth from NetworkX worked on creating a co-collaboration network across the broader scientific python ecosystem. This gave us the opportunity to look at how contributors collaborate across projects. We could see how the bigger projects were all clustered together as there are multiple contributors who share maintenance duties for multiple projects. We could also see how the Scikit-HEP cluster was a bit further away from the usual scientific python cluster. An action item for us :) We need more collaboration!!
 
+![Visualization of co-collaboration network](collab.png)
 ### Pytest plugins/Sphinx extensions
 
 - [pytest-doctestplus](https://github.com/scientific-python/pytest-doctestplus)
