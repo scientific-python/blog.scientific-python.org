@@ -71,13 +71,9 @@ One of the fun things that happens at summits like these are the chance encounte
 
 - [pytest-doctestplus](https://github.com/scientific-python/pytest-doctestplus) was moved upstream into the Scientific Python organization. The summit provided new momentum to develop new features (e.g. produce updated docstring), and to use it for the numpy documentation testing.
 
-
-
 - sphinx-scientific-python, a new extension as a home for various features from the ecosystem, e.g. we aggreed on bringing existing extensions from MNE tools to this extension.
 
 - pydata-sphinx-theme updates
-
-
 
 ### SciPy release management progress
 
