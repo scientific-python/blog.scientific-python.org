@@ -30,6 +30,8 @@ Prior to the summit we held several hour-long planning meetings:
 
 ## Summit execution
 
+![Morning group check-in](checkin.png)
+
 At the summit, we had a brief check-in and then split into several groups based on each developers time and interests. Raw work progress and log have been collected in a [document](https://hackmd.io/iEtdfbxfSbGwOAJTXmqyIQ?both), we list some of the highlights below:
 
 ### Sparse arrays
@@ -40,28 +42,45 @@ This work is part of a larger, [multi-year effort](https://scientific-python.org
 involve removing the sparse matrix API and eventually `np.matrix`.
 Stay tuned for a future blog post focused on the sparse work at the summit as well as more detailed roadmap for this project.
 
-### CI Infrastructure
+### Scientific Python Ecosystem Coordination documents
 
-We made significant progress on several SPECs, which had been drafted during previous sprints.
+We made significant progress on several [SPECs](https://scientific-python.org/specs/), which had been drafted during previous sprints.
 
-- [SPEC 4---Using a creating nightly wheels](https://scientific-python.org/specs/spec-0004/)
-- [upload-nightly-action](https://github.com/scientific-python/upload-nightly-action)
-- [nightly wheels](https://anaconda.org/scientific-python-nightly-wheels/)
+![Snapshot of the current SPECs and their endorsements](specs.png)
 
-- [reverse-dependency-testing](https://github.com/scientific-python/reverse-dependency-testing)
+[SPEC 0---Minimum Supported Versions ](https://scientific-python.org/specs/spec-0000), an updated and expanded recommendation similar to
+the [NEP 29](https://numpy.org/neps/nep-0029-deprecation_policy.html), was discussed and endorsed by several
+[core projects](https://scientific-python.org/specs/core-projects/).
+
+[SPEC 1---Lazy Loading of Submodules and Functions](https://scientific-python.org/specs/spec-0001/) was discussed and endorsed by
+two [core projects](https://scientific-python.org/specs/core-projects/).
+
+[SPEC 2---API Dispatch](https://scientific-python.org/specs/spec-0002/) was discussed (in a follow-up video meeting just after the summit)
+and is in the process of being marked as `withdrawn` or something similar.
+
+[SPEC 3---Accessibility](https://scientific-python.org/specs/spec-0003/) was discussed and updated. We hope to see it endorsed by
+several core projects in the near future.
+
+[SPEC 4---Using a creating nightly wheels](https://scientific-python.org/specs/spec-0004/) was rewritten, a helper GitHub action
+[upload-nightly-action](https://github.com/scientific-python/upload-nightly-action) was created, and PRs to update the various
+projects to use the new [nightly wheels location](https://anaconda.org/scientific-python-nightly-wheels/) were made. The updates
+are now complete and the SPEC was endorsed by two core projects.
+
+We anticipate several more core projects to endorse the existing SPECs over the coming months and we are now holding regular
+SPEC steering committee meetings to continue developing and expanding the SPECs.
 
 ### Community building
 
-### Developer Workflow Documentation
+### Development Documentation
 
-Henry Schreiner from scikit-hep and Dan Allan from Brookhaven National Laboratory
+Henry Schreiner and Dan Allan
 contributed a [development guide](https://learn.scientific-python.org/development/),
 a [new project template](https://github.com/scientific-python/cookie),
 and [existing project review](https://learn.scientific-python.org/development/guides/repo-review/).
 
 ### Serendipitous Collaboration
 
-One of the fun things that happens at summits like these are the chance encounters of people from different projects. Jim Pivarski from Scikit-HEP and Mridul Seth from NetworkX worked on creating a co-collaboration network across the broader scientific python ecosystem. This gave us the opportunity to look at how contributors collaborate across projects. We could see how the bigger projects were all clustered together as there are multiple contributors who share maintenance duties for multiple projects. We could also see how the Scikit-HEP cluster was a bit further away from the usual scientific python cluster. An action item for us :) We need more collaboration!!
+One of the fun things that happens at summits like these are the chance encounters of people from different projects. Jim Pivarski and Mridul Seth worked on creating a co-collaboration network across the broader scientific python ecosystem. This gave us the opportunity to look at how contributors collaborate across projects. We could see how the bigger projects were all clustered together as there are multiple contributors who share maintenance duties for multiple projects. We could also see how the Scikit-HEP cluster was a bit further away from the usual scientific python cluster. An action item for us :) We need more collaboration!!
 
 ![Visualization of co-collaboration network](collab.png)
 
