@@ -1,5 +1,5 @@
 ---
-title: "First Developer Summit"
+title: "Developer Summit 1"
 date: 2023-07-09T18:24:17-07:00
 draft: false
 description: "Learn about the first Scientific Python Developer Summit."
@@ -40,7 +40,10 @@ Almost a quarter of the group worked on [sparse arrays](https://scientific-pytho
 This work is part of a larger, [multi-year effort](https://scientific-python.org/grants/sparse_arrays/) to improve and expand SciPy's
 [sparse array API](https://github.com/scipy/scipy/pull/14822), which will eventually
 involve removing the sparse matrix API and eventually `np.matrix`.
-More details can be found in the
+
+<!--
+More details can be found in the [Developer Summit 1: Sparse](https://blog.scientific-python.org/scientific-python/dev-summit-1-sparse/) blog post.
+-->
 
 ### Scientific Python Ecosystem Coordination documents
 
