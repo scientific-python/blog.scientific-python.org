@@ -86,4 +86,3 @@ Near term work is to:
 - Deprecate some matrix-specific functionality
 - General performance improvements
 - Adapting scikit-learn to support sparse arrays (to be discussed with scikit-learn's maintainers)
-
