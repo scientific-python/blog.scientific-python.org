@@ -46,7 +46,7 @@ with more detailed description appearing in the
 [Summmit Worklog](https://hackmd.io/iEtdfbxfSbGwOAJTXmqyIQ?view).
 Some big picture take-aways are:
 
-- We reorganized how to check for matrix/array/format info. This involved
+- Reorganized how to check for matrix/array/format info. This involved
   adding a `format` attribute describing which format of sparse storage is used,
   adding an `_is_array` attribute to assist in converting from the matrix to array
   interfaces, changing functions `issparse`/`isspmatrix` as well as shifting
@@ -56,8 +56,7 @@ Some big picture take-aways are:
   - `isinstance(A, sparray)` or alternatively `issparse(A) and A._is_array`: True when a sprase array.
   - `isspmatrix(A)` or alternatively `issparse() and not A._is_array`: True when a sparse matrix.
     To check the format of a sparse array or matrix use `A.format == "csr"` or similar.
-- We updated the `sparray` interface, leaving `spmatrix` untouched for backward compatibility.
-- We made decisions about how to approach the "creation functions" for sparse arrays.
+- Made decisions about how to approach the "creation functions" for sparse arrays.
   The big-picture approach is to introduce new functions with an `_array` suffix which
   construct sparse arrays. The old names will continue to create sparse matrix until
   post-deprecation removal.
@@ -67,7 +66,7 @@ Some big picture take-aways are:
 - Made progress toward 1D sparse arrays. The data structures for 1d may be quite different from 2d.
   A prototype `coo_array` allowed exploration of possible n-d arrays, though that is not a short-term goal.
 - Explored feasibility and usefulness of defining `__array_ufunc__` and other `__array_*__` protocols for sparse arrays
-- Made clearer distinction between private and public methods
+- Made clearer distinction between private and public methods for sparse arrays
 - Improved documentation for sparse arrays
 
 Our goal is to have a working set of sparse array construction functions
