@@ -6,7 +6,7 @@ draft: false
 description: "
 Sparse Arrays at the May Developer Summit in Seattle
 "
-tags: ["summits", "scipy.sparse"]
+tags: ["Summit", "Scientific-Python", "scipy.sparse", "Sparse"]
 displayInList: true
 author: ["Dan Schult", "Stéfan van der Walt"]
 ---
