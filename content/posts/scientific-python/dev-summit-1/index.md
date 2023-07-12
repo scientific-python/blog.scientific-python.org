@@ -41,9 +41,7 @@ This work is part of a larger, [multi-year effort](https://scientific-python.org
 [sparse array API](https://github.com/scipy/scipy/pull/14822), which will eventually
 involve removing the sparse matrix API and eventually `np.matrix`.
 
-<!--
 More details can be found in the [Developer Summit 1: Sparse](https://blog.scientific-python.org/scientific-python/dev-summit-1-sparse/) blog post.
--->
 
 ### Scientific Python Ecosystem Coordination documents
 
