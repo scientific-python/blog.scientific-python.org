@@ -1,6 +1,6 @@
 ---
 
-title: "Developer Summit: Sparse Arrays"
+title: "Developer Summit 1: Sparse Arrays"
 date: 2023-07-09T10:07:40-04:00
 draft: false
 description: "
