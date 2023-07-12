@@ -14,7 +14,7 @@ author: ["Dan Schult", "Stéfan van der Walt"]
 ## Scientific-Python Developer Summit
 
 (May 22-26, 2023, Seattle WA) --
-The Scientific Python Developer Summit provided an opportunity
+The first [Scientific Python Developer Summit](https://blog.scientific-python.org/scientific-python/dev-summit-1/) provided an opportunity
 for core developers from the scientific Python ecosystem to come together to:
 
 1. improve joint infrastructure
