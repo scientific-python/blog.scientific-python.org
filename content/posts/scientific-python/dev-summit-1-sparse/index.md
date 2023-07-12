@@ -43,7 +43,7 @@ last beyond the summit itself.
 The specific PRs and Issues involved in `scipy.sparse` are detailed in the
 [Summit 2023 scipy.sparse Report](https://hackmd.io/1Q2832LDR_2Uv_-cV-wnYg),
 with more detailed description appearing in the
-[Summmit Worklog](https://hackmd.io/iEtdfbxfSbGwOAJTXmqyIQ?view).
+[Summit Worklog](https://hackmd.io/iEtdfbxfSbGwOAJTXmqyIQ?view).
 Some big picture take-aways are:
 
 - Reorganized how to check for matrix/array/format info. This involved
@@ -52,8 +52,8 @@ Some big picture take-aways are:
   interfaces, changing functions `issparse`/`isspmatrix` as well as shifting
   the class hierarchy to allow easy `isinstance` checking.
   The interface going forward includes:
-  - `issparse(A)`: True when a sprase array or matrix.
-  - `isinstance(A, sparray)` or alternatively `issparse(A) and A._is_array`: True when a sprase array.
+  - `issparse(A)`: True when a sparse array or matrix.
+  - `isinstance(A, sparray)` or alternatively `issparse(A) and A._is_array`: True when a sparse array.
   - `isspmatrix(A)` or alternatively `issparse() and not A._is_array`: True when a sparse matrix.
     To check the format of a sparse array or matrix use `A.format == "csr"` or similar.
 - Made decisions about how to approach the "creation functions" for sparse arrays.
