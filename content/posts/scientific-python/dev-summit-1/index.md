@@ -98,7 +98,7 @@ Several attendees worked on pytest plugins and Sphinx extensions:
 - [pytest-regex](https://github.com/tylerjereddy/pytest-regex) was created to support selecting tests with regular expressions.
 
 - [pytest-doctestplus](https://github.com/scientific-python/pytest-doctestplus) was moved upstream into the Scientific Python organization.
-  The summit provided new momentum to develop new features (e.g. produce updated docstring), and to use it for the numpy documentation testing.
+  The summit provided new momentum to develop new features (e.g. produce updated docstring), and to use it for the NumPy documentation testing.
 
 - sphinx-scientific-python, a new extension as a home for various features from the ecosystem, e.g.,
   we agreed on bringing existing extensions from MNE tools to this extension.
