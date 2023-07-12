@@ -5,7 +5,7 @@ draft: false
 description: "Learn about the first Scientific Python Developer Summit."
 tags: ["Summit", "Scientific-Python"]
 displayInList: true
-author: ["Jarrod Millman"]
+author: ["Jarrod Millman", "Brigitta Sipőcz", "Mridul Seth"]
 
 resources:
   - name: featuredImage
@@ -32,7 +32,7 @@ Prior to the summit we held several hour-long planning meetings:
 
 ![Morning group check-in](checkin.png)
 
-At the summit, we had a brief check-in and then split into several groups based on each developers time and interests. Raw work progress and log have been collected in a [document](https://hackmd.io/iEtdfbxfSbGwOAJTXmqyIQ?both), we list some of the highlights below:
+At the summit, we had a brief check-in and then split into several groups based on each developers time and interests. Raw work progress and log have been collected in a [document](https://hackmd.io/iEtdfbxfSbGwOAJTXmqyIQ?both), we highlight just a few of things we accomplished below:
 
 ### Sparse arrays
 
@@ -40,7 +40,7 @@ Almost a quarter of the group worked on [sparse arrays](https://scientific-pytho
 This work is part of a larger, [multi-year effort](https://scientific-python.org/grants/sparse_arrays/) to improve and expand SciPy's
 [sparse array API](https://github.com/scipy/scipy/pull/14822), which will eventually
 involve removing the sparse matrix API and eventually `np.matrix`.
-Stay tuned for a future blog post focused on the sparse work at the summit as well as more detailed roadmap for this project.
+More details can be found in the
 
 ### Scientific Python Ecosystem Coordination documents
 
@@ -69,40 +69,60 @@ are now complete and the SPEC was endorsed by two core projects.
 We anticipate several more core projects to endorse the existing SPECs over the coming months and we are now holding regular
 SPEC steering committee meetings to continue developing and expanding the SPECs.
 
+<!--
 ### Community building
+-->
 
 ### Development Documentation
 
-Henry Schreiner and Dan Allan
-contributed a [development guide](https://learn.scientific-python.org/development/),
+We created a [development guide](https://learn.scientific-python.org/development/),
 a [new project template](https://github.com/scientific-python/cookie),
 and [existing project review](https://learn.scientific-python.org/development/guides/repo-review/).
 
 ### Serendipitous Collaboration
 
-One of the fun things that happens at summits like these are the chance encounters of people from different projects. Jim Pivarski and Mridul Seth worked on creating a co-collaboration network across the broader scientific python ecosystem. This gave us the opportunity to look at how contributors collaborate across projects. We could see how the bigger projects were all clustered together as there are multiple contributors who share maintenance duties for multiple projects. We could also see how the Scikit-HEP cluster was a bit further away from the usual scientific python cluster. An action item for us :) We need more collaboration!!
+One of the fun things that happens at summits like these are the chance encounters of people from different projects.
+For example, a couple of attendees worked on creating a co-collaboration network across the broader scientific python ecosystem.
+This gave us the opportunity to look at how contributors collaborate across projects.
+We could see how the bigger projects were all clustered together as there are multiple contributors who share maintenance duties for multiple projects.
+We could also, for example, see how the Scikit-HEP cluster was a bit further away from the usual scientific Python cluster.
+An action item for us :) We need more collaboration!!
 
 ![Visualization of co-collaboration network](collab.png)
 
 ### Pytest plugins/Sphinx extensions
 
+Several attendees worked on pytest plugins and Sphinx extensions:
+
 - [pytest-regex](https://github.com/tylerjereddy/pytest-regex) was created to support selecting tests with regular expressions.
 
-- [pytest-doctestplus](https://github.com/scientific-python/pytest-doctestplus) was moved upstream into the Scientific Python organization. The summit provided new momentum to develop new features (e.g. produce updated docstring), and to use it for the numpy documentation testing.
+- [pytest-doctestplus](https://github.com/scientific-python/pytest-doctestplus) was moved upstream into the Scientific Python organization.
+  The summit provided new momentum to develop new features (e.g. produce updated docstring), and to use it for the numpy documentation testing.
 
-- sphinx-scientific-python, a new extension as a home for various features from the ecosystem, e.g. we aggreed on bringing existing extensions from MNE tools to this extension.
+- sphinx-scientific-python, a new extension as a home for various features from the ecosystem, e.g.,
+  we agreed on bringing existing extensions from MNE tools to this extension.
 
 - pydata-sphinx-theme updates
 
+<!--
+
 ### SciPy release management progress
 
+-->
+
+<!--
+
 ### Lecture notes
+-->
 
 ### Package metrics
 
 We factored out a general [developer statistics package](https://github.com/scientific-python/devstats)
 from our prototype [developer statistics website](https://devstats.scientific-python.org/).
 
+<!--
+
 ## Post-summit implementation
 
 We are still in the process of
+-->
