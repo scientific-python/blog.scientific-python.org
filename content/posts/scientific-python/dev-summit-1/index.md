@@ -72,9 +72,9 @@ are now complete and the SPEC was endorsed by two core projects.
 We anticipate several more core projects to endorse the existing SPECs over the coming months and we are now holding regular
 SPEC steering committee meetings to continue developing and expanding the SPECs.
 
-<!--
 ### Community building
--->
+
+We created a comprehensive [community guide](https://learn.scientific-python.org/community/) to empower projects in fostering their communities. This guide includes essential information on the role of community managers, along with practical strategies for community meetings, outreach, onboarding, and project management.
 
 ### Development Documentation
 
