@@ -1,6 +1,6 @@
 ---
 
-title: "May 2023 Developer Summit"
+title: "Developer Summit: Sparse Arrays"
 date: 2023-07-09T10:07:40-04:00
 draft: false
 description: "
@@ -24,25 +24,23 @@ for core developers from the scientific Python ecosystem to come together to:
 Related notes/sites:
 
 - [Worklog](https://hackmd.io/iEtdfbxfSbGwOAJTXmqyIQ?view).
-- [Planning Meeting Notes and Info](https://blog.scientific-python.org).
+- [Planning Meeting Notes and Info](https://scientific-python.org/summits/developer/2023/).
 
-One of the projects in focus at the summit was SciPy Sparse Arrays.
-This blog attempts to recap what happened with "sparse" at the summit
-and a glimpse of plans for our continuing work. The Sparse Array Group
-holds [open follow-up meetings currently scheduled every two weeks](https://scientific-python.org/calendars)
+One of the focuses of the summit was Sparse Arrays, and specifically their implementation in SciPy.
+This post attempts to recap what happened with "sparse" at the summit
+and a glimpse of plans for our continuing work. The Sparse Array working group
+holds [open follow-up meetings](https://scientific-python.org/calendars), currently scheduled every two weeks,
 to continue the momentum and move this project forward.
 
-At the Summit, we focused on converting Sparse Matrix capabilities
-in Scipy from the Sparse Matrix API to the new Sparse Array API. This
-shifts the interface from one like NumPy-Matrix to one like NumPy-Array.
-Of course, this work began well before the summit with the introduction
-of sparse arrays into the scipy.sparse subpackage.
-Our goal in the summit was to give some focused energy to the effort,
-bring new people on board and connect downstream users with the development
-effort. We also worked to create a community for this project that would
+At the Summit, we focused on improving the newly added Sparse Array API
+in SciPy, that lets users manipulate sparse data with NumPy
+semantics (before, SciPy used NumPy's 2D-only Matrix API, but that is [slated for deprecation](https://stackoverflow.com/questions/53254738/deprecation-status-of-the-numpy-matrix-class)).
+Our goal at the summit was to give focused energy to the effort,
+bring new people on board, and connect downstream users with the development
+effort. We also worked to create a working group for this project that would
 last beyond the summit itself.
 
-The specific PRs and Issues involved in Scipy Sparse are detailed in the
+The specific PRs and Issues involved in `scipy.sparse` are detailed in the
 [Summit 2023 scipy.sparse Report](https://hackmd.io/1Q2832LDR_2Uv_-cV-wnYg),
 with more detailed description appearing in the
 [Summmit Worklog](https://hackmd.io/iEtdfbxfSbGwOAJTXmqyIQ?view).
@@ -69,23 +67,23 @@ Some big picture take-aways are:
 - Made progress toward 1D sparse arrays. The data structures for 1d may be quite different from 2d.
   A prototype `coo_array` allowed exploration of possible n-d arrays, though that is not a short-term goal.
 - Explored feasibility and usefulness of defining `__array_ufunc__` and other `__array_*__` protocols for sparse arrays
+- Made clearer distinction between private and public methods
 - Improved documentation for sparse arrays
 
-We have set a goal of a working set of sparse array construction functions
+Our goal is to have a working set of sparse array construction functions
 and a 1d sparse array class (focusing on `coo_array` first) in plenty of
 time for intensive testing before SciPy v1.12. This will then allow us to
 focus on creating migration documents and tools as well as helping downstream
 libraries make the shift to sparse arrays. We hope to enable the removal of
 deprecated sparse matrix interfaces in favor of the array interface. For this
-to happen we will need most downstream users to shift to the sparse array api.
+to happen we will need most downstream users to shift to the sparse array API.
 We intend to help them do that.
 
 Our work continues with a community call every [two weeks on Fridays.](https://scientific-python.org/calendars)
-Our immediate near term work involves:
+Near term work is to:
 
 - Continue improving sparse creation functions: diags, eye, random and others.
 - Deprecate some matrix-specific functionality
 - General performance improvements
 - Adapting scikit-learn to support sparse arrays (to be discussed with scikit-learn's maintainers)
 
-This blog was largely composed based on the [scipy-sparse report hackmd document](https://hackmd.io/1Q2832LDR_2Uv_-cV-wnYg).
