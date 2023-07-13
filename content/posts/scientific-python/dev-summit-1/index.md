@@ -105,7 +105,6 @@ Several attendees worked on pytest plugins and Sphinx extensions:
 
 - pydata-sphinx-theme updates
 
-
 ### SciPy release management progress
 
 The first release candidate of SciPy 1.11.0 was published on PyPI
