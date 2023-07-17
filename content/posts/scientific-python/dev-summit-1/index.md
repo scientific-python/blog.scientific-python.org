@@ -105,11 +105,20 @@ Several attendees worked on pytest plugins and Sphinx extensions:
 
 - pydata-sphinx-theme updates
 
-<!--
-
 ### SciPy release management progress
 
--->
+The first release candidate of SciPy 1.11.0 was published on PyPI
+on May 31, 2023, five days after the conclusion of the summit. The
+summit facilitated high-bandwidth decision making on several proposed
+SciPy code changes by allowing the current SciPy release manager (Tyler Reddy,
+Los Alamos National Laboratory) to consult with other SciPy core developers
+in person. Specific code changes were discussed with the following SciPy
+maintainers: Stefan van der Walt (`scipy.ndimage`), CJ Carey (`scipy.sparse`),
+Matt Haberland (`scipy.stats`), and Pamphile Roy (`scipy.stats`). When SciPy
+releases are performed out of band from the summit, the release manager
+will often have to delay incorporation of useful code changes to the
+next release six months later, due to lack of availability of the
+pertinent domain experts.
 
 <!--
 
