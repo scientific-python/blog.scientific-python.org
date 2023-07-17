@@ -182,16 +182,14 @@ badge).
 [including data]: https://learn.scientific-python.org/development/patterns/data-files/
 [backports]: https://learn.scientific-python.org/development/patterns/backports/
 [exports]: https://learn.scientific-python.org/development/patterns/exports/
-
 [scikit-hep]: https://scikit-hep.org
 [scikit-hep/developer]: https://scikit-hep.org/developer
-[2023 Scientific Python Developer Summit]: https://scientific-python.org/summits/developer/2023
-[Scientific Python Development Guide]: https://learn.scientific-python.org/development
+[2023 scientific python developer summit]: https://scientific-python.org/summits/developer/2023
+[scientific python development guide]: https://learn.scientific-python.org/development
 [cookie]: https://github.com/scientific-python/cookie
 [repo-review]: https://github.com/scientific-python/repo-review
 [sp-repo-review]: https://learn.scientific-python.org/development/guides/repo-review
 [scikit-hep dev pages]: https://scikit-hep.org/developer
-
 [scikit-build-core]: https://scikit-build-core.readthedocs.io
 [meson-python]: https://meson-python.readthedocs.io
 [maturin]: https://www.maturin.rs
@@ -202,4 +200,3 @@ badge).
 [nox]: https://nox.thea.codes
 [pre-commit]: https://pre-commit.com
 [rich]: https://rich.readthedocs.io
-
