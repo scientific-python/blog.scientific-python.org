@@ -55,10 +55,10 @@ P\_1 = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (\overline{m\_1, p\_1}), \dots, (\ov
 P\_2 = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (t\_1, v\_1), (\overline{m\_1, p\_1}), \dots, (\overline{m\_l, p\_l}), (\overline{t\_2, v\_2})\} \\\\\\
 P\_3 = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (t\_1, v\_1), (t\_2, v\_2), (\overline{m\_1, p\_1}), \dots, (\overline{m\_l, p\_l}), (\overline{t\_3, v\_3})\} \\\\\\
 \vdots \\\\\\
-\begin{multiline\*}
+\begin{multline\*}
 P\_{n-r-1} = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (t\_1, v\_1), \dots, (t\_{n-r-2}, v\_{n-r-2}), (\overline{m\_1, p\_1}), \dots, (\overline{m\_l, p\_l}), \\\\\\
 (\overline{t\_{n-r-1}, v\_{n-r-1}})\}
-\end{multiline\*} \\\\\\
+\end{multline\*} \\\\\\
 \end{array}
 \\]
 
