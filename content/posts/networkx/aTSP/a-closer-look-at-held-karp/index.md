@@ -159,7 +159,7 @@ There are two things which must be refined about this procedure in order to make
 - How do we know when there is no direction of ascent? (i.e. how do we know when we are at the maximal value of \\(w(\pi)\\)?)
 
 Held and Karp have provided guidance on both of these points.
-In section 6 on matroids, we are told to use a method developed by Dijkstra in _A Note on Two Problems in Connection with Graphs_, but in this particular case that is not the most helpful.
+In section 6 on matroids, we are told to use a method developed by Dijkstra in _A Note on Two Problems in Connexion with Graphs_, but in this particular case that is not the most helpful.
 I have found this document, but there is a function called [`minimum_spanning_arborescence`](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.tree.branchings.minimum_spanning_arborescence.html) already within NetworkX which we can use to create a minimum 1-Arborescence.
 That process would be to find a minimum spanning arborescence on only the vertices in \\(\{2, 3, \dots, n\}\\) and then connect vertex 1 to create the cycle.
 In order to connect vertex 1, we would choose the outgoing arc with the smallest cost and the incoming arc with the smallest cost.
