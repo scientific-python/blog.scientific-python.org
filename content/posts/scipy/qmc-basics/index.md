@@ -123,9 +123,9 @@ qrng = qmc.Sobol(d=d)
 sample_qmc = qrng.random(n=n)
 ```
 
-A very similar interface, but as seen bellow, with radically different results.
+A very similar interface, but as seen below, with radically different results.
 
-![Comparision between MC and QMC samples using a 2D scatter plot.](mc_sobol.png)
+![Comparison between MC and QMC samples using a 2D scatter plot.](mc_sobol.png)
 
 The 2D space clearly exhibit less empty areas and less clusters with the QMC
 sample.

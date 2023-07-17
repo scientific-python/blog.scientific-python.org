@@ -94,7 +94,7 @@ I have not changed the commit messages here, so that you may be assumed by my tr
 
 [Testing](https://github.com/mjschwenne/networkx/commit/495458842d3ec798c6ea52dc1c8089b9a5ce3de5) - _Rewrote Kruskal's algorithm to respect partitions and tested that while stubbing the iterators in a separate file_
 
-[I'm not entirly sure how the commit hook works...](https://github.com/mjschwenne/networkx/commit/3d81e36c8313013a3ae4c4dfc6517c3bde8d826e) - _Added test cases and finalized implementation of Spanning Tree Iterator in the incorrect file_
+[I'm not entirely sure how the commit hook works...](https://github.com/mjschwenne/networkx/commit/3d81e36c8313013a3ae4c4dfc6517c3bde8d826e) - _Added test cases and finalized implementation of Spanning Tree Iterator in the incorrect file_
 
 [Moved iterators into the correct files to maintain proper codebase visibility](https://github.com/mjschwenne/networkx/commit/d481f757125a699f69bf5c16790d2e727e3cc159) - _Realized that the iterators need to be in `mst.py` and `branchings.py` respectively to keep private functions hidden_
 
@@ -134,7 +134,7 @@ My commits listed here are still annotated and much of the work was done at the 
 
 [Testing](https://github.com/mjschwenne/networkx/commit/495458842d3ec798c6ea52dc1c8089b9a5ce3de5) - _Rewrote Kruskal's algorithm to respect partitions and tested that while stubbing the iterators in a separate file_
 
-[Moved iterators into the correct files to maintain proper codebase visibility](https://github.com/mjschwenne/networkx/commit/d481f757125a699f69bf5c16790d2e727e3cc159) - _Realized that the iterators need to be in `mst.py` and `branchings.py` respectivly to keep private functions hidden_
+[Moved iterators into the correct files to maintain proper codebase visibility](https://github.com/mjschwenne/networkx/commit/d481f757125a699f69bf5c16790d2e727e3cc159) - _Realized that the iterators need to be in `mst.py` and `branchings.py` respectively to keep private functions hidden_
 
 [Including Black reformat](https://github.com/mjschwenne/networkx/commit/73cade29568f9e10303fb901c97ac52b1d45b8aa) - _Modified Edmonds' algorithm to respect partitions_
 

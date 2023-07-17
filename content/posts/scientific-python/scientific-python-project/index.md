@@ -93,7 +93,7 @@ Why? Because I believe in this.
 Jarrod and Stéfan reached out to me last year, inviting me to be part of this amazing idea and I was honored and very grateful.
 I wasn't sure that I could do it, but now I find myself here and I know that this is the right place for me.
 Not because I have a lot of experience in these things (I had actually never even used TikTok before joining the project), but because I care.
-I have learned the importance of building community and while the Scientific Python tools are amazing, what makes the difference is the community around them and I'm greatful to be able to help make this community great.
+I have learned the importance of building community and while the Scientific Python tools are amazing, what makes the difference is the community around them and I'm grateful to be able to help make this community great.
 
 I have learned a lot from the Scientific Python ecosystem by being a community manager, I have met a lot of wonderful people and I have seen what people can do with the tools that the ecosystem offers.
 So, my take: The Scientific Python project is a great bet.

@@ -126,7 +126,7 @@ Things to note about the anatomy of a figure are:
 
 Understanding this hierarchy of `Figure`, `Artist`, `Axes` and `Axis` is immensely important, because it plays a crucial role in how me make an animation in `matplotlib`.
 
-Now that we understand how plots are generated, we can easily solve the problem we faced earlier. To make Velocity and Distance plot to make more sense, we need to plot each data item against a seperate axis, with a different scale. Thus, we will need one parent `Figure` object and two `Axes` objects.
+Now that we understand how plots are generated, we can easily solve the problem we faced earlier. To make Velocity and Distance plot to make more sense, we need to plot each data item against a separate axis, with a different scale. Thus, we will need one parent `Figure` object and two `Axes` objects.
 
 ```python
 fig, ax1 = plt.subplots()
@@ -183,7 +183,7 @@ The command `ax1.set_yticks(np.linspace(*ax1.get_ybound(), 10))` calculates the 
 
 1. The `np.linspace` command will create a set of `n` no. of partitions between a specified upper and lower limit.
 2. The method `ax1.get_ybound()` returns a list which contains the maximum and minimum limits for that particular axis (which in our case is the Y-axis).
-3. In python, the operator `*` acts as an unpacking operator when prepended before a `list` or `tuple`. Thus, it will convert a list `[1, 2, 3, 4]` into seperate values `1, 2, 3, 4`. This is an immensely powerful feature.
+3. In python, the operator `*` acts as an unpacking operator when prepended before a `list` or `tuple`. Thus, it will convert a list `[1, 2, 3, 4]` into separate values `1, 2, 3, 4`. This is an immensely powerful feature.
 4. Thus, we are asking the `np.linspace` method to divide the interval between the maximum and minimum tick values into 10 equal parts.
 5. We provide this array to the `set_yticks` method.
 

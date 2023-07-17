@@ -2,7 +2,7 @@
 title: "Completing the Asadpour Algorithm"
 date: 2020-08-10
 draft: false
-description: "Implemtation details for asadpour_atsp"
+description: "Implementation details for asadpour_atsp"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
 author: ["mjschwenne"]

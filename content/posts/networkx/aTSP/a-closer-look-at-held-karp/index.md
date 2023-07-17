@@ -98,7 +98,7 @@ We only focus on the edges which are in each of the 1-Trees, giving each column 
 and the column which enters the solution in the 1-Tree for which \\(c_k + \theta + \sum\_{j=2}^{n-1} \pi_jv\_{j k}\\) is a minimum where \\(\theta\\) and \\(\pi_j\\) come from the vector of 'shadow prices' given by \\((\theta, \pi_2, \pi_3, \dots, \pi\_{n-1})\\).
 Now the basis is \\((n - 1) \times (n - 1)\\) and we can find the 1-Tree to add to the basis using a minimum 1-Tree algorithm which Held and Karp say can be done in \\(O(n^2)\\) steps.
 
-I am already [familar](https://github.com/mjschwenne/GraphAlgorithms/blob/main/src/Simplex.py) with the simplex method, so I will not detail it's implementation here.
+I am already [familiar](https://github.com/mjschwenne/GraphAlgorithms/blob/main/src/Simplex.py) with the simplex method, so I will not detail it's implementation here.
 
 ### Performance of the Column Generation Technique
 
@@ -211,7 +211,7 @@ The one constraint is actually a collection of very similar one which could be w
 \\]
 
 Because all of the summations must equal zero, no stack and surplus variables are required, so the constraint matrix for this program is \\(n \times k\\).
-The \\(n\\) obivously has a linear growth rate, but I'm not sure how big to expect \\(k\\) to become.
+The \\(n\\) obviously has a linear growth rate, but I'm not sure how big to expect \\(k\\) to become.
 \\(k\\) is the set of minimum 1-Trees, so I believe that it will be manageable.
 This linear program can be solved using the built in [`linprog`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html) function in the SciPy library.
 

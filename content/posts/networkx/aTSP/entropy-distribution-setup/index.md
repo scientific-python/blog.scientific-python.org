@@ -76,7 +76,7 @@ q\_e(\gamma) = \frac{\sum\_{T \ni e} \exp(\gamma(T))}{\sum\_{T \in \mathcal{T}} 
 
 where \\(\gamma(T) = \sum\_{f \in T} \gamma_f\\).
 
-The first thing that I noticed is that in the denominator the summation is over all spanning trees for in the graph, which for the complete graphs we will be working with is exponetial so a `brute force' approach here is useless.
+The first thing that I noticed is that in the denominator the summation is over all spanning trees for in the graph, which for the complete graphs we will be working with is exponential so a `brute force' approach here is useless.
 Fortunately, Asadpour and team realized we can use Kirchhoff's matrix tree theorem to our advantage.
 
 As an aside about Kirchhoff's matrix tree theorem, I was not familiar with this theorem before this project so I had to do a bit of reading about it.

@@ -59,7 +59,7 @@ The PDF, PS/EPS and SVG backends used to support font subsetting, _only for a fe
 
 With [PR: Type42 subsetting in PS/PDF](https://github.com/matplotlib/matplotlib/pull/20391) merged in, users can expect their PDF/PS/EPS documents to contains subsetted glyphs from the original fonts.
 
-This is especially benefitial for people who wish to use <ins>commercial</ins> (or [CJK](https://en.wikipedia.org/wiki/CJK_characters)) fonts. Licenses for many fonts **_require_** subsetting such that they can’t be trivially copied from the output files generated from Matplotlib.
+This is especially beneficial for people who wish to use <ins>commercial</ins> (or [CJK](https://en.wikipedia.org/wiki/CJK_characters)) fonts. Licenses for many fonts **_require_** subsetting such that they can’t be trivially copied from the output files generated from Matplotlib.
 
 ## Font Fallback
 

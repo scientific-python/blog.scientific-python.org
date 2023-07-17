@@ -93,7 +93,7 @@ This adds \\(2 \times |V|\\) rows to \\(A\\), the coefficient matrix which bring
 We already know that \\(A\\) will have \\(2^{|V|} + 2|V|\\) rows.
 But how many columns will \\(A\\) have?
 We know that each arc is a variable so at lest \\(|E|\\) rows, but in a traditional matrix form of a linear program, we have to introduce slack and surplus variables so that \\(AX = b\\) and not \\(AX \geqslant b\\) or any other inequality operation.
-The \\(2|V|\\) rows already comply with this requirment, but the rows created with every subset of \\(V\\) do _not_, those rows only require that \\(x(\delta^+(U)) \geqslant 1\\), so we introduce a surplus variable for each of these rows bring the column count to \\(|E| + 2^{|V|}\\).
+The \\(2|V|\\) rows already comply with this requirement, but the rows created with every subset of \\(V\\) do _not_, those rows only require that \\(x(\delta^+(U)) \geqslant 1\\), so we introduce a surplus variable for each of these rows bring the column count to \\(|E| + 2^{|V|}\\).
 
 Now, the Held-Karp relaxation performed in the Asadpour algorithm in is done on the complete bi-directed graph.
 For a graph with \\(n\\) vertices, there will be \\(2 \times \binom{n}{2}\\) arcs in the graph.

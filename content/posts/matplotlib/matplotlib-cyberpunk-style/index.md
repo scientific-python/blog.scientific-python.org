@@ -64,7 +64,7 @@ It looks more interesting now, but we need our colors to shine more against the 
 
 ## 4 - The Glow
 
-Now, how to get that neon look? To make it shine, we _redraw the lines multiple times_, with low alpha value and slighty increasing linewidth. The overlap creates the glow effect.
+Now, how to get that neon look? To make it shine, we _redraw the lines multiple times_, with low alpha value and slightly increasing linewidth. The overlap creates the glow effect.
 
     n_lines = 10
     diff_linewidth = 1.05
@@ -114,7 +114,7 @@ Here's the full code:
 
     df.plot(marker='o', color=colors, ax=ax)
 
-    # Redraw the data with low alpha and slighty increased linewidth:
+    # Redraw the data with low alpha and slightly increased linewidth:
     n_shades = 10
     diff_linewidth = 1.05
     alpha_value = 0.3 / n_shades

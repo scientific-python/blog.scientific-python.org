@@ -2,7 +2,7 @@
 title: "Finalizing the Held-Karp Relaxation"
 date: 2020-07-07
 draft: false
-description: "Picking which method to use for the final implemention of the Asadpour algorithm in NetworkX"
+description: "Picking which method to use for the final implementation of the Asadpour algorithm in NetworkX"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
 author: ["mjschwenne"]
@@ -166,9 +166,9 @@ However, you don't know the address and have no way to get a GPS route to that b
 Instead of wandering around aimlessly, you decide to scan the skyline for the tallest building you can see and start walking down the street which is the closest to matching that direction.
 Additionally, you have the ability to tell at any given direction how far down the chosen street to go before you need to re-evaluate and pick a new street.
 
-This hypothetical is a better approximation of the ascent method, but the problem here can be demostrated non the less.
+This hypothetical is a better approximation of the ascent method, but the problem here can be demonstrated non the less.
 
-- Determining if you are at the tallest building is runing the linear program to see if the direction of ascent still exists.
+- Determining if you are at the tallest building is running the linear program to see if the direction of ascent still exists.
 - Picking the street to go down is the same as finding the direction of ascent.
 - Finding out how far to go down that street is the same as finding epsilon.
 
