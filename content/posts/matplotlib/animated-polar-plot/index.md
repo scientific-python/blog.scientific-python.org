@@ -35,7 +35,7 @@ df2 = argo_loader.region(
 ).to_xarray()
 ```
 
-Here we create some arrays we'll use for plotting, we set up a date array and extract day of the year and year itself that will be usefull. Then to build our temperature array, we use xarray very usefull methods : `where()` and `mean()`. Then we build a pandas Dataframe, because it's prettier!
+Here we create some arrays we'll use for plotting, we set up a date array and extract day of the year and year itself that will be useful. Then to build our temperature array, we use xarray very useful methods : `where()` and `mean()`. Then we build a pandas Dataframe, because it's prettier!
 
 ```pycon
 # Weekly date array
@@ -75,7 +75,7 @@ This produces:
 4 2010-01-28    0.0    0.0
 ```
 
-Then it's time to plot, for that we first need to import what we need, and set some usefull variables.
+Then it's time to plot, for that we first need to import what we need, and set some useful variables.
 
 ```python
 import matplotlib.pyplot as plt

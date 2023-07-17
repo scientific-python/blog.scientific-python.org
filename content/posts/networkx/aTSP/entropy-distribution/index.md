@@ -212,7 +212,7 @@ But if we change the algorithm to add \\(\delta\\) to \\(\gamma_e\\) rather than
 This reduces the overall probability of picking \\(e\\) in a spanning tree.
 And, if we happen to use the same formula for \\(\delta\\) as before for our example of \\((0, 1)\\) then \\(q\_{(0, 1)}\\) becomes \\(0.449307\\).
 Recall our target value of \\(0.458\overline{3}\\).
-This anwser has a \\(-1.96\%\\) error.
+This answer has a \\(-1.96\%\\) error.
 
 \\[
 \begin{array}{r c l}
@@ -247,10 +247,10 @@ The above statement can be expanded into
 c(T) = \lambda\_1 \times \lambda\_2 \times \dots \times \lambda\_{|E|}
 \\]
 
-with some arbitary ordering of the edges \\(1, 2, \dots |E|\\).
-Because the ordering of the edges is arbitary and due to the associative property of multiplcation, we can assume without loss of generality that the desired edge \\(e\\) is the last one in the sequence.
+with some arbitrary ordering of the edges \\(1, 2, \dots |E|\\).
+Because the ordering of the edges is arbitrary and due to the associative property of multiplcation, we can assume without loss of generality that the desired edge \\(e\\) is the last one in the sequence.
 
-Any spanning tree in \\(G \backslash \\{e\\}\\) cannot include that last \\(\lambda\\) in it becuase that edge does not exist in the graph.
+Any spanning tree in \\(G \backslash \\{e\\}\\) cannot include that last \\(\lambda\\) in it because that edge does not exist in the graph.
 Therefore in order to convert the weight from a tree in \\(G \backslash \\{e\\}\\) we need to multiply \\(\lambda_e\\) back into the weight of the contracted tree.
 So, we can now state that
 
@@ -283,7 +283,7 @@ Using the rules of summation, we can pull the \\(\lambda_e\\) factor out of the 
 \lambda\_e \times \sum\_{T \ni e} \prod\_{f \in T, f \not= e} \lambda\_f
 \\]
 
-And since we use that applying Krichhoff's Theorem to \\(G \backslash \\{e\\}\\) will yeild everything except the factor of \\(\lambda_e\\), we can just multiply it back manually.
+And since we use that applying Krichhoff's Theorem to \\(G \backslash \\{e\\}\\) will yield everything except the factor of \\(\lambda_e\\), we can just multiply it back manually.
 This would let the peusdo code for `q` become
 
 ```
@@ -309,7 +309,7 @@ def q
 ```
 
 Making this small change to `q` worked very well.
-I was able to change back to subtracting \\(\delta\\) as the Asadpour paper does and even added a check to code so that everytime we update a value in \\(\gamma\\) we know that \\(\delta\\) has had the correct effect.
+I was able to change back to subtracting \\(\delta\\) as the Asadpour paper does and even added a check to code so that every time we update a value in \\(\gamma\\) we know that \\(\delta\\) has had the correct effect.
 
 ```python
 # Check that delta had the desired effect

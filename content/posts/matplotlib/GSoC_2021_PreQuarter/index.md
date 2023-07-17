@@ -24,7 +24,7 @@ With this short writeup, I intend to talk about _what_ we did and _why_ we did, 
 
 Ring any bells? Remember OS (Operating Systems)? It's one of the core CS subjects which I bunked then and regret now. (╥﹏╥)
 
-The [wikipedia page](https://en.wikipedia.org/wiki/Ostrich_algorithm) has a 2-liner explaination if you have no idea what's an Ostrich Algorithm.. but I know most of y'all won't bother clicking it XD, so here goes:
+The [wikipedia page](https://en.wikipedia.org/wiki/Ostrich_algorithm) has a 2-liner explanation if you have no idea what's an Ostrich Algorithm.. but I know most of y'all won't bother clicking it XD, so here goes:
 
 > Ostrich algorithm is a strategy of ignoring potential problems by "sticking one's head in the sand and pretending there is no problem"
 

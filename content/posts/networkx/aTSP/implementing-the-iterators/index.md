@@ -47,7 +47,7 @@ This was easy to implement in NetworkX.
 The Kruskal's algorithm in NetworkX is a generator which returns the edges in the minimum spanning tree one at a time using a sorted list of edges.
 All that I had to do was change the sorting process so that the included edges where always at the front of that list, then the algorithm would always select them, regardless of weight for the spanning tree.
 
-Additionally, since the general spanning tree of a graph is a partitioned tree where the partition has no included or excluded edges, I was about to convert the normal Kruskal's implementation into a wrapper for my partition respecting one in order to reduce redunant code.
+Additionally, since the general spanning tree of a graph is a partitioned tree where the partition has no included or excluded edges, I was about to convert the normal Kruskal's implementation into a wrapper for my partition respecting one in order to reduce redundant code.
 
 As for the partitioning process itself, that proved to be a bit more tricky mostly stemming from my own limited python experience.
 (I have only been working with python since the start of the calendar year)
@@ -57,7 +57,7 @@ Thus, I implemented a dataclass where only the weight of the spanning tree was c
 This means that for ties in spanning tree weight, the oldest partition with that weight is considered first.
 
 Once the implementation details were ironed out, I moved on to testing.
-At the time of this writting, I have tested the `SpanningTreeIterator` on the sample graph in the Sörensen and Janssens paper.
+At the time of this writing, I have tested the `SpanningTreeIterator` on the sample graph in the Sörensen and Janssens paper.
 That graph is
 
 <center><img src="tree-example.png" alt="Example Graph"/></center>
@@ -101,7 +101,7 @@ The minimum spanning arborescence initially is shown below.
 <center><img src="digraph-partition-msa.png" alt="Minimum spanning arborescence respecting the above partition"/></center>
 
 While the \\((3, 0)\\) edge is properly excluded and the \\((2, 3)\\) edge is included, the \\((6, 2)\\) is not present in the arborescence (show as a dashed edge).
-Tracking this problem down was a hassle, but the way that Edmonds' algorithm works is that a cycle, which would have been present if the \\((6, 2)\\) edge was included, are collasped into a signle vertex as the algorithm moves to the next iteration.
+Tracking this problem down was a hassle, but the way that Edmonds' algorithm works is that a cycle, which would have been present if the \\((6, 2)\\) edge was included, are collapsed into a single vertex as the algorithm moves to the next iteration.
 Once that cycle is collapsed into a vertex, it still has to choose how to access that vertex and the choice is based on the best edge as before (this is step I1 in [1]).
 Then, when the algorithm expands the cycle out, it will remove the edge which is
 
@@ -115,7 +115,7 @@ Represented visually, the cycle with incoming edges would look like
 
 And that would be collapsed into a new vertex, \\(N\\) from which the incoming edge with weight 12 would be selected.
 
-<center><img src="digraph-collapsed-cycle.png" alt="Same cycle after the Edmonds algorithm collasped it"/></center>
+<center><img src="digraph-collapsed-cycle.png" alt="Same cycle after the Edmonds algorithm collapsed it"/></center>
 
 In this example we want to forbid the algorithm from picking the edge with weight 12, so that when the cycle is reconstructed the included edge \\((6, 2)\\) is still present.
 Once we make one of the incoming edges an included edge, we know from the definition of an arborescence that we cannot get to that vertex from any other edges.
@@ -145,7 +145,7 @@ But how do I know that it isn't skipping arborescences within that range?
 Since 680 arborescences is too many to explicitly check, I decided to write another test case.
 This one would check that the number of arborescences was correct and that the sequence never decreases.
 
-In order to check the number of arborescecnes, I dicided to take a brute force approach.
+In order to check the number of arborescecnes, I decided to take a brute force approach.
 There are
 
 \\[
@@ -216,4 +216,4 @@ Since Jekyll will not let me put up the txt file I had to convert it into a pdf 
 
 [1] J. Edmonds, _Optimum Branchings_, Journal of Research of the National Bureau of Standards, 1967, Vol. 71B, p.233-240, [https://archive.org/details/jresv71Bn4p233](https://archive.org/details/jresv71Bn4p233)
 
-[2] G.K. Janssens, K. Sörensen, _An algoirthm to generate all spanning trees in order of incresing cost_, Pesquisa Operacional, 2005-08, Vol. 25 (2), p. 219-229, [https://www.scielo.br/j/pope/a/XHswBwRwJyrfL88dmMwYNWp/?lang=en](https://www.scielo.br/j/pope/a/XHswBwRwJyrfL88dmMwYNWp/?lang=en)
+[2] G.K. Janssens, K. Sörensen, _An algorithm to generate all spanning trees in order of increasing cost_, Pesquisa Operacional, 2005-08, Vol. 25 (2), p. 219-229, [https://www.scielo.br/j/pope/a/XHswBwRwJyrfL88dmMwYNWp/?lang=en](https://www.scielo.br/j/pope/a/XHswBwRwJyrfL88dmMwYNWp/?lang=en)

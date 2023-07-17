@@ -15,7 +15,7 @@ resources:
       showOnTop: true
 ---
 
-It has been far longer than I would have prefered since I wrote a blog post.
+It has been far longer than I would have preferred since I wrote a blog post.
 As I expected in my original GSoC proposal, the Held-Karp relaxation is proving to be quite difficult to implement.
 
 My mentors and I agreed that the branch and bound method discussed in Held and Karp's 1970 paper _The Traveling-Salesman Problem and Minimum Spanning Trees_ which first required the implementation of the ascent method because it is used in the branch and bound method.

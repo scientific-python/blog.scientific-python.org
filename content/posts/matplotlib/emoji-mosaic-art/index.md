@@ -171,11 +171,11 @@ TypeError: Invalid shape (32, 32, 16, 16, 4) for image data
 
 To grasp our problem intuitively, think about it this way. What we have right now are lots of images like these:
 
-!["Chopped racoon img"](./chopped_face.png "Image from Scipy under BSD License")
+!["Chopped raccoon img"](./chopped_face.png "Image from Scipy under BSD License")
 
 What we want is to merge them all together. Like so:
 
-!["Rejoined racoon img"](./rejoined_face.png)
+!["Rejoined raccoon img"](./rejoined_face.png)
 
 To think about it slightly more technically, what we have right now is a _five_ dimensional array. What we need is to rehshape it in such a way that it's - at maximum - _three_ dimensional. However, it's not as easy as a simple `np.reshape` (I'd suggest you go ahead and try that anyway).
 

@@ -59,12 +59,12 @@ discussions on the [working pull request](https://github.com/MarsBarLee/blog.sci
 and the final steps needed to make change on the [contributing pull request](https://github.com/scientific-python/blog.scientific-python.org/pull/71).
 
 But wait, there's more! While the community made great progress on improving
-the blog, the work to add or imporve alt text on Scientific Python's blog,
+the blog, the work to add or improve alt text on Scientific Python's blog,
 website, and documentation is ongoing. You can continue these efforts by
 
 - Contributing as an individual! There's no reason you can't write some image descriptions for your favorite blog post to make it even better. (👀 This is a great excuse to find a new favorite blog post.)
 - Contributing as a group! Collect your friends, co-workers, neighbors, local book club attendees, or others to team up and write alt text. (Help for duplicating the process of our group PR can be found [on the draft event documentation](https://github.com/isabela-pf/a11y-events/tree/main/workshop-resources/alt-text).)
-- Staying in touch for annoucements of future contributing events on the [Scientific Python Twitter](https://twitter.com/scientific_py).
+- Staying in touch for announcements of future contributing events on the [Scientific Python Twitter](https://twitter.com/scientific_py).
 
 ---
 

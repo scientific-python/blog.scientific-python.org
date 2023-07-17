@@ -61,7 +61,7 @@ According to the VF2++ paper notation:
 $$T_1=\(u\in V_1 \setminus m: \exists \tilde{u} \in m: (u,\tilde{u}\in E_1)\)$$
 
 where $V_1$ and $E_1$ contain all the nodes and edges of the first graph respectively, and $m$ is a dictionary, mapping
-every node of the first graph to a node of the second graph. Now if we interpet the above equation, we conclude that
+every node of the first graph to a node of the second graph. Now if we interpret the above equation, we conclude that
 $T_1$ contains uncovered neighbors of covered nodes. In simple terms, it includes all the nodes that do not belong in
 the mapping $m$ yet, but are neighbors of nodes that are in the mapping. In addition,
 
@@ -81,7 +81,7 @@ Regarding the computation of these sets, it's not practical to use the brute for
 every step of the algorithm to find the desired nodes and compute $T_i$ and $\tilde{T_i}$. We use the following
 observations to implement an incremental computation of $T_i$ and $\tilde{T_i}$ and make VF2++ more efficient.
 
-- $T_i$ is empty in the beggining, since there are no mapped nodes ($m=\varnothing$) and therefore no neighbors of
+- $T_i$ is empty in the beginning, since there are no mapped nodes ($m=\varnothing$) and therefore no neighbors of
   mapped nodes.
 - $\tilde{T_i}$ initially contains all the nodes from graph $G_i, i=1,2$ which can be realized directly from the
   notation if we consider both $m$ and $T_1$ empty sets.
@@ -161,7 +161,7 @@ In this post we investigated how node ordering works at a high level, and also
 how we are able to calculate some important parameters so that the space and
 time complexity are reduced.
 The next post will continue with examining two more significant components of
-the VF2++ algorith: the **candidate node pair selection** and the
+the VF2++ algorithm: the **candidate node pair selection** and the
 **cutting/consistency** rules that decide when the mapping should or shouldn't
 be extended.
 Stay tuned!

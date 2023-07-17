@@ -2,7 +2,7 @@
 title: "Finding all Minimum Arborescences"
 date: 2020-06-05
 draft: false
-description: "Exploring an algoritm to generate arborescences in ascending order"
+description: "Exploring an algorithm to generate arborescences in ascending order"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
 author: ["mjschwenne"]
@@ -45,7 +45,7 @@ In order to achieve these conditions, they define the generation of the partitio
 s(P) = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (t\_1, v\_1), \dots, (t\_{n-r-1}, v\_{n-r-1}\}
 \\]
 
-where the \\((i, j)\\) edges are the included edges of the original parition and the \\((t, v)\\) are from the open edges of the original partition.
+where the \\((i, j)\\) edges are the included edges of the original partition and the \\((t, v)\\) are from the open edges of the original partition.
 Now, to create the next set of partitions, take each of the \\((t, v)\\) edges sequentially and introduce them one at a time, make that edge an excluded edge in the first partition it appears in and an included edge in all subsequent partitions.
 This will produce something to the effects of
 
@@ -55,10 +55,10 @@ P\_1 = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (\overline{m\_1, p\_1}), \dots, (\ov
 P\_2 = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (t\_1, v\_1), (\overline{m\_1, p\_1}), \dots, (\overline{m\_l, p\_l}), (\overline{t\_2, v\_2})\} \\\\\\
 P\_3 = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (t\_1, v\_1), (t\_2, v\_2), (\overline{m\_1, p\_1}), \dots, (\overline{m\_l, p\_l}), (\overline{t\_3, v\_3})\} \\\\\\
 \vdots \\\\\\
-\begin{multline\*}
+\begin{multiline\*}
 P\_{n-r-1} = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (t\_1, v\_1), \dots, (t\_{n-r-2}, v\_{n-r-2}), (\overline{m\_1, p\_1}), \dots, (\overline{m\_l, p\_l}), \\\\\\
 (\overline{t\_{n-r-1}, v\_{n-r-1}})\}
-\end{multline\*} \\\\\\
+\end{multiline\*} \\\\\\
 \end{array}
 \\]
 
@@ -71,7 +71,7 @@ s\_a(P) = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (t\_1, v\_1), \dots, (t\_{n-r-1},
 \\]
 
 \\(s_a(P)\\) is still constructed of all of the included arcs of the partition and a subset of the open arcs of that partition.
-If we partition in the same manner as the Sörensen and Janssens paper [4], then their cannot be spanning trees which both include and exclude a given edge and this conflict exists for every combintaion of partitions.
+If we partition in the same manner as the Sörensen and Janssens paper [4], then their cannot be spanning trees which both include and exclude a given edge and this conflict exists for every combination of partitions.
 
 Clearly the original arborescence, which includes all of the \\((t_1, v_1), \dots, (t\_{n-r-1}, v\_{n-r-1})\\) cannot be an element of any of the resulting partitions.
 
@@ -245,4 +245,4 @@ I would need to change the format of the first code block as I would like it to 
 
 [3] M. Held, R.M. Karp, _The traveling-salesman problem and minimum spanning trees_, Operations research, 1970-11-01, Vol.18 (6), p.1138-1162, [https://www.jstor.org/stable/169411](https://www.jstor.org/stable/169411)
 
-[4] G.K. Janssens, K. Sörensen, _An algoirthm to generate all spanning trees in order of incresing cost_, Pesquisa Operacional, 2005-08, Vol. 25 (2), p. 219-229, [https://www.scielo.br/j/pope/a/XHswBwRwJyrfL88dmMwYNWp/?lang=en](https://www.scielo.br/j/pope/a/XHswBwRwJyrfL88dmMwYNWp/?lang=en)
+[4] G.K. Janssens, K. Sörensen, _An algorithm to generate all spanning trees in order of increasing cost_, Pesquisa Operacional, 2005-08, Vol. 25 (2), p. 219-229, [https://www.scielo.br/j/pope/a/XHswBwRwJyrfL88dmMwYNWp/?lang=en](https://www.scielo.br/j/pope/a/XHswBwRwJyrfL88dmMwYNWp/?lang=en)
