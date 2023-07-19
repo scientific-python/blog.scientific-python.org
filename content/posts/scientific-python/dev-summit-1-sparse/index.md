@@ -48,13 +48,12 @@ Some big picture take-aways are:
 
 - Reorganized how to check for matrix/array/format info. This involved
   adding a `format` attribute describing which format of sparse storage is used,
-  adding an `_is_array` attribute to assist in converting from the matrix to array
-  interfaces, changing functions `issparse`/`isspmatrix` as well as shifting
+  changing functions `issparse`/`isspmatrix` as well as shifting
   the class hierarchy to allow easy `isinstance` checking.
   The interface going forward includes:
   - `issparse(A)`: True when a sparse array or matrix.
-  - `isinstance(A, sparray)` or alternatively `issparse(A) and A._is_array`: True when a sparse array.
-  - `isspmatrix(A)` or alternatively `issparse() and not A._is_array`: True when a sparse matrix.
+  - `isinstance(A, sparray)`: True when a sparse array.
+  - `isspmatrix(A)`: True when a sparse matrix.
     To check the format of a sparse array or matrix use `A.format == "csr"` or similar.
 - Made decisions about how to approach the "creation functions" for sparse arrays.
   The big-picture approach is to introduce new functions with an `_array` suffix which
