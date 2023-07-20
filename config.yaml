@@ -45,16 +45,24 @@ params:
     image: logo.svg
     text: Scientific Python Blog
     link: /
+
+  navbar:
+    - title: Home
+      url: /
+      is_external: true
+    - title: Blog
+      url: https://blog.scientific-python.org
+    - title: Devstats
+      url: https://devstats.scientific-python.org
+      is_external: true
+    - title: Learn
+      url: https://learn.scientific-python.org
+      is_external: true
+
   hero:
     title: Scientific Python Blog
     image: logo.svg
-  navbar:
-    - title: Home
-      url: https://scientific-python.org/
-    - title: Blog
-      url: /
-    - title: SPECs
-      url: https://scientific-python.org/specs
+
   panel:
     tiles:
       - buttonText: Submit a post
@@ -67,7 +75,6 @@ params:
     logo: logo.svg
     socialmediatitle: ""
     socialmedia:
-      # Find icon names at https://fontawesome.com/search
       - link: https://scientific-python.org
         icon: scientific-python
       - link: https://github.com/scientific-python/blog.scientific-python.org
@@ -102,12 +109,12 @@ params:
       column2:
         title: "Maintainers"
         links:
-          - text: Community
-            link: https://scientific-python.org/community/
-          - text: Calendars
-            link: https://scientific-python.org/calendars/
+          - text: SPECs
+            link: https://scientific-python.org/specs/
           - text: Summits
             link: https://scientific-python.org/summits/
+          - text: Calendars
+            link: https://scientific-python.org/calendars/
       column3:
         links:
           - text: Press kit
