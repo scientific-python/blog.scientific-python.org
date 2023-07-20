@@ -2,7 +2,7 @@
 title: "Your Code Could Go To Space"
 date: 2023-07-19
 draft: false
-tags: ["Open-source", "Scientific-Python", "NASA", "JPL"]
+tags: ["Open-source", "Scientific-Python", "NASA", "JPL", "scipy", "internship"]
 description: "How I learned to code and contributed to a library used on the Mars 2020 mission."
 displayInList: true
 author: ["Will Tirone"]
