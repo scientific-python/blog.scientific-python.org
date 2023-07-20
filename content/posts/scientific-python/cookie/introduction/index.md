@@ -5,15 +5,15 @@ draft: false
 description: "
 Introducing the Scientific Python Development Guide!
 "
-tags: ["tutorials", "cookie"]
+tags: ["tutorials", "cookie", "scientific-python", "summit"]
 displayInList: true
 author: ["Henry Schreiner"]
 
 resources:
 - name: featuredImage
-  src: "my-image.png"
+  src: "henriii.png"
   params:
-    description: "my image description"
+    description: "Henry Schreiner presenting the Development Guide and cookie project template at the first Scientific Python Developer Summit."
     showOnTop: true
 ---
 
