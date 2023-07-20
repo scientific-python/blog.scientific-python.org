@@ -19,11 +19,6 @@ underrepresented in STEM and the open source scientific Python community.
 Community members must adhere to our
 [code of conduct](https://scientific-python.org/code_of_conduct/).
 
-### Diversity, Equity, and Inclusion
-
-- [Diversity & Inclusion in Scientific Computing (DISC) group](https://numfocus.org/programs/diversity-inclusion)
-- [Advancing an inclusive culture in the scientific Python ecosystem](https://scientific-python.org/grants/inclusive_culture/)
-
 ## People
 
 For more information, see our
