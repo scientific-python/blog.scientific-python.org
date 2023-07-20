@@ -46,24 +46,18 @@ params:
     text: Scientific Python Blog
     link: /
 
+  navbarlogoshow: true
+
   navbar:
     - title: Home
-      url: /
-      is_external: true
+      url: https://scientific-python.org
     - title: Blog
-      url: https://blog.scientific-python.org
-    - title: Devstats
-      url: https://devstats.scientific-python.org
-      is_external: true
+      url: /
     - title: Learn
       url: https://learn.scientific-python.org
-      is_external: true
-
-  hero:
-    title: Scientific Python Blog
-    image: logo.svg
 
   panel:
+    title: Posts from the Scientific Python community
     tiles:
       - buttonText: Submit a post
         url: /about/submit/
