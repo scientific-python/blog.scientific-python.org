@@ -103,7 +103,9 @@ cookiecutter, too!
 
 ## Repo-review
 
-I wrote an [introduction post](/post/repo-review/) about this one!
+<!--fix
+I wrote an [introduction post](/posts/scientific-python/repo-review/) about this one!
+-->
 
 Along with this was probably the biggest change, one requested by several people
 at the summit: [scientific-python/repo-review][repo-review] (was
