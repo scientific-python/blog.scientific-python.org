@@ -1,27 +1,28 @@
 ---
 title: "The Scientific Python Development Guide"
-date: 2023-07-16T00:23:59-05:00
+date: 2023-07-21T00:00:00-05:00
 draft: false
-description: "
-Introducing the Scientific Python Development Guide!
-"
+description: >
+  Introducing the Scientific Python Development Guide!
 tags: ["tutorials", "cookie", "scientific-python", "summit"]
 displayInList: true
 author: ["Henry Schreiner"]
 
 resources:
-- name: featuredImage
-  src: "henriii.png"
-  params:
-    description: "Henry Schreiner presenting the Development Guide and cookie project template at the first Scientific Python Developer Summit."
-    showOnTop: true
+  - name: featuredImage
+    src: "henriii.png"
+    params:
+      description: |
+        Henry Schreiner presenting the Development Guide and cookie project
+        template at the first Scientific Python Developer Summit.
+      showOnTop: true
 ---
 
 One outcome of the
 [2023 Scientific Python Developer Summit](https://scientific-python.org/summits/developer/2023/)
 was the [Scientific Python Development Guide][], a comprehensive guide to modern
 Python package development, complete with a [new project template][cookie]
-supporting 12 build backends and a [WebAssembly-powered checker][sp-repo-review]
+supporting 10+ build backends and a [WebAssembly-powered checker][sp-repo-review]
 with checks linked to the guide. The guide covers topics like [modern][],
 [compiled][], and [classic][] packaging, [style][] checks, [type
 checking][mypy], [docs][], [task runners][], [CI][gha_basic], [tests][pytest],
@@ -52,7 +53,7 @@ The core of the project is the guide, which is comprised of four sections:
 
 From the original [Scikit-HEP dev pages][], a lot was added:
 
-- Brand new guide page on documentation, along with new sp-repo-review checks to
+- Brand new guide page on documentation, along with new [sp-repo-review][] checks to
   help with readthedocs.
 - A compiled projects page! Finally! With [scikit-build-core][],
   [meson-python][], and [maturin][]. The page shows real outputs from the
@@ -80,8 +81,15 @@ The infrastructure was updated too:
 We also did something I've wanted to do for a long time: the guide, the
 cookiecutter template, and the checks are all in a single repo! The repo is
 [scientific-python/cookie][cookie], which is the moved `scikit-hep/cookie` (the
-old URL for cookiecutter still works!). A lot of work went into the
-cookiecutter, too!
+old URL for cookiecutter still works!).
+
+Cookie is a new project template supporting multiple backends (including
+compiled ones), kept in sync with the dev guide. We recommend starting with
+the dev guide and setting up your first package by hand, so that you understand
+what each part is for, but once you've done that, [cookie][] allows you to get
+started on a new project in seconds.
+
+A lot of work went into [cookie][], too!
 
 - Generalized defaults. We still have special integration if someone sets the
   org to `scikit-hep`; the same integration can be offered to other orgs.
@@ -98,14 +106,13 @@ cookiecutter, too!
   current year).
 - Reworked docs template.
 - Support for cookiecutter 2.2 pretty descriptions (added about four hours after
-  cookiecutter 2.2.0 was released).
+  cookiecutter 2.2.0 was released) and cookiecutter 2.2.3 choice descriptions.
 - GitLab CI support when not targeting github.com URLs (added by Giordon Stark).
 
 ## Repo-review
 
-<!--fix
-I wrote an [introduction post](/posts/scientific-python/repo-review/) about this one!
--->
+See the [introduction to repo-review](https://iscinumpy.dev/post/repo-review/)
+for information about this one!
 
 Along with this was probably the biggest change, one requested by several people
 at the summit: [scientific-python/repo-review][repo-review] (was
@@ -140,7 +147,7 @@ you’d like to write check for, feel free to write a plugin!
 
 ## sp-repo-review
 
-Finally, sp-repo-review contains the previous repo-review plugins with checks:
+Finally, [sp-repo-review][] contains the previous repo-review plugins with checks:
 
 - Fully cross-linked with the development guide. Every check has a URL that
   points to a matching badge inside the development guide where the thing the
@@ -155,14 +162,24 @@ Finally, sp-repo-review contains the previous repo-review plugins with checks:
   checkmark that respects skips (based on the excellent contrition to
   pypa/build).
 
+<!-- prettier-ignore-start -->
+{{< figure
+  src="cibw_example.png"
+  title="Running sp-repo-review on cibuildwheel"
+  alt="Image of sp-repo-review showing checks"
+  width="60%"
+  class="fig-center"
+>}}
+<!-- prettier-ignore-end -->
+
 ## Using the guide
 
-If you have a guide, I'd like for you to compare it with the Scientific Python
+If you have a guide, we'd like for you to compare it with the Scientific Python
 Development Guide, and see if we are missing anything - bring it to our
-attention, and maybe we can add it. And then you can link to the centerally
+attention, and maybe we can add it. And then you can link to the centrally
 maintained guide instead of manually maintaining a complete custom guide. See
-[scikit-hep/developer][] for an example; many pages now point at this guide now.
-We can also provide org integrations for the cookiecutter, providing some
+[scikit-hep/developer][] for an example; many pages now point at this guide.
+We can also provide org integrations for [cookie][], providing some
 customizations when a user targets your org (targeting `scikit-hep` will add a
 badge).
 
