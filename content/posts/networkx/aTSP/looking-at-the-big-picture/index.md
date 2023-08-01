@@ -34,17 +34,14 @@ Recall that from the Asadpour paper the overview of the algorithm is
 > 1. Solve the Held-Karp LP relaxation of the ATSP instance to get an optimum extreme point solution \\(x^\*\\).
 >    Define \\(z^\*\\) as in (5), making it a symmetrized and scaled down version of \\(x^\*\\).
 >    Vector \\(z^\*\\) can be viewed as a point in the spanning tree polytope of the undirected graph on the support of \\(x^\*\\) that one obtains after disregarding the directions of arcs (See Section 3.)
->
 > 2. Let \\(E\\) be the support graph of \\(z^\*\\) when the direction of the arcs are disregarded.
 >    Find weights \\(\{\tilde{\gamma}\}\_{e \in E}\\) such that the exponential distribution on the spanning trees, \\(\tilde{p}(T) \propto \exp(\sum\_{e \in T} \tilde{\gamma}\_e)\\) (approximately) preserves the marginals imposed by \\(z^\*\\), i.e. for any edge \\(e \in E\\),
 >    <center>\\(\sum\_{T \in \mathcal{T} : T \ni e} \tilde{p}(T) \leq (1 + \epsilon) z^\*\_e\\),</center>
 >    for a small enough value of \\(\epsilon\\).
 >    (In this paper we show that \\(\epsilon = 0.2\\) suffices for our purpose. See Section 7 and 8 for a description of how to compute such a distribution.)
->
 > 3. Sample \\(2\lceil \log n \rceil\\) spanning trees \\(T_1, \dots, T\_{2\lceil \log n \rceil}\\) from \\(\tilde{p}(.)\\).
 >    For each of these trees, orient all its edges so as to minimize its cost with respect to our (asymmetric) cost function \\(c\\).
 >    Let \\(T^\*\\) be the tree whose resulting cost is minimal among all of the sampled trees.
->
 > 4. Find a minimum cost integral circulation that contains the oriented tree \\(\vec{T}^\*\\).
 >    Shortcut this circulation to a tour and output it. (See Section 4.)
 >
