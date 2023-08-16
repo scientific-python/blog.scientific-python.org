@@ -1,6 +1,6 @@
 ---
 title: "The Scientific Python Development Guide"
-date: 2023-07-21T00:00:00-05:00
+date: 2023-08-15T00:00:00-05:00
 draft: false
 description: >
   Introducing the Scientific Python Development Guide!
@@ -108,6 +108,7 @@ A lot of work went into [cookie][], too!
 - Support for cookiecutter 2.2 pretty descriptions (added about four hours after
   cookiecutter 2.2.0 was released) and cookiecutter 2.2.3 choice descriptions.
 - GitLab CI support when not targeting github.com URLs (added by Giordon Stark).
+- Support for selecting VCS or classic versioning.
 
 ## Repo-review
 
@@ -119,7 +120,7 @@ at the summit: [scientific-python/repo-review][repo-review] (was
 `scikit-hep/repo-review`) is now a completely general framework for implementing
 checks in Python 3.10+. The checks have been moved to `sp-repo-review`, which is
 now part of scientific-python/cookie. There are too many changes to list here,
-so just the key ones in 0.6, 0.7 & 0.8:
+so just the key ones in 0.6, 0.7, 0.8, and 0.9:
 
 - Extensive, beautiful [documentation](https://repo-review.readthedocs.io) for
   check authors at (used to help guide the new docs guide page & template
@@ -138,6 +139,8 @@ so just the key ones in 0.6, 0.7 & 0.8:
 - Pretty printed and controllable sorting for families.
 - Supports running from Python, including inside a readme with something like
   cog.
+- Support for dynamic family descriptions (such as to output build system and
+  licence used).
 
 The
 [full changelog](https://repo-review.readthedocs.io/en/latest/changelog.html)
