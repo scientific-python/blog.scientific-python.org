@@ -1,6 +1,6 @@
 ---
 title: "The Scientific Python Development Guide"
-date: 2023-08-15T00:00:00-05:00
+date: 2023-08-26T12:00:00-05:00
 draft: false
 description: >
   Introducing the Scientific Python Development Guide!
@@ -120,7 +120,7 @@ at the summit: [scientific-python/repo-review][repo-review] (was
 `scikit-hep/repo-review`) is now a completely general framework for implementing
 checks in Python 3.10+. The checks have been moved to `sp-repo-review`, which is
 now part of scientific-python/cookie. There are too many changes to list here,
-so just the key ones in 0.6, 0.7, 0.8, and 0.9:
+so just the key ones in 0.6, 0.7, 0.8, 0.9, and 0.10:
 
 - Extensive, beautiful [documentation](https://repo-review.readthedocs.io) for
   check authors at (used to help guide the new docs guide page & template
@@ -141,12 +141,24 @@ so just the key ones in 0.6, 0.7, 0.8, and 0.9:
   cog.
 - Support for dynamic family descriptions (such as to output build system and
   licence used).
+- Support for limiting the output to just errors or errors and skips.
+- Support for running on multiple repos at once, with output tailored to
+  multiple repos. Also supports passing `pyproject.toml` path instead to make
+  running on mixed repos easier.
+- Support for linting `[tool.repo-review]` with [validate-pyproject][].
 
 The
 [full changelog](https://repo-review.readthedocs.io/en/latest/changelog.html)
 has more - you can even see the 10 beta releases in-between 0.6.x and 0.7.0
 where a lot of this refactoring work was happening. If you have configuration
 you’d like to write check for, feel free to write a plugin!
+
+[validate-pyproject][] 0.14 has added support for being used as a repo-review
+plugin, so you can validate `pyproject.toml` files with repo-review! This lints
+`[project]` and `[build-system]` tables, `[tool.setuptools]`, and other tools
+via plugins. [Scikit-build-core][] 0.5 can be used as a validate-project plugin
+to lint `[tool.scikit-build]`. Repo-review has a plugin for
+`[tool.repo-review]`.
 
 ## sp-repo-review
 
@@ -222,3 +234,5 @@ badge).
 [nox]: https://nox.thea.codes
 [pre-commit]: https://pre-commit.com
 [rich]: https://rich.readthedocs.io
+[validate-pyproject]: https://validate-pyproject.readthedocs.io
+[scikit-build-core]: https://scikit-build-core.readthedocs.io
