@@ -41,7 +41,7 @@ Meson build support including all the above work was merged into SciPy's `main` 
 
 _"A basic API design principle is: a public object should only be available from one namespace. Having any function in two or more places is just extra technical debt, and with things like dispatching on an API or another library implementing a mirror API, the cost goes up."_
 
-```py
+```pycon
 >>> from scipy import ndimage
 >>> ndimage.filters.gaussian_filter is ndimage.gaussian_filter  # :(
 True
@@ -52,7 +52,7 @@ I worked on [cleaning the pubic namespaces](https://github.com/scipy/scipy/issue
 
 #### The solution:
 
-```py
+```pycon
 >>> from scipy import ndimage
 >>> ndimage.filters.gaussian_filter is ndimage.gaussian_filter
 <stdin>:1: DeprecationWarning: Please use `gaussian_filter` from the `scipy.ndimage` namespace, the `scipy.ndimage.filters` namespace is deprecated.
@@ -86,7 +86,7 @@ import numpy as np
 from scipy.linalg import inv, set_backend
 import cupyx.scipy.linalg as _cupy_backend
 
-x_cu, x_nu = cp.array([[1., 2.], [3., 4.]]), np.array([[1., 2.], [3., 4.]])
+x_cu, x_nu = cp.array([[1.0, 2.0], [3.0, 4.0]]), np.array([[1.0, 2.0], [3.0, 4.0]])
 y_scipy = inv(x_nu)
 
 with set_backend(_cupy_backend):
