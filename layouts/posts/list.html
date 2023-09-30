@@ -32,15 +32,12 @@
 </div>
 
 <div class="content-container">
-  {{ $paginator := .Paginate (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts") }}
+  {{ $paginator := .Paginate (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts") 50 }}
   {{ range $paginator.Pages }}
   <div class="post-list">
     <article>
       <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-      {{ partial "post_meta.html" . }}
-      <div class="post-summary">
-        {{ .Summary }}
-      </div>
+      <div>{{ partial "post_meta.html" . }}</div>
     </article>
   </div>
   {{ end }}
