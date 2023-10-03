@@ -119,7 +119,7 @@ And that would be collapsed into a new vertex, \\(N\\) from which the incoming e
 
 In this example we want to forbid the algorithm from picking the edge with weight 12, so that when the cycle is reconstructed the included edge \\((6, 2)\\) is still present.
 Once we make one of the incoming edges an included edge, we know from the definition of an arborescence that we cannot get to that vertex from any other edges.
-They are all effectivily excluded, so once we find an included edge directed towards a vertex we can made all of the other incoming edges excluded.
+They are all effectively excluded, so once we find an included edge directed towards a vertex we can made all of the other incoming edges excluded.
 
 Returning to the example, the collapsed vertex \\(N\\) would have the edge of weight 12 excluded and would pick the edge of weight 13.
 

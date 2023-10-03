@@ -15,7 +15,7 @@ resources:
       showOnTop: true
 ---
 
-Now that my porposal was accepted by NetworkX for the 2021 Google Summer of Code (GSoC), I can get more into the technical details of how I plan to implement the Asadpour algorithm within NetworkX.
+Now that my proposal was accepted by NetworkX for the 2021 Google Summer of Code (GSoC), I can get more into the technical details of how I plan to implement the Asadpour algorithm within NetworkX.
 
 In this post I am going to outline my thought process for the control scheme of my implementation and create function stubs according to my GSoC proposal.
 Most of the work for this project will happen in `netowrkx.algorithms.approximation.traveling_salesman.py`, where I will finish the last algorithm for the Traveling Salesman Problem so it can be merged into the project. The main function in `traveling_salesman.py` is
