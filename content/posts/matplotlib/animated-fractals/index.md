@@ -127,7 +127,7 @@ def animate(i):
         for j in range(len(im)):
             X[i, j] = mandelbrot(re[i], im[j], threshold)
 
-    # associate colors to the iterations with an iterpolation
+    # associate colors to the iterations with an interpolation
     img = ax.imshow(X.T, interpolation="bicubic", cmap="magma")
     return [img]
 
