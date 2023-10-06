@@ -72,3 +72,27 @@ div.MathJax_Display {
   margin-top: 60px;
   padding-bottom: 10px;
 }
+
+/* Flex-column layout for /posts/. */
+.content-container {
+  max-width: 70em;
+  margin: 0 30px;
+  /* overflow: hidden; */
+}
+
+.content-container .flex-row {
+  border-bottom: 1px dotted var(--colorBackgroundAlt2);
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 75em) {
+  .content-container .flex-row {
+    flex-direction: row;
+  }
+}
+
+.content-container .flex-row .post-list {
+  margin-left: 2em;
+  width: 100%;
+}

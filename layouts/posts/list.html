@@ -32,16 +32,28 @@
 </div>
 
 <div class="content-container">
-  {{ $paginator := .Paginate (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts") 50 }}
-  {{ range $paginator.Pages }}
+  {{ $posts := where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts" }}
+  {{ range $k, $v := $posts }}
+  {{ if (not (eq (mod $k 2) 0)) }}
+    {{ continue }}
+  {{ end }}
+  {{ $first := $v }}
+  {{ $second := index $posts (add $k 1) }}
+  <div class="flex-row">
   <div class="post-list">
     <article>
-      <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+      <div class="post-title"><a href="{{ $first.RelPermalink }}">{{ $first.Title }}</a></div>
       <div>{{ partial "post_meta.html" . }}</div>
     </article>
   </div>
+  <div class="post-list">
+    <article>
+      <div class="post-title"><a href="{{ $second.RelPermalink }}">{{ $second.Title }}</a></div>
+      <div>{{ partial "post_meta.html" . }}</div>
+    </article>
+  </div>
+  </div>
   {{ end }}
-  {{ template "_internal/pagination.html" . }}
 </div>
 
 </section>
