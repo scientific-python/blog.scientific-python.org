@@ -43,6 +43,13 @@
   font-family: serif;
 }
 
+.post-summary img {
+    border: 1px solid #bbb;
+    float: right;
+    max-width: 15em;
+    margin: 0.5em;
+}
+
 div.MathJax_Display {
   margin-top: 0;
   margin-bottom: 0;

@@ -18,10 +18,11 @@
     <span class="post-tag"><a href="{{ path.Join "/tags/" $tag | relURL }}">#{{ $tag }}</a></span>
     {{- end -}}
   </div>
-  <div class="post-featuredImage">
-    {{ with $featuredImage }}
-    <img src="{{ .RelPermalink }}" {{ if .Params.description }}alt="{{ .Params.description }}"{{ end }}/>
-    {{ end }}
+  <div class="post-summary">
+  {{ with $featuredImage }}
+  <img src="{{ .RelPermalink }}" {{ if .Params.description }}alt="{{ .Params.description }}"{{ end }}/>
+  {{ end }}
+  {{ .Summary }}
   </div>
   {{- end -}}
 </div>
