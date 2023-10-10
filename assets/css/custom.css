@@ -20,7 +20,6 @@
 }
 
 .post-meta {
-  color: var(--colorSecondaryDark);
   padding-bottom: 1rem;
 }
 
@@ -42,7 +41,6 @@
 
 .post-summary {
   font-family: serif;
-  font-size: 130%;
 }
 
 div.MathJax_Display {
