@@ -81,7 +81,6 @@ div.MathJax_Display {
 }
 
 .content-container .flex-row {
-  border-bottom: 1px dotted var(--colorBackgroundAlt2);
   justify-content: space-between;
   flex-direction: column;
 }
