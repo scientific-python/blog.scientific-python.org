@@ -75,7 +75,6 @@ div.MathJax_Display {
 .content-container {
   max-width: 70em;
   margin: 0 30px;
-  /* overflow: hidden; */
 }
 
 .content-container .flex-row {
