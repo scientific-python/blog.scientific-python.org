@@ -1,5 +1,5 @@
 ---
-title: "Good practices with numpy random number generators"
+title: "Good practices with NumPy random number generators"
 date: 2023-08-31T23:22:46+02:00
 draft: false
 description: "
