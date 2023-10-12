@@ -34,6 +34,7 @@ To create a new RNG you can use the `default_rng` function as illustrated in the
 
 ```python
 import numpy as np
+
 seed = 12345
 rng = np.random.default_rng(seed)  # can be called without a seed
 rng.random()
@@ -48,6 +49,7 @@ As you write functions that you will use on their own as well as in a more compl
 
 ```python
 import numpy as np
+
 
 def stochastic_function(seed, high=10):
     rng = np.random.default_rng(seed)
@@ -72,9 +74,11 @@ From numpy 1.17, it is now very easy to instantiate independent RNGs. Depending 
 import numpy as np
 from joblib import Parallel, delayed
 
+
 def stochastic_function(seed, high=10):
     rng = np.random.default_rng(seed)
     return rng.integers(high, size=5)
+
 
 seed = 98765
 # create the RNG that you want to pass around
@@ -85,13 +89,15 @@ ss = rng.bit_generator._seed_seq
 child_states = ss.spawn(5)
 
 # use 2 processes to run the stochastic_function 5 times with joblib
-random_vector = Parallel(n_jobs=2)(delayed(
-    stochastic_function)(random_state) for random_state in child_states)
+random_vector = Parallel(n_jobs=2)(
+    delayed(stochastic_function)(random_state) for random_state in child_states
+)
 print(random_vector)
 
 # rerun to check that we obtain the same outputs
-random_vector = Parallel(n_jobs=2)(delayed(
-    stochastic_function)(random_state) for random_state in child_states)
+random_vector = Parallel(n_jobs=2)(
+    delayed(stochastic_function)(random_state) for random_state in child_states
+)
 print(random_vector)
 ```
 
