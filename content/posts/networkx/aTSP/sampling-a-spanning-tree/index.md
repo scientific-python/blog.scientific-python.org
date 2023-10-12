@@ -92,7 +92,7 @@ It has to have a probability of 0.
 Yet in the current implementation of the function, it would have a probability of \\(\lambda\_{\\{1, 2\\}}\\).
 So, I have to check to see if a representative edge exists for the edge we are considering in the current iteration of the main for loop.
 
-The solution to this is to return the merge-find data structure with the prepared graph for \\(G\\) and then check that an edge with endpoints at the two representatives for the endpoints of the original edge persent.
+The solution to this is to return the merge-find data structure with the prepared graph for \\(G\\) and then check that an edge with endpoints at the two representatives for the endpoints of the original edge exists.
 If so, use the kirchhoff value as normal but if not make `G_e_total_tree_weight` equal to zero so that this edge cannot be picked.
 Finally I was able to sample trees from `G` consistently, but did they match the expected probabilities?
 

@@ -89,9 +89,9 @@ def draw_battery(
     tip_ec : str, optional
         The edge color of the tip of battery. The default is "grey".
     bol_fc : str, optional
-        The fill/face color of the lighning bolt. The default is "#fdfdfd".
+        The fill/face color of the lightning bolt. The default is "#fdfdfd".
     bol_ec : str, optional
-        The edge color of the lighning bolt. The default is "grey".
+        The edge color of the lightning bolt. The default is "grey".
     invert_perc : bool, optional
         A flag to invert the percentage shown inside the battery. The default is False
 
