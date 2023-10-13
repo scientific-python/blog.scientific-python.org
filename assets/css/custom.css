@@ -44,10 +44,10 @@
 }
 
 .post-summary img {
-    border: 1px solid #bbb;
-    float: right;
-    max-width: 15em;
-    margin: 0.5em;
+  border: 1px solid #bbb;
+  float: right;
+  max-width: 15em;
+  margin: 0.5em;
 }
 
 div.MathJax_Display {
@@ -56,11 +56,11 @@ div.MathJax_Display {
 }
 
 .post-featuredImage img {
-    /* FIXME: Use color variable. */
-    border: 0.15em #bbb solid;
-    border-radius: 25px;
-    max-width: 20rem;
-    margin: 0.5em;
+  /* FIXME: Use color variable. */
+  border: 0.15em #bbb solid;
+  border-radius: 25px;
+  max-width: 20rem;
+  margin: 0.5em;
 }
 
 .tag-cloud {
