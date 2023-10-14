@@ -32,19 +32,7 @@
 </div>
 
 <div class="content-container">
-  {{ $paginator := .Paginate (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts") }}
-  {{ range $paginator.Pages }}
-  <div class="post-list">
-    <article>
-      <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-      {{ partial "post_meta.html" . }}
-      <div class="post-summary">
-        {{ .Summary }}
-      </div>
-    </article>
-  </div>
-  {{ end }}
-  {{ template "_internal/pagination.html" . }}
+  {{ partial "posts.html" (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts") }}
 </div>
 
 </section>

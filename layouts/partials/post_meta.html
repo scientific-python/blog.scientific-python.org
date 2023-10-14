@@ -1,8 +1,8 @@
+{{ $noSummary := .noSummary }}
+{{- with .context -}}
 {{- $featuredImage := .Resources.GetMatch "featuredImage" -}}
 <div class="post-meta">
-  {{ with $featuredImage }}
-  <img class="post-featuredImage" src="{{ .RelPermalink }}" {{ if .Params.description }}alt="{{ .Params.description }}"{{ end }}/>
-  {{ end }}
+  <!-- FIXME: What is this </span> closing? -->
   </span>
   <span class="post-authors">
     {{- range .Params.author -}}
@@ -20,5 +20,14 @@
     <span class="post-tag"><a href="{{ path.Join "/tags/" $tag | relURL }}">#{{ $tag }}</a></span>
     {{- end -}}
   </div>
+  <div class="post-summary">
+  {{ with $featuredImage }}
+  <img src="{{ .RelPermalink }}" {{ if .Params.description }}alt="{{ .Params.description }}"{{ end }}/>
+  {{ end }}
+  {{- if (not $noSummary) -}}
+  {{ .Summary }}
+  {{- end -}}
+  </div>
   {{- end -}}
 </div>
+{{- end -}}
