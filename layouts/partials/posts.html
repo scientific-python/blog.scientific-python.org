@@ -1,26 +1,9 @@
 {{ $posts := . }}
-{{ range $k, $v := $posts }}
-{{ if (not (eq (mod $k 2) 0)) }}
-{{ continue }}
-{{ end }}
-{{ $first := $v }}
-{{ $second := index $posts (add $k 1) }}
-<div class="flex-row">
-  {{ with $first }}
-  <div class="post-list">
-    <article>
-      <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-      <div>{{ partial "post_meta.html" (dict "context" . ) }}</div>
-    </article>
-  </div>
-  {{ end }}
-  {{ with $second }}
-  <div class="post-list">
-    <article>
-      <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-      <div>{{ partial "post_meta.html" (dict "context" . ) }}</div>
-    </article>
-  </div>
+<div class="post-list">
+  {{ range $posts }}
+  <article>
+    <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+    <div>{{ partial "post_meta.html" (dict "context" . ) }}</div>
+  </article>
   {{ end }}
 </div>
-{{ end }}
