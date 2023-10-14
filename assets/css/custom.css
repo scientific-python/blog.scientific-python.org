@@ -20,7 +20,6 @@
 }
 
 .post-meta {
-  color: var(--colorSecondaryDark);
   padding-bottom: 1rem;
 }
 
@@ -33,7 +32,7 @@
 }
 
 .post-content {
-  font-family: serif;
+  font-family: "Fira Sans", serif;
 }
 
 .post-content p:not(:last-child) {
@@ -41,8 +40,14 @@
 }
 
 .post-summary {
-  font-family: serif;
-  font-size: 130%;
+  font-family: "Fira Sans", serif;
+}
+
+.post-summary img {
+  border: 1px solid #bbb;
+  float: right;
+  max-width: 15em;
+  margin: 0.5em;
 }
 
 div.MathJax_Display {
@@ -50,10 +55,12 @@ div.MathJax_Display {
   margin-bottom: 0;
 }
 
-img.post-featuredImage {
-  width: 15rem;
-  float: left;
-  padding-right: 1rem;
+.post-featuredImage img {
+  /* FIXME: Use color variable. */
+  border: 0.15em #bbb solid;
+  border-radius: 25px;
+  max-width: 20rem;
+  margin: 0.5em;
 }
 
 .tag-cloud {
@@ -69,4 +76,26 @@ img.post-featuredImage {
   font-size: 32px;
   margin-top: 60px;
   padding-bottom: 10px;
+}
+
+/* Flex-column layout for /posts/. */
+.content-container {
+  max-width: 70em;
+  margin: 0 30px;
+}
+
+.content-container .flex-row {
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 75em) {
+  .content-container .flex-row {
+    flex-direction: row;
+  }
+}
+
+.content-container .flex-row .post-list {
+  margin-left: 2em;
+  width: 100%;
 }
