@@ -17,7 +17,7 @@
         <div class="post-title">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </div>
-        {{ partial "post_meta.html" . }}
+        {{ partial "post_meta.html" (dict "context" .) }}
         <div class="post-summary">{{ .Summary }}</div>
       </article>
     </div>
