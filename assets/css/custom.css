@@ -78,24 +78,28 @@ div.MathJax_Display {
   padding-bottom: 10px;
 }
 
-/* Flex-column layout for /posts/. */
+.content-container .post-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+}
+
+/* Default: single column layout for mobile */
 .content-container {
   max-width: 70em;
   margin: 0 30px;
-}
-
-.content-container .flex-row {
-  justify-content: space-between;
   flex-direction: column;
 }
 
+/* Full screen two-column layout for desktop etc. */
 @media only screen and (min-width: 75em) {
-  .content-container .flex-row {
+  .content-container {
     flex-direction: row;
   }
-}
 
-.content-container .flex-row .post-list {
-  margin-left: 2em;
-  width: 100%;
+  article {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: calc(50% - 1rem);
+  }
 }

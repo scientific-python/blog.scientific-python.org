@@ -1,9 +1,8 @@
 <section class="content-padding flex-row">
   <div class="content-container">
-    Recent Posts
     {{- partial "posts.html" (first 8 (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts")) -}}
     <div class="panel-box-action" style="text-align: left;">
-      <a class="panel-button" href="{{ "posts/" | relURL }}">All posts...</a>
+      <a class="panel-button" href="{{ "posts/" | relURL }}">Browse all posts &nbsp;⟶</a>
     </div>
   </div>
 </section>
