@@ -32,32 +32,7 @@
 </div>
 
 <div class="content-container">
-  {{ $posts := where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts" }}
-  {{ range $k, $v := $posts }}
-  {{ if (not (eq (mod $k 2) 0)) }}
-    {{ continue }}
-  {{ end }}
-  {{ $first := $v }}
-  {{ $second := index $posts (add $k 1) }}
-  <div class="flex-row">
- {{ with $first }}
-  <div class="post-list">
-    <article>
-      <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-      <div>{{ partial "post_meta.html" . }}</div>
-    </article>
-  </div>
-  {{ end }}
-  {{ with $second }}
-  <div class="post-list">
-    <article>
-      <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-      <div>{{ partial "post_meta.html" . }}</div>
-    </article>
-  </div>
-  {{ end }}
-  </div>
-  {{ end }}
+  {{ partial "posts.html" (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts") }}
 </div>
 
 </section>

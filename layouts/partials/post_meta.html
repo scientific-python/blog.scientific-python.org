@@ -1,3 +1,5 @@
+{{ $noSummary := .noSummary }}
+{{- with .context -}}
 {{- $featuredImage := .Resources.GetMatch "featuredImage" -}}
 <div class="post-meta">
   <!-- FIXME: What is this </span> closing? -->
@@ -22,7 +24,10 @@
   {{ with $featuredImage }}
   <img src="{{ .RelPermalink }}" {{ if .Params.description }}alt="{{ .Params.description }}"{{ end }}/>
   {{ end }}
+  {{- if (not $noSummary) -}}
   {{ .Summary }}
+  {{- end -}}
   </div>
   {{- end -}}
 </div>
+{{- end -}}
