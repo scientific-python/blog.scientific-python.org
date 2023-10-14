@@ -32,7 +32,7 @@
 }
 
 .post-content {
-  font-family: serif;
+  font-family: "Fira Sans", serif;
 }
 
 .post-content p:not(:last-child) {
