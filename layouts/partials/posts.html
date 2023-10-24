@@ -3,7 +3,7 @@
   {{ range $posts }}
   <article>
     <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-    <div>{{ partial "post_meta.html" (dict "context" . ) }}</div>
+    <div>{{ .Scratch.Set "noSummary" true }}{{ partial "post_meta.html" . }}</div>
   </article>
   {{ end }}
 </div>
