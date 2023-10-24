@@ -29,6 +29,8 @@ checking][mypy], [docs][], [task runners][], [CI][gha_basic], [tests][pytest],
 and much more! There also are sections of [tutorials][], [principles][], and
 some common [patterns][].
 
+<!--more-->
+
 This guide (along with cookie & repo-review) started in [Scikit-HEP][] in 2020.
 During the summit, it was merged with the [NSLS-II][] guidelines, which provided
 the basis for the [principles][] section. I'd like to thank and acknowledge Dan
@@ -36,8 +38,6 @@ Allan and Gregory Lee for working tirelessly during the summit to rework,
 rewrite, merge, and fix the guide, including writing most of the [tutorials][]
 pages and first [patterns][] page, and rewriting the [environment][] page as a
 tutorial.
-
-<!--more-->
 
 ## The guide
 

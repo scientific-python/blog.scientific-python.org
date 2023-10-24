@@ -1,4 +1,16 @@
 {{ define "main" }}
 {{ partial "panel.html" . }}
-{{ partial "section.html" . }}
+
+<section class="content-padding flex-row">
+  <div class="content-container">
+    {{ $latest := (first 8 (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts")) }}
+
+    {{ partial "posts_with_summary.html" $latest }}
+
+    <div class="panel-box-action" style="text-align: left;">
+      <a class="panel-button" href="{{ "posts/" | relURL }}">Browse all posts &nbsp;⟶</a>
+    </div>
+  </div>
+</section>
+
 {{ end }}

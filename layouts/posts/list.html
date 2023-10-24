@@ -21,18 +21,19 @@
         {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weight) ) }}
         <li>
           <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}"
-            style="font-size:{{$currentFontSize}}{{$fontUnit}}"
+             style="font-size:{{$currentFontSize}}{{$fontUnit}}"
           >
             {{ $name }}
           </a>
         </li>
-      {{ end }}
+        {{ end }}
     </ul>
-  {{ end }}
+    {{ end }}
 </div>
 
 <div class="content-container">
-  {{ partial "posts.html" (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts") }}
+  {{ $latest := (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts") }}
+  {{ partial "posts.html" $latest }}
 </div>
 
 </section>

@@ -1,4 +1,3 @@
-{{- $featuredImage := .Resources.GetMatch "featuredImage" -}}
 <div class="post-meta">
   <span class="post-authors">
     {{- range .Params.author -}}
@@ -16,13 +15,5 @@
     <span class="post-tag"><a href="{{ path.Join "/tags/" $tag | relURL }}">#{{ $tag }}</a></span>
     {{- end -}}
   </div>
-  {{- if not (.Scratch.Get "noSummary") -}}
-  <div class="post-summary">
-  {{ with $featuredImage }}
-  <img src="{{ .RelPermalink }}" {{ if .Params.description }}alt="{{ .Params.description }}"{{ end }}/>
-  {{ end }}
-  {{ .Summary }}
-  </div>
-  {{- end -}}
   {{- end -}}
 </div>
