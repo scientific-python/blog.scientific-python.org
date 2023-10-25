@@ -33,7 +33,7 @@
 
   <div class="content-container">
     {{ $latest := (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts") }}
-    {{ partial "posts.html" $latest }}
+    {{ partial "posts_with_description.html" $latest }}
   </div>
 
 </section>
