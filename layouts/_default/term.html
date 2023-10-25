@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ define "main" }}
-<section class="content-padding flex-row">
+<section class="content-padding">
   <div class="content-container">
     <h1 id="term-title">
       Posts with
@@ -11,17 +11,7 @@
           <span class="icon fas fa-rss" style="vertical-align: baseline;"></span>
         </a>
     </h1>
-    {{ range .Pages }}
-    <div class="post-list">
-      <article>
-        <div class="post-title">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </div>
-        {{ partial "post_meta.html" (dict "context" .) }}
-        <div class="post-summary">{{ .Summary }}</div>
-      </article>
-    </div>
-    {{ end }}
+    {{ partial "posts.html" .Pages }}
   </div>
 </section>
 {{ end }}

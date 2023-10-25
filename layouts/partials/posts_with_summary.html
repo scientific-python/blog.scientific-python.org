@@ -4,8 +4,9 @@
   {{ range $posts }}
   <article>
     <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-    <div class="post-meta">
-      <div>{{ partial "post_meta.html" . }}</div>
+    <div>
+    {{ partial "post_meta.html" . }}
+    {{ partial "post_summary.html" . }}
     </div>
   </article>
   {{ end }}

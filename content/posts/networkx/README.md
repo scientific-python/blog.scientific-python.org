@@ -1,3 +1,8 @@
+---
+_build:
+  list: never
+---
+
 # NetworkX posts
 
 This directory contains the posts related to NetworkX.
