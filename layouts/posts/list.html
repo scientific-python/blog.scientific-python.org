@@ -32,8 +32,13 @@
   </div>
 
   <div class="content-container">
-    {{ $latest := (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts") }}
-    {{ partial "posts.html" $latest }}
+    <!-- Here, we try to render all blog posts under a certain subdirectory -->
+    <!-- The exception is /posts, on which we want to render all posts -->
+    {{ if (eq .Page.RelPermalink "/posts/") }}
+    {{ partial "posts.html" (where .Site.RegularPages.ByPublishDate.Reverse "Section" .Section) }}
+    {{ else }}
+    {{ partial "posts.html" (where $.RegularPagesRecursive.ByPublishDate.Reverse "Section" .Section) }}
+    {{ end }}
   </div>
 
 </section>
