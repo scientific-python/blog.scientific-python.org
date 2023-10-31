@@ -1,3 +1,7 @@
+.navbar-logo-text {
+  font-family: "Lato";
+}
+
 .post-author:not(:first-child):before {
   content: "";
 }
