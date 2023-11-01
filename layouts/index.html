@@ -5,7 +5,7 @@
   <div class="content-container">
     {{ $latest := (first 8 (where $.Site.RegularPages.ByPublishDate.Reverse "Section" "posts")) }}
 
-    {{ partial "posts_with_summary.html" $latest }}
+    {{ partial "posts/list-with-summary.html" $latest }}
 
     <div class="panel-box-action" style="text-align: left;">
       <a class="panel-button" href="{{ "posts/" | relURL }}">Browse all posts &nbsp;⟶</a>
