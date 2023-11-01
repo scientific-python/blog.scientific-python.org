@@ -35,16 +35,8 @@
   fill: gray;
 }
 
-.post-content {
-  font-family: "Fira Sans", serif;
-}
-
 .post-content p:not(:last-child) {
   margin-bottom: 0.25rem;
-}
-
-.post-summary {
-  font-family: "Fira Sans", serif;
 }
 
 .post-summary img {

@@ -1,7 +1,0 @@
-{{- $featuredImage := .Resources.GetMatch "featuredImage" -}}
-<div class="post-summary">
-  {{ with $featuredImage }}
-  <img src="{{ .RelPermalink }}" {{ if .Params.description }}alt="{{ .Params.description }}"{{ end }}/>
-  {{ end }}
-  {{ .Summary }}
-</div>
