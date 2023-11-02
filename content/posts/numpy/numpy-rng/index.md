@@ -35,12 +35,28 @@ To create a new RNG you can use the `default_rng` function as illustrated in the
 ```python
 import numpy as np
 
-seed = 12345
-rng = np.random.default_rng(seed)  # can be called without a seed
+rng = np.random.default_rng()
 rng.random()
 ```
 
-The reason for seeding your RNG only once is that you can lose on the randomness and the independence of the generated random numbers by reseeding the RNG multiple times. Furthermore obtaining a good seed can be time consuming. Once you have a good seed to instantiate your generator you might as well use it. With a good RNG such as the one returned by `default_rng` you will be ensured good randomness (and independence) of the generated numbers. It might be more dangerous to use different seeds: how do you know that the streams of random numbers obtained with two different seeds are not correlated, or I should say less independent than the ones created from the same seed? That being said, [as explained by Robert Kern](https://github.com/numpy/numpy/issues/15322#issuecomment-573890207), with the RNGs and seeding strategies introduced in numpy 1.17, it could be considered safe enough to recreate new RNGs from the system entropy, e.g. using `default_rng(None)` multiple times. However as explained later be careful when running jobs in parallel and relying on `default_rng(None)`.
+If you want to use a seed for reproducibility, [Numpy's doc](https://numpy.org/doc/stable/reference/random/index.html#quick-start) recommends using a very large and unique number to have a different seed than anyone else. Another reason is that using small a seed could lead to a bad initialization of the RNG, although `default_rng` takes care of creating a good initialization from small seeds. To obtain a good unique seed you can rely on the [secrets module](https://docs.python.org/3/library/secrets.html). The following code will return a number that you can then use as a seed:
+
+```python
+import secrets
+secrets.randbits(128)  
+```
+
+When running this code I get `65647437836358831880808032086803839626` for the number to use as my seed. This number is randomly generated so you need to copy paste the value that is returned by `secrets.randbits(128)` otherwise you will have a different seed each time you run your code and thus break reproducibility:
+
+```python
+import numpy as np
+
+seed = 65647437836358831880808032086803839626
+rng = np.random.default_rng(seed)
+rng.random()
+```
+
+The reason for seeding your RNG only once (and passing that RNG around) is that you can lose on the randomness and the independence of the generated random numbers by reseeding the RNG multiple times. Furthermore obtaining a good seed can be time consuming. Once you have a good seed to instantiate your generator you might as well use it. With a good RNG such as the one returned by `default_rng` you will be ensured good randomness (and independence) of the generated numbers. It might be more dangerous to use different seeds: how do you know that the streams of random numbers obtained with two different seeds are not correlated, or I should say less independent than the ones created from the same seed? That being said, [as explained by Robert Kern](https://github.com/numpy/numpy/issues/15322#issuecomment-573890207), with the RNGs and seeding strategies introduced in numpy 1.17, it could be considered safe enough to recreate new RNGs from the system entropy, e.g. using `default_rng(None)` multiple times. However as explained later be careful when running jobs in parallel and relying on `default_rng(None)`.
 
 
 ## Passing a numpy RNG around
@@ -80,7 +96,7 @@ def stochastic_function(seed, high=10):
     return rng.integers(high, size=5)
 
 
-seed = 98765
+seed = 319929794527176038403653493598663843656
 # create the RNG that you want to pass around
 rng = np.random.default_rng(seed)
 # get the SeedSequence of the passed RNG
