@@ -43,7 +43,8 @@ If you want to use a seed for reproducibility, [Numpy documentation](https://num
 
 ```python
 import secrets
-secrets.randbits(128)  
+
+secrets.randbits(128)
 ```
 
 When running this code I get `65647437836358831880808032086803839626` for the number to use as my seed. This number is randomly generated so you need to copy paste the value that is returned by `secrets.randbits(128)` otherwise you will have a different seed each time you run your code and thus break reproducibility:
@@ -99,7 +100,7 @@ def stochastic_function(seed, high=10):
 seed = 319929794527176038403653493598663843656
 # create the RNG that you want to pass around
 rng = np.random.default_rng(seed)
-# get the SeedSequence of the passed RNG. note that this is 
+# get the SeedSequence of the passed RNG. note that this is
 # using a private attribute of the RNG and the API might change
 # in the future.
 ss = rng.bit_generator._seed_seq
