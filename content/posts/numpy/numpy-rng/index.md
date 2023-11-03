@@ -100,9 +100,9 @@ def stochastic_function(seed, high=10):
 seed = 319929794527176038403653493598663843656
 # create the RNG that you want to pass around
 rng = np.random.default_rng(seed)
-# get the SeedSequence of the passed RNG. note that this is
-# using a private attribute of the RNG and the API might change
-# in the future.
+# get the SeedSequence of the passed RNG.
+# WARNING: note that this is using a private attribute of
+# the RNG and the API might change in the future.
 ss = rng.bit_generator._seed_seq
 # create 5 initial independent states
 child_states = ss.spawn(5)
