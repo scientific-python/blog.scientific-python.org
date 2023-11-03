@@ -1,3 +1,7 @@
+.navbar-logo-text {
+  font-family: "Lato";
+}
+
 .post-author:not(:first-child):before {
   content: "";
 }
@@ -20,7 +24,6 @@
 }
 
 .post-meta {
-  color: var(--colorSecondaryDark);
   padding-bottom: 1rem;
 }
 
@@ -32,17 +35,15 @@
   fill: gray;
 }
 
-.post-content {
-  font-family: serif;
-}
-
 .post-content p:not(:last-child) {
   margin-bottom: 0.25rem;
 }
 
-.post-summary {
-  font-family: serif;
-  font-size: 130%;
+.post-summary img {
+  border: 1px solid #bbb;
+  float: right;
+  max-width: 15em;
+  margin: 0.5em;
 }
 
 div.MathJax_Display {
@@ -50,10 +51,12 @@ div.MathJax_Display {
   margin-bottom: 0;
 }
 
-img.post-featuredImage {
-  width: 15rem;
-  float: left;
-  padding-right: 1rem;
+.post-featuredImage img {
+  /* FIXME: Use color variable. */
+  border: 0.15em #bbb solid;
+  border-radius: 25px;
+  max-width: 20rem;
+  margin: 0.5em;
 }
 
 .tag-cloud {
@@ -69,4 +72,30 @@ img.post-featuredImage {
   font-size: 32px;
   margin-top: 60px;
   padding-bottom: 10px;
+}
+
+.content-container .post-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+}
+
+/* Default: single column layout for mobile */
+.content-container {
+  max-width: 70em;
+  margin: 0 30px;
+  flex-direction: column;
+}
+
+/* Full screen two-column layout for desktop etc. */
+@media only screen and (min-width: 75em) {
+  .content-container {
+    flex-direction: row;
+  }
+
+  article {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: calc(50% - 1rem);
+  }
 }
