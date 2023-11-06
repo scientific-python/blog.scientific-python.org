@@ -3,7 +3,7 @@
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: f71fa2c1f9cf5cb705f73dffe4b21f7c61470ba9 # frozen: v4.4.0
+    rev: c4a0b883114b00d8d76b479c820ce7950211c99b # frozen: v4.5.0
     hooks:
       - id: check-added-large-files
       - id: check-ast
@@ -26,7 +26,7 @@ repos:
         args: [--prose-wrap=preserve]
 
   - repo: https://github.com/psf/black
-    rev: e87737140f32d3cd7c44ede75f02dcd58e55820e # frozen: 23.9.1
+    rev: 744d23b34800c06e10272149b70752396e90eeb8 # frozen: 23.10.1
     hooks:
       - id: black
 
@@ -36,7 +36,7 @@ repos:
       - id: blacken-docs
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: ac0449824100a11dbd880d9be7cfa55c4711b05a # frozen: v3.14.0
+    rev: 1bbebc88c6925a4e56fd5446b830b12c38c1c24a # frozen: v3.15.0
     hooks:
       - id: pyupgrade
         args: [--py38-plus]
