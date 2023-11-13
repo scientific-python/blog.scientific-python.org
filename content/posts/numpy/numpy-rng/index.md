@@ -14,7 +14,7 @@ Unless you are working on a problem where you can afford a true Random Number Ge
 
 ### The main messages
 1. Avoid using the global NumPy RNG. This means that you should avoid using [`np.random.seed`](https://numpy.org/doc/stable/reference/random/generated/numpy.random.seed.html) and `np.random.*` functions, such as `np.random.random`, to generate random values.
-2. Create a new RNG, using the [`np.random.default_rng`](https://numpy.org/doc/stable/reference/random/generator.html#numpy.random.default_rng) function, and pass it around.
+2. Create a new RNG and pass it around using the [`np.random.default_rng`](https://numpy.org/doc/stable/reference/random/generator.html#numpy.random.default_rng) function.
 3. Be careful with parallel computations and rely on [NumPy strategies for reproducible parallel number generation](https://numpy.org/doc/stable/reference/random/parallel.html).
 
 Note that with NumPy <1.17 the way to create a new RNG is to use [`np.random.RandomState`](https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState) which is based on the popular Mersenne Twister 19937 algorithm. This is also how the global NumPy RNG is created. It is still possible to use this function in versions higher than 1.17 but it is now recommended to use `default_rng` which returns an instance of the statistically better [PCG64](https://www.pcg-random.org) RNG. You might see `np.random.RandomState` being used in tests as it has strong stability guarantees between different NumPy versions.
