@@ -27,7 +27,7 @@ Although not recommended, it is a common practice to reset the seed of this glob
 > The implicit global RandomState behind the `np.random.*` convenience functions can cause problems, especially when threads or other forms of concurrency are involved. Global state is always problematic. We categorically recommend avoiding using the convenience functions when reproducibility is involved. [...] The preferred best practice for getting reproducible pseudorandom numbers is to instantiate a generator object with a seed and pass it around.
 
 In short:
-* Instead of using `np.random.seed`, which reseeds the already created global NumPy RNG and then using `np.random.*` functions you should create a new RNG.
+* Instead of using `np.random.seed`, which reseeds the already created global NumPy RNG, and then using `np.random.*` functions, you should create a new RNG.
 * You should create one RNG at the beginning of your script (with a seed if you want reproducibility) and use this RNG in the rest of your script.
 
 To create a new RNG you can use the `default_rng` function as illustrated in the [introduction of the random module documentation](https://numpy.org/doc/stable/reference/random/index.html):
