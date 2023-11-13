@@ -39,7 +39,7 @@ rng = np.random.default_rng()
 rng.random()  # generate a floating point number between 0 and 1
 ```
 
-If you want to use a seed for reproducibility, [Numpy documentation](https://numpy.org/doc/stable/reference/random/index.html#quick-start) recommends using a very large and unique number to have a different seed than anyone else. Another reason is that using a small number for the seed could lead to a bad initialization of the RNG, although `default_rng` now takes care of creating a good initialization from a small number. To obtain a good unique seed you can rely on the [secrets module](https://docs.python.org/3/library/secrets.html). The following code will return a 128 bit number that you can then use as a seed:
+If you want to use a seed for reproducibility, [the NumPy documentation recommends](https://numpy.org/doc/stable/reference/random/index.html#quick-start) using a very large and unique number to have a different seed than anyone else. Another reason is that using a small number for the seed could lead to a bad initialization of the RNG, although `default_rng` now takes care of creating a good initialization from a small number. To obtain a good, unique seed you can rely on the [secrets module](https://docs.python.org/3/library/secrets.html). The following code will return a 128 bit number that you can then use as a seed:
 
 ```python
 import secrets
