@@ -28,7 +28,7 @@ Although not recommended, it is a common practice to reset the seed of this glob
 
 In short:
 * Instead of using `np.random.seed`, which reseeds the already created global NumPy RNG, and then using `np.random.*` functions, you should create a new RNG.
-* You should create one RNG at the beginning of your script (with a seed if you want reproducibility) and use this RNG in the rest of your script.
+* You should create an RNG at the beginning of your script (with a seed, if you want reproducibility) and use this RNG in the rest of the script.
 
 To create a new RNG you can use the `default_rng` function as illustrated in the [introduction of the random module documentation](https://numpy.org/doc/stable/reference/random/index.html):
 
