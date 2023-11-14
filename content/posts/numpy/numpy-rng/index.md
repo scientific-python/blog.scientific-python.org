@@ -120,6 +120,8 @@ print(random_vector)
 
 By using a fixed seed you always get the same results and by using `SeedSequence.spawn` you have an independent RNG for each of the iterations. Note that I used the convenient `default_rng` function in `stochastic_function`. You can also see that the `SeedSequence` of the existing RNG is a private attribute. Accessing the `SeedSequence` might become easier in future versions of NumPy (more information [here](https://github.com/numpy/numpy/issues/15322#issuecomment-626400433)).
 
+I hope this blog post made you aware of the best practices when using Numpy RNGs. The new Numpy API provides all the tools to follow them. The resources below are available for further reading. Finally, I would like to thank Pamphile Roy, Stefan van der Walt and Jarrod Millman for their great feedbacks and comments which contributed to greatly improve the original version of this blog post.
+
 ## Resources
 
 ### Numpy RNGs
