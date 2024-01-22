@@ -10,7 +10,9 @@ displayInList: true
 author: ["Albert Thomas"]
 ---
 
-Unless you are working on a problem where you can afford a true Random Number Generator (RNG), which is basically never for most of us, implementing something random means relying on a pseudo Random Number Generator. I want to share here what I have learned about good practices with pseudo RNGs and especially the ones available in [NumPy](https://numpy.org/). I assume a certain knowledge of NumPy and that NumPy 1.17 or greater is used. The reason for this is that great new features were introduced in the [random](https://numpy.org/doc/stable/reference/random/index.html) module of version 1.17. As `numpy` is usually imported as `np`, I will sometimes use `np` instead of `numpy`. Finally, as I will not talk about true RNGs, RNG will always mean pseudo RNG in the rest of this blog post.
+Unless you are working on a problem where you can afford a true Random Number Generator (RNG), which is basically never for most of us, implementing something random means relying on a pseudo Random Number Generator. A pseudo RNG works by updating an internal state through a deterministic algorithm. The internal state is initialized with an initial value known as a seed and each update of this internal state produces a number that appears randomly generated. The key here is that the process is deterministic, meaning that if you start with the same seed and apply the same algorithm, you will get the same sequence of internal states and corresponding numbers. Despite this determinism, the resulting numbers exhibit properties of randomness, appearing unpredictable and evenly distributed. Users can either specify the seed manually, providing a degree of control over the generated sequence, or they can opt to let the RNG object automatically derive the seed from system entropy. The latter approach enhances unpredictability by incorporating external factors into the seed.
+
+I want to share here what I have learned about good practices with pseudo RNGs and especially the ones available in [NumPy](https://numpy.org/). I assume a certain knowledge of NumPy and that NumPy 1.17 or greater is used. The reason for this is that great new features were introduced in the [random](https://numpy.org/doc/stable/reference/random/index.html) module of version 1.17. As `numpy` is usually imported as `np`, I will sometimes use `np` instead of `numpy`. Finally, as I will not talk about true RNGs, RNG will always mean pseudo RNG in the rest of this blog post.
 
 ### The main messages
 1. Avoid using the global NumPy RNG. This means that you should avoid using [`np.random.seed`](https://numpy.org/doc/stable/reference/random/generated/numpy.random.seed.html) and `np.random.*` functions, such as `np.random.random`, to generate random values.
@@ -39,7 +41,7 @@ rng = np.random.default_rng()
 rng.random()  # generate a floating point number between 0 and 1
 ```
 
-If you want to use a seed for reproducibility, [the NumPy documentation recommends](https://numpy.org/doc/stable/reference/random/index.html#quick-start) using a very large and unique number to have a different seed than anyone else. Another reason is that using a small number for the seed could lead to a bad initialization of the RNG, although `default_rng` now takes care of creating a good initialization from a small number. To obtain a good, unique seed you can rely on the [secrets module](https://docs.python.org/3/library/secrets.html). The following code will return a 128 bit number that you can then use as a seed:
+If you want to use a seed for reproducibility, [the NumPy documentation recommends](https://numpy.org/doc/stable/reference/random/index.html#quick-start) using a very large and unique number to have a different seed than anyone else. Another reason is that using a small number for the seed could lead to a bad first internal state of the RNG leading to a sequence of numbers that would not look like a random sequence, although `default_rng` now takes care of creating a good internal state from a small number. To obtain a good and unique seed you can rely on the [secrets module](https://docs.python.org/3/library/secrets.html). The following code will return a 128 bit number that you can then use as a seed:
 
 ```python
 import secrets
@@ -68,8 +70,8 @@ As you write functions that you will use on their own as well as in a more compl
 import numpy as np
 
 
-def stochastic_function(seed, high=10):
-    rng = np.random.default_rng(seed)
+def stochastic_function(rng, high=10):
+    rng = np.random.default_rng(rng)
     return rng.integers(high, size=5)
 ```
 You can either pass an `int` seed or your already created RNG to `stochastic_function`. To be perfectly exact, the `default_rng` function returns the exact same RNG passed to it for certain kind of RNGs such at the ones created with `default_rng` itself. You can refer to the [`default_rng` documentation](https://numpy.org/doc/stable/reference/random/generator.html#numpy.random.default_rng) for more details on the arguments that you can pass to this function.
@@ -120,7 +122,7 @@ print(random_vector)
 
 By using a fixed seed you always get the same results and by using `SeedSequence.spawn` you have an independent RNG for each of the iterations. Note that I used the convenient `default_rng` function in `stochastic_function`. You can also see that the `SeedSequence` of the existing RNG is a private attribute. Accessing the `SeedSequence` might become easier in future versions of NumPy (more information [here](https://github.com/numpy/numpy/issues/15322#issuecomment-626400433)).
 
-I hope this blog post made you aware of the best practices when using Numpy RNGs. The new Numpy API provides all the tools to follow them. The resources below are available for further reading. Finally, I would like to thank Pamphile Roy, Stefan van der Walt and Jarrod Millman for their great feedbacks and comments which contributed to greatly improve the original version of this blog post.
+I hope this blog post helped you understand the best ways to use Numpy RNGs. The new Numpy API gives you all the tools you need for that. The resources below are available for further reading. Finally, I would like to thank Pamphile Roy, Stefan van der Walt and Jarrod Millman for their great feedbacks and comments which contributed to greatly improve the original version of this blog post.
 
 ## Resources
 
