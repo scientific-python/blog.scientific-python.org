@@ -10,7 +10,7 @@ displayInList: true
 author: ["Albert Thomas"]
 ---
 
-Unless you are working on a problem where you can afford a true Random Number Generator (RNG), which is basically never for most of us, implementing something random means relying on a pseudo Random Number Generator. I want to share here what I have learned about good practices with pseudo RNGs and especially the ones available in [NumPy](https://numpy.org/). 
+Unless you are working on a problem where you can afford a true Random Number Generator (RNG), which is basically never for most of us, implementing something random means relying on a pseudo Random Number Generator. I want to share here what I have learned about good practices with pseudo RNGs and especially the ones available in [NumPy](https://numpy.org/).
 
 A pseudo RNG works by updating an internal state through a deterministic algorithm. The internal state is initialized with an initial value known as a seed and each update of this internal state produces a number that appears randomly generated. The key here is that the process is deterministic, meaning that if you start with the same seed and apply the same algorithm, you will get the same sequence of internal states (and numbers). Despite this determinism, the resulting numbers exhibit properties of randomness, appearing unpredictable and evenly distributed. Users can either specify the seed manually, providing a degree of control over the generated sequence, or they can opt to let the RNG object automatically derive the seed from system entropy. The latter approach enhances unpredictability by incorporating external factors into the seed.
 
