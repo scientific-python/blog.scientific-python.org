@@ -5,7 +5,7 @@ draft: false
 description: "
 Good practices with NumPy random number generators
 "
-tags: ["tutorials", numpy, rng]
+tags: [tutorials, numpy, rng]
 displayInList: true
 author: ["Albert Thomas"]
 ---
