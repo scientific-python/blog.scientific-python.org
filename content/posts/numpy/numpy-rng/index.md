@@ -10,7 +10,7 @@ displayInList: true
 author: ["Albert Thomas"]
 ---
 
-Unless you are working on a problem where you can afford a true Random Number Generator (RNG), which is basically never for most of us, implementing something random means relying on a pseudo Random Number Generator. I want to share here what I have learned about good practices with pseudo RNGs and especially the ones available in [NumPy](https://numpy.org/).
+I want to share here what I have learned about good practices with pseudo RNGs and especially the ones available in [NumPy](https://numpy.org/).
 
 A pseudo RNG works by updating an internal state through a deterministic algorithm. The internal state is initialized with an initial value known as a seed and each update of this internal state produces a number that appears randomly generated. The key here is that the process is deterministic, meaning that if you start with the same seed and apply the same algorithm, you will get the same sequence of internal states (and numbers). Despite this determinism, the resulting numbers exhibit properties of randomness, appearing unpredictable and evenly distributed. Users can either specify the seed manually, providing a degree of control over the generated sequence, or they can opt to let the RNG object automatically derive the seed from system entropy. The latter approach enhances unpredictability by incorporating external factors into the seed.
 
@@ -74,7 +74,7 @@ As you write functions that you will use on their own as well as in a more compl
 import numpy as np
 
 
-def stochastic_function(rng, high=10):
+def stochastic_function(high=10, rng=None):
     rng = np.random.default_rng(rng)
     return rng.integers(high, size=5)
 ```
@@ -96,7 +96,7 @@ import numpy as np
 from joblib import Parallel, delayed
 
 
-def stochastic_function(rng, high=10):
+def stochastic_function(high=10, rng=None):
     rng = np.random.default_rng(rng)
     return rng.integers(high, size=5)
 
@@ -113,13 +113,13 @@ child_states = ss.spawn(5)
 
 # use 2 processes to run the stochastic_function 5 times with joblib
 random_vector = Parallel(n_jobs=2)(
-    delayed(stochastic_function)(random_state) for random_state in child_states
+    delayed(stochastic_function)(rng=random_state) for random_state in child_states
 )
 print(random_vector)
 
 # rerun to check that we obtain the same outputs
 random_vector = Parallel(n_jobs=2)(
-    delayed(stochastic_function)(random_state) for random_state in child_states
+    delayed(stochastic_function)(rng=random_state) for random_state in child_states
 )
 print(random_vector)
 ```
