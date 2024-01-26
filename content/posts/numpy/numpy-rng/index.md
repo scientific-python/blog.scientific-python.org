@@ -1,6 +1,6 @@
 ---
 title: "Good practices with NumPy random number generators"
-date: 2023-08-31T23:22:46+02:00
+date: 2024-01-26T23:22:46+02:00
 draft: false
 description: "
 Good practices with NumPy random number generators
