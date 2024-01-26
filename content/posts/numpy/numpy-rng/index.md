@@ -5,7 +5,7 @@ draft: false
 description: "
 Good practices with NumPy random number generators
 "
-tags: ["tutorials", numpy, rng]
+tags: [tutorials, numpy, rng]
 displayInList: true
 author: ["Albert Thomas"]
 ---
@@ -26,7 +26,7 @@ Note that, with the older NumPy <1.17, the way to create a new RNG is to use [`n
 
 ## Random number generation with NumPy
 
-When you import `numpy` in your python script, an RNG is created behind the scenes. This RNG is the one used when you generate a new random value using a function such as `np.random.random`. I will here refer to this RNG as the global NumPy RNG.
+When you import `numpy` in your Python script, an RNG is created behind the scenes. This RNG is the one used when you generate a new random value using a function such as `np.random.random`. I will here refer to this RNG as the global NumPy RNG.
 
 Although not recommended, it is a common practice to reset the seed of this global RNG at the beginning of a script using the `np.random.seed` function. Fixing the seed at the beginning ensures that the script is reproducible: the same values and results will be produced each time you run it. However, although sometimes convenient, using the global NumPy RNG is a bad practice. A simple reason is that using global variables can lead to undesired side effects. For instance one might use `np.random.random` without knowing that the seed of the global RNG was set somewhere else in the codebase. Quoting [Numpy Enhancement Proposal (NEP) 19](https://numpy.org/neps/nep-0019-rng-policy.html) by Robert Kern:
 
@@ -126,7 +126,7 @@ print(random_vector)
 
 By using a fixed seed you always get the same results and by using `SeedSequence.spawn` you have an independent RNG for each of the iterations. Note that I used the convenient `default_rng` function in `stochastic_function`. You can also see that the `SeedSequence` of the existing RNG is a private attribute. Accessing the `SeedSequence` might become easier in future versions of NumPy (more information [here](https://github.com/numpy/numpy/issues/15322#issuecomment-626400433)).
 
-I hope this blog post helped you understand the best ways to use Numpy RNGs. The new Numpy API gives you all the tools you need for that. The resources below are available for further reading. Finally, I would like to thank Pamphile Roy, Stefan van der Walt and Jarrod Millman for their great feedbacks and comments which contributed to greatly improve the original version of this blog post.
+I hope this blog post helped you understand the best ways to use NumPy RNGs. The new Numpy API gives you all the tools you need for that. The resources below are available for further reading. Finally, I would like to thank Pamphile Roy, Stefan van der Walt and Jarrod Millman for their great feedbacks and comments which contributed to greatly improve the original version of this blog post.
 
 ## Resources
 
