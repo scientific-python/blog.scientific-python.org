@@ -22,7 +22,7 @@ I assume a certain knowledge of NumPy and that NumPy 1.17 or greater is used. Th
 2. Create a new RNG and pass it around using the [`np.random.default_rng`](https://numpy.org/doc/stable/reference/random/generator.html#numpy.random.default_rng) function.
 3. Be careful with parallel random number generation and use the [strategies provided by NumPy](https://numpy.org/doc/stable/reference/random/parallel.html).
 
-Note that, with the older NumPy <1.17, the way to create a new RNG is to use [`np.random.RandomState`](https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState) which is based on the popular Mersenne Twister 19937 algorithm. This is also how the global NumPy RNG is created. This function is still available in newer versions of NumPy, but it is now recommended to use `default_rng` instead, which returns an instance of the statistically better [PCG64](https://www.pcg-random.org) RNG. You might still see `np.random.RandomState` being used in tests as it has strong stability guarantees between different NumPy versions.
+Note that, with older versions of NumPy (<1.17), the way to create a new RNG is to use [`np.random.RandomState`](https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState) which is based on the popular Mersenne Twister 19937 algorithm. This is also how the global NumPy RNG is created. This function is still available in newer versions of NumPy, but it is now recommended to use `default_rng` instead, which returns an instance of the statistically better [PCG64](https://www.pcg-random.org) RNG. You might still see `np.random.RandomState` being used in tests as it has strong stability guarantees between different NumPy versions.
 
 ## Random number generation with NumPy
 
