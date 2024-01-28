@@ -10,11 +10,11 @@ displayInList: true
 author: ["Albert Thomas"]
 ---
 
-I want to share here what I have learned about best practices with pseudo RNGs and especially the ones available in [NumPy](https://numpy.org/).
+Given the practical challenges of achieving true randomness, deterministic algorithms, known as Pseudo Random Number Generators (RNGs), are employed in science to create sequences that mimic randomness. These generators are used for simulations, experiments, and analysis where it is essential to have numbers that appear unpredictable. I want to share here what I have learned about best practices with pseudo RNGs and especially the ones available in [NumPy](https://numpy.org/).
 
 A pseudo RNG works by updating an internal state through a deterministic algorithm. The internal state is initialized with a value known as a seed and each update of this internal state produces a number that appears randomly generated. The key here is that the process is deterministic, meaning that if you start with the same seed and apply the same algorithm, you will get the same sequence of internal states (and numbers). Despite this determinism, the resulting numbers exhibit properties of randomness, appearing unpredictable and evenly distributed. Users can either specify the seed manually, providing a degree of control over the generated sequence, or they can opt to let the RNG object automatically derive the seed from system entropy. The latter approach enhances unpredictability by incorporating external factors into the seed.
 
-I assume a certain knowledge of NumPy and that NumPy 1.17 or greater is used. The reason for this is that great new features were introduced in the [random](https://numpy.org/doc/stable/reference/random/index.html) module of version 1.17. As `numpy` is usually imported as `np`, I will sometimes use `np` instead of `numpy`. Finally, as I will not talk about true RNGs, RNG will always mean pseudo RNG in the rest of this blog post.
+I assume a certain knowledge of NumPy and that NumPy 1.17 or greater is used. The reason for this is that great new features were introduced in the [random](https://numpy.org/doc/stable/reference/random/index.html) module of version 1.17. As `numpy` is usually imported as `np`, I will sometimes use `np` instead of `numpy`. Finally, RNG will always mean pseudo RNG in the rest of this blog post.
 
 ### The main messages
 
@@ -64,7 +64,7 @@ rng = np.random.default_rng(seed)
 rng.random()
 ```
 
-The reason for seeding your RNG only once (and passing that RNG around) is that with a good RNG such as the one returned by `default_rng` you will be ensured good randomness and independence of the generated numbers. However, if not done properly, using several RNGs (each one created with its own seed) might lead to streams of random numbers that are less independent than the ones created from the same seed.[^1] That being said, [as explained by Robert Kern](https://github.com/numpy/numpy/issues/15322#issuecomment-573890207), with the RNGs and seeding strategies introduced in NumPy 1.17, it is considered fairly safe to create RNGs using system entropy, i.e. using `default_rng(None)` multiple times. However as explained later be careful when running jobs in parallel and relying on `default_rng(None)`. Another reason for seeding your RNG only once is that obtaining a good seed can be time consuming. Once you have a good seed to instantiate your generator, you might as well use it.
+The reason for seeding your RNG only once (and passing that RNG around) is that with a good RNG such as the one returned by `default_rng` you will be ensured good randomness and independence of the generated numbers. However, if not done properly, using several RNGs (each one created with its own seed) might lead to streams of random numbers that are less independent than the ones created from the same seed[^1]. That being said, [as explained by Robert Kern](https://github.com/numpy/numpy/issues/15322#issuecomment-573890207), with the RNGs and seeding strategies introduced in NumPy 1.17, it is considered fairly safe to create RNGs using system entropy, i.e. using `default_rng(None)` multiple times. However as explained later be careful when running jobs in parallel and relying on `default_rng(None)`. Another reason for seeding your RNG only once is that obtaining a good seed can be time consuming. Once you have a good seed to instantiate your generator, you might as well use it.
 
 ## Passing a NumPy RNG around
 
@@ -79,7 +79,7 @@ def stochastic_function(high=10, rng=None):
     return rng.integers(high, size=5)
 ```
 
-You can either pass an `int` seed or your already created RNG to `stochastic_function`. To be perfectly exact, the `default_rng` function returns the exact same RNG passed to it for certain kind of RNGs such at the ones created with `default_rng` itself. You can refer to the [`default_rng` documentation](https://numpy.org/doc/stable/reference/random/generator.html#numpy.random.default_rng) for more details on the arguments that you can pass to this function.[^2]
+You can either pass an `int` seed or your already created RNG to `stochastic_function`. To be perfectly exact, the `default_rng` function returns the exact same RNG passed to it for certain kind of RNGs such at the ones created with `default_rng` itself. You can refer to the [`default_rng` documentation](https://numpy.org/doc/stable/reference/random/generator.html#numpy.random.default_rng) for more details on the arguments that you can pass to this function[^2].
 
 ## Parallel processing
 
