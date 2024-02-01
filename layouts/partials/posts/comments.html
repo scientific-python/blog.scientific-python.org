@@ -20,6 +20,19 @@
     }
   };
 
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName == "data-theme") {
+        notifyIFrameOfTheme();
+      }
+    });
+
+  });
+  observer.observe(document.querySelector("html"), {
+    subtree: false,
+    attributes: true,
+  });
+
   // Call notifyIFrameOfTheme once we receive a message from Discourse
   // that the comments iframe has loaded
   const handleMessageListener = (event) => {
