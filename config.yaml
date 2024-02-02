@@ -39,6 +39,8 @@ params:
   analytics:
     plausible:
       dataDomain: blog.scientific-python.org
+  comments:
+    discourse_url: https://discuss.scientific-python.org/
   images:
     - /images/logo.svg
   navbarlogo:
