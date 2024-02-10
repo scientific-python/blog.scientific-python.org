@@ -87,7 +87,7 @@ You must be careful when using RNGs in conjunction with parallel processing. Let
 
 If you fix the seed at the beginning of your main script for reproducibility and then pass your seeded RNG to each process to be run in parallel, most of the time this will not give you what you want as this RNG will be deep copied. The same results will thus be produced by each process. One of the solutions is to create as many RNGs as parallel processes with a different seed for each of these RNGs. The issue now is that you cannot choose the seeds as easily as you would think. When you choose two different seeds to instantiate two different RNGs how do you know that the numbers produced by these RNGs will appear as statistically independent?[^1] The design of independent RNGs for parallel processes has been an important research question. See, for example, [Random numbers for parallel computers: Requirements and methods, with emphasis on GPUs](https://www.sciencedirect.com/science/article/pii/S0378475416300829) by L'Ecuyer et al. (2017) for a good summary of different methods.
 
-Starting with NumPy 1.17, it is now very easy to instantiate independent RNGs. Depending on the type of RNG you use, different strategies are available as documented in the [Parallel random number generation section](https://numpy.org/doc/stable/reference/random/parallel.html) of the NumPy documentation. One of the strategies is to use `SeedSequence` which is an algorithm that makes sure that poor input seeds are transformed into good initial RNG states. Additionally, it ensures that close seeds are mapped to very different initial states, resulting in RNGs that are, with very high probability, independent of each other. You can refer to the documentation of [SeedSequence Spawning](https://numpy.org/doc/stable/reference/random/parallel.html#seedsequence-spawning) for an example on how to generate independent RNGs from a user-provided seed. I here show how you can do this from an already existing RNG and apply it to the [joblib example](https://joblib.readthedocs.io/en/latest/auto_examples/parallel_random_state.html#fixing-the-random-state-to-obtain-deterministic-results) mentioned above.
+Starting with NumPy 1.17, it is now very easy to instantiate independent RNGs. Depending on the type of RNG you use, different strategies are available as documented in the [Parallel random number generation section](https://numpy.org/doc/stable/reference/random/parallel.html) of the NumPy documentation. One of the strategies is to use `SeedSequence` which is an algorithm that makes sure that poor input seeds are transformed into good initial RNG states. Additionally, it ensures that close seeds are mapped to very different initial states, resulting in RNGs that are, with very high probability, independent of each other. You can refer to the documentation of [SeedSequence Spawning](https://numpy.org/doc/stable/reference/random/parallel.html#seedsequence-spawning) for examples on how to generate independent RNGs from a `SeedSequence` or an existing RNG. I here show how to apply this to the [joblib example](https://joblib.readthedocs.io/en/latest/auto_examples/parallel_random_state.html#fixing-the-random-state-to-obtain-deterministic-results) mentioned above.
 
 ```python
 import numpy as np
@@ -100,29 +100,19 @@ def stochastic_function(high=10, rng=None):
 
 
 seed = 319929794527176038403653493598663843656
-# create the RNG that you want to pass around
+# creating the RNG that is passed around.
 rng = np.random.default_rng(seed)
-# get the SeedSequence of the passed RNG.
-# WARNING: note that this is using a private attribute of
-# the RNG and the API might change in the future.
-ss = rng.bit_generator._seed_seq
-# create 5 initial independent states
-child_states = ss.spawn(5)
+# create 5 independent RNGs
+child_rngs = rng.spawn(5)
 
 # use 2 processes to run the stochastic_function 5 times with joblib
 random_vector = Parallel(n_jobs=2)(
-    delayed(stochastic_function)(rng=random_state) for random_state in child_states
-)
-print(random_vector)
-
-# rerun to check that we obtain the same outputs
-random_vector = Parallel(n_jobs=2)(
-    delayed(stochastic_function)(rng=random_state) for random_state in child_states
+    delayed(stochastic_function)(rng=child_rng) for child_rng in child_rngs
 )
 print(random_vector)
 ```
 
-By using a fixed seed you always get the same results and by using `SeedSequence.spawn` you have an independent RNG for each of the iterations. Note that I used the convenient `default_rng` function in `stochastic_function`. You can also see that the `SeedSequence` of the existing RNG is a private attribute. Accessing the `SeedSequence` might become easier in future versions of NumPy (more information [here](https://github.com/numpy/numpy/issues/15322#issuecomment-626400433)).
+By using a fixed seed you always get the same results each time you run this code and by using `rng.spawn` you have an independent RNG for each call to `stochastic_function`. Note that here you could also spawn from a `SeedSequence` that you would create with the seed instead of creating an RNG. However, in general you pass around an RNG therefore I only assume to have access to an RNG. Also note that spawning from an RNG is only possible from version 1.25 of NumPy[^3].
 
 I hope this blog post helped you understand the best ways to use NumPy RNGs. The new Numpy API gives you all the tools you need for that. The resources below are available for further reading. Finally, I would like to thank Pamphile Roy, Stefan van der Walt and Jarrod Millman for their great feedbacks and comments which contributed to greatly improve the original version of this blog post.
 
@@ -142,4 +132,6 @@ I hope this blog post helped you understand the best ways to use NumPy RNGs. The
 - To know more about the default RNG used in NumPy, named PCG, I recommend the [PCG paper](https://www.pcg-random.org/paper.html) which also contains lots of useful information about RNGs in general. The [pcg-random.org website](https://www.pcg-random.org) is also full of interesting information about RNGs.
 
 [^1]: A good RNG is expected to produce independent numbers for a given seed. However, the independence of sequences generated from two different seeds is not always guaranteed. For instance, it is possible that the sequence started with the second seed might quickly converge to an internal state also obtained by the first seed. This can result in both RNGs producing the same subsequent numbers, which would compromise the randomness expected from distinct seeds.
-[^2]: Before knowing about `default_rng`, and before NumPy 1.17, I was using the scikit-learn function [`check_random_state`](https://scikit-learn.org/stable/modules/generated/sklearn.utils.check_random_state.html) which is of course heavily used in the scikit-learn codebase. While writing this post I discovered that this function is now available in [scipy](https://github.com/scipy/scipy/blob/62d2af2e13280d29781585aa39a3c5a5dfdfba17/scipy/_lib/_util.py#L231). A look at the docstring and/or the source code of this function will give you a good idea about what it does. The differences with `default_rng` are that `check_random_state` currently relies on `np.random.RandomState` and that when `None` is passed to `check_random_state` then the function returns the already existing global NumPy RNG. The latter can be convenient because if you fix the seed of the global RNG before in your script using `np.random.seed`, `check_random_state` returns the generator that you seeded. However, as explained above, this is not the recommended practice and you should be aware of the risks and the side effects.
+[^2]:
+    Before knowing about `default_rng`, and before NumPy 1.17, I was using the scikit-learn function [`check_random_state`](https://scikit-learn.org/stable/modules/generated/sklearn.utils.check_random_state.html) which is of course heavily used in the scikit-learn codebase. While writing this post I discovered that this function is now available in [scipy](https://github.com/scipy/scipy/blob/62d2af2e13280d29781585aa39a3c5a5dfdfba17/scipy/_lib/_util.py#L231). A look at the docstring and/or the source code of this function will give you a good idea about what it does. The differences with `default_rng` are that `check_random_state` currently relies on `np.random.RandomState` and that when `None` is passed to `check_random_state` then the function returns the already existing global NumPy RNG. The latter can be convenient because if you fix the seed of the global RNG before in your script using `np.random.seed`, `check_random_state` returns the generator that you seeded. However, as explained above, this is not the recommended practice and you should be aware of the risks and the side effects.
+    [^3]: Before 1.25 you need to get the `SeedSequence` from the RNG using the `_seed_seq` private attribute of the underlying bit generator: `rng.bit_generator._seed_seq`. You can then spawn from this `SeedSequence` to get child seeds that will result in independent RNGs.
