@@ -110,9 +110,7 @@ def draw_battery(
         bat_fc = (
             "#fc3d2e"
             if percentage <= 20
-            else "#53d069"
-            if percentage >= 80
-            else "#f5c54e"
+            else "#53d069" if percentage >= 80 else "#f5c54e"
         )
 
         """
