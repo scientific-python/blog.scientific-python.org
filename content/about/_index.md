@@ -2,6 +2,8 @@
 title: "About"
 ---
 
+Test
+
 The Scientific Python ecosystem is a loose federation of community developed
 and owned Python projects widely used in scientific research, technical
 computing, and data science. This blog is part of the Scientific Python
