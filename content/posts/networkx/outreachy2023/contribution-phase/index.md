@@ -42,4 +42,4 @@ If this is your first time contributing to an open-source project you may feel o
 
 I hope this information helps you to start your Open-Source journey! The NetworkX team is waiting for your great contributions!
 
-If you are interested in my experience during the internship you can find the second part of this blog [here]({{< relref "../internship" >}}).
+If you are interested in my experience during the internship you can find the second part of this blog [here]({{< relref "internship" >}}).

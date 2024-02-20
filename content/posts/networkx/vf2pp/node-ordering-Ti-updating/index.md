@@ -11,7 +11,7 @@ author: ["Konstantinos Petridis"]
 
 ---
 
-This post includes all the major updates since the [last post]({{< relref "../GSoC-2022" >}}) about VF2++. Each section
+This post includes all the major updates since the [last post]({{< relref "GSoC-2022" >}}) about VF2++. Each section
 is dedicated to a different sub-problem and presents the progress on it so far. General progress, milestones and related
 issues can be [found here](https://github.com/kpetridis24/networkx/milestone/1).
 

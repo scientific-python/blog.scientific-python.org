@@ -11,7 +11,7 @@ author: ["Konstantinos Petridis"]
 
 ---
 
-The previous post can be found [here]({{< relref "../node-ordering-Ti-updating" >}}), be sure to check it out so you
+The previous post can be found [here]({{< relref "node-ordering-Ti-updating" >}}), be sure to check it out so you
 can
 follow the process step by step. Since then, another two very significant features of the algorithm have been
 implemented and tested: **node pair candidate selection** and **feasibility checks**.
