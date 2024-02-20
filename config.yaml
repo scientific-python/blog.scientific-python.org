@@ -62,15 +62,6 @@ params:
     - title: Learn
       url: https://learn.scientific-python.org
 
-  panel:
-    title: Posts from the Scientific Python community
-    tiles:
-      - buttonText: Submit a post
-        url: /about/submit/
-        text: We welcome contributions from all community members.
-      - buttonText: Volunteer to review
-        url: /about/review/
-        text: Learn how you can help the community grow and become a member of the team.
   footer:
     logo: logo.svg
     socialmediatitle: ""
