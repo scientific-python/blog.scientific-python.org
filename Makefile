@@ -8,7 +8,7 @@ help:   ## show this help
 	@grep -h "##" $(MAKEFILE_LIST) | grep -v grep | sed -e 's/\(.*\):.*##\(.*\)/    \1: \2/'
 
 prepare:
-	git submodule update --init
+	git submodule update --init --recursive
 	pre-commit install || echo "Install 'pre-commit' in a Python environment with: 'pip install pre-commit'"
 	hugo version || echo "Install Hugo from: https://gohugo.io"
 
