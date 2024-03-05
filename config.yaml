@@ -1,11 +1,7 @@
 baseURL: "https://blog.scientific-python.org/"
 languageCode: "en-us"
-title: "Scientific Python blog"
-theme:
-  [
-    "scientific-python-hugo-theme/themes/hugo-atom-feed",
-    "scientific-python-hugo-theme",
-  ]
+title: "Blog"
+theme: scientific-python-hugo-theme
 relativeURLs: true
 disableKinds: ["RSS", "taxonomy"]
 ignoreErrors: ["error-disable-taxonomy"]
