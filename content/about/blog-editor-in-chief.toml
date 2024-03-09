@@ -1,0 +1,9 @@
+[[item]]
+type = 'card'
+classcard = 'text-center'
+body = '''{{< image >}}
+src = 'https://avatars.githubusercontent.com/u/23188539?u=64445b52dbf3f75de8006ed4264fdd2afaed97a3&v=4"'
+alt = 'Avatar of Pamphile Roy'
+{{< /image >}}
+Pamphile Roy'''
+link = 'https://github.com/tupui'

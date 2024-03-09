@@ -12,23 +12,20 @@ prepare:
 	pre-commit install || echo "Install 'pre-commit' in a Python environment with: 'pip install pre-commit'"
 	hugo version || echo "Install Hugo from: https://gohugo.io"
 
-TEAMS_DIR = static/teams
+TEAMS_DIR = content/about
 TEAMS = blog-editor-in-chief blog-editors blog-reviewers
 TEAMS_QUERY = python themes/scientific-python-hugo-theme/tools/team_query.py
 
-$(TEAMS_DIR):
-	mkdir -p $(TEAMS_DIR)
-
-$(TEAMS_DIR)/%.md: $(TEAMS_DIR)
-	$(TEAMS_QUERY) --org scientific-python --team "$*"  >  $(TEAMS_DIR)/$*.html
+$(TEAMS_DIR)/%.toml:
+	$(TEAMS_QUERY) --org scientific-python --team "$*"  >  $(TEAMS_DIR)/$*.toml
 
 teams-clean:
 	for team in $(TEAMS); do \
-	  rm -f $(TEAMS_DIR)/$${team}.html ;\
+	  rm -f $(TEAMS_DIR)/$${team}.toml ;\
 	done
 
 teams: ## generates team gallery pages
-teams: | teams-clean $(patsubst %,$(TEAMS_DIR)/%.md,$(TEAMS))
+teams: | teams-clean $(patsubst %,$(TEAMS_DIR)/%.toml,$(TEAMS))
 
 html: ## Build site in `./public`
 html: prepare
