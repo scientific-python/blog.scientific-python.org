@@ -1,6 +1,6 @@
 ---
 title: "My Summer of Code 2021"
-date: 2020-08-16
+date: 2021-08-16
 draft: false
 description: "Review of my entire summer implementing the Asadpour ATSP Algorithm"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
