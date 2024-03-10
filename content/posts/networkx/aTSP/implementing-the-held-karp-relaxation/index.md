@@ -1,6 +1,6 @@
 ---
 title: "Implementing the Held-Karp Relaxation"
-date: 2020-06-28
+date: 2021-06-28
 draft: false
 description: "Implementation details for the ascent method to solve the Held-Karp relaxation"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]

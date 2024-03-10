@@ -1,6 +1,6 @@
 ---
 title: "The Entropy Distribution"
-date: 2020-07-20
+date: 2021-07-20
 draft: false
 description: "Details on implementing the entropy distribution"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]

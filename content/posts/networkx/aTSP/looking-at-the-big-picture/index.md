@@ -1,6 +1,6 @@
 ---
 title: "Looking at the Big Picture"
-date: 2020-07-29
+date: 2021-07-29
 draft: false
 description: "Prelimiaries for the final Asadpour algorithm function in NetworkX"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
