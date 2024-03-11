@@ -2,24 +2,24 @@
 title:
 ---
 
-{{< grid columns="1 2 2 2" >}}
+{{< grid1 columns="1 2 2 2" >}}
 
-{{< card >}}
+[[item]]
+type = 'card'
 title = 'Submit a post'
 link = '/about/submit/'
 body = '''
 We welcome contributions from all community members.
 '''
-{{< /card >}}
 
-{{< card >}}
+[[item]]
+type = 'card'
 title = 'Volunteer to review'
 link = '/about/review/'
 body = '''
 Learn how you can help the community grow and become a member of the team.
 '''
-{{< /card >}}
 
-{{< /grid >}}
+{{< /grid1 >}}
 
 {{< blog >}}
