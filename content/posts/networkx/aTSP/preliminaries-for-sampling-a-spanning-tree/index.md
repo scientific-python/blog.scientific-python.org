@@ -1,6 +1,6 @@
 ---
 title: "Preliminaries for Sampling a Spanning Tree"
-date: 2020-07-21
+date: 2021-07-21
 draft: false
 description: "A close examination of the mathematics required to sample a random spanning tree from a graph"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]

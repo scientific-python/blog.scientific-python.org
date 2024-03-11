@@ -1,6 +1,6 @@
 ---
 title: "NetworkX Function Stubs"
-date: 2020-05-24
+date: 2021-05-24
 draft: false
 description: "Draft function stubs for the Asadpour method to use in the NetworkX API"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]

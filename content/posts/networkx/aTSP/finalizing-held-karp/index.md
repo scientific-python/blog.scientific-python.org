@@ -1,6 +1,6 @@
 ---
 title: "Finalizing the Held-Karp Relaxation"
-date: 2020-07-07
+date: 2021-07-07
 draft: false
 description: "Picking which method to use for the final implementation of the Asadpour algorithm in NetworkX"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]

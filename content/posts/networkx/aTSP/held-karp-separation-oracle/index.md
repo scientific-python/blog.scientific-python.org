@@ -1,6 +1,6 @@
 ---
 title: "Held-Karp Separation Oracle"
-date: 2020-05-08
+date: 2021-05-08
 draft: false
 description: "Considering creating a separation oracle for the Held-Karp relaxation"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]

@@ -1,6 +1,6 @@
 ---
 title: "Understanding the Ascent Method"
-date: 2020-06-22
+date: 2021-06-22
 draft: false
 description: "A deep dive into the ascent method for the Held-Karp relaxation"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]

@@ -1,6 +1,6 @@
 ---
 title: "Completing the Asadpour Algorithm"
-date: 2020-08-10
+date: 2021-08-10
 draft: false
 description: "Implementation details for asadpour_atsp"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
