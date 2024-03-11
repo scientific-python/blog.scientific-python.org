@@ -1,7 +1,7 @@
 ---
 title: "Starting Contributing to NetworkX"
-date: 2024-03-11
-tags: ["NetworkX", "nx-parallel", "Outreachy", "first-time-contributor"]
+date: 2024-03-11T19:33:00+0530
+tags: ["nx-parallel", "NetworkX", "Outreachy", "first-time-contributor"]
 draft: false
 description: "Journey of contributing to NetworkX of an open-source newbie during the contribution phase of Outreachy's December 2023 cohort."
 author: ["Aditi Juneja"]
@@ -98,6 +98,6 @@ I continued contributing to my PRs after submitting the proposal. I didn't know 
 
 [All of my involvements in networkx](https://github.com/search?q=repo%3Anetworkx%2Fnetworkx+involves%3ASchefflera-Arboricola&type=issues)!
 
-Check out the next blog - [NetworkX Internship - Working on nx-parallel](https://blog.scientific-python.org/networkx/networkx_internship/)!
+Check out the next blog - [NetworkX Internship - Working on nx-parallel](../networkx_internship/)!
 
 Thank you :)

@@ -1,6 +1,6 @@
 ---
 title: "NetworkX Internship - Working on nx-parallel"
-date: 2024-03-11
+date: 2024-03-11T19:34:00+0530
 tags: ["nx-parallel", "NetworkX", "NetworkX-Internship", "CZI"]
 draft: false
 description: "Two months of contributing to nx-parallel as an independent contractor."
@@ -14,7 +14,7 @@ resources:
       showOnTop: false
 ---
 
-In the [last blog](https://blog.scientific-python.org/networkx/contri_phase_outreachy/), I walked you through my journey of contributing to NetworkX as an open-source newbie. In this blog, I’ll share with you my journey of working primarily on [nx-parallel](https://github.com/networkx/nx-parallel) and NetworkX in general, during the NetworkX Internship as an Independent Contractor. I hope you will find this blog helpful if you are someone thinking of contributing to nx-parallel in the future.
+In the [last blog](../contri_phase_outreachy/), I walked you through my journey of contributing to NetworkX as an open-source newbie. In this blog, I’ll share with you my journey of working primarily on [nx-parallel](https://github.com/networkx/nx-parallel) and NetworkX in general, during the NetworkX Internship as an Independent Contractor. I hope you will find this blog helpful if you are someone thinking of contributing to nx-parallel in the future.
 
 I won't be concentrating too much on the details of the work I did in this blog, but I will be sharing the resources I found helpful, the problems I faced, the solutions I came up with, the things I learned, and the future todos for nx-parallel. If you are interested in the exact work that I did, then going through these [internship meeting notes](https://hackmd.io/@Schefflera-Arboricola/HkHl6IPaa) (weekly work updates included) might be insightful.
 
