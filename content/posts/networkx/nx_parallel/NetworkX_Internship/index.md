@@ -1,7 +1,7 @@
 ---
 title: "NetworkX Internship - Working on nx-parallel"
 date: 2024-03-11
-tags: ["nx-parallel", "NetworkX", "NetworkX Internship", "CZI"]
+tags: ["nx-parallel", "NetworkX", "NetworkX-Internship", "CZI"]
 draft: false
 description: "Two months of contributing to nx-parallel as an independent contractor."
 author: ["Aditi Juneja"]
