@@ -1,6 +1,6 @@
 ---
 title: "Starting Contributing to NetworkX"
-date: 2024-03-11T17:19:00+05:30
+date: 2024-03-11
 tags: ["NetworkX", "nx-parallel", "Outreachy", "first-time-contributor"]
 draft: false
 description: "Journey of contributing to NetworkX of an open-source newbie during the contribution phase of Outreachy's December 2023 cohort."
