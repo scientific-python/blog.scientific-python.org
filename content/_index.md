@@ -2,7 +2,7 @@
 title:
 ---
 
-{{< grid1 columns="1 2 2 2" >}}
+{{< grid columns="1 2 2 2" >}}
 
 [[item]]
 type = 'card'
@@ -20,6 +20,6 @@ body = '''
 Learn how you can help the community grow and become a member of the team.
 '''
 
-{{< /grid1 >}}
+{{< /grid >}}
 
 {{< blog >}}
