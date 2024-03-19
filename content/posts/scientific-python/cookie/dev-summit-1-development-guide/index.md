@@ -178,13 +178,12 @@ Finally, [sp-repo-review][] contains the previous repo-review plugins with check
   pypa/build).
 
 <!-- prettier-ignore-start -->
-{{< figure
-  src="cibw_example.png"
-  title="Running sp-repo-review on cibuildwheel"
-  alt="Image of sp-repo-review showing checks"
-  width="60%"
-  class="fig-center"
->}}
+{{< figure >}}
+src = 'cibw_example.png'
+caption = 'Running sp-repo-review on cibuildwheel'
+alt = 'Image of sp-repo-review showing checks'
+width = '60%'
+{{< /figure >}}
 <!-- prettier-ignore-end -->
 
 ## Using the guide
