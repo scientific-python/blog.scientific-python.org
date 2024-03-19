@@ -26,12 +26,12 @@ For more information, see our
 
 ### Blog Reviewers
 
-{{< grid1 file="blog-reviewers.toml" columns="2 3 4 5" />}}
+{{< grid file="blog-reviewers.toml" columns="2 3 4 5" />}}
 
 ### Blog Editors
 
-{{< grid1 file="blog-editors.toml" columns="2 3 4 5" />}}
+{{< grid file="blog-editors.toml" columns="2 3 4 5" />}}
 
 ### Blog Editor-in-Chief
 
-{{< grid1 file="blog-editor-in-chief.toml" columns="2 3 4 5" />}}
+{{< grid file="blog-editor-in-chief.toml" columns="2 3 4 5" />}}
