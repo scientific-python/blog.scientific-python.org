@@ -100,28 +100,28 @@ The minimum spanning arborescence initially is shown below.
 
 <center><img src="digraph-partition-msa.png" alt="Minimum spanning arborescence respecting the above partition"/></center>
 
-While the \\((3, 0)\\) edge is properly excluded and the \\((2, 3)\\) edge is included, the \\((6, 2)\\) is not present in the arborescence (show as a dashed edge).
-Tracking this problem down was a hassle, but the way that Edmonds' algorithm works is that a cycle, which would have been present if the \\((6, 2)\\) edge was included, are collapsed into a single vertex as the algorithm moves to the next iteration.
+While the $(3, 0)$ edge is properly excluded and the $(2, 3)$ edge is included, the $(6, 2)$ is not present in the arborescence (show as a dashed edge).
+Tracking this problem down was a hassle, but the way that Edmonds' algorithm works is that a cycle, which would have been present if the $(6, 2)$ edge was included, are collapsed into a single vertex as the algorithm moves to the next iteration.
 Once that cycle is collapsed into a vertex, it still has to choose how to access that vertex and the choice is based on the best edge as before (this is step I1 in [1]).
 Then, when the algorithm expands the cycle out, it will remove the edge which is
 
 - Wholly contained inside the cycle and,
 - Directed towards the vertex which is the 'access point' for the cycle.
 
-Which is this case, would be \\((6, 2)\\) shown in red in the next image.
+Which is this case, would be $(6, 2)$ shown in red in the next image.
 Represented visually, the cycle with incoming edges would look like
 
 <center><img src="digraph-cycle.png" alt="Problematic cycle with partition edges"/></center>
 
-And that would be collapsed into a new vertex, \\(N\\) from which the incoming edge with weight 12 would be selected.
+And that would be collapsed into a new vertex, $N$ from which the incoming edge with weight 12 would be selected.
 
 <center><img src="digraph-collapsed-cycle.png" alt="Same cycle after the Edmonds algorithm collapsed it"/></center>
 
-In this example we want to forbid the algorithm from picking the edge with weight 12, so that when the cycle is reconstructed the included edge \\((6, 2)\\) is still present.
+In this example we want to forbid the algorithm from picking the edge with weight 12, so that when the cycle is reconstructed the included edge $(6, 2)$ is still present.
 Once we make one of the incoming edges an included edge, we know from the definition of an arborescence that we cannot get to that vertex from any other edges.
 They are all effectively excluded, so once we find an included edge directed towards a vertex we can made all of the other incoming edges excluded.
 
-Returning to the example, the collapsed vertex \\(N\\) would have the edge of weight 12 excluded and would pick the edge of weight 13.
+Returning to the example, the collapsed vertex $N$ would have the edge of weight 12 excluded and would pick the edge of weight 13.
 
 <center><img src="digraph-collapsed-forbidden-cycle.png" alt="Solution to tracking bad cycles in the arborescence"/></center>
 
@@ -148,9 +148,9 @@ This one would check that the number of arborescences was correct and that the s
 In order to check the number of arborescecnes, I decided to take a brute force approach.
 There are
 
-\\[
+$$
 \binom{18}{8} = 43,758
-\\]
+$$
 
 possible combinations of edges which could be arborescences.
 That's a lot of combintation, more than I wanted to check by hand so I wrote a short python script.

@@ -24,31 +24,31 @@ While I was not able to find an online copy of this article, the Michigan Tech l
 Kulkarni gave a general overview of the algorithm in Section 2, but Section 5 is titled `Random Spanning Trees' and starts on page 200.
 First, let's check that the preliminaries for the Kulkarni paper on page 200 match the Asadpour algorithm.
 
-> Let \\(G = (V, E)\\) be an undirected network of \\(M\\) nodes and \\(N\\) arcs...
-> Let \\(\mathfrak{B}\\) be the set of all spanning trees in \\(G\\).
-> Let \\(\alpha_i\\) be the positive weight of arc \\(i \in E\\).
-> Defined the weight \\(w(B)\\) of a spanning tree \\(B \in \mathfrak{B}\\) as
+> Let $G = (V, E)$ be an undirected network of $M$ nodes and $N$ arcs...
+> Let $\mathfrak{B}$ be the set of all spanning trees in $G$.
+> Let $\alpha_i$ be the positive weight of arc $i \in E$.
+> Defined the weight $w(B)$ of a spanning tree $B \in \mathfrak{B}$ as
 >
-> \\[w(B) = \prod\_{i \in B} \alpha\_i\\]
+> $$w(B) = \prod\_{i \in B} \alpha\_i$$
 >
 > Also define
 >
-> \\[n(G) = \sum\_{B \in \mathfrak{B}} w(B)\\]
+> $$n(G) = \sum\_{B \in \mathfrak{B}} w(B)$$
 >
-> In this section we describe an algorithm to generate \\(B \in \mathfrak{B}\\) so that
+> In this section we describe an algorithm to generate $B \in \mathfrak{B}$ so that
 >
-> \\[P\\{B \text{ is generated}\\} = \frac{w(B)}{n(G)}\\]
+> $$P\\{B \text{ is generated}\\} = \frac{w(B)}{n(G)}$$
 
-Immediately we can see that \\(\mathfrak{B}\\) is the same as \\(\mathcal{T}\\) from the Asadpour paper, the set of all spanning trees.
-The weight of each edge is \\(\alpha_i\\) for Kulkarni and \\(\lambda_e\\) to Asadpour.
+Immediately we can see that $\mathfrak{B}$ is the same as $\mathcal{T}$ from the Asadpour paper, the set of all spanning trees.
+The weight of each edge is $\alpha_i$ for Kulkarni and $\lambda_e$ to Asadpour.
 As for the product of the weights of the graph being the probability, the Asadpour paper states on page 382
 
-> Given \\(\lambda*e \geq 0\\) for \\(e \in E\\), a \\(\lambda\\)*-random tree\_ \\(T\\) of \\(G\\) is a tree \\(T\\) chosen from the set of all spanning trees of \\(G\\) with probability proportional to \\(\prod\_{e \in T} \lambda_e\\).
+> Given $\lambda*e \geq 0$ for $e \in E$, a $\lambda$*-random tree\_ $T$ of $G$ is a tree $T$ chosen from the set of all spanning trees of $G$ with probability proportional to $\prod\_{e \in T} \lambda_e$.
 
 So this is not a concern.
-Finally, \\(n(G)\\) can be written as
+Finally, $n(G)$ can be written as
 
-\\[\sum\_{T \in \mathcal{T}} \prod\_{e \in T} \lambda\_e\\]
+$$\sum\_{T \in \mathcal{T}} \prod\_{e \in T} \lambda\_e$$
 
 which does appear several times throughout the Asadpour paper.
 Thus the preliminaries between the Kulkarni and Asadpour papers align.
@@ -57,48 +57,48 @@ Thus the preliminaries between the Kulkarni and Asadpour papers align.
 
 The specialized version of the general algorithm which Kulkarni gives is Algorithm A8 on page 202.
 
-> \\(U = \emptyset,\\) \\(V = E\\)\
-> Do \\(i = 1\\) to \\(N\\);\
-> \\(\qquad\\)Let \\(a = n(G(U, V))\\)\
-> \\(\qquad\qquad a'\\) \\(= n(G(U \cup \{i\}, V))\\)\
-> \\(\qquad\\)Generate \\(Z \sim U[0, 1]\\)\
-> \\(\qquad\\)If \\(Z \leq \alpha_i \times \left(a' / a\right)\\)\
-> \\(\qquad\qquad\\)then \\(U = U \cup \{i\}\\),\
-> \\(\qquad\qquad\\)else \\(V = V - \{i\}\\)\
-> \\(\qquad\\)end.\
-> Stop. \\(U\\) is the required spanning tree.
+> $U = \emptyset,$ $V = E$\
+> Do $i = 1$ to $N$;\
+> $\qquad$Let $a = n(G(U, V))$\
+> $\qquad\qquad a'$ $= n(G(U \cup \{i\}, V))$\
+> $\qquad$Generate $Z \sim U[0, 1]$\
+> $\qquad$If $Z \leq \alpha_i \times \left(a' / a\right)$\
+> $\qquad\qquad$then $U = U \cup \{i\}$,\
+> $\qquad\qquad$else $V = V - \{i\}$\
+> $\qquad$end.\
+> Stop. $U$ is the required spanning tree.
 
 Now we have to understand this algorithm so we can create pseudo code for it.
-First as a notational explanation, the statement "Generate \\(Z \sim U[0, 1]\\)" means picking a uniformly random variable over the interval \\([0, 1]\\) which is independent of all the random variables generated before it (See page 188 of Kulkarni for more information).
+First as a notational explanation, the statement "Generate $Z \sim U[0, 1]$" means picking a uniformly random variable over the interval $[0, 1]$ which is independent of all the random variables generated before it (See page 188 of Kulkarni for more information).
 The built-in python module [`random`](https://docs.python.org/3/library/random.html) can be used here.
 Looking at real-valued distributions, I believe that using `random.uniform(0, 1)` is preferable to `random.random()` since the latter does not have the probability of generating a '1' and that is explicitly part of the interval discussed in the Kulkarni paper.
 
-The other notational oddity would be statements similar to \\(G(U, V)\\) which is this case does not refer to a graph with \\(U\\) as the vertex set and \\(V\\) as the edge set as \\(U\\) and \\(V\\) are both subsets of the full edge set \\(E\\).
+The other notational oddity would be statements similar to $G(U, V)$ which is this case does not refer to a graph with $U$ as the vertex set and $V$ as the edge set as $U$ and $V$ are both subsets of the full edge set $E$.
 
-\\(G(U, V)\\) is defined in the Kulkarni paper on page 201 as
+$G(U, V)$ is defined in the Kulkarni paper on page 201 as
 
-> Let \\(G(U, V)\\) be a subgraph of \\(G\\) obtained by deleting arcs that are not in \\(V\\), and collapsing arcs that are in \\(U\\) (i.e., identifying the end nodes of arcs in \\(U\\)) and deleting all self-loops resulting from these deletions and collapsing.
+> Let $G(U, V)$ be a subgraph of $G$ obtained by deleting arcs that are not in $V$, and collapsing arcs that are in $U$ (i.e., identifying the end nodes of arcs in $U$) and deleting all self-loops resulting from these deletions and collapsing.
 
-This language seems a bit... clunky, especially for the edges in \\(U\\).
-In this case, "collapsing arcs that are in \\(U\\)" would be contracting those edges without self loops.
+This language seems a bit... clunky, especially for the edges in $U$.
+In this case, "collapsing arcs that are in $U$" would be contracting those edges without self loops.
 Fortunately, this functionality is a part of NetworkX using [`networkx.algorithms.minors.contracted_edge`](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.minors.contracted_edge.html#networkx.algorithms.minors.contracted_edge) with the `self_loops` keyword argument set to `False`.
 
-As for the edges in \\(E - V\\), this can be easily accomplished by using [`networkx.MultiGraph.remove_edges_from`](https://networkx.org/documentation/stable/reference/classes/generated/networkx.MultiGraph.remove_edges_from.html).
+As for the edges in $E - V$, this can be easily accomplished by using [`networkx.MultiGraph.remove_edges_from`](https://networkx.org/documentation/stable/reference/classes/generated/networkx.MultiGraph.remove_edges_from.html).
 
-Once we have generated \\(G(U, V)\\), we need to find \\(n(G(U, V)\\).
+Once we have generated $G(U, V)$, we need to find $n(G(U, V)$.
 This can be done with something we are already familiar with: Kirchhoff's Tree Matrix Theorem.
 All we need to do is create the Laplacian matrix and then find the determinant of the first cofactor.
 This code will probably be taken directly from the `spanning_tree_distribution` function.
 Actually, this is a place to create a broader helper function called `krichhoffs` which will take a graph and return the number of weighted spanning trees in it which would then be used as part of `q` in `spanning_tree_distribution` and in `sample_spanning_tree`.
 
-From here we compare \\(Z\\) to \\(\alpha_i \left(a' / a\right)\\) so see if that edge is added to the graph or discarded.
-Understanding the process of the algorithm gives context to the meaning of \\(U\\) and \\(V\\).
-\\(U\\) is the set of edges which we have decided to include in the spanning tree while \\(V\\) is the set of edges yet to be considered for \\(U\\) (roughly speaking).
+From here we compare $Z$ to $\alpha_i \left(a' / a\right)$ so see if that edge is added to the graph or discarded.
+Understanding the process of the algorithm gives context to the meaning of $U$ and $V$.
+$U$ is the set of edges which we have decided to include in the spanning tree while $V$ is the set of edges yet to be considered for $U$ (roughly speaking).
 
-Now there is still a bit of ambiguity in the algorithm that Kulkarni gives, mainly about \\(i\\).
-In the loop condition, \\(i\\) is an integer from 1 to \\(N\\), the number of arcs in the graph but it is later being added to \\(U\\) so it has to be an edge.
-Referencing the Asadpour paper, it starts its description of sampling the \\(\lambda\\)-random tree on page 383 by saying "The idea is to order the edges \\(e_1, \dots, e_m\\) of \\(G\\) arbitrarily and process them one by one".
-So I believe that the edge interpretation is correct and the integer notation used in Kulkarni was assuming that a mapping of the edges to \\(\{1, 2, \dots, N\}\\) has occurred.
+Now there is still a bit of ambiguity in the algorithm that Kulkarni gives, mainly about $i$.
+In the loop condition, $i$ is an integer from 1 to $N$, the number of arcs in the graph but it is later being added to $U$ so it has to be an edge.
+Referencing the Asadpour paper, it starts its description of sampling the $\lambda$-random tree on page 383 by saying "The idea is to order the edges $e_1, \dots, e_m$ of $G$ arbitrarily and process them one by one".
+So I believe that the edge interpretation is correct and the integer notation used in Kulkarni was assuming that a mapping of the edges to $\{1, 2, \dots, N\}$ has occurred.
 
 ## sample_spanning_tree pseudo code
 
@@ -120,7 +120,7 @@ Next up is a bit of initialization
 ```
 
 Now the definitions of `U` and `V` come directly from Algorithm A8, but `shuffled_edges` is new.
-My thoughts are that this will be what we use for \\(i\\).
+My thoughts are that this will be what we use for $i$.
 We shuffle the edges of the graph and then in the loop we iterate over the edges within `shuffled_edges`.
 Next we have the loop.
 

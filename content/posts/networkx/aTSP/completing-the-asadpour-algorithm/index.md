@@ -70,7 +70,7 @@ A few issues were present, as they always were going to be.
 
 First, my largest issue came from a part of a word being in parenthesis in the Asadpour paper on page 385.
 
-> This integral circulation \\(f^\*\\) corresponds to a directed (multi)graph \\(H\\) which contains \\(\vec{T}^\*\\).
+> This integral circulation $f^\*$ corresponds to a directed (multi)graph $H$ which contains $\vec{T}^\*$.
 
 Basically if the minimum flow is every larger than 1 along an edge, I need to add that many parallel edges in order to ensure that everything is still Eulerian.
 This became a problem quickly while developing my test cases as shown in the below example.
@@ -84,7 +84,7 @@ All of the others were just minor points where the pseudo code didn't directly t
 ## Understanding the Output
 
 The first thing I did once `asadpour_atsp` was take the fractional, symmetric Held Karp relaxation test graph and run it through the general `traveling_salesman_problem` function.
-Since there are random numbers involved here, the results were always within the \\(O(\log n / \log \log n)\\) approximation factor but were different.
+Since there are random numbers involved here, the results were always within the $O(\log n / \log \log n)$ approximation factor but were different.
 Three examples are shown below.
 
 <center><img src="example-tours.png" alt="Three possible ATSP tours on an example graph"/></center>
@@ -92,40 +92,40 @@ Three examples are shown below.
 The first thing we want to check is the approximation ratio.
 We know that the minimum cost output of the `traveling_saleman_problem` function is 304 (This is actually lower than the optimal tour in the undirected version, more on this later).
 Next we need to know what our maximum approximation factor is.
-Now, the Asadpour algorithm is \\(O(\log n / \log \log n)\\) which for our six vertex graph would be \\(\ln(6) / \ln(\ln(6)) \approx 3.0723\\).
-However, on page 386 they give the coefficients of the approximation as \\((2 + 8 \log n / \log \log n)\\) which would be \\(2 + 8 \times \ln(6) / \ln(\ln(6)) \approx 26.5784\\).
-(Remember that all \\(\log\\)'s in the Asadpour paper refer to the natural logarithm.)
+Now, the Asadpour algorithm is $O(\log n / \log \log n)$ which for our six vertex graph would be $\ln(6) / \ln(\ln(6)) \approx 3.0723$.
+However, on page 386 they give the coefficients of the approximation as $(2 + 8 \log n / \log \log n)$ which would be $2 + 8 \times \ln(6) / \ln(\ln(6)) \approx 26.5784$.
+(Remember that all $\log$'s in the Asadpour paper refer to the natural logarithm.)
 All of our examples are well below even the lower limit.
 
 For example 1:
 
-\\[
+$$
 \begin{array}{r l}
 \text{actual}: & 504 \\\\\\
 \text{expected}: & 304 \\\\\\
 \text{approx. factor}: & \frac{504}{304} \approx 1.6578 < 3.0723
 \end{array}
-\\]
+$$
 
 Example 2:
 
-\\[
+$$
 \begin{array}{r l}
 \text{actual}: & 404 \\\\\\
 \text{expected}: & 304 \\\\\\
 \text{approx. factor}: & \frac{404}{304} \approx 1.3289 < 3.0723
 \end{array}
-\\]
+$$
 
 Example 3:
 
-\\[
+$$
 \begin{array}{r l}
 \text{actual}: & 304 \\\\\\
 \text{expected}: & 304 \\\\\\
 \text{approx. factor}: & \frac{304}{304} = 1.0000 < 3.0723
 \end{array}
-\\]
+$$
 
 At this point, you've probably noticed that the examples given are strictly speaking, _not_ hamiltonian cycles: they visit vertices multiple times.
 This is because the graph we have is not complete.
