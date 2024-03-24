@@ -274,7 +274,7 @@ However, they were not very clear on how to calculate $q_e(\gamma)$ other than t
 
 My original method for calculating $q*e(\gamma)$ was to apply Krichhoff's Theorem to the original laplacian matrix and the laplacian produced once the edge $e$ is contracted from the graph.
 Testing quickly showed that once the edge is contracted from the graph, it cannot affect the value of the laplacian and thus after subtracting $\delta$ the probability of that edge would increase rather than decrease.
-Multiplying my original value of $q_e(\gamma)$ by $\exp(\gamma_e)$ proved to be the solution here for reasons extensively discussed in my blog post \_The Entropy Distribution* and in particular the "Update! (28 July 2021)" section.
+Multiplying my original value of $q_e(\gamma)$ by $\exp(\gamma_e)$ proved to be the solution here for reasons extensively discussed in my blog post \_The Entropy Distribution\* and in particular the "Update! (28 July 2021)" section.
 
 **Blog posts about `spanning_tree_distribution`**
 

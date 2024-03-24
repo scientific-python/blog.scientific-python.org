@@ -43,7 +43,7 @@ Immediately we can see that $\mathfrak{B}$ is the same as $\mathcal{T}$ from the
 The weight of each edge is $\alpha_i$ for Kulkarni and $\lambda_e$ to Asadpour.
 As for the product of the weights of the graph being the probability, the Asadpour paper states on page 382
 
-> Given $\lambda*e \geq 0$ for $e \in E$, a $\lambda$*-random tree\_ $T$ of $G$ is a tree $T$ chosen from the set of all spanning trees of $G$ with probability proportional to $\prod\_{e \in T} \lambda_e$.
+> Given $\lambda*e \geq 0$ for $e \in E$, a $\lambda$\*-random tree\_ $T$ of $G$ is a tree $T$ chosen from the set of all spanning trees of $G$ with probability proportional to $\prod\_{e \in T} \lambda_e$.
 
 So this is not a concern.
 Finally, $n(G)$ can be written as

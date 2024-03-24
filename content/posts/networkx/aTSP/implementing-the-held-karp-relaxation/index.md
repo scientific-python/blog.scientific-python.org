@@ -80,20 +80,20 @@ and I now had two algorithms returning this solution:
 As I mentioned before, the branch and bound method is more human-computable than the ascent method, so I decided to follow the execution of my implementation with the one given in [1].
 Below, the left side is the data from the Held and Karp paper and on the right my program's execution on the directed version.
 
-| Undirected Graph                                                                                               | Directed Graph                                                                                                 |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| Iteration 1:                                                                                                   |
+| Undirected Graph                                                                                           | Directed Graph                                                                                             |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Iteration 1:                                                                                               |
 | Starting configuration: $(\emptyset, \emptyset, \begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 0 \end{bmatrix}, 196)$ | Starting configuration: $(\emptyset, \emptyset, \begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 0 \end{bmatrix}, 196)$ |
-| Minimum 1-Trees:                                                                                               | Minimum 1-Arborescences:                                                                                       |
-| ![minimum 1 trees](minimum-1-trees-iteration-1.png)                                                            | ![minimum 1 arborescences](minimum-1-arborescences-iteration-1.png)                                            |
-| Vertex 3 out-of-kilter LOW                                                                                     | Vertex 3 out-of-kilter LOW                                                                                     |
+| Minimum 1-Trees:                                                                                           | Minimum 1-Arborescences:                                                                                   |
+| ![minimum 1 trees](minimum-1-trees-iteration-1.png)                                                        | ![minimum 1 arborescences](minimum-1-arborescences-iteration-1.png)                                        |
+| Vertex 3 out-of-kilter LOW                                                                                 | Vertex 3 out-of-kilter LOW                                                                                 |
 | $d = \begin{bmatrix} 0 & 0 & 0 & -1 & 0 & 0 \end{bmatrix}$                                                 | $d = \begin{bmatrix} 0 & 0 & 0 & -1 & 0 & 0 \end{bmatrix}$                                                 |
 | $\epsilon(\pi, d) = 5$                                                                                     | $\epsilon(\pi, d) = 5$                                                                                     |
 | New configuration: $(\emptyset, \emptyset, \begin{bmatrix} 0 & 0 & 0 & -5 & 0 & 0 \end{bmatrix}, 201)$     | New configuration: $(\emptyset, \emptyset, \begin{bmatrix} 0 & 0 & 0 & -5 & 0 & 0 \end{bmatrix}, 212)$     |
-|                                                                                                                |
-| Iteration 2:                                                                                                   |
-| Minimum 1-Trees:                                                                                               | Minimum 1-Arborescences:                                                                                       |
-| ![minimum 1 trees](minimum-1-trees-iteration-2.png)                                                            | ![minimum 1 arborescences](minimum-1-arborescences-iteration-2.png)                                            |
+|                                                                                                            |
+| Iteration 2:                                                                                               |
+| Minimum 1-Trees:                                                                                           | Minimum 1-Arborescences:                                                                                   |
+| ![minimum 1 trees](minimum-1-trees-iteration-2.png)                                                        | ![minimum 1 arborescences](minimum-1-arborescences-iteration-2.png)                                        |
 
 In order to get these results, I forbid the program from being able to choose to connect vertex 0 to the same other vertex for both the incoming and outgoing edge.
 However, it is very clear that from the start, iteration two was not going to be the same.
