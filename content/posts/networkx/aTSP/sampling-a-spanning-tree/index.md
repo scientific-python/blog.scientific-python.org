@@ -27,7 +27,7 @@ It followed exactly from the pesudo code and was working with `spanning_tree_dis
 
 This function was more difficult than I originally anticipated.
 The code for the main body of the function only needed minor tweaks to work with the specifics of python such as `shuffle` being in place and returning `None` and some details about how sets work.
-For example, I add edge \\(e\\) to \\(U\\) before calling `prepare_graph` on in and then switch the `if` statement to be the inverse to remove \\(e\\) from \\(U\\).
+For example, I add edge $e$ to $U$ before calling `prepare_graph` on in and then switch the `if` statement to be the inverse to remove $e$ from $U$.
 Those portions are functionally the same.
 The issues I had with this function _all_ stem back to contracting multiple nodes in a row and how that affects the graph.
 
@@ -42,13 +42,13 @@ I struggled with NetworkX's API about the graph classes in a past post titled [T
 
 For NetworkX's implementation, we would call `nx.contracted_nodes(G, u, v)` and `u` and `v` would always be merged into `u`, so `v` is the node which is no longer in the graph.
 
-Now imagine that we have three edges to contract because they are all in \\(U\\) which look like the following.
+Now imagine that we have three edges to contract because they are all in $U$ which look like the following.
 
 <center><img src="multiple-contraction.png" alt="Example subgraph with multiple edges to contract"></center>
 
 If we process this from left to right, we first contract nodes 0 and 1.
-At this point, the \\(\\{1, 2\\}\\) no longer exists in \\(G\\) as node 1 itself has been removed.
-However, we would still need to contract the new \\(\\{0, 2\\}\\) edge which is equivalent to the old \\(\\{1, 2\\}\\) edge.
+At this point, the $\\{1, 2\\}$ no longer exists in $G$ as node 1 itself has been removed.
+However, we would still need to contract the new $\\{0, 2\\}$ edge which is equivalent to the old $\\{1, 2\\}$ edge.
 
 My first attempt to solve this was... messy and didn't work well.
 I developed an `if-elif` chain for which endpoints of the contracting edge no longer existed in the graph and tried to use dict comprehension to force a dict to always be up to date with which vertices were equivalent to each other.
@@ -59,7 +59,7 @@ This next bit of code I actually first used in my Graph Algorithms class from la
 In particular it is the merge-find or disjoint set data structure from the components algorithm (code can be found [here](https://github.com/mjschwenne/GraphAlgorithms/blob/main/src/Components.py) and more information about the data structure [here](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)).
 
 Basically we create a mapping from a node to that node's representative.
-In this case a node's representative is the node that is still in \\(G\\) but the input node has been merged into through a series of contractions.
+In this case a node's representative is the node that is still in $G$ but the input node has been merged into through a series of contractions.
 In the above example, once node 1 is merged into node 0, 0 would become node 1's representative.
 We search recursively through the `merged_nodes` dict until we find a node which is not in the dict, meaning that it is still its own representative and therefore in the graph.
 This will let us handle a representative node later being merged into another node.
@@ -72,27 +72,27 @@ I was testing on the symmetric fractional Held Karp graph by the way, so with si
 I seeded the random number generator for one of the seven edge results and started to debug!
 Recall that once we generate a uniform decimal between 0 and 1 we compare it to
 
-\\[
+$$
 \lambda\_e \times \frac{K\_{G \backslash \{e\}}}{K\_G}
-\\]
+$$
 
-where \\(K\\) is the result of Krichhoff's Theorem on the subscripted graph.
+where $K$ is the result of Krichhoff's Theorem on the subscripted graph.
 One probability that caught my eye had the fractional component equal to 1.
-This means that adding \\(e\\) to the set of contracted edges had no effect on where that edge should be included in the final spanning tree.
-Closer inspection revealed that the edge \\(e\\) in question already could not be picked for the spanning tree since it did not exist in \\(G\\) it could not exist in \\(G \backslash \{e\}\\).
+This means that adding $e$ to the set of contracted edges had no effect on where that edge should be included in the final spanning tree.
+Closer inspection revealed that the edge $e$ in question already could not be picked for the spanning tree since it did not exist in $G$ it could not exist in $G \backslash \{e\}$.
 
 Imagine the following situation.
 We have three edges to contract but they form a cycle of length three.
 
 <center><img src="contraction-cycle.png" alt="Example of the contraction of a cycle in a subgraph"></center>
 
-If we contract \\(\\{0, 1\\}\\) and then \\(\\{0, 2\\}\\) what does that mean for \\(\\{1, 2\\}\\)?
-Well, \\(\{1, 2\}\\) would become a self loop on vertex 0 but we are deleting self loops so it cannot exist.
+If we contract $\\{0, 1\\}$ and then $\\{0, 2\\}$ what does that mean for $\\{1, 2\\}$?
+Well, $\{1, 2\}$ would become a self loop on vertex 0 but we are deleting self loops so it cannot exist.
 It has to have a probability of 0.
-Yet in the current implementation of the function, it would have a probability of \\(\lambda\_{\\{1, 2\\}}\\).
+Yet in the current implementation of the function, it would have a probability of $\lambda\_{\\{1, 2\\}}$.
 So, I have to check to see if a representative edge exists for the edge we are considering in the current iteration of the main for loop.
 
-The solution to this is to return the merge-find data structure with the prepared graph for \\(G\\) and then check that an edge with endpoints at the two representatives for the endpoints of the original edge exists.
+The solution to this is to return the merge-find data structure with the prepared graph for $G$ and then check that an edge with endpoints at the two representatives for the endpoints of the original edge exists.
 If so, use the kirchhoff value as normal but if not make `G_e_total_tree_weight` equal to zero so that this edge cannot be picked.
 Finally I was able to sample trees from `G` consistently, but did they match the expected probabilities?
 

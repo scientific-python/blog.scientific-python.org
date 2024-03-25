@@ -250,31 +250,31 @@ Annotations only provided if needed.
 
 ## `spanning_tree_distribution`
 
-Once we have the support of the Held Karp relaxation, we calculate edge weights \\(\gamma\\) for support so that the probability of any tree being sampled is proportional to the product of \\(e^{\gamma}\\) across its edges.
+Once we have the support of the Held Karp relaxation, we calculate edge weights $\gamma$ for support so that the probability of any tree being sampled is proportional to the product of $e^{\gamma}$ across its edges.
 This is called a maximum entropy distribution in the Asadpour paper.
 This procedure was included in the Asadpour paper [1] on page 386.
 
-> 1. Set \\(\gamma = \vec{0}\\).
-> 2. While there exists an edge \\(e\\) with \\(q_e(\gamma) > (1 + \epsilon)z_e\\):
+> 1. Set $\gamma = \vec{0}$.
+> 2. While there exists an edge $e$ with $q_e(\gamma) > (1 + \epsilon)z_e$:
 >
-> - Compute \\(\delta\\) such that if we define \\(\gamma'\\) ad \\(\gamma_e' = \gamma_e - \delta\\) and \\(\gamma_f' = \gamma_e\\) for all \\(f \in E \backslash \{e\}\\), then \\(q_e(\gamma') = (1 + \epsilon / 2)z_e\\)
-> - Set \\(\gamma \leftarrow \gamma'\\)
+> - Compute $\delta$ such that if we define $\gamma'$ ad $\gamma_e' = \gamma_e - \delta$ and $\gamma_f' = \gamma_e$ for all $f \in E \backslash \{e\}$, then $q_e(\gamma') = (1 + \epsilon / 2)z_e$
+> - Set $\gamma \leftarrow \gamma'$
 >
-> 3. Output \\(\tilde{\gamma} := \gamma\\).
+> 3. Output $\tilde{\gamma} := \gamma$.
 
-Where \\(q_e(\gamma)\\) is the probability that any given edge \\(e\\) will be in a sampled spanning tree chosen with probability proportional to \\(\exp(\gamma(T))\\).
-\\(\delta\\) is also given as
+Where $q_e(\gamma)$ is the probability that any given edge $e$ will be in a sampled spanning tree chosen with probability proportional to $\exp(\gamma(T))$.
+$\delta$ is also given as
 
-\\[
+$$
 \delta = \frac{q\_e(\gamma)(1-(1+\epsilon/2)z\_e)}{(1-q\_e(\gamma))(1+\epsilon/2)z\_e}
-\\]
+$$
 
 so the Asadpour paper did almost all of the heavy lifting for this function.
-However, they were not very clear on how to calculate \\(q_e(\gamma)\\) other than that Krichhoff's Tree Matrix Theorem can be used.
+However, they were not very clear on how to calculate $q_e(\gamma)$ other than that Krichhoff's Tree Matrix Theorem can be used.
 
-My original method for calculating \\(q*e(\gamma)\\) was to apply Krichhoff's Theorem to the original laplacian matrix and the laplacian produced once the edge \\(e\\) is contracted from the graph.
-Testing quickly showed that once the edge is contracted from the graph, it cannot affect the value of the laplacian and thus after subtracting \\(\delta\\) the probability of that edge would increase rather than decrease.
-Multiplying my original value of \\(q_e(\gamma)\\) by \\(\exp(\gamma_e)\\) proved to be the solution here for reasons extensively discussed in my blog post \_The Entropy Distribution* and in particular the "Update! (28 July 2021)" section.
+My original method for calculating $q*e(\gamma)$ was to apply Krichhoff's Theorem to the original laplacian matrix and the laplacian produced once the edge $e$ is contracted from the graph.
+Testing quickly showed that once the edge is contracted from the graph, it cannot affect the value of the laplacian and thus after subtracting $\delta$ the probability of that edge would increase rather than decrease.
+Multiplying my original value of $q_e(\gamma)$ by $\exp(\gamma_e)$ proved to be the solution here for reasons extensively discussed in my blog post \_The Entropy Distribution\* and in particular the "Update! (28 July 2021)" section.
 
 **Blog posts about `spanning_tree_distribution`**
 
@@ -286,7 +286,7 @@ Multiplying my original value of \\(q_e(\gamma)\\) by \\(\exp(\gamma_e)\\) prove
 
 [Draft of spanning_tree_distribution](https://github.com/mjschwenne/networkx/commit/da1f5cf688277426575115e3328e16d8f5b29a3c)
 
-[Changed HK to only report on the support of the answer](https://github.com/mjschwenne/networkx/commit/b6bec0dada9ff67dc1cf28f5ae0fe3b1df490dc5) - _Needing to limit \\(\gamma\\) to only the support of the Held Karp relaxation is what caused this change_
+[Changed HK to only report on the support of the answer](https://github.com/mjschwenne/networkx/commit/b6bec0dada9ff67dc1cf28f5ae0fe3b1df490dc5) - _Needing to limit $\gamma$ to only the support of the Held Karp relaxation is what caused this change_
 
 [Fixed contraction bug by changing to MultiGraph. Problem with prob > 1](https://github.com/mjschwenne/networkx/commit/0fcf0b3ecfc3704db17830eeeae72a67b4182ffb) - _Because the probability is only_ proportional _to the product of the edge weights, this was not actually a problem_
 
@@ -294,9 +294,9 @@ Multiplying my original value of \\(q_e(\gamma)\\) by \\(\exp(\gamma_e)\\) prove
 
 [Fixed pypi test error](https://github.com/mjschwenne/networkx/commit/2195002e9394bcb2c47876809cfbbec3c05b1008) - _The pypi tests do not have `numpy` or `scipy` and I forgot to flag the test to be skipped if they are not available_
 
-[Further testing of dist fix](https://github.com/mjschwenne/networkx/commit/e4cd4f17311e8d908f016cea45f03b1b3e35822e) - _Fixed function to multiply \\(q_e(\gamma)\\) by \\(\exp(\gamma_e)\\) and implemented exception if \\(\delta\\) ever misbehaves_
+[Further testing of dist fix](https://github.com/mjschwenne/networkx/commit/e4cd4f17311e8d908f016cea45f03b1b3e35822e) - _Fixed function to multiply $q_e(\gamma)$ by $\exp(\gamma_e)$ and implemented exception if $\delta$ ever misbehaves_
 
-[Can sample spanning trees](https://github.com/mjschwenne/networkx/commit/68f0cf95565bcdce0aec4678e3af9815e23b494e) - _Streamlined finding \\(q_e(\gamma)\\) using new helper function_
+[Can sample spanning trees](https://github.com/mjschwenne/networkx/commit/68f0cf95565bcdce0aec4678e3af9815e23b494e) - _Streamlined finding $q_e(\gamma)$ using new helper function_
 
 [documentation update](https://github.com/mjschwenne/networkx/commit/837d0448d38936278cfa9fdb7d8cb636eb8552c3)
 
@@ -311,16 +311,16 @@ What good is a spanning tree distribution if we can't sample from it?
 While the Asadpour paper [1] provides a rough outline of the sampling process, the bulk of their methodology comes from the Kulkarni paper, _Generating random combinatorial objects_ [5].
 That paper had a much more detailed explanation and even this pseudo code from page 202.
 
-> \\(U = \emptyset,\\) \\(V = E\\)\
-> Do \\(i = 1\\) to \\(N\\);\
-> \\(\qquad\\)Let \\(a = n(G(U, V))\\)\
-> \\(\qquad\qquad a'\\) \\(= n(G(U \cup \{i\}, V))\\)\
-> \\(\qquad\\)Generate \\(Z \sim U[0, 1]\\)\
-> \\(\qquad\\)If \\(Z \leq \alpha_i \times \left(a' / a\right)\\)\
-> \\(\qquad\qquad\\)then \\(U = U \cup \{i\}\\),\
-> \\(\qquad\qquad\\)else \\(V = V - \{i\}\\)\
-> \\(\qquad\\)end.\
-> Stop. \\(U\\) is the required spanning tree.
+> $U = \emptyset,$ $V = E$\
+> Do $i = 1$ to $N$;\
+> $\qquad$Let $a = n(G(U, V))$\
+> $\qquad\qquad a'$ $= n(G(U \cup \{i\}, V))$\
+> $\qquad$Generate $Z \sim U[0, 1]$\
+> $\qquad$If $Z \leq \alpha_i \times \left(a' / a\right)$\
+> $\qquad\qquad$then $U = U \cup \{i\}$,\
+> $\qquad\qquad$else $V = V - \{i\}$\
+> $\qquad$end.\
+> Stop. $U$ is the required spanning tree.
 
 The only real difficulty here was tracking how the nodes were being contracted.
 My first attempt was a mess of `if` statements and the like, but switching it to a merge-find data structure (or disjoint set data structure) proved to be a wise decision.
@@ -329,9 +329,9 @@ Of course, it is one thing to be able to sample a spanning tree and another enti
 My first iteration test for `sample_spanning_tree` just sampled a large number of trees (50000) and they printed the percent error from the normalized distribution of spanning tree.
 With a sample size of 50000 all of the errors were under 10%, but I still wanted to find a better test.
 
-From my AP statistics class in high school I remembered the \\(X^2\\) (Chi-squared) test and realized that it would be perfect here.
+From my AP statistics class in high school I remembered the $X^2$ (Chi-squared) test and realized that it would be perfect here.
 `scipy` even had the ability to conduct one.
-By converting to a chi-squared test I was able to reduce the sample size down to 1200 (near the minimum required sample size to have a valid chi-squared test) and use a proper hypothesis test at the \\(\alpha = 0.01\\) significance level.
+By converting to a chi-squared test I was able to reduce the sample size down to 1200 (near the minimum required sample size to have a valid chi-squared test) and use a proper hypothesis test at the $\alpha = 0.01$ significance level.
 Unfortunately, the test would still fail 1% of the time until I added the `@py_random_state` decorator to `sample_spanning_tree`, and then the test can pass in a `Random` object to produce repeatable results.
 
 **Blog posts about `sample_spanning_tree`**
@@ -366,7 +366,7 @@ A brief overview of the whole algorithm is given below:
 
 1. Solve the Held Karp relaxation and symmertize the result to made it undirected.
 2. Calculate the maximum entropy spanning tree distribution on the Held Karp support graph.
-3. Sample \\(2 \lceil \ln n \rceil\\) spanning trees and record the smallest weight one before reintroducing direction to the edges.
+3. Sample $2 \lceil \ln n \rceil$ spanning trees and record the smallest weight one before reintroducing direction to the edges.
 4. Find the minimum cost circulation to create an eulerian graph containing the sampled tree.
 5. Take the eulerian walk of that graph and shortcut the answer.
 6. return the shortcut answer.
