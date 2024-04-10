@@ -47,8 +47,6 @@ params:
     text: Scientific Python Blog
     link: /
 
-  navbarlogoshow: true
-
   navbar:
     - title: Home
       url: https://scientific-python.org
