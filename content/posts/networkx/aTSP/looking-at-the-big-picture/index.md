@@ -23,26 +23,26 @@ Recall that from the Asadpour paper the overview of the algorithm is
 
 > ---
 >
-> **Algorithm 1** An \\(O(\log n / \log \log n)\\)-approximation algorithm for the ATSP
+> **Algorithm 1** An $O(\log n / \log \log n)$-approximation algorithm for the ATSP
 >
 > ---
 >
-> **Input:** A set \\(V\\) consisting of \\(n\\) points and a cost function \\(c\ :\ V \times V \rightarrow \mathbb{R}^+\\) satisfying the triangle inequality.
+> **Input:** A set $V$ consisting of $n$ points and a cost function $c\ :\ V \times V \rightarrow \mathbb{R}^+$ satisfying the triangle inequality.
 >
-> **Output:** \\(O(\log n / \log \log n)\\)-approximation of the asymmetric traveling salesman problem instance described by \\(V\\) and \\(c\\).
+> **Output:** $O(\log n / \log \log n)$-approximation of the asymmetric traveling salesman problem instance described by $V$ and $c$.
 >
-> 1. Solve the Held-Karp LP relaxation of the ATSP instance to get an optimum extreme point solution \\(x^\*\\).
->    Define \\(z^\*\\) as in (5), making it a symmetrized and scaled down version of \\(x^\*\\).
->    Vector \\(z^\*\\) can be viewed as a point in the spanning tree polytope of the undirected graph on the support of \\(x^\*\\) that one obtains after disregarding the directions of arcs (See Section 3.)
-> 2. Let \\(E\\) be the support graph of \\(z^\*\\) when the direction of the arcs are disregarded.
->    Find weights \\(\{\tilde{\gamma}\}\_{e \in E}\\) such that the exponential distribution on the spanning trees, \\(\tilde{p}(T) \propto \exp(\sum\_{e \in T} \tilde{\gamma}\_e)\\) (approximately) preserves the marginals imposed by \\(z^\*\\), i.e. for any edge \\(e \in E\\),
->    <center>\\(\sum\_{T \in \mathcal{T} : T \ni e} \tilde{p}(T) \leq (1 + \epsilon) z^\*\_e\\),</center>
->    for a small enough value of \\(\epsilon\\).
->    (In this paper we show that \\(\epsilon = 0.2\\) suffices for our purpose. See Section 7 and 8 for a description of how to compute such a distribution.)
-> 3. Sample \\(2\lceil \log n \rceil\\) spanning trees \\(T_1, \dots, T\_{2\lceil \log n \rceil}\\) from \\(\tilde{p}(.)\\).
->    For each of these trees, orient all its edges so as to minimize its cost with respect to our (asymmetric) cost function \\(c\\).
->    Let \\(T^\*\\) be the tree whose resulting cost is minimal among all of the sampled trees.
-> 4. Find a minimum cost integral circulation that contains the oriented tree \\(\vec{T}^\*\\).
+> 1. Solve the Held-Karp LP relaxation of the ATSP instance to get an optimum extreme point solution $x^\*$.
+>    Define $z^\*$ as in (5), making it a symmetrized and scaled down version of $x^\*$.
+>    Vector $z^\*$ can be viewed as a point in the spanning tree polytope of the undirected graph on the support of $x^\*$ that one obtains after disregarding the directions of arcs (See Section 3.)
+> 2. Let $E$ be the support graph of $z^\*$ when the direction of the arcs are disregarded.
+>    Find weights $\{\tilde{\gamma}\}\_{e \in E}$ such that the exponential distribution on the spanning trees, $\tilde{p}(T) \propto \exp(\sum\_{e \in T} \tilde{\gamma}\_e)$ (approximately) preserves the marginals imposed by $z^\*$, i.e. for any edge $e \in E$,
+>    <center>$\sum\_{T \in \mathcal{T} : T \ni e} \tilde{p}(T) \leq (1 + \epsilon) z^\*\_e$,</center>
+>    for a small enough value of $\epsilon$.
+>    (In this paper we show that $\epsilon = 0.2$ suffices for our purpose. See Section 7 and 8 for a description of how to compute such a distribution.)
+> 3. Sample $2\lceil \log n \rceil$ spanning trees $T_1, \dots, T\_{2\lceil \log n \rceil}$ from $\tilde{p}(.)$.
+>    For each of these trees, orient all its edges so as to minimize its cost with respect to our (asymmetric) cost function $c$.
+>    Let $T^\*$ be the tree whose resulting cost is minimal among all of the sampled trees.
+> 4. Find a minimum cost integral circulation that contains the oriented tree $\vec{T}^\*$.
 >    Shortcut this circulation to a tour and output it. (See Section 4.)
 >
 > ---
@@ -53,7 +53,7 @@ But before we get to creating pseudo code for it there is still step 4 which nee
 
 ## Circulation and Shortcutting
 
-Once we have sampled enough spanning trees from the graph and converted the minimum one into \\(\vec{T}^\*\\) we need to find the minimum cost integral circulation in the graph which contains \\(\vec{T}^\*\\).
+Once we have sampled enough spanning trees from the graph and converted the minimum one into $\vec{T}^\*$ we need to find the minimum cost integral circulation in the graph which contains $\vec{T}^\*$.
 While NetworkX a minimum cost circulation function, namely, [`min_cost_flow`](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.flow.min_cost_flow.html), it is not suitable for the Asadpour algorithm out of the box.
 The problem here is that we do not have node demands, we have edge demands.
 However, after some reading and discussion with one of my mentors Dan, we can convert the current problem into one which can be solved using the `min_cost_flow` function.
@@ -61,18 +61,18 @@ However, after some reading and discussion with one of my mentors Dan, we can co
 The problem that we are trying to solve is called the minimum cost circulation problem and the one which `min_cost_flow` is able to solve is the, well, minimum cost flow problem.
 As it happens, these are equivalent problems, so I can convert the minimum cost circulation into a minimum cost flow problem by transforming the minimum edge demands into node demands.
 
-Recall that at this point we have a directed minimum sampled spanning tree \\(\vec{T}^\*\\) and that the flow through each of the edges in \\(\vec{T}^\*\\) needs to be at least one.
-From the perspective of a flow problem, \\(\vec{T}^\*\\) is moving some flow around the graph.
-However, in order to augment \\(\vec{T}^\*\\) into an Eulerian graph so that we can walk it, we need to counteract this flow so that the net flow for each node is 0 \\((f(\delta^+(v)) = f(\delta^-(v))\\) in the Asadpour paper).
+Recall that at this point we have a directed minimum sampled spanning tree $\vec{T}^\*$ and that the flow through each of the edges in $\vec{T}^\*$ needs to be at least one.
+From the perspective of a flow problem, $\vec{T}^\*$ is moving some flow around the graph.
+However, in order to augment $\vec{T}^\*$ into an Eulerian graph so that we can walk it, we need to counteract this flow so that the net flow for each node is 0 $(f(\delta^+(v)) = f(\delta^-(v))$ in the Asadpour paper).
 
 So, we find the net flow of each node and then assign its demand to be the negative of that number so that the flow will balance at the node in question.
-If the total flow at any node \\(i\\) is \\(\delta^+(i) - \delta^-(i)\\) then the demand we assign to that node is \\(\delta^-(i) - \delta^+(i)\\).
+If the total flow at any node $i$ is $\delta^+(i) - \delta^-(i)$ then the demand we assign to that node is $\delta^-(i) - \delta^+(i)$.
 Once we assign the demands to the nodes we can temporarily ignore the edge lower capacities to find the minimum flow.
 
 For more information on the conversion process, please see [2].
 
-After the minimum flow is found, we take the support of the flow and add it to the \\(\vec{T}^\*\\) to create a multigraph \\(H\\).
-Now we know that \\(H\\) is weakly connected (it contains \\(\vec{T^\*}\\)) and that it is Eulerian because for every node the in-degree is equal to the out-degree.
+After the minimum flow is found, we take the support of the flow and add it to the $\vec{T}^\*$ to create a multigraph $H$.
+Now we know that $H$ is weakly connected (it contains $\vec{T^\*}$) and that it is Eulerian because for every node the in-degree is equal to the out-degree.
 A closed eulerian walk or eulerian circuit can be found in this graph with [`eulerian_circuit`](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.euler.eulerian_circuit.html).
 
 Here is an example of this process on a simple graph.
@@ -94,7 +94,7 @@ def asadpour_tsp
     Output: A list of edges which form the approximate ATSP solution.
 ```
 
-This is exactly what we'd expect, take a complete graph \\(G\\) satisfying the triangle inequality and return the edges in the approximate solution to the asymmetric traveling salesman problem.
+This is exactly what we'd expect, take a complete graph $G$ satisfying the triangle inequality and return the edges in the approximate solution to the asymmetric traveling salesman problem.
 Recall from my post [Networkx Function Stubs]({{< relref "networkx-function-stubs" >}}) what the primary traveling salesman function, `traveling_salesman_problem` will ensure that we are given a complete graph that follows the triangle inequality by using all-pairs shortest path calculations and will handle if we are expected to return a true cycle or only a path.
 
 The first step in the Asadpour algorithm is the Held Karp relaxation.
@@ -121,7 +121,7 @@ Once we have the Held Karp solution, we create the undirected support of `z_star
 ```
 
 This completes steps 1 and 2 in the Asadpour overview at the top of this post.
-Next we sample \\(2 \lceil \log n \rceil\\) spanning trees.
+Next we sample $2 \lceil \log n \rceil$ spanning trees.
 
 ```
     for u, v in z_support.edges
@@ -136,8 +136,8 @@ Next we sample \\(2 \lceil \log n \rceil\\) spanning trees.
 ```
 
 Now that we have the minimum sampled tree, we need to orient the edge directions to keep the cost equal to that minimum tree.
-We can do this by iterating over the edges in `minimum_sampled_tree` and checking the edge weights in the original graph \\(G\\).
-Using \\(G\\) is required here if we did not record the minimum direction which is a possibility when we create `z_support`.
+We can do this by iterating over the edges in `minimum_sampled_tree` and checking the edge weights in the original graph $G$.
+Using $G$ is required here if we did not record the minimum direction which is a possibility when we create `z_support`.
 
 ```
     t_star = nx.DiGraph

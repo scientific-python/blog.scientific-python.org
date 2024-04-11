@@ -2,7 +2,6 @@ baseURL: "https://blog.scientific-python.org/"
 languageCode: "en-us"
 title: "Blog"
 theme: scientific-python-hugo-theme
-relativeURLs: true
 disableKinds: ["RSS", "taxonomy"]
 ignoreErrors: ["error-disable-taxonomy"]
 
@@ -47,8 +46,6 @@ params:
     image: logo.svg
     text: Scientific Python Blog
     link: /
-
-  navbarlogoshow: true
 
   navbar:
     - title: Home

@@ -16,7 +16,7 @@ resources:
 ---
 
 There is only one thing that I need to figure out before the first coding period for GSoC starts on Monday: how to find _all_ of the minimum arborescences of a graph.
-This is the set \\(K(\pi)\\) in the Held and Karp paper from 1970 which can be refined down to \\(K(\pi, d)\\) or \\(K\_{X, Y}(\pi)\\) as needed.
+This is the set $K(\pi)$ in the Held and Karp paper from 1970 which can be refined down to $K(\pi, d)$ or $K\_{X, Y}(\pi)$ as needed.
 For more information as to why I need to do this, please see my last post [here]({{< relref "a-closer-look-at-held-karp" >}}).
 
 This is a place where my contributions to NetworkX to implement the Asadpour algorithm [1] for the directed traveling salesman problem will be useful to the rest of the NetworkX community (I hope).
@@ -41,15 +41,15 @@ The critical ideas for creating the partitions are given on pages 221 and 222 an
 
 In order to achieve these conditions, they define the generation of the partitions using this definition for a minimum spanning tree
 
-\\[
+$$
 s(P) = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (t\_1, v\_1), \dots, (t\_{n-r-1}, v\_{n-r-1}\}
-\\]
+$$
 
-where the \\((i, j)\\) edges are the included edges of the original partition and the \\((t, v)\\) are from the open edges of the original partition.
-Now, to create the next set of partitions, take each of the \\((t, v)\\) edges sequentially and introduce them one at a time, make that edge an excluded edge in the first partition it appears in and an included edge in all subsequent partitions.
+where the $(i, j)$ edges are the included edges of the original partition and the $(t, v)$ are from the open edges of the original partition.
+Now, to create the next set of partitions, take each of the $(t, v)$ edges sequentially and introduce them one at a time, make that edge an excluded edge in the first partition it appears in and an included edge in all subsequent partitions.
 This will produce something to the effects of
 
-\\[
+$$
 \begin{array}{l}
 P\_1 = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (\overline{m\_1, p\_1}), \dots, (\overline{m\_l, p\_l}), (\overline{t\_1, v\_1})\} \\\\\\
 P\_2 = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (t\_1, v\_1), (\overline{m\_1, p\_1}), \dots, (\overline{m\_l, p\_l}), (\overline{t\_2, v\_2})\} \\\\\\
@@ -60,20 +60,20 @@ P\_{n-r-1} = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (t\_1, v\_1), \dots, (t\_{n-r-
 (\overline{t\_{n-r-1}, v\_{n-r-1}})\}
 \end{multline\*} \\\\\\
 \end{array}
-\\]
+$$
 
 Now, if we extend this to a directed graph, our included and excluded edges become included and excluded arcs, but the definition of the spanning arborescence of a partition does not change.
-Let \\(s_a(P)\\) be the minimum spanning arborescence of a partition \\(P\\).
+Let $s_a(P)$ be the minimum spanning arborescence of a partition $P$.
 Then
 
-\\[
+$$
 s\_a(P) = \{(i\_1, j\_1), \dots, (i\_r, j\_r), (t\_1, v\_1), \dots, (t\_{n-r-1}, v\_{n-r-1}\}
-\\]
+$$
 
-\\(s_a(P)\\) is still constructed of all of the included arcs of the partition and a subset of the open arcs of that partition.
+$s_a(P)$ is still constructed of all of the included arcs of the partition and a subset of the open arcs of that partition.
 If we partition in the same manner as the Sörensen and Janssens paper [4], then their cannot be spanning trees which both include and exclude a given edge and this conflict exists for every combination of partitions.
 
-Clearly the original arborescence, which includes all of the \\((t_1, v_1), \dots, (t\_{n-r-1}, v\_{n-r-1})\\) cannot be an element of any of the resulting partitions.
+Clearly the original arborescence, which includes all of the $(t_1, v_1), \dots, (t\_{n-r-1}, v\_{n-r-1})$ cannot be an element of any of the resulting partitions.
 
 Finally, there is the claim that the union of the resulting partitions is the original partition minus the original minimum spanning tree.
 Being honest here, this claim took a while for me to understand.
@@ -88,21 +88,21 @@ We need to modify Edmonds’ algorithm to mandate that certain arcs be included 
 To start, a review of this algorithm is in order.
 The original description of the algorithm is given on pages 234 and 235 of Jack Edmonds' 1967 paper _Optimum Branchings_ [2] and roughly speaking it has three major steps.
 
-1. For each vertex \\(v\\), find the incoming arc with the smallest weight and place that arc in a bucket \\(E^i\\) and the vertex in a bucket \\(D^i\\).
-   Repeat this step until either (a) \\(E^i\\) no longer qualifies as a branching or (b) all vertices of the graph are in \\(D^i\\).
+1. For each vertex $v$, find the incoming arc with the smallest weight and place that arc in a bucket $E^i$ and the vertex in a bucket $D^i$.
+   Repeat this step until either (a) $E^i$ no longer qualifies as a branching or (b) all vertices of the graph are in $D^i$.
    If (a) occurs, go to step 2, otherwise go to step 3.
-2. If \\(E^i\\) no longer qualifies as a branching then it must contain a cycle.
-   Contract all of the vertices of the cycle into one new one, say \\(v_1^{i + 1}\\).
-   Every edge which has one endpoint in the cycle has that endpoint replaced with \\(v_1^{i + 1}\\) and its cost updated.
-   Using this new graph \\(G^{i + 1}\\), create buckets \\(D^{i + 1}\\) containing the nodes in both \\(G^{i + 1}\\) and \\(D^i\\) and \\(E^{i + 1}\\) containing edges in both \\(G^{i + 1}\\) and \\(E^i\\)
-   (i.e. remove the edges and vertices which are affected by the creation of \\(G^{i + 1}\\).)
-   Return to step 1 and apply it to graph \\(G^{i + 1}\\).
+2. If $E^i$ no longer qualifies as a branching then it must contain a cycle.
+   Contract all of the vertices of the cycle into one new one, say $v_1^{i + 1}$.
+   Every edge which has one endpoint in the cycle has that endpoint replaced with $v_1^{i + 1}$ and its cost updated.
+   Using this new graph $G^{i + 1}$, create buckets $D^{i + 1}$ containing the nodes in both $G^{i + 1}$ and $D^i$ and $E^{i + 1}$ containing edges in both $G^{i + 1}$ and $E^i$
+   (i.e. remove the edges and vertices which are affected by the creation of $G^{i + 1}$.)
+   Return to step 1 and apply it to graph $G^{i + 1}$.
 3. Once this step is reached, we have a smaller graph for which we have found a minimum spanning arborescence.
    Now we need to un-contract all of the cycles to return to the original graph.
-   To do this, if the node \\(v_1^{i + 1}\\) is the root of the arborescence or not.
-   - \\(v_1^{i + 1}\\) is the root: Remove the arc of maximum weight from the cycle represented by \\(v_1^{i + 1}\\).
-   - \\(v_1^{i + 1}\\) is not the root: There is a single arc directed towards \\(v_1^{i + 1}\\) which translates into an arc directed to one of the vertices in the cycle represented by \\(v_1^{i + 1}\\).
-     Because \\(v_1^{i + 1}\\) represents a cycle, there is another arc wholly internal to the cycle which is directed into the same vertex as the incoming edge to the cycle.
+   To do this, if the node $v_1^{i + 1}$ is the root of the arborescence or not.
+   - $v_1^{i + 1}$ is the root: Remove the arc of maximum weight from the cycle represented by $v_1^{i + 1}$.
+   - $v_1^{i + 1}$ is not the root: There is a single arc directed towards $v_1^{i + 1}$ which translates into an arc directed to one of the vertices in the cycle represented by $v_1^{i + 1}$.
+     Because $v_1^{i + 1}$ represents a cycle, there is another arc wholly internal to the cycle which is directed into the same vertex as the incoming edge to the cycle.
      Delete the internal one to break the cycle.
      Repeat until the original graph has been restored.
 

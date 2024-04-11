@@ -22,9 +22,9 @@ My mentors and I agreed that the branch and bound method discussed in Held and K
 For the last week and a half I have been implementing and debugging the ascent method and wanted to take some time to reflect on what I have learned.
 
 I will start by saying that as of the writing of this post, my version of the ascent method is not giving what I expect to be the optimal solution.
-For my testing, I took the graph which Held and Karp use in their example of the branch and bound method, a weighted \\(\mathcal{K}\_6\\), and converted to a directed but symmetric version given in the following adjacency matrix.
+For my testing, I took the graph which Held and Karp use in their example of the branch and bound method, a weighted $\mathcal{K}\_6$, and converted to a directed but symmetric version given in the following adjacency matrix.
 
-\\[
+$$
 \begin{bmatrix}
 0 & 97 & 60 & 73 & 17 & 52 \\\\\\
 97 & 0 & 41 & 52 & 90 & 30 \\\\\\
@@ -33,7 +33,7 @@ For my testing, I took the graph which Held and Karp use in their example of the
 17 & 90 & 35 & 95 & 0 & 81 \\\\\\
 52 & 30 & 41 & 46 & 81 & 0
 \end{bmatrix}
-\\]
+$$
 
 The original solution is an undirected tour but in the directed version, the expected solutions depend on which way they are traversed.
 Both of these cycles have a total weight of 207.
@@ -56,7 +56,7 @@ I stated that
 > In order to connect vertex 1, we would choose the outgoing arc with the smallest cost and the incoming arc with the smallest cost.
 
 In reality, this method would produce graphs which are almost arborescences based solely on the fact that the outgoing arc would almost certainly create a vertex with two incoming arcs.
-Instead, we need to connect vertex 1 with the incoming edge of lowest cost and the edge connecting to the root node of the arborescence on nodes \\(\{2, 3, \dots, n\}\\) that way the in-degree constraint is not violated.
+Instead, we need to connect vertex 1 with the incoming edge of lowest cost and the edge connecting to the root node of the arborescence on nodes $\{2, 3, \dots, n\}$ that way the in-degree constraint is not violated.
 
 For the test graph on the first iteration of the ascent method, `k_pi()` returned 10 1-arborescences but the costs were not all the same.
 Notice that because we have no agency in choosing the outgoing edge of vertex 1 that the total cost of the 1-arborescence will vary by the difference between the cheapest root to connect to and the most expensive node to connect to.
@@ -163,26 +163,26 @@ Either way, the fact that I had almost entirely re-written this function without
 
 This was the one function which has pseudocode in the Held and Karp paper:
 
-> 1. Set \\(d\\) equal to the zero \\(n\\)-vector.
-> 2. Find a 1-tree \\(T^k\\) such that \\(k \in K(\pi, d)\\). [A method of executing Step 2 follows from the results of Section 6 (the greedy algorithm).]
-> 3. If \\(\sum\_{i=1}^{i=n} d_i v\_{i k} > 0\\), STOP.
-> 4. \\(d_i \rightarrow d_i + v\_{i k}\\), for \\(i = 2, 3, \dots, n\\)
+> 1. Set $d$ equal to the zero $n$-vector.
+> 2. Find a 1-tree $T^k$ such that $k \in K(\pi, d)$. [A method of executing Step 2 follows from the results of Section 6 (the greedy algorithm).]
+> 3. If $\sum\_{i=1}^{i=n} d_i v\_{i k} > 0$, STOP.
+> 4. $d_i \rightarrow d_i + v\_{i k}$, for $i = 2, 3, \dots, n$
 > 5. GO TO 2.
 
 Using this as a guide, the implementation of this function was simple until I got to the terminating condition, which is a linear program discussed on page 1149 as
 
-> Thus, when failure to terminate is suspected, it is necessary to check whether no direction of ascent exists; by the Minkowski-Farkas lemma this is equivalent to the existence of nonnegative coefficients \\(\alpha_k\\) such that
+> Thus, when failure to terminate is suspected, it is necessary to check whether no direction of ascent exists; by the Minkowski-Farkas lemma this is equivalent to the existence of nonnegative coefficients $\alpha_k$ such that
 >
-> \\( \sum\_{k \in K(\pi)} \alpha_kv\_{i k} = 0, \quad i = 1, 2, \dots, n \\)
+> $ \sum\_{k \in K(\pi)} \alpha_kv\_{i k} = 0, \quad i = 1, 2, \dots, n $
 >
 > This can be checked by linear programming.
 
 While I was able to implement this without much issue, one _very_ important constraint of the linear program was not mentioned here, but rather the page before during a proof.
 That constraint is
 
-\\[
+$$
 \sum\_{k \in K(\pi)} \alpha\_k = 1
-\\]
+$$
 
 Once I spent several hours trying to debug the original linear program and noticed the missing constraint. The linear program started to behave correctly, terminating the program when a tour is found.
 
@@ -193,13 +193,13 @@ This function requires a completely different implementation compared to the one
 The basic idea in both my implementation for directed graphs and the description for undirected graphs is finding edges which are substitutes for each other, or an edge outside the 1-arborescence which can replace an edge in the arborescence and will result in a 1-arborescence.
 
 The undirected version uses the idea of fundamental cycles in the tree to find the substitutes, and I tried to use this idea as will with the [`find_cycle()`](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.cycles.find_cycle.html) function in the NetworkX library.
-I executed the first iteration of the ascent method by hand and noticed that what I computed for all of the possible values of \\(\epsilon\\) and what the program found did not match.
+I executed the first iteration of the ascent method by hand and noticed that what I computed for all of the possible values of $\epsilon$ and what the program found did not match.
 I had found several that it had missed and it found several that I missed.
 For the example graph, I found that the following edge pairs are substitutes where the first edge is not in the 1-arborescence and the second one is the one in the 1-arborescence which it can replace using the below minimum 1-arborescence.
 
 <center><img src="minimum-1-arborescence.png" width=350 alt="1-arborescence after the first iteration of the ascent method"/></center>
 
-\\[
+$$
 \begin{array}{l}
 (0, 1) \rightarrow (2, 1) \text{ valid: } \epsilon = 56 \\\\\\
 (0, 2) \rightarrow (4, 2) \text{ valid: } \epsilon = 25 \\\\\\
@@ -214,11 +214,11 @@ For the example graph, I found that the following edge pairs are substitutes whe
 (4, 5) \rightarrow (1, 5) \text{ valid: } \epsilon = -25.5 \text{, not valid (negative }\epsilon) \\\\\\
 (5, 3) \rightarrow (2, 3) \text{ valid: } \epsilon = 25 \\\\\\
 \end{array}
-\\]
+$$
 
 I missed the following substitutes which the program did find.
 
-\\[
+$$
 \begin{array}{l}
 (1, 0) \rightarrow (4, 0) \text{ valid: } \epsilon = 80 \\\\\\
 (1, 4) \rightarrow (0, 4) \text{ valid: } \epsilon = 73 \\\\\\
@@ -229,22 +229,22 @@ I missed the following substitutes which the program did find.
 (5, 0) \rightarrow (4, 0) \text{ valid: } \epsilon = 35 \\\\\\
 (5, 4) \rightarrow (0, 4) \text{ valid: } \epsilon = \frac{17 - 81}{0 - 0} \text{, not valid} \\\\\\
 \end{array}
-\\]
+$$
 
 Notice that some substitutions do not cross over if we move in the direction of ascent, which are the pairs which have a zero as the denominator.
-Additionally, \\(\epsilon\\) is a distance, and the concept of a negative distance does not make sense.
+Additionally, $\epsilon$ is a distance, and the concept of a negative distance does not make sense.
 Interpreting a negative distance as a positive distance in the opposite direction, if we needed to move in that direction, the direction of ascent vector would be pointing the other way.
 
 The reason that my list did not match the list of the program was because `find_cycle()` did not always return the fundamental cycle containing the new edge.
-If I called `find_cycle()` on a vertex in the other cycle in the graph (in this case \\(\{(0, 4), (4, 0)\}\\)), it would return that rather than the true fundamental cycle.
+If I called `find_cycle()` on a vertex in the other cycle in the graph (in this case $\{(0, 4), (4, 0)\}$), it would return that rather than the true fundamental cycle.
 
 This prompted me to think about what really determines if edges in a 1-arborescence are substitutes for each other.
 In every case where a substitute was valid, both of those edges lead to the same vertex.
 If they did not, then the degree constraint of the arborescence would be violated because we did not replace the edge leading into a node with another edge leading into the same node.
 This is true regardless of if the edges are part of the same fundamental cycle or not.
 
-Thus, `find_epsilon()` now takes every edge in the graph but not the chosen 1-arborescence \\(k \in K(\pi, d)\\) and find the other edge in \\(k\\) pointing to the same vertex, swaps them and then checks that the degree constraint is not violated, it has the correct number of edges and it is still connected.
-This is a more efficient method to use, and it found more valid substitutions as well so I was hopeful that it would finally bring the returned solution down to the optimal solution, perhaps because it was missing the correct value of \\(\epsilon\\) on even just one of the iterations.
+Thus, `find_epsilon()` now takes every edge in the graph but not the chosen 1-arborescence $k \in K(\pi, d)$ and find the other edge in $k$ pointing to the same vertex, swaps them and then checks that the degree constraint is not violated, it has the correct number of edges and it is still connected.
+This is a more efficient method to use, and it found more valid substitutions as well so I was hopeful that it would finally bring the returned solution down to the optimal solution, perhaps because it was missing the correct value of $\epsilon$ on even just one of the iterations.
 
 It did not.
 

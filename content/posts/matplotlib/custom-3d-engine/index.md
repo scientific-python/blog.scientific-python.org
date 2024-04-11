@@ -160,7 +160,7 @@ Now we can display the result again ([bunny-2.py](bunny-2.py)):
 
 Oh, weird result. What's wrong? What is wrong is that the camera is actually
 inside the bunny. To have a proper rendering, we need to move the bunny away
-from the camera or move the camera away from the bunny. Let's do the later. The
+from the camera or move the camera away from the bunny. Let's do the latter. The
 camera is currently positioned at (0,0,0) and looking up in the z direction
 (because of the frustum transformation). We thus need to move the camera away a
 little bit in the z negative direction and **before the perspective

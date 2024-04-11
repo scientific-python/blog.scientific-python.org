@@ -89,7 +89,7 @@ for u, v, d in min_weight_tour.edges(data="weight"):
 
 ## Everything is Cool with the Ascent Method
 
-This is useful information as every though the ascent method returns a vector, because if the ascent method returns this solution (a.k.a \\(f(\pi) = 0\\)) we can calculate that vector off of the edges in the solution without having to explicitly enumerate the dict returned by `held_karp_ascent()`.
+This is useful information as every though the ascent method returns a vector, because if the ascent method returns this solution (a.k.a $f(\pi) = 0$) we can calculate that vector off of the edges in the solution without having to explicitly enumerate the dict returned by `held_karp_ascent()`.
 
 The first output from the program was a six vertex graph and is presented below.
 
@@ -116,10 +116,10 @@ sys     0m0.241s
 ```
 
 First I checked that the ascent method was returning a solution with the same weight, 144, which it was.
-Also, every entry in the vector was \\(0.866\overline{6}\\) which is \\(\frac{5}{6}\\) or the scaling factor from the Asadpour paper so I know that it was finding the exact solution.
-Because if this, my test in `test_traveling_salesman.py` checks that for all edges in the solution edge set both \\((u, v)\\) and \\((v, u)\\) are equal to \\(\frac{5}{6}\\).
+Also, every entry in the vector was $0.866\overline{6}$ which is $\frac{5}{6}$ or the scaling factor from the Asadpour paper so I know that it was finding the exact solution.
+Because if this, my test in `test_traveling_salesman.py` checks that for all edges in the solution edge set both $(u, v)$ and $(v, u)$ are equal to $\frac{5}{6}$.
 
-For my next test, I created a \\(7 \times 7\\) matrix to test with, and as expected the running time of the python script was much slower.
+For my next test, I created a $7 \times 7$ matrix to test with, and as expected the running time of the python script was much slower.
 
 ```
 ~ time python3 brute_force_optimal_tour.py
@@ -145,7 +145,7 @@ user	7m29.048s
 sys     0m0.245s
 ```
 
-Once again, the value of \\(f(\pi)\\) hit 0, so the ascent method returned an exact solution and my testing procedure was the same as for the six vertex graph.
+Once again, the value of $f(\pi)$ hit 0, so the ascent method returned an exact solution and my testing procedure was the same as for the six vertex graph.
 
 ## Trouble with Branch and Bound
 
@@ -157,8 +157,8 @@ I moved to the six vertex graph with high hopes, I already had a six vertex grap
 The six vertex graph created a large number of exceptions and errors when I ran the tests.
 I was able to determine why the errors were being generated, but the context did not conform which my expectations for the branch and bound method.
 
-Basically, `direction_of_ascent_kilter()` was finding a vertex which was out-of-kilter and returning the corresponding direction of ascent, but `find_epsilon()` was not finding any valid cross over edges and returning a maximum direction of travel of \\(\infty\\).
-While I could change the default value for the return value of `find_epsilon()` to zero, that would not solve the problem because the value of the vector \\(\pi\\) would get stuck and the program would enter an infinite loop.
+Basically, `direction_of_ascent_kilter()` was finding a vertex which was out-of-kilter and returning the corresponding direction of ascent, but `find_epsilon()` was not finding any valid cross over edges and returning a maximum direction of travel of $\infty$.
+While I could change the default value for the return value of `find_epsilon()` to zero, that would not solve the problem because the value of the vector $\pi$ would get stuck and the program would enter an infinite loop.
 
 I do have an analogy for this situation.
 Imagine that you are in an unfamiliar city and you have to meet somebody at the tallest building in that city.

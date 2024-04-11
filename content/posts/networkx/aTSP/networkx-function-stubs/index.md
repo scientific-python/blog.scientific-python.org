@@ -65,7 +65,7 @@ def traveling_salesman_problem(G, weight="weight", nodes=None, cycle=True, metho
 
 All user calls to find an approximation to the traveling salesman problem will go through this function.
 My implementation of the Asadpour algorithm will also need to be compatible with this function.
-`traveling_salesman_problem` will handle creating a new, complete graph using the weight of the shortest path between nodes \\(u\\) and \\(v\\) as the weight of that arc, so we know that by the time the graph is passed to the Asadpour algorithm it is a complete digraph which satisfies the triangle inequality.
+`traveling_salesman_problem` will handle creating a new, complete graph using the weight of the shortest path between nodes $u$ and $v$ as the weight of that arc, so we know that by the time the graph is passed to the Asadpour algorithm it is a complete digraph which satisfies the triangle inequality.
 The main function also handles the `nodes` and `cycles` parameters by only copying the necessary nodes into the complete digraph before calling the requested method and afterwards searching for and removing the largest arc within the returned cycle.
 Thus, the parent function for the Asadpour algorithm only needs to deal with the graph itself and the weights or costs of the arcs in the graph.
 
@@ -125,25 +125,25 @@ Solving the Held-Karp relaxation is the first step in the algorithm.
 
 Recall that the Held-Karp relaxation is defined as the following linear program:
 
-\\[
+$$
 \begin{array}{c l l}
 \text{min} & \sum_{a} c(a)x_a \\\\\\
 \text{s.t.} & x(\delta^+(U)) \geqslant 1 & \forall\ U \subset V \text{ and } U \not= \emptyset \\\\\\
 & x(\delta^+(v)) = x(\delta^-(v)) = 1 & \forall\ v \in V \\\\\\
 & x_a \geqslant 0 & \forall\ a
 \end{array}
-\\]
+$$
 
 and that it is a semi-infinite program so it is too large to be solved in conventional forms.
-The algorithm uses the solution to the Held-Karp relaxation to create a vector \\(z^\*\\) which is a symmetrized and slightly scaled down version of the true Held-Karp solution \\(x^\*\\).
-\\(z^\*\\) is defined as
+The algorithm uses the solution to the Held-Karp relaxation to create a vector $z^\*$ which is a symmetrized and slightly scaled down version of the true Held-Karp solution $x^\*$.
+$z^\*$ is defined as
 
-\\[
+$$
 z^\*\_{\{u, v\}} = \frac{n - 1}{n} \left(x^\*\_{uv} + x^\*\_{vu}\right)
-\\]
+$$
 
 and since this is what the algorithm using to build the rest of the approximation, this should be one of the return values from `held_karp`.
-I will also return the value of the cost of \\(x^\*\\), which is denoted as \\(c(x^\*)\\) or \\(OPT\_{HK}\\) in the Asadpour paper [1].
+I will also return the value of the cost of $x^\*$, which is denoted as $c(x^\*)$ or $OPT\_{HK}$ in the Asadpour paper [1].
 
 Additionally, the separation oracle will be defined as an inner function within `held_karp`.
 At the present moment I am not sure what the exact parameters for the separation oracle, `sep_oracle`, but it should be the the point the algorithm wishes to test and will need to access the graph the algorithm is relaxing.
@@ -251,7 +251,7 @@ def _spanning_tree_distribution(z_star):
 ```
 
 Now that the algorithm has the distribution of spanning trees, we need to sample them.
-Each sampled tree is a \\(\lambda\\)-random tree and can be sampled using algorithm A8 in [2].
+Each sampled tree is a $\lambda$-random tree and can be sampled using algorithm A8 in [2].
 
 ```python
 def _sample_spanning_tree(G, gamma):
@@ -332,7 +332,7 @@ Which is exactly what I need, _except_ the decorator states that it does not sup
 Fortunately, our distribution of spanning trees is for trees in a directed graph _once the direction is disregarded_, so we can actually use the existing function.
 The definition given in the Asadpour paper [1], is
 
-\\[
+$$
 L\_{i,j} = \left\\{
 \begin{array}{l l}
 -\lambda\_e & e = (i, j) \in E \\\\\\
@@ -340,9 +340,9 @@ L\_{i,j} = \left\\{
 0 & \text{otherwise}
 \end{array}
 \right.
-\\]
+$$
 
-Where \\(E\\) is defined as "Let \\(E\\) be the support of graph of \\(z^\*\\) when the direction of the arcs are disregarded" on page 5 of the Asadpour paper.
+Where $E$ is defined as "Let $E$ be the support of graph of $z^\*$ when the direction of the arcs are disregarded" on page 5 of the Asadpour paper.
 Thus, I can use the existing method without having to create a new one, which will save time and effort on this GSoC project.
 
 In addition to being discussed here, these function stubs have been added to my fork of `NetworkX` on the `bothTSP` branch.
