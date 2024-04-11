@@ -10,7 +10,7 @@ displayInList: true
 author: ["Paula Pérez Bianchi"]
 ---
 
-This is the second part of a blog series where I talk about my experience during my Outreachy internship at NetworkX. If you haven’t read the first part you can find it [here]({{< relref "contribution-phase" >}}).
+This is the second part of a blog series where I talk about my experience during my Outreachy internship at NetworkX. If you haven’t read the first part you can find it [here](../contribution-phase).
 
 As you advance through the contribution phase you may wonder how your internship is gonna be in case you get selected. Here is my experience as a **NetworkX** intern and some tips that could help you through the internship.
 

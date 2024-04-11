@@ -81,9 +81,9 @@ This class I'm sure will be useful to the other users of NetworkX and provided a
 
 **Blog Posts about `SpanningTreeIterator`**
 
-5 Jun 2021 - [Finding All Minimum Arborescences]({{< relref "finding-all-minimum-arborescences" >}})
+5 Jun 2021 - [Finding All Minimum Arborescences](../finding-all-minimum-arborescences)
 
-10 Jun 2021 - [Implementing The Iterators]({{< relref "implementing-the-iterators" >}})
+10 Jun 2021 - [Implementing The Iterators](../implementing-the-iterators)
 
 **Commits about `SpanningTreeIterator`**
 
@@ -124,9 +124,9 @@ This was used as part of the branch and bound method, but is no longer a part of
 
 **Blog Posts about `ArborescenceIterator`**
 
-5 Jun 2021 - [Finding All Minimum Arborescences]({{< relref "finding-all-minimum-arborescences" >}})
+5 Jun 2021 - [Finding All Minimum Arborescences](../finding-all-minimum-arborescences)
 
-10 Jun 2021 - [Implementing The Iterators]({{< relref "implementing-the-iterators" >}})
+10 Jun 2021 - [Implementing The Iterators](../implementing-the-iterators)
 
 **Commits about `ArborescenceIterator`**
 
@@ -190,21 +190,21 @@ All of this is detailed in the (many) blog posts I wrote on this topic, which ar
 
 My first two posts were about the `scipy` solution and the ellipsoid algorithm.
 
-11 Apr 2021 - [Held Karp Relaxation]({{< relref "held-karp-relaxation" >}})
+11 Apr 2021 - [Held Karp Relaxation](../held-karp-relaxation)
 
-8 May 2021 - [Held Karp Separation Oracle]({{< relref "held-karp-separation-oracle" >}})
+8 May 2021 - [Held Karp Separation Oracle](../held-karp-separation-oracle)
 
 This next post discusses the merits of each algorithm presenting in the original Held and Karp paper [3].
 
-3 Jun 2021 - [A Closer Look At Held Karp]({{< relref "a-closer-look-at-held-karp" >}})
+3 Jun 2021 - [A Closer Look At Held Karp](../a-closer-look-at-held-karp)
 
 And finally, the last three Held Karp related posts are about the debugging of the algorithms I did implement.
 
-22 Jun 2021 - [Understanding The Ascent Method]({{< relref "understanding-the-ascent-method" >}})
+22 Jun 2021 - [Understanding The Ascent Method](../understanding-the-ascent-method)
 
-28 Jun 2021 - [Implementing The Held Karp Relaxation]({{< relref "implementing-the-held-karp-relaxation" >}})
+28 Jun 2021 - [Implementing The Held Karp Relaxation](../implementing-the-held-karp-relaxation)
 
-7 Jul 2021 - [Finalizing Held Karp]({{< relref "finalizing-held-karp" >}})
+7 Jul 2021 - [Finalizing Held Karp](../finalizing-held-karp)
 
 **Commits about the Held Karp relaxation**
 
@@ -278,9 +278,9 @@ Multiplying my original value of $q_e(\gamma)$ by $\exp(\gamma_e)$ proved to be 
 
 **Blog posts about `spanning_tree_distribution`**
 
-13 Jul 2021 - [Entropy Distribution Setup]({{< relref "entropy-distribution-setup" >}})
+13 Jul 2021 - [Entropy Distribution Setup](../entropy-distribution-setup)
 
-20 Jul 2021 - [The Entropy Distribution]({{< relref "entropy-distribution" >}})
+20 Jul 2021 - [The Entropy Distribution](../entropy-distribution)
 
 **Commits about `spanning_tree_distribution`**
 
@@ -336,9 +336,9 @@ Unfortunately, the test would still fail 1% of the time until I added the `@py_r
 
 **Blog posts about `sample_spanning_tree`**
 
-21 Jul 2021 - [Preliminaries For Sampling A Spanning Tree]({{< relref "preliminaries-for-sampling-a-spanning-tree" >}})
+21 Jul 2021 - [Preliminaries For Sampling A Spanning Tree](../preliminaries-for-sampling-a-spanning-tree)
 
-28 Jul 2021 - [Sampling A Spanning Tree]({{< relref "sampling-a-spanning-tree" >}})
+28 Jul 2021 - [Sampling A Spanning Tree](../sampling-a-spanning-tree)
 
 **Commits about `sample_spanning_tree`**
 
@@ -373,9 +373,9 @@ A brief overview of the whole algorithm is given below:
 
 **Blog posts about `asadpour_atsp`**
 
-29 Jul 2021 - [Looking At The Big Picture]({{< relref "looking-at-the-big-picture" >}})
+29 Jul 2021 - [Looking At The Big Picture](../looking-at-the-big-picture)
 
-10 Aug 2021 - [Completing The Asadpour Algorithm]({{< relref "completing-the-asadpour-algorithm" >}})
+10 Aug 2021 - [Completing The Asadpour Algorithm](../completing-the-asadpour-algorithm)
 
 **Commits about `asadpour_atsp`**
 

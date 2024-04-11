@@ -11,7 +11,7 @@ author: ["Konstantinos Petridis"]
 
 ---
 
-The last and final post discussing the **VF2++ helpers** can be found [here]({{< relref "ISO-feasibility-candidates" >}}).
+The last and final post discussing the **VF2++ helpers** can be found [here](../iso-feasibility-candidates).
 Now that we've figured out how to solve all the sub-problems that **VF2++** consists of, we are ready to combine our
 implemented functionalities to create the final solver for the **Graph Isomorphism** problem.
 

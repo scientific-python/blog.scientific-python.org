@@ -24,7 +24,7 @@ Recall that the algorithm for creating the distribution is given in the Asadpour
 >    - Set $\gamma \leftarrow \gamma'$.
 > 3. Output $\tilde{\gamma} := \gamma$.
 
-Now, the procedure that I laid out in my last blog titled [Entropy Distribution Setup]({{< relref "entropy-distribution-setup" >}}) worked well for the while loop portion.
+Now, the procedure that I laid out in my last blog titled [Entropy Distribution Setup](../entropy-distribution-setup) worked well for the while loop portion.
 All of my difficulties with the NetworkX API happened in the `q` inner function.
 
 After I programmed the function, I of course needed to run it and at first I was just printing the `gamma` dict out so that I could see what the values for each edge were.

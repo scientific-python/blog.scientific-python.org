@@ -48,7 +48,7 @@ Recall that from the Asadpour paper the overview of the algorithm is
 > ---
 
 We are now firmly in the steps 3 and 4 area.
-Going all the way back to my post on 24 May 2021 titled [Networkx Function stubs]({{< relref "networkx-function-stubs" >}}) the only function left is `asadpour_tsp`, the main function which needs to accomplish this entire algorithm.
+Going all the way back to my post on 24 May 2021 titled [Networkx Function stubs](../networkx-function-stubs) the only function left is `asadpour_tsp`, the main function which needs to accomplish this entire algorithm.
 But before we get to creating pseudo code for it there is still step 4 which needs a thorough examination.
 
 ## Circulation and Shortcutting
@@ -95,7 +95,7 @@ def asadpour_tsp
 ```
 
 This is exactly what we'd expect, take a complete graph $G$ satisfying the triangle inequality and return the edges in the approximate solution to the asymmetric traveling salesman problem.
-Recall from my post [Networkx Function Stubs]({{< relref "networkx-function-stubs" >}}) what the primary traveling salesman function, `traveling_salesman_problem` will ensure that we are given a complete graph that follows the triangle inequality by using all-pairs shortest path calculations and will handle if we are expected to return a true cycle or only a path.
+Recall from my post [Networkx Function Stubs](../networkx-function-stubs) what the primary traveling salesman function, `traveling_salesman_problem` will ensure that we are given a complete graph that follows the triangle inequality by using all-pairs shortest path calculations and will handle if we are expected to return a true cycle or only a path.
 
 The first step in the Asadpour algorithm is the Held Karp relaxation.
 I am planning on editing the flow of the algorithm here a bit.
