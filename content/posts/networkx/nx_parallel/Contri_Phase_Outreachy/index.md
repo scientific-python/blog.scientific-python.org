@@ -21,39 +21,69 @@ One of the TSP-related [issues](https://github.com/networkx/networkx/issues/6748
 There were 5 initial tasks that our mentor([@MridulS](https://github.com/MridulS)) wanted us to do as Outreachy's potential interns, to get familiar with the codebase and set up the development environment. One of the tasks was to run the [timing_individual_function.py](https://github.com/networkx/nx-parallel/blob/main/timing/timing_individual_function.py) script in nx-parallel, and generate a heatmap depicting how much faster the nx-parallel implementations are as compared to the standard, sequential networkx implementations for the `betweenness_centrality` function. [At first](https://github.com/networkx/outreachy/pull/206), I wasn't able to observe any speedup values greater than 1 in my heatmap, which led me to explore how the timing script was working and dig deeper into how the repository was set up.
 
 <div style="text-align: center;">
-    <img src="aditij_heatmap_1.png" alt="heatmap for betweenness_centality with no speedups"  width="800">
-    <p>heatmap for betweenness_centality algorithm with negligible speedups</p>
+    {{< image >}}
+    src = 'aditij_heatmap_1.png'
+    alt = 'heatmap for betweenness_centality with no speedups'
+    width = 800
+    align = 'center'
+    {{< /image >}}
+    Heatmap for betweenness_centality algorithm with negligible speedups
 </div>
 
 While trying to figure this out, I enjoyed observing and playing around with all the stats in the Activity Monitor(in Mac). At the time I didn't know how the parallel implementation worked so when I observed the number of threads increase and the CPU% increase for the `kernel_task` process, I thought that maybe parallel implementation does threading. And it made sense because I was running the timing script through my terminal and I had heard people refer terminal as a kernel sometimes.
 
 <div style="text-align: center;">
-    <img src="aditij_activity_monitor_ss1.png" alt="While sequential implementation (low % CPU for kernel_task)"  width="800">
-    <p>While sequential implementation (low % CPU for kernel_task)</p>
+    {{< image >}}
+    src = 'aditij_activity_monitor_ss1.png'
+    alt = 'While sequential implementation (low % CPU for kernel_task)'
+    width = 800
+    align = 'center'
+    {{< /image >}}
+    While sequential implementation (low % CPU for kernel_task)
 </div>
 
 <div style="text-align: center;">
-    <img src="aditij_activity_monitor_ss2.png" alt="While parallel implementation (number of threads and %CPU for kernel_task increases)"  width="800">
-    <p>While parallel implementation (number of threads and %CPU for kernel_task increases)</p>
+    {{< image >}}
+    src = 'aditij_activity_monitor_ss2.png'
+    alt = 'While parallel implementation (number of threads and %CPU for kernel_task increases)'
+    width = 800
+    align = 'center'
+    {{< /image >}}
+    While parallel implementation (number of threads and %CPU for kernel_task increases)
 </div>
 
 But later, when I looked at the code, I discovered that the default backend(`loky`) of `joblib.Parallel` creates parallel processes and not threads, and then I did see there were also new python3.11 processes getting formed. I also observed the usage of all the CPU cores (ref. the small window in the screenshots).
 
 <div style="text-align: center;">
-    <img src="aditij_activity_monitor_ss3.png" alt="Only one python3.11 process with 99.9% CPU while sequential implementation" width="800">
-    <p>Only one python3.11 process with 99.9% CPU while sequential implementation</p>
+    {{< image >}}
+    src = 'aditij_activity_monitor_ss3.png'
+    alt = 'Only one python3.11 process with 99.9% CPU while sequential implementation'
+    width = 800
+    align = 'center'
+    {{< /image >}}
+    Only one python3.11 process with 99.9% CPU while sequential implementation
 </div>
 
 <div style="text-align: center;">
-    <img src="aditij_activity_monitor_ss4.png" alt="8 more python3.11 processes using CPU while parallel implementation is running" width="800">
-    <p>8 more python3.11 processes using CPU while parallel implementation is running</p>
+    {{< image >}}
+    src = 'aditij_activity_monitor_ss4.png'
+    alt = '8 more python3.11 processes using CPU while parallel implementation is running'
+    width = 800
+    align = 'center'
+    {{< /image >}}
+    8 more python3.11 processes using CPU while parallel implementation is running
 </div>
 
 But, later I figured there were no speedups because I didn't set up the development environment properly. And, I also ended up [fixing a bug](https://github.com/networkx/nx-parallel/pull/13) in the timing script, related to edge probability. Here is the final heatmap:
 
 <div style="text-align: center;">
-    <img src="aditij_heatmap_2.png" alt="heatmap for betweenness_centality with speedups"  width="800">
-    <p>heatmap for betweenness_centality algorithm with speedups</p>
+    {{< image >}}
+    src = 'aditij_heatmap_2.png'
+    alt = 'heatmap for betweenness_centality with speedups'
+    width = 800
+    align = 'center'
+    {{< /image >}}
+    Heatmap for betweenness_centality algorithm with speedups
 </div>
 
 ### 1. Parallelizing `all_pairs_bellman_ford_path` algorithm [ref. [PR](https://github.com/networkx/nx-parallel/pull/14)]
@@ -85,7 +115,7 @@ Some of the resources I found useful during the initial application and while wr
 
 ## After the Final Application
 
-I continued contributing to my PRs after submitting the proposal. I didn't know this, but you can keep adding new contributions to the projects on the Outreachy website even a few days after the final proposal deadline. And I also discovered these [blogs by @20kavishs](https://github.com/20kavishs/GSOCBlogNetworkX/blob/main/index.md) (the person working on nx-parallel before me). They also gave some more context. After the results were announced, I wasn't feeling very... great. But, still, I sent an email to my mentor asking for feedback on my performance and how I could have been better. And, in the reply, I got to know that I wasn't selected because I wasn't eligible for Dec'23 cohort as I was a student at a university in the northern hemisphere. My mentor also informed me that they(NetworkX) might be interested in hiring me as an intern outside of Outreachy, but nothing for sure. So, it was a bit uncertain for a few days. However, I decided to keep on contributing because I felt like I was getting value out of it and learning something, and I didn't want to abandon my open PRs. And around one week later, I got an email from Mridul to discuss further about the NetworkX Internship. And, after some discussions, I filled out the Independent Contractor form, the W8-BEN form and signed the ICA with NumFOCUS (NetworkX's fiscal sponsor) to primarily work on nx-parallel, and NetworkX in general, starting 1st Jan'24. I was paid from NetworkX's CZI grant funds, and my primary mentors were [Dan Schult](https://github.com/dschult) and [Mridul Seth](https://github.com/MridulS). Yay!
+I continued contributing to my PRs after submitting the proposal. I didn't know this, but you can keep adding new contributions to the projects on the Outreachy website even a few days after the final proposal deadline. And I also discovered these [blogs](https://github.com/20kavishs/GSOCBlogNetworkX/blob/main/index.md) and the [GSoC final submission doc](https://docs.google.com/document/d/1aGnYhUlbT970HkipDZ4K7R4qqTtid29tmSFYT98hYyw/edit#heading=h.y43pkwhqzzp2) by [@20kavishs](https://github.com/20kavishs) (the person working on nx-parallel before me). They also gave some more context. After the results were announced, I wasn't feeling very... great. But, still, I sent an email to my mentor asking for feedback on my performance and how I could have been better. And, in the reply, I got to know that I wasn't selected because I wasn't eligible for Dec'23 cohort as I was a student at a university in the northern hemisphere. My mentor also informed me that they(NetworkX) might be interested in hiring me as an intern outside of Outreachy, but nothing for sure. So, it was a bit uncertain for a few days. However, I decided to keep on contributing because I felt like I was getting value out of it and learning something, and I didn't want to abandon my open PRs. And around one week later, I got an email from Mridul to discuss further about the NetworkX Internship. And, after some discussions, I filled out the Independent Contractor form, the W8-BEN form and signed the ICA with NumFOCUS (NetworkX's fiscal sponsor) to primarily work on nx-parallel, and NetworkX in general, starting 1st Jan'24. I was paid from NetworkX's CZI grant funds, and my primary mentors were [Dan Schult](https://github.com/dschult) and [Mridul Seth](https://github.com/MridulS). Yay!
 
 ## A few extra points/tips
 
