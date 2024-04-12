@@ -1,3 +1,3 @@
 ---
-title: NeworkX
+title: NetworkX
 ---
