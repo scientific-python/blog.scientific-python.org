@@ -17,7 +17,7 @@ resources:
 
 There is only one thing that I need to figure out before the first coding period for GSoC starts on Monday: how to find _all_ of the minimum arborescences of a graph.
 This is the set $K(\pi)$ in the Held and Karp paper from 1970 which can be refined down to $K(\pi, d)$ or $K\_{X, Y}(\pi)$ as needed.
-For more information as to why I need to do this, please see my last post [here]({{< relref "a-closer-look-at-held-karp" >}}).
+For more information as to why I need to do this, please see my last post [here](../a-closer-look-at-held-karp).
 
 This is a place where my contributions to NetworkX to implement the Asadpour algorithm [1] for the directed traveling salesman problem will be useful to the rest of the NetworkX community (I hope).
 The research paper that I am going to template this off of is [this](https://www.scielo.br/j/pope/a/XHswBwRwJyrfL88dmMwYNWp/?lang=en&format=pdf) 2005 paper by Sörensen and Janssens titled _An Algorithm to Generate all Spanning Trees of a Graph in Order of Increasing Cost_ [4].

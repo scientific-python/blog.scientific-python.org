@@ -38,7 +38,7 @@ First recall how edge contraction, or in this case node contraction, works.
 Two nodes are merged into one which is connected by the same edges which connected the original two nodes.
 Edges between those two nodes become self loops, but in this case I prevented the creation of self loops as directed by Kulkarni.
 If a node which is not contracted has edges to both of the contracted nodes, we insert a parallel edge between them.
-I struggled with NetworkX's API about the graph classes in a past post titled [The Entropy Distribution]({{< relref "entropy-distribution" >}}).
+I struggled with NetworkX's API about the graph classes in a past post titled [The Entropy Distribution](../entropy-distribution).
 
 For NetworkX's implementation, we would call `nx.contracted_nodes(G, u, v)` and `u` and `v` would always be merged into `u`, so `v` is the node which is no longer in the graph.
 
