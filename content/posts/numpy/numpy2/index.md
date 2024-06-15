@@ -17,17 +17,17 @@ But, the journey to an actual 2.0 release has been long and it was difficult to 
 Many of these rewrites and changes happened over the years, but they remained largely invisible to the users and NumPy 2 is in part, just the culmination of these improvements.
 
 To continue improving both the user experience and NumPy internals it became necessary to do some changes which are larger than those in a typical NumPy 1 release.
-So, we started concrete plans for the 2.0 release around two years ago and had a [public planning meeting](https://github.com/numpy/archive/tree/main/2.0_developer_meeting) in April 2023 where many of the below changes were proposed and discussed in more details.  After this NumPy enhancement proposals (NEP) written or reviewed, discussed and finally implemented.
+So, we started concrete plans for the 2.0 release around two years ago and had a [public planning meeting](https://github.com/numpy/archive/tree/main/2.0_developer_meeting) in April 2023 where many of the below changes were proposed and discussed in more details. After this NumPy enhancement proposals (NEP) written or reviewed, discussed and finally implemented.
 
 Some of the key highlights and major changes are:
 
-* Cleaned-up and Streamlined API ([NEP 54](https://numpy.org/neps/nep-0052-python-api-cleanup.html)): The Python API has undergone a thorough cleanup, making it easier to learn and use NumPy. The main namespace has been reduced by approximately 10%, and the more private `numpy.lib` namespace has been reduced by about 80%, providing a clearer distinction between public and private API elements.
+- Cleaned-up and Streamlined API ([NEP 54](https://numpy.org/neps/nep-0052-python-api-cleanup.html)): The Python API has undergone a thorough cleanup, making it easier to learn and use NumPy. The main namespace has been reduced by approximately 10%, and the more private `numpy.lib` namespace has been reduced by about 80%, providing a clearer distinction between public and private API elements.
 
-* Improved Scalar Promotion Rules: The scalar promotion rules have been updated, as proposed in [NEP 50](https://numpy.org/neps/nep-0050-scalar-promotion.html) addressing surprising behaviors in promotion e.g. with zero dimensional arrays.
+- Improved Scalar Promotion Rules: The scalar promotion rules have been updated, as proposed in [NEP 50](https://numpy.org/neps/nep-0050-scalar-promotion.html) addressing surprising behaviors in promotion e.g. with zero dimensional arrays.
 
-* Powerful new DType API and a new string dtype: NumPy 2.0 introduces a new API for implementing user-defined custom data types as proposed by [NEP 41](https://numpy.org/neps/nep-0041-improved-dtype-support.html). We used this new API to implement `StringDType` offering efficient and painless support for variable length strings which was proposed in [NEP 55](https://numpy.org/neps/nep-0055-string_dtype.html).  And it is our hope that enable future DTypes in PyData ecosystem and NumPy itself.
+- Powerful new DType API and a new string dtype: NumPy 2.0 introduces a new API for implementing user-defined custom data types as proposed by [NEP 41](https://numpy.org/neps/nep-0041-improved-dtype-support.html). We used this new API to implement `StringDType` offering efficient and painless support for variable length strings which was proposed in [NEP 55](https://numpy.org/neps/nep-0055-string_dtype.html). And it is our hope that enable future DTypes in PyData ecosystem and NumPy itself.
 
-* Windows Compatibility Enhancements: The default 32-bit integer representation on Windows has been updated to 64-bit, addressing compatibility issues that some packages faced.
+- Windows Compatibility Enhancements: The default 32-bit integer representation on Windows has been updated to 64-bit, addressing compatibility issues that some packages faced.
 
 These are just some of the more impactful changes and does not include significant performance improvements. For a more extensive list of changes, see also the [NumPy 2 release notes](https://numpy.org/devdocs/release/2.0.0-notes.html).
 
@@ -38,6 +38,6 @@ And while we do require C API users to recompile their projects, we prepared for
 This means that projects build with NumPy 2 are "magically" compatible with 1.x.
 
 The release of NumPy 2.0 is the result of a collaborative and largely volunteer effort spanning many years and involving contributions from a diverse community of developers.
-Many of the changes above would not have been possible without grants and institutional sponsors enabling many of us to work on NumPy.  These are the Gordon and Betty Moore Foundation, the Alfred P. Sloan Foundation, NASA, NVIDIA, Quansight Labs, and the Chan Zuckerberg Initiative.
+Many of the changes above would not have been possible without grants and institutional sponsors enabling many of us to work on NumPy. These are the Gordon and Betty Moore Foundation, the Alfred P. Sloan Foundation, NASA, NVIDIA, Quansight Labs, and the Chan Zuckerberg Initiative.
 
 We are excited about future improvements to NumPy some of which will be possible due to changes in NumPy 2. Let's continue to work together to improve NumPy and our ecosystem.
