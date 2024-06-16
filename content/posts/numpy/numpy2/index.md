@@ -10,57 +10,61 @@ displayInList: true
 author: ["NumPy Developers"]
 ---
 
-After 18 years since the release of NumPy 1.0, the NumPy community is thrilled
-to announce the launch of NumPy 2.0! This major release marks a significant
-milestone in the evolution of the popular scientific computing library,
-bringing a wealth of enhancements and improvements to users and unlocks future
-developments.
+After 18 years since the release of NumPy 1.0, we are thrilled to announce the
+launch of NumPy 2.0! This major release marks a significant milestone in the
+evolution of NumPy, bringing a wealth of enhancements and improvements to users
+and unlocks future developments.
 
 NumPy has improved and evolved over the past 18 years and many old releases had
-significant performance, understandability, and consistency improvements.
-The journey to an actual 2.0 release has been long and it was difficult to
+significant performance, usability, and consistency improvements.
+The journey to an actual 2.0 release has been long, and it was difficult to
 build the necessary momentum. In part this may be because for a time the idea
-of a NumPy 2 among the NumPy developers required a revolutionary change with a
-large code rewrite. Many of these rewrites and changes happened over the years,
-but because of backward compatibility concerns they remained largely invisible
-to the users and NumPy 2 is in part, just the culmination of these
-improvements, allowing us to discard some of the legacy behaviors or details of
-the ABI that prevent future improvements.
+of doing a NumPy 2.0 release among the NumPy developers required a revolutionary change with
+rewrites of significant key pieces in the code base. Many of these rewrites and
+changes happened over the years, but because of backward compatibility concerns
+they remained largely invisible to the users. NumPy 2.0 is, in part, the
+culmination of these improvements, allowing us to discard some of the legacy
+behaviors or details of the ABI that prevent future improvements.
 
-We started concrete plans for the 2.0 release more than a year ago at a
-[public planning meeting](https://github.com/numpy/archive/tree/main/2.0_developer_meeting)
-in April 2023 where many of the below changes were proposed and discussed.
+We started concrete plans for the 2.0 release more than a year ago, at a four hour
+long [public planning meeting](https://github.com/numpy/archive/tree/main/2.0_developer_meeting)
+in April 2023. Many of the key changes were proposed and discussed. The key goals
+we decided on there were perhaps even larger and more ambitious in scope than
+some of us expected. This also unlocked some extra energy - which has been great to see.
 After the meeting and over the course of the last year, NumPy enhancement
-proposals ([NEPs](https://numpy.org/neps/)) written, reviewed, and implemented.
+proposals ([NEPs](https://numpy.org/neps/)) for each major change were written,
+reviewed, and implemented.
 
 Some of the key highlights and major changes are:
 
-- Cleaned-up and Streamlined API ([NEP 52](https://numpy.org/neps/nep-0052-python-api-cleanup.html)):
+- Cleaned-up and streamlined Python API ([NEP 52](https://numpy.org/neps/nep-0052-python-api-cleanup.html)):
   The Python API has undergone a thorough cleanup, making it easier to learn
   and use NumPy. The main namespace has been reduced by approximately 10%, and
   the more niche `numpy.lib` namespace has been reduced by about 80%, providing
   a clearer distinction between public and private API elements.
 
-- Improved Scalar Promotion Rules: The scalar promotion rules have been
+- Improved scalar promotion rules: The scalar promotion rules have been
   updated, as proposed in [NEP 50](https://numpy.org/neps/nep-0050-scalar-promotion.html)
   addressing surprising behaviors in type promotion e.g. with zero dimensional arrays.
 
 - Powerful new DType API and a new string dtype: NumPy 2.0 introduces a new API
   for implementing user-defined custom data types as proposed by
   [NEP 41](https://numpy.org/neps/nep-0041-improved-dtype-support.html). We used
-  this new API to implement `StringDType` offering efficient and painless
+  this new API to implement `StringDType`, offering efficient and painless
   support for variable length strings which was proposed in
   [NEP 55](https://numpy.org/neps/nep-0055-string_dtype.html). And it is our hope
-  that enable future DTypes in PyData ecosystem and NumPy itself.
+  that enable future new data types with interesting new capabilities in the
+  PyData ecosystem and in NumPy itself.
 
-- Windows Compatibility Enhancements: The default 32-bit integer representation
-  on Windows has been updated to 64-bit on 64 bit architectures, addressing one
+- Windows compatibility enhancements: The default 32-bit integer representation
+  on Windows has been updated to 64-bit on 64-bit architectures, addressing one
   of the most common issues a developer runs into trying to get NumPy code to
   work portably on Windows and Unix-like operating systems.
 
-These are just some of the more impactful changes and does not include
-significant performance improvements. For a more extensive list of changes, see
-also the [NumPy 2 release notes](https://numpy.org/devdocs/release/2.0.0-notes.html).
+These are just some of the more impactful changes in behavior and usability. In addition,
+NumPy 2.0 contains significant performance improvements, large documentation improvements,
+and more much - for a more extensive list of changes, see
+the [NumPy 2 release notes](https://numpy.org/devdocs/release/2.0.0-notes.html).
 
 A major release comes with changes that users may have to adapt to, but we
 worked hard to strike a balance between improvements and ensuring that the
