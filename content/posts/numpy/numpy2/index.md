@@ -61,6 +61,12 @@ Some of the key highlights and major changes are:
   of the most common issues a developer runs into trying to get NumPy code to
   work portably on Windows and Unix-like operating systems.
 
+- Full support for the Python array API standard: This is the first release to
+  include full support for the array API standard (v2022.12), which was enabled
+  by the promotion rules and API cleanup mentioned above, as well as by
+  adding new APIs and aligning existing APIs and behavior with the standard,
+  as proposed by [NEP 56](https://numpy.org/neps/nep-0056-array-api-main-namespace.html).
+
 These are just some of the more impactful changes in behavior and usability. In addition,
 NumPy 2.0 contains significant performance improvements, large documentation improvements,
 and more much - for a more extensive list of changes, see
