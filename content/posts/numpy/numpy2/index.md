@@ -80,23 +80,22 @@ and a [ruff plugin](https://numpy.org/devdocs/numpy_2_0_migration_guide.html#ruf
 helps to automatically update Python code so it will work with both NumPy 1.x and
 NumPy 2.x.
 
-We knew when we started the development for 2.0 that rolling out a NumPy 2.0
-will be (temporarily) disruptive, because of the backwards-incompatible ABI change
-in particular which prevents previously-released wheels of other packages
-that use the NumPy C API from working with numpy 2.0 wheels in the PyPI ecosystem.
-We spent an extraordinary amount of effort communicating these changes, helping
-downstream projects adapt, tracking compatibility of popular open source projects
-(see, e.g., [numpy#26191](https://github.com/numpy/numpy/issues/26191), and
-completing the release process at a very mild pace to give everyone enough time
-to adapt. No doubt the next few weeks will be slightly rocky still, however
-we expect this to be manageable and well worth it in the long run.
-
 While we do require C API users to recompile their projects to support running
 with NumPy 2.0, we prepared for this already in NumPy 1.25. The build process was
 simplified so that you can now always compile with the latest NumPy version.
 This means that projects build with NumPy 2.x are "magically" compatible with
 1.x. It also means that projects no longer need to build their binaries using
 the oldest version of NumPy supported by a project.
+
+We knew when we started the development for 2.0 that rolling out a NumPy 2.0
+will be (temporarily) disruptive, because of the backwards-incompatible API and
+ABI changes. We spent an extraordinary amount of effort communicating these
+changes, helping downstream projects adapt, tracking compatibility of popular
+open source projects (see, e.g.,
+[numpy#26191](https://github.com/numpy/numpy/issues/26191), and completing the
+release process at a very mild pace to give everyone enough time to adapt. No
+doubt the next few weeks will be slightly rocky still, however we expect this
+to be manageable and well worth it in the long run.
 
 The release of NumPy 2.0 is the result of a collaborative and largely volunteer
 effort spanning many years and involving contributions from a diverse community
