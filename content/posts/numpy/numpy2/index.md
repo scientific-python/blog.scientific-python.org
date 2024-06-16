@@ -1,22 +1,22 @@
 ---
-title: "16 years in the Making: NumPy 2.0 Released"
+title: "18 years in the Making: NumPy 2.0 Released"
 date: 2024-06-16
 draft: false
 description: "
-16 years in the Making: NumPy 2.0 Released
+18 years in the Making: NumPy 2.0 Released
 "
 tags: ["News", "numpy"]
 displayInList: true
 author: ["NumPy Developers"]
 ---
 
-After 16 years since the release of NumPy 1.0, the NumPy community is thrilled
+After 18 years since the release of NumPy 1.0, the NumPy community is thrilled
 to announce the launch of NumPy 2.0! This major release marks a significant
 milestone in the evolution of the popular scientific computing library,
 bringing a wealth of enhancements and improvements to users and unlocks future
 developments.
 
-NumPy has improved and evolved over the past 16 years and many old releases had
+NumPy has improved and evolved over the past 18 years and many old releases had
 significant performance, understandability, and consistency improvements.
 The journey to an actual 2.0 release has been long and it was difficult to
 build the necessary momentum. In part this may be because for a time the idea
