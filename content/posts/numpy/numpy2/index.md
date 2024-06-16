@@ -35,7 +35,7 @@ proposals ([NEPs](https://numpy.org/neps/)) written, reviewed, and implemented.
 
 Some of the key highlights and major changes are:
 
-- Cleaned-up and Streamlined API ([NEP 54](https://numpy.org/neps/nep-0052-python-api-cleanup.html)):
+- Cleaned-up and Streamlined API ([NEP 52](https://numpy.org/neps/nep-0052-python-api-cleanup.html)):
   The Python API has undergone a thorough cleanup, making it easier to learn
   and use NumPy. The main namespace has been reduced by approximately 10%, and
   the more niche `numpy.lib` namespace has been reduced by about 80%, providing
