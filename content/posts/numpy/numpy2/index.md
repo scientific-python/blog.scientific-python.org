@@ -106,6 +106,8 @@ to work on NumPy as part of our day jobs. We'd like to acknowledge in particular
 the Gordon and Betty Moore Foundation, the Alfred P. Sloan Foundation,
 NASA, NVIDIA, Quansight Labs, the Chan Zuckerberg Initiative, and Tidelift.
 
-We are excited about future improvements to NumPy that will be possible due to
-changes in NumPy 2.0. Let's continue to work together to improve NumPy and the
-scientific Python and PyData ecosystem!
+We are excited about future improvements to NumPy, many of which will be
+possible due to changes in NumPy 2.0. See [the NumPy roadmap](https://numpy.org/neps/roadmap.html)
+for some of the things that are in the pipeline or on the wishlist. Let's
+continue to work together to improve NumPy and the scientific Python and PyData
+ecosystem!
