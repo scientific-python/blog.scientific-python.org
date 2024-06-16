@@ -68,26 +68,38 @@ the [NumPy 2 release notes](https://numpy.org/devdocs/release/2.0.0-notes.html).
 
 A major release comes with changes that users may have to adapt to, but we
 worked hard to strike a balance between improvements and ensuring that the
-transition to NumPy 2 is as seamless as possible. We wrote a comprehensive
+transition to NumPy 2.0 is as seamless as possible. We wrote a comprehensive
 [migration guide](https://numpy.org/devdocs/numpy_2_0_migration_guide.html),
 and a [ruff plugin](https://numpy.org/devdocs/numpy_2_0_migration_guide.html#ruff-plugin)
-helps to automatically update Python code so it will work with both NumPy 1 and
-NumPy 2.
+helps to automatically update Python code so it will work with both NumPy 1.x and
+NumPy 2.x.
+
+We knew when we started the development for 2.0 that rolling out a NumPy 2.0
+will be (temporarily) disruptive, because of the backwards-incompatible ABI change
+in particular which prevents previously-released wheels of other packages
+that use the NumPy C API from working with numpy 2.0 wheels in the PyPI ecosystem.
+We spent an extraordinary amount of effort communicating these changes, helping
+downstream projects adapt, tracking compatibility of popular open source projects
+(see, e.g., [numpy#26191](https://github.com/numpy/numpy/issues/26191), and
+completing the release process at a very mild pace to give everyone enough time
+to adapt. No doubt the next few weeks will be slightly rocky still, however
+we expect this to be manageable and well worth it in the long run.
 
 While we do require C API users to recompile their projects to support running
-with NumPy 2, we prepared for this already in NumPy 1.25. The build process was
+with NumPy 2.0, we prepared for this already in NumPy 1.25. The build process was
 simplified so that you can now always compile with the latest NumPy version.
-This means that projects build with NumPy 2 are "magically" compatible with
+This means that projects build with NumPy 2.x are "magically" compatible with
 1.x. It also means that projects no longer need to build their binaries using
-the oldest supported NumPy.
+the oldest version of NumPy supported by a project.
 
 The release of NumPy 2.0 is the result of a collaborative and largely volunteer
 effort spanning many years and involving contributions from a diverse community
-of developers. Many of the changes above would not have been possible without
-grants and institutional sponsors enabling many of us to work on NumPy. These
-are the Gordon and Betty Moore Foundation, the Alfred P. Sloan Foundation,
-NASA, NVIDIA, Quansight Labs, and the Chan Zuckerberg Initiative.
+of developers. In addition, many of the changes above would not have been
+possible without funders and institutional sponsors enabling quite a few of us
+to work on NumPy as part of our day jobs. We'd like to acknowledge in particular:
+the Gordon and Betty Moore Foundation, the Alfred P. Sloan Foundation,
+NASA, NVIDIA, Quansight Labs, the Chan Zuckerberg Initiative, and Tidelift.
 
-We are excited about future improvements to NumPy some of which will be
-possible due to changes in NumPy 2. Let's continue to work together to improve
-NumPy and our ecosystem.
+We are excited about future improvements to NumPy that will be possible due to
+changes in NumPy 2.0. Let's continue to work together to improve NumPy and the
+scientific Python and PyData ecosystem!
