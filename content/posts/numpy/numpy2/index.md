@@ -1,6 +1,6 @@
 ---
-title: "18 years in the Making: NumPy 2.0 Released"
-date: 2024-06-16
+title: "NumPy 2.0: an evolutionary milestone"
+date: 2024-06-17
 draft: false
 description: "
 We announce the release of NumPy 2.0, which brings major improvements in
