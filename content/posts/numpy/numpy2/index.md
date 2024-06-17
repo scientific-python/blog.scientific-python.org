@@ -22,11 +22,11 @@ and unlocking future developments.
 NumPy has improved and evolved over the past 18 years, with many old releases bringing
 significant performance, usability, and consistency improvements.
 That said, our approach for a long time has been to make only incremental changes while
-carefully managing backward compatibility. This approach finally had to come to
-an end, for this one-off major release, with the significant improvements to
-NumPy's type system. The type system is fundamental to NumPy, and major
-behavioral changes could not be made incrementally, since mixing two different
-type systems would be a recipe for disaster.
+carefully managing backward compatibility. This approach minimizes user breakage,
+but also limits the scope of improvements that can be made, both to the API and its underlying implementation.
+Therefore, for this one-off major release, we are breaking backward compatibility to implement significant improvements in NumPy's type system. The type system is fundamental to NumPy, and major
+behavioral changes could not be made incrementally without mixing two different
+type systems, which would be a recipe for disaster.
 
 The journey to an actual 2.0 release has been long, and it was difficult to
 build the necessary momentum. In part, this may be because, for a time, the NumPy developers associated a NumPy 2.0 release with nothing less than a revolutionary 
