@@ -100,7 +100,7 @@ changes, helping downstream projects adapt, tracking compatibility of popular
 open source projects (see, e.g.,
 [numpy#26191](https://github.com/numpy/numpy/issues/26191), and completing the
 release process at limited pace to provide time for adoption. No
-doubt the next few weeks will be slightly rocky still, however we expect this
+doubt, the next few weeks will bring to light some new challenges, however we fully expect these
 to be manageable and well worth it in the long run.
 
 The NumPy 2.0 release is the result of a collaborative, largely volunteer,
