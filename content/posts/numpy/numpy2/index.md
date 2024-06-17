@@ -17,7 +17,7 @@ author: ["NumPy Developers"]
 Eighteen years since the release of NumPy 1.0, we are thrilled to announce the
 launch of NumPy 2.0! This major release marks a significant milestone in the
 evolution of NumPy, bringing a wealth of enhancements and improvements to users,
-and unlocking future developments.
+and setting the stage for future feature development.
 
 NumPy has improved and evolved over the past 18 years, with many old releases bringing
 significant performance, usability, and consistency improvements.
