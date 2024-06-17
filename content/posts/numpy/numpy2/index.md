@@ -10,14 +10,14 @@ displayInList: true
 author: ["NumPy Developers"]
 ---
 
-After 18 years since the release of NumPy 1.0, we are thrilled to announce the
+Eighteen years since the release of NumPy 1.0, we are thrilled to announce the
 launch of NumPy 2.0! This major release marks a significant milestone in the
-evolution of NumPy, bringing a wealth of enhancements and improvements to users
+evolution of NumPy, bringing a wealth of enhancements and improvements to users,
 and unlocking future developments.
 
-NumPy has improved and evolved over the past 18 years and many old releases had
+NumPy has improved and evolved over the past 18 years, with many old releases bringing
 significant performance, usability, and consistency improvements.
-Our approach for a long time has been to make incremental changes while
+That said, our approach for a long time has been to make only incremental changes while
 carefully managing backward compatibility. This approach finally had to come to
 an end, for this one-off major release, with the significant improvements to
 NumPy's type system. The type system is fundamental to NumPy, and major
@@ -25,13 +25,12 @@ behavioral changes could not be made incrementally, since mixing two different
 type systems would be a recipe for disaster.
 
 The journey to an actual 2.0 release has been long, and it was difficult to
-build the necessary momentum. In part this may be because for a time the idea
-of doing a NumPy 2.0 release among the NumPy developers required a revolutionary change with
-rewrites of significant key pieces in the code base. Many of these rewrites and
+build the necessary momentum. In part, this may be because, for a time, the NumPy developers associated a NumPy 2.0 release with nothing less than a revolutionary 
+rewrite of significant key pieces in the code base. Many of these rewrites and
 changes happened over the years, but because of backward compatibility concerns
-they remained largely invisible to the users. NumPy 2.0 is, in part, the
-culmination of these improvements, allowing us to discard some of the legacy
-behaviors or details of the ABI that prevent future improvements.
+they remained largely invisible to the users. NumPy 2.0 is the
+culmination of these improvements, allowing us to discard some legacy
+ABI (Application Binary Interface) that prevented future improvements.
 
 We started concrete plans for the 2.0 release more than a year ago, at a four hour
 long [public planning meeting](https://github.com/numpy/archive/tree/main/2.0_developer_meeting)
@@ -39,10 +38,10 @@ in April 2023. Many of the key changes were proposed and discussed. The key goal
 we decided on there were perhaps even larger and more ambitious in scope than
 some of us expected. This also unlocked some extra energy - which has been great to see.
 After the meeting and over the course of the last year, NumPy enhancement
-proposals ([NEPs](https://numpy.org/neps/)) for each major change were written,
-reviewed, and implemented.
+proposals ([NEPs](https://numpy.org/neps/)) were written,
+reviewed, and implemented for each major change.
 
-Some of the key highlights and major changes are:
+Some key highlights are:
 
 - Cleaned-up and streamlined Python API ([NEP 52](https://numpy.org/neps/nep-0052-python-api-cleanup.html)):
   The Python API has undergone a thorough cleanup, making it easier to learn
@@ -52,7 +51,7 @@ Some of the key highlights and major changes are:
 
 - Improved scalar promotion rules: The scalar promotion rules have been
   updated, as proposed in [NEP 50](https://numpy.org/neps/nep-0050-scalar-promotion.html)
-  addressing surprising behaviors in type promotion e.g. with zero dimensional arrays.
+  addressing surprising behaviors in type promotion, e.g. with zero dimensional arrays.
 
 - Powerful new DType API and a new string dtype: NumPy 2.0 introduces a new API
   for implementing user-defined custom data types as proposed by
@@ -65,55 +64,55 @@ Some of the key highlights and major changes are:
 
 - Windows compatibility enhancements: The default 32-bit integer representation
   on Windows has been updated to 64-bit on 64-bit architectures, addressing one
-  of the most common issues a developer runs into trying to get NumPy code to
-  work portably on Windows and Unix-like operating systems.
+  of the most common problems with having NumPy work portably across operating
+  systems.
 
-- Full support for the Python array API standard: This is the first release to
-  include full support for the array API standard (v2022.12), which was enabled
-  by the promotion rules and API cleanup mentioned above, as well as by
-  adding new APIs and aligning existing APIs and behavior with the standard,
-  as proposed by [NEP 56](https://numpy.org/neps/nep-0056-array-api-main-namespace.html).
+- Support for the Python array API standard: This is the first release to
+  include full support for the array API standard (v2022.12), made possible
+  by the new promotion rules, APIs, and API cleanup mentioned above.
+  We also aligned existing APIs and behavior with the standard,
+  as proposed in [NEP 56](https://numpy.org/neps/nep-0056-array-api-main-namespace.html).
 
 These are just some of the more impactful changes in behavior and usability. In addition,
-NumPy 2.0 contains significant performance improvements, large documentation improvements,
-and more much - for a more extensive list of changes, see
+NumPy 2.0 contains significant performance and documentation improvements,
+and more much - for an extensive list of changes, see
 the [NumPy 2 release notes](https://numpy.org/devdocs/release/2.0.0-notes.html).
 
-A major release comes with changes that users may have to adapt to, but we
+To adopt this major release, users will likely need to adjust existing code, but we
 worked hard to strike a balance between improvements and ensuring that the
 transition to NumPy 2.0 is as seamless as possible. We wrote a comprehensive
 [migration guide](https://numpy.org/devdocs/numpy_2_0_migration_guide.html),
 and a [ruff plugin](https://numpy.org/devdocs/numpy_2_0_migration_guide.html#ruff-plugin)
-helps to automatically update Python code so it will work with both NumPy 1.x and
+that helps to update Python code so it will work with both NumPy 1.x and
 NumPy 2.x.
 
-While we do require C API users to recompile their projects to support running
-with NumPy 2.0, we prepared for this already in NumPy 1.25. The build process was
+While we do require C API users to recompile their projects to support
+NumPy 2.0, we prepared for this in NumPy 1.25 already. The build process was
 simplified so that you can now always compile with the latest NumPy version.
 This means that projects build with NumPy 2.x are "magically" compatible with
 1.x. It also means that projects no longer need to build their binaries using
-the oldest version of NumPy supported by a project.
+the oldest supported version of NumPy.
 
-We knew when we started the development for 2.0 that rolling out a NumPy 2.0
-will be (temporarily) disruptive, because of the backwards-incompatible API and
+We knew throughout development that rolling out NumPy 2.0
+would be (temporarily) disruptive, because of the backwards-incompatible API and
 ABI changes. We spent an extraordinary amount of effort communicating these
 changes, helping downstream projects adapt, tracking compatibility of popular
 open source projects (see, e.g.,
 [numpy#26191](https://github.com/numpy/numpy/issues/26191), and completing the
-release process at a very mild pace to give everyone enough time to adapt. No
+release process at limited pace to provide time for adoption. No
 doubt the next few weeks will be slightly rocky still, however we expect this
 to be manageable and well worth it in the long run.
 
-The release of NumPy 2.0 is the result of a collaborative and largely volunteer
+The NumPy 2.0 release is the result of a collaborative, largely volunteer,
 effort spanning many years and involving contributions from a diverse community
 of developers. In addition, many of the changes above would not have been
-possible without funders and institutional sponsors enabling quite a few of us
-to work on NumPy as part of our day jobs. We'd like to acknowledge in particular:
+possible without funders and institutional sponsors allowing several team members
+to work on NumPy as part of their day jobs. We'd like to acknowledge in particular:
 the Gordon and Betty Moore Foundation, the Alfred P. Sloan Foundation,
 NASA, NVIDIA, Quansight Labs, the Chan Zuckerberg Initiative, and Tidelift.
 
 We are excited about future improvements to NumPy, many of which will be
 possible due to changes in NumPy 2.0. See [the NumPy roadmap](https://numpy.org/neps/roadmap.html)
-for some of the things that are in the pipeline or on the wishlist. Let's
-continue to work together to improve NumPy and the scientific Python and PyData
+for some features in the pipeline or on the wishlist. Let's
+continue working together to improve NumPy and the scientific Python and PyData
 ecosystem!
