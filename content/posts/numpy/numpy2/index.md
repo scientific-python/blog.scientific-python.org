@@ -24,16 +24,19 @@ significant performance, usability, and consistency improvements.
 That said, our approach for a long time has been to make only incremental changes while
 carefully managing backward compatibility. This approach minimizes user breakage,
 but also limits the scope of improvements that can be made, both to the API and its underlying implementation.
-Therefore, for this one-off major release, we are breaking backward compatibility to implement significant improvements in NumPy's type system. The type system is fundamental to NumPy, and major
-behavioral changes could not be made incrementally without mixing two different
+Therefore, for this one-off major release, we are breaking backward
+compatibility to implement significant improvements in NumPy's type system. The
+type system is fundamental to NumPy, and major behavioral changes could not be
+made incrementally without mixing two different
 type systems, which would be a recipe for disaster.
 
 The journey to an actual 2.0 release has been long, and it was difficult to
-build the necessary momentum. In part, this may be because, for a time, the NumPy developers associated a NumPy 2.0 release with nothing less than a revolutionary 
-rewrite of significant key pieces of the code base. Many of these rewrites and
-changes happened over the years, but because of backward compatibility concerns
-they remained largely invisible to the users. NumPy 2.0 is the
-culmination of these efforts, allowing us to discard some legacy
+build the necessary momentum. In part, this may be because, for a time, the
+NumPy developers associated a NumPy 2.0 release with nothing less than a
+revolutionary rewrite of significant key pieces of the code base. Many of these
+rewrites and changes happened over the years, but because of backward
+compatibility concerns they remained largely invisible to the users. NumPy 2.0
+is the culmination of these efforts, allowing us to discard some legacy
 ABI (Application Binary Interface) that prevented future improvements.
 
 Some major changes to NumPy internals—required for key features in
