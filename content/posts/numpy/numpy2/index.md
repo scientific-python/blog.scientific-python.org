@@ -84,7 +84,7 @@ Some key highlights are:
 
 These are just some of the more impactful changes in behavior and usability. In addition,
 NumPy 2.0 contains significant performance and documentation improvements,
-and more much - for an extensive list of changes, see
+and much more - for an extensive list of changes, see
 the [NumPy 2 release notes](https://numpy.org/devdocs/release/2.0.0-notes.html).
 
 To adopt this major release, users will likely need to adjust existing code, but we
