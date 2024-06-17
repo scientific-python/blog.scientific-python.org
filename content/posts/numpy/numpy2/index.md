@@ -36,7 +36,9 @@ they remained largely invisible to the users. NumPy 2.0 is the
 culmination of these improvements, allowing us to discard some legacy
 ABI (Application Binary Interface) that prevented future improvements.
 
-We started concrete plans for the 2.0 release more than a year ago, at a four hour
+Some major changes to NumPy internals that were required for key features in
+2.0 have been in the works since 2019 at least.
+We started concrete plans for the 2.0 release itself more than a year ago, at a four hour
 long [public planning meeting](https://github.com/numpy/archive/tree/main/2.0_developer_meeting)
 in April 2023. Many of the key changes were proposed and discussed. The key goals
 we decided on there were perhaps even larger and more ambitious in scope than
