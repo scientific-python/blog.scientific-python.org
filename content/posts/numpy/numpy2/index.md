@@ -88,7 +88,8 @@ NumPy 2.x.
 
 While we do require C API users to recompile their projects to support
 NumPy 2.0, we prepared for this in NumPy 1.25 already. The build process was
-simplified so that you can now always compile with the latest NumPy version.
+simplified so that you can now compile with the latest NumPy version,
+and remain backward compatible.
 This means that projects build with NumPy 2.x are "magically" compatible with
 1.x. It also means that projects no longer need to build their binaries using
 the oldest supported version of NumPy.
