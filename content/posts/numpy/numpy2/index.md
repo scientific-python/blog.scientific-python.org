@@ -3,7 +3,11 @@ title: "18 years in the Making: NumPy 2.0 Released"
 date: 2024-06-16
 draft: false
 description: "
-18 years in the Making: NumPy 2.0 Released
+We announce the release of NumPy 2.0, which brings major improvements in
+functionality and usability. Improvements to NumPy internals sets the stage
+for future development. We discuss the motivation behind breaking changes
+and how those impact users, as well as some of the history of the 2.0
+development process.
 "
 tags: ["News", "numpy"]
 displayInList: true
