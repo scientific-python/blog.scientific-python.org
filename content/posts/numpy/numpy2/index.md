@@ -17,6 +17,13 @@ and unlocking future developments.
 
 NumPy has improved and evolved over the past 18 years and many old releases had
 significant performance, usability, and consistency improvements.
+Our approach for a long time has been to make incremental changes while
+carefully managing backward compatibility. This approach finally had to come to
+an end (for this one major release) with the significant improvements to
+NumPy's type system. The type system is fundamental to NumPy, and major
+behavioral changes could not be made incrementally, since mixing two different
+type systems would be a recipe for disaster.
+
 The journey to an actual 2.0 release has been long, and it was difficult to
 build the necessary momentum. In part this may be because for a time the idea
 of doing a NumPy 2.0 release among the NumPy developers required a revolutionary change with
