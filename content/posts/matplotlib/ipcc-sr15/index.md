@@ -68,7 +68,7 @@ and on [GitHub](https://github.com/iiasa/ipcc_sr15_scenario_analysis).
 <figure style="width: 600px ">
   <img src="sr15-fig2.4.png" style="width: 600px; "/>
   <figcaption style="text-align: center; color: grey; font-size: small">
-  Figure 2.4 of the IPCC SR15, showing the range of assumptions of socio-economic drivers<br />
+  Figure 2.4 of the IPCC SR15, showing the range of assumptions of socioeconomic drivers<br />
   across the IAMC 1.5°C Scenario Ensemble<br />
   Drawn with Matplotlib, source code available <a href="https://data.ene.iiasa.ac.at/sr15_scenario_analysis/assessment/sr15_2.3.1_range_of_assumptions.html">here</a>
   </figcaption>
