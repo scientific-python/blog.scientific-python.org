@@ -67,12 +67,12 @@ ndf.head()
 This produces:
 
 ```pycon
-        date  tsurf  t1000
-0 2009-12-31    0.0    0.0
-1 2010-01-07    0.0    0.0
-2 2010-01-14    0.0    0.0
-3 2010-01-21    0.0    0.0
-4 2010-01-28    0.0    0.0
+date  tsurf  t1000
+2-31    0.0    0.0
+1-07    0.0    0.0
+1-14    0.0    0.0
+1-21    0.0    0.0
+1-28    0.0    0.0
 ```
 
 Then it's time to plot, for that we first need to import what we need, and set some useful variables.
