@@ -18,4 +18,6 @@ _build:
   publishResources: false
 ---
 
-# Pypalettes
+# PyPalettes is all you need
+
+![Preview and try all the palettes](https://github.com/holtzy/The-Python-Graph-Gallery/raw/master/static/asset/pypalettes.gif)
