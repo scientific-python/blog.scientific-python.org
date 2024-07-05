@@ -1,5 +1,5 @@
 ---
-title: "PyPalettes: all colors you need"
+title: "PyPalettes: all the colors you'll ever need"
 description: "In matplotlib, when you create a chart, you can somehow becomes quite limited in terms of colors. Libraries such as matplotlib and seaborn have some built-in colormaps (like viridis, inferno etc), but it gives all the charts outside the exact same look. And that's where PyPalettes appears: thousands of pre-made palettes with good color matching and a web app to browse and preview all of them!"
 date: 2024-07-10T21:37:03-04:00
 tags: ["matplotlib", "color", "colormap"]
