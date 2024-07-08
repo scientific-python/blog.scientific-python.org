@@ -1,6 +1,6 @@
 ---
 title: "PyPalettes: all the colors you'll ever need"
-description: "In matplotlib, when you create a chart, you can somehow becomes quite limited in terms of colors. Libraries such as matplotlib and seaborn have some built-in colormaps (like viridis, inferno etc), but it gives all the charts outside the exact same look. And that's where PyPalettes appears: thousands of pre-made palettes with good color matching and a web app to browse and preview all of them!"
+description: "Matplotlib is the go-to library for data visualization in Python. While it offers quality built-in colormaps like viridis and inferno, the limited selection can make Matplotlib charts look similar. To address this, I developed pypalettes, a Python library with over 2,500 high-quality, pre-made color palettes. The library includes a web app for browsing and previewing all of them."
 date: 2024-07-10T21:37:03-04:00
 tags: ["matplotlib", "color", "colormap"]
 displayInList: true
@@ -16,7 +16,9 @@ resources:
 
 ## Finding the right color has never been easier
 
-Recently (June 2024), the [pypalettes library](https://github.com/JosephBARBIERDARNAL/pypalettes), a Python tool for working with colormaps, was released. It provides mainly two things:
+[PyPalettes](https://github.com/JosephBARBIERDARNAL/pypalettes) is a new Python library designed to simplify the use of color palettes in Python charts.
+
+It provides mainly two things:
 
 - a [super-easy-to-use library](https://github.com/JosephBARBIERDARNAL/pypalettes) that requires only 1 line of code (in 99.99% of cases, 2 otherwise 🙃) to access thousands of pre-defined and attractive palettes.
 - a [web app](https://python-graph-gallery.com/color-palette-finder/) to browse, filter, search, and preview all available palettes (with **bonus**: copy-pastable code to reproduce the charts).
