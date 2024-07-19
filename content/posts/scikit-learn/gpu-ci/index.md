@@ -30,12 +30,10 @@ In this blog post I will describe how we set up a GitHub Action based GPU runner
 for the scikit-learn project and the things we learnt along the way. The goal is
 to give you some additional information and details about the setup we now use.
 
-> [seberg] "intro sentence for the bullets, or is this just a ToC?"
-
-- Setting up larger runners for your project
-- VM image contents and setup
-- Workflow configuration
-- Bonus material
+- [Setting up larger runners for your project](#larger-runners-with-gpus)
+- [VM image contents and setup](#vm-image-contents)
+- [Workflow configuration](#workflow-configuration)
+- [Bonus material](#bonus-material)
 
 ## Larger runners with GPUs
 
