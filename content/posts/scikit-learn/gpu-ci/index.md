@@ -31,11 +31,11 @@ for the scikit-learn project and the things we learnt along the way. The goal is
 to give you some additional information and details about the setup we now use.
 
 > [seberg] "intro sentence for the bullets, or is this just a ToC?"
-* Setting up larger runners for your project
-* VM image contents and setup
-* Workflow configuration
-* Bonus material
 
+- Setting up larger runners for your project
+- VM image contents and setup
+- Workflow configuration
+- Bonus material
 
 ## Larger runners with GPUs
 
@@ -64,22 +64,20 @@ setup, so I will not cover it in this blog post.
 Name your runner group `cuda-gpu-runner-group` to match the name used in the examples
 below.
 
-
 ## VM Image contents
 
 The GPU runner uses a disk image provided by NVIDIA. This means that there are
 some differences to the image that the default runner uses.
 
-The `gh` command-line utility is not installed by default.  Keep this in mind
+The `gh` command-line utility is not installed by default. Keep this in mind
 if you want to do things like removing a label from the Pull Request or
 other such tasks.
 
 The biggest difference to the standard image is that the GPU image contains
-a conda instalation, but the file permissions do not allow the workflow user
+a conda installation, but the file permissions do not allow the workflow user
 to modify the existing environment or create new environments. As a result
 for scikit-learn we install conda a second time via miniforge. The conda environment is
 created from a lockfile, so we do not need to run the dependency solver.
-
 
 ## Workflow configuration
 
@@ -149,9 +147,9 @@ jobs:
         with:
           labels: CUDA CI
 ```
+
 This snippet is from the [label remover workflow](https://github.com/scikit-learn/scikit-learn/blob/9d39f57399d6f1f7d8e8d4351dbc3e9244b98d28/.github/workflows/cuda-label-remover.yml)
 we use in scikit-learn.
-
 
 ## Bonus Material
 
@@ -164,7 +162,6 @@ for contributors who do not have easy access to a GPU. They can test their chang
 failures without having to wait for a maintainer to label the Pull Request. We plan to add
 a workflow that comments on PRs with information on how to use this notebook to increase its
 discoverability.
-
 
 ## Conclusion
 
