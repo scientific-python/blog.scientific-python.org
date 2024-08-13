@@ -1,6 +1,6 @@
 ---
 title: "Translations for Scientific Python projects"
-date: 2024-08-08
+date: 2024-08-13
 draft: false
 tags: ["Scientific-Python", "translations", "inclusion", "CZI"]
 description: "Setting up and managing translations for Scientific Python projects."
