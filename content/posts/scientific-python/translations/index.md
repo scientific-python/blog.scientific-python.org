@@ -2,13 +2,7 @@
 title: "Translations for Scientific Python projects"
 date: 2024-08-08
 draft: false
-tags:
-  [
-    "Scientific-Python",
-    "translations",
-    "inclusion",
-    "CZI",
-  ]
+tags: ["Scientific-Python", "translations", "inclusion", "CZI"]
 description: "Setting up and managing translations for Scientific Python projects."
 displayInList: true
 author: ["Melissa Mendonça", "Albert Steppi"]
@@ -30,7 +24,7 @@ You may have seen that translations into some languages are already available fo
 
 ![Screenshot of the numpy.org site in Japanese, with a version switcher in the top right corner showing the English and Portuguese language options.](numpyorg.png)
 
-A number of core projects have also joined this effort and are set up to start with translations. At the moment, we are targeting [NumPy](https://numpy.org), [SciPy](https://scipy.org), [NetworkX](https://networkx.org), [Xarray](https://xarray.dev), and [pandas](https://pandas.org). We're offering to help other core projects integrate something similar into their websites, and we aim to accomplish this in a way that requires minimal effort from the core project maintainers, using [Crowdin](https://scientific-python.crowdin.com). 
+A number of core projects have also joined this effort and are set up to start with translations. At the moment, we are targeting [NumPy](https://numpy.org), [SciPy](https://scipy.org), [NetworkX](https://networkx.org), [Xarray](https://xarray.dev), and [pandas](https://pandas.org). We're offering to help other core projects integrate something similar into their websites, and we aim to accomplish this in a way that requires minimal effort from the core project maintainers, using [Crowdin](https://scientific-python.crowdin.com).
 
 For the moment, our scope is to translate only the projects' websites—the landing pages you see when you check out the links above—and **not** full documentation. We are intentionally starting small with the goal of completing this first phase and then potentially expanding once the translations team is established.
 
@@ -41,6 +35,7 @@ For new contributors who are looking to get involved in the projects they alread
 One advantage of setting this up at the Scientific Python level, and not on a per-project basis, is that the translations team can work on multiple projects, and knowledge and experience can be shared. This also helps to ensure that translations are consistent across projects.
 
 The translations team will be responsible for:
+
 - Translating (and reviewing) content into multiple languages;
 - Ensuring that translations are accurate and up-to-date;
 - Engaging with the community to help maintain and improve translations.
