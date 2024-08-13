@@ -11,7 +11,7 @@ tags:
   ]
 description: "Setting up and managing translations for Scientific Python projects."
 displayInList: true
-author: ["Melissa Mendonça", "Albert Steppi", "Tania Allard", "Ralf Gommers", "Stéfan van der Walt", "Jarrod Millman"]
+author: ["Melissa Mendonça", "Albert Steppi"]
 ---
 
 In November 2022, [the Chan Zuckerberg Initiative (CZI) awarded the Scientific Python project with a grant to improve communications infrastructure and accessibility](https://blog.scientific-python.org/scientific-python/2022-czi-grant/). This proposal involves several key areas to improve sustainability, inclusivity and accessibility of the Scientific Python ecosystem. One of these areas is making software documentation and user interfaces available in multiple languages. We are happy to announce that we have organized the necessary infrastructure and processes to allow volunteers to start translating multiple project websites.
