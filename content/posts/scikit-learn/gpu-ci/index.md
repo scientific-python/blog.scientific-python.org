@@ -6,13 +6,7 @@ description: "Setting up CI with a GPU to test your code"
 tags: ["scikit-learn", "ci", "gpu", "cuda"]
 displayInList: true
 author: ["Tim Head <>timhead"]
-
-resources:
-  - name: featuredImage
-    src: "group.png"
-    params:
-      description: "Group picture of summit attendees."
-      showOnTop: true
+canonicalURL: https://betatim.github.io/posts/github-action-with-gpu/
 ---
 
 TL;DR: If you have GPU code in your project, setup a GitHub hosted GPU runner today.
