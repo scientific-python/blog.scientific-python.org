@@ -1,6 +1,6 @@
 ---
 title: "Automated tests with GPUs for your project"
-date: 2024-07-19T15:24:17+01:00
+date: 2024-08-15
 draft: false
 description: "Setting up CI with a GPU to test your code"
 tags: ["scikit-learn", "ci", "gpu", "cuda"]
