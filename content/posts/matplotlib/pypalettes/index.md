@@ -1,7 +1,7 @@
 ---
 title: "PyPalettes: all the colors you'll ever need"
 description: "Matplotlib is the go-to library for data visualization in Python. While it offers quality built-in colormaps like viridis and inferno, the limited selection can make Matplotlib charts look similar. To address this, I developed pypalettes, a Python library with over 2,500 high-quality, pre-made color palettes. The library includes a web app for browsing and previewing all of them."
-date: 2024-07-10T21:37:03-04:00
+date: 2024-09-09T21:37:03-04:00
 tags: ["matplotlib", "color", "colormap"]
 displayInList: true
 author: ["Joseph Barbier", "Yan Holtz"]
