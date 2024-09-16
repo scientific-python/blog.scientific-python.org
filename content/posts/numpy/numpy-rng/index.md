@@ -12,6 +12,8 @@ author: ["Albert Thomas <albertcthomas>"]
 
 Given the practical challenges of achieving true randomness, deterministic algorithms, known as Pseudo Random Number Generators (RNGs), are employed in science to create sequences that mimic randomness. These generators are used for simulations, experiments, and analysis where it is essential to have numbers that appear unpredictable. I want to share here what I have learned about best practices with pseudo RNGs and especially the ones available in [NumPy](https://numpy.org/).
 
+<!--more-->
+
 A pseudo RNG works by updating an internal state through a deterministic algorithm. This internal state is initialized with a value known as a seed and each update produces a number that appears randomly generated. The key here is that the process is deterministic, meaning that if you start with the same seed and apply the same algorithm, you will get the same sequence of internal states (and numbers). Despite this determinism, the resulting numbers exhibit properties of randomness, appearing unpredictable and evenly distributed. Users can either specify the seed manually, providing a degree of control over the generated sequence, or they can opt to let the RNG object automatically derive the seed from system entropy. The latter approach enhances unpredictability by incorporating external factors into the seed.
 
 I assume a certain knowledge of NumPy and that NumPy 1.17 or greater is used. The reason for this is that great new features were introduced in the [random](https://numpy.org/doc/stable/reference/random/index.html) module of version 1.17. As `numpy` is usually imported as `np`, I will sometimes use `np` instead of `numpy`. Finally, RNG will always mean pseudo RNG in the rest of this blog post.

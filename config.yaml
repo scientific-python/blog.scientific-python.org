@@ -10,6 +10,11 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+    renderHooks:
+      image:
+        enableDefault: true
+      link:
+        enableDefault: true
 
 outputFormats:
   Atom:
