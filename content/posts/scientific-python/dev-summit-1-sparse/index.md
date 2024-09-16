@@ -9,9 +9,18 @@ Sparse Arrays at the May Developer Summit in Seattle
 tags: ["Summit", "Scientific-Python", "scipy.sparse", "Sparse"]
 displayInList: true
 author: ["Dan Schult", "Stéfan van der Walt"]
----
+summary: |
+    The first [Scientific Python Developer Summit](https://blog.scientific-python.org/scientific-python/dev-summit-1/) provided an opportunity
+    for core developers from the scientific Python ecosystem to come together to:
 
-## Scientific-Python Developer Summit
+    1. improve joint infrastructure
+    2. better coordinate core projects
+    3. work on a shared strategic plan
+
+    One of the focuses of the summit was Sparse Arrays, and specifically their implementation in SciPy.
+    This post attempts to recap what happened with "sparse" at the summit
+    and a glimpse of plans for our continuing work.
+---
 
 (May 22-26, 2023, Seattle WA) --
 The first [Scientific Python Developer Summit](https://blog.scientific-python.org/scientific-python/dev-summit-1/) provided an opportunity

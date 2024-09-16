@@ -12,6 +12,8 @@ canonicalURL: https://betatim.github.io/posts/github-action-with-gpu/
 TL;DR: If you have GPU code in your project, setup a GitHub hosted GPU runner today.
 It is fairly quick to do and will free you from having to run tests manually.
 
+<!--more-->
+
 Writing automated tests for your code base and certainly for the more complex parts
 of it has become as normal as brushing your teeth in the morning. Having a system
 that automatically runs a project's tests for every Pull Request

@@ -19,6 +19,8 @@ launch of NumPy 2.0! This major release marks a significant milestone in the
 evolution of NumPy, bringing a wealth of enhancements and improvements to users,
 and setting the stage for future feature development.
 
+<!--more-->
+
 NumPy has improved and evolved over the past 18 years, with many old releases bringing
 significant performance, usability, and consistency improvements.
 That said, our approach for a long time has been to make only incremental changes while

@@ -6,6 +6,7 @@ tags: ["Scientific-Python", "translations", "inclusion", "CZI"]
 description: "Setting up and managing translations for Scientific Python projects."
 displayInList: true
 author: ["Melissa Mendonça", "Albert Steppi"]
+summary: We are happy to announce that we have organized the necessary infrastructure and processes to allow volunteers to start translating multiple project websites. In this blog post, we will discuss how we set up manage translations for Scientific Python projects, and how you can participate in the translation and localization effort.
 ---
 
 In November 2022, [the Chan Zuckerberg Initiative (CZI) awarded the Scientific Python project with a grant to improve communications infrastructure and accessibility](https://blog.scientific-python.org/scientific-python/2022-czi-grant/). This proposal involves several key areas to improve sustainability, inclusivity and accessibility of the Scientific Python ecosystem. One of these areas is making software documentation and user interfaces available in multiple languages. We are happy to announce that we have organized the necessary infrastructure and processes to allow volunteers to start translating multiple project websites.
