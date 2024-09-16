@@ -17,6 +17,8 @@ resources:
 
 The first [Scientific Python Developer Summit](https://scientific-python.org/summits/developer/2023/) (May 22-26, 2023) brought together 34 developers at the eScience Institute at the University of Washington to develop shared infrastructure, documentation, tools, and recommendations for libraries in the Scientific Python ecosystem.
 
+<!--more-->
+
 ## Pre-summit planning
 
 Prior to the summit we held several hour-long planning meetings:
