@@ -45,7 +45,7 @@ Broad topics included [SPECs](https://scientific-python.org/specs/), documentati
 Documentation was a much more popular topic than anticipated!
 
 - The new [mystmd](https://mystmd.org/guide) tooling generated some excitement, and an [experimental port of the NumPy tutorials](https://github.com/numpy/numpy-tutorials/tree/mystjs) was made.
-- A recommendation on [consistent use of backticks was submitted to numpydoc](https://github.com/numpy/numpydoc/pull/525).
+- Recommendations on consistent use of [backticks](https://github.com/numpy/numpydoc/pull/525) and [monospaced font](https://github.com/pydata/pydata-sphinx-theme/issues/1852) were submitted to numpydoc and pydata-sphinx-theme, respectively.
 
 ### SPECs
 
@@ -72,7 +72,7 @@ Some existing SPECs were discussed and improved:
 
 ### SciPy
 
-Several of the SciPy developers were present, and we used to opportunity to celebrate Dan Schult joining as core developer. Matt and Pamphile did some work on the new distribution infrastructure, Dan worked on sparse (remotely with CJ), and newly-supported [`const` statements were added to Cython code](https://github.com/scipy/scipy/pull/20891) got reviewed and merged.
+Several of the SciPy developers were present, and we used the opportunity to celebrate Dan Schult joining as a core developer. Matt and Pamphile did some work on the new distribution infrastructure, Dan worked on sparse (remotely with CJ), and newly-supported [`const` statements were added to Cython code](https://github.com/scipy/scipy/pull/20891) got reviewed and merged.
 
 ### Unplanned collaborations
 
@@ -80,6 +80,6 @@ As is the nature of these events, some collaborations arise spontaneously. E.g.,
 
 ### Conclusion
 
-Numerous other PRs were made, of which a number were probably not even captured in the [worklog](https://hackmd.io/wsJVTMYdQGG_Zgz7rgxSzw). But, besides the inherent satisfaction of working together with this great group, the best features of the summit was that we were able to hang out, bonding over our communal joys and struggles—both technical and personal.
+Numerous other PRs were made, of which a number were probably not even captured in the [worklog](https://hackmd.io/wsJVTMYdQGG_Zgz7rgxSzw). But, besides the inherent satisfaction of working together with this great group, the best feature of the summit was that we were able to hang out, bonding over our communal joys and struggles—both technical and personal.
 
-We are grateful to the ecosystem developer who gave up their time to attend the summit (many had to put in leave _just to do more work_!). The summits are valuable, and translate to a lot of work work getting done and decisions being made. We hope that there will be more on the horizon!
+We are grateful to the ecosystem developers who gave up their time to attend the summit (many had to put in leave _just to do more work_!). The summits are valuable, and translate to a lot of work work getting done and decisions being made. We hope that there will be more on the horizon!
