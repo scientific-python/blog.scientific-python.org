@@ -67,7 +67,7 @@ Some existing SPECs were discussed and improved:
 ### Tooling
 
 - We created a new tools team to handle the ever-growing [list of tools we maintain](https://tools.scientific-python.org/).
-- Eric added his [https://github.com/scientific-python/circleci-artifacts-redirector-action](circleci-artifacts-redirector-action) to the suite.
+- Eric added his [circleci-artifacts-redirector-action](https://github.com/scientific-python/circleci-artifacts-redirector-action) to the suite.
 - Matthias brought over his [backport bot](https://github.com/scientific-python/MeeseeksDev) and set up a maintenance team.
 
 ### SciPy
