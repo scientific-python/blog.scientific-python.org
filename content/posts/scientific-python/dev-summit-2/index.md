@@ -11,6 +11,7 @@ author:
     "Jarrod Millman",
     "Brigitta Sipőcz",
     "Pamphile Roy",
+    "Matt Haberland",
     "Matthew Feickert",
     "Melissa Mendonça",
   ]
@@ -28,11 +29,15 @@ summary: |
 
 This post is a while overdue, but it's been a busy summer for everyone!
 
-In June, several of us got together for the "annual" (well, we've had it twice now) Scientific Python developer summit in Seattle. Our friends at the eScience Institute were again kind enough to host us. This time around, we made the event a bit shorter: a week is a long time to take off, and it also gets a bit overstimulating/exhausting, given the amount of conversations and work that take place.
+In June, several of us got together for the "annual" (well, we've had it twice now) Scientific Python developer summit in Seattle.
+Our friends at the eScience Institute were again kind enough to host us.
+This time around, we made the event a bit shorter: a week is a long time to take off, and it also gets a bit overstimulating/exhausting, given the amount of conversation and work that takes place.
 
-As before, the Developer Summits are for members of the community to come together, in person, so they can work. Of course, we work together already online, but the event allows us to focus our energies on cross-project concerns (that often fall by the wayside) with planning and intent.
+As before, the Developer Summits are for members of the community to come together, in person, so they can work.
+Of course, we work together already online, but the event allows us to focus our energies on cross-project concerns (that often fall by the wayside) with planning and intent.
 
-This is why, before the summit, we have planning Zoom calls, where we identify topics of interest, which are turned into issues, which are then fleshed out and discussed prior to the event. That way, we hoped to hit the ground running—as we did!
+This is why, before the summit, we have planning Zoom calls, where we identify topics of interest, which are turned into issues, which are then fleshed out and discussed prior to the event.
+That way, we hoped to hit the ground running—as we did!
 
 ## Topics
 
@@ -72,14 +77,21 @@ Some existing SPECs were discussed and improved:
 
 ### SciPy
 
-Several of the SciPy developers were present, and we used the opportunity to celebrate Dan Schult joining as a core developer. Matt and Pamphile did some work on the new distribution infrastructure, Dan worked on sparse (remotely with CJ), and newly-supported [`const` statements were added to Cython code](https://github.com/scipy/scipy/pull/20891) got reviewed and merged.
+Several of the SciPy developers were present, and we used the opportunity to celebrate Dan Schult joining as a core developer.
+Matt and Pamphile did some work on the new distribution infrastructure, Dan worked on sparse (remotely with CJ), and newly-supported [`const` statements were added to Cython code](https://github.com/scipy/scipy/pull/20891) got reviewed and merged.
 
 ### Unplanned collaborations
 
-As is the nature of these events, some collaborations arise spontaneously. E.g., Nick and Ariel explored using Awkward Array for neuro-tractography, while Nick and Mridul explored using [scipp](https://scipp.github.io/index.html) for high-energy physics data. Guen worked on telemetry, while Inessa and Sanket discussed community surveys and governance. Sebastian and Thomas [discussed parallelization APIs](https://hackmd.io/84thx0ucQ2ab17ZYrBhWRw).
+As is the nature of these events, some collaborations arise spontaneously.
+E.g., Nick and Ariel explored using Awkward Array for neuro-tractography, while Nick and Mridul explored using [scipp](https://scipp.github.io/index.html) for high-energy physics data.
+Guen worked on telemetry, while Inessa and Sanket discussed community surveys and governance.
+Sebastian and Thomas [discussed parallelization APIs](https://hackmd.io/84thx0ucQ2ab17ZYrBhWRw).
 
 ### Conclusion
 
-Numerous other PRs were made, of which a number were probably not even captured in the [worklog](https://hackmd.io/wsJVTMYdQGG_Zgz7rgxSzw). But, besides the inherent satisfaction of working together with this great group, the best feature of the summit was that we were able to hang out, bonding over our communal joys and struggles—both technical and personal.
+Numerous other PRs were made, of which a number were probably not even captured in the [worklog](https://hackmd.io/wsJVTMYdQGG_Zgz7rgxSzw).
+But, besides the inherent satisfaction of working together with this great group, the best feature of the summit was that we were able to hang out, bonding over our communal joys and struggles—both technical and personal.
 
-We are grateful to the ecosystem developers who gave up their time to attend the summit (many had to put in leave _just to do more work_!). The summits are valuable, and translate to a lot of work work getting done and decisions being made. We hope that there will be more on the horizon!
+We are grateful to the ecosystem developers who gave up their time to attend the summit (many had to put in leave _just to do more work_!).
+The summits are valuable, and translate to a lot of work work getting done and decisions being made.
+We hope that there will be more on the horizon!
