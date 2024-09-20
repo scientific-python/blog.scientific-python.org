@@ -12,6 +12,7 @@ author:
     "Brigitta Sipőcz",
     "Pamphile Roy",
     "Matt Haberland",
+    "Nabil Freij",
     "Elliott Sales de Andrade",
     "Matthew Feickert",
     "Melissa Mendonça",
