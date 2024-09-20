@@ -33,7 +33,7 @@ This post is a while overdue, but it's been a busy summer for everyone!
 
 In June, several of us got together for the "annual" (well, we've had it twice now) Scientific Python developer summit in Seattle.
 Our friends at the eScience Institute were again kind enough to host us.
-This time around, we made the event a bit shorter: a week is a long time to take off, and it also gets a bit overstimulating/exhausting, given the amount of conversation and work that takes place.
+This time around, we made the event a bit shorter to avoid clashing with graduation.
 
 As before, the Developer Summits are for members of the community to come together, in person, so they can work.
 Of course, we work together already online, but the event allows us to focus our energies on cross-project concerns (that often fall by the wayside) with planning and intent.
