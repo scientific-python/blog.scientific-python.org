@@ -85,7 +85,7 @@ Matt and Pamphile did some work on the new distribution infrastructure, Dan work
 ### Unplanned collaborations
 
 As is the nature of these events, some collaborations arise spontaneously.
-E.g., Nick and Ariel explored using Awkward Array for neuro-tractography, while Nick and Mridul explored using [scipp](https://scipp.github.io/index.html) for high-energy physics data.
+For example, Nick and Ariel explored using Awkward Array for neuro-tractography, while Nick and Mridul explored using [scipp](https://scipp.github.io/index.html) for high-energy physics data.
 Guen worked on telemetry, while Inessa and Sanket discussed community surveys and governance.
 Sebastian and Thomas [discussed parallelization APIs](https://hackmd.io/84thx0ucQ2ab17ZYrBhWRw).
 
