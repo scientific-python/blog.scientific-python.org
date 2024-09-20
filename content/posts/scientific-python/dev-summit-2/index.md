@@ -18,6 +18,7 @@ author:
     "Dan Schult",
     "Ross Barnowsk",
     "Melissa Mendonça",
+    "Dan McCloy",
   ]
 
 resources:
@@ -55,6 +56,7 @@ Documentation was a much more popular topic than anticipated!
 
 - The new [mystmd](https://mystmd.org/guide) tooling generated some excitement, and an [experimental port of the NumPy tutorials](https://github.com/numpy/numpy-tutorials/tree/mystjs) was made.
 - Recommendations on consistent use of [backticks](https://github.com/numpy/numpydoc/pull/525) and [monospaced font](https://github.com/pydata/pydata-sphinx-theme/issues/1852) were submitted to numpydoc and pydata-sphinx-theme, respectively.
+- Madicken, Paul, and Dan worked together to [extend PyData Sphinx Theme's testing infrastructure](https://github.com/pydata/pydata-sphinx-theme/pull/1861), by combining Sphinx Build Factory (for generating small test sites) with Playwright (for browser automation).
 
 ### SPECs
 
@@ -81,8 +83,10 @@ Some existing SPECs were discussed and improved:
 
 ### SciPy
 
-Several of the SciPy developers were present, and we used the opportunity to celebrate Dan Schult joining as a core developer.
-Matt and Pamphile did some work on the new distribution infrastructure, Dan worked on sparse (remotely with CJ), and newly-supported [`const` statements added to Cython code](https://github.com/scipy/scipy/pull/20891) got reviewed and merged.
+Several of the SciPy developers were present, and we used the opportunity to celebrate Dan Schult joining as a core developer 🎉!
+Matt and Pamphile did some work on the new distribution infrastructure, Dan worked on sparse (remotely with CJ), and a [PR adding newly-supported `const` statements to Cython code](https://github.com/scipy/scipy/pull/20891) got reviewed and merged.
+Eric isolated [a non-deterministic bug in Sphinx](https://github.com/sphinx-doc/sphinx/issues/12409) that was impacting parallel builds of SciPy's documentation.
+He found a work-around that had been eluding the team for months!
 
 ### Unplanned collaborations
 
