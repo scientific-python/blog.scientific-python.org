@@ -15,6 +15,8 @@ author:
     "Nabil Freij",
     "Elliott Sales de Andrade",
     "Matthew Feickert",
+    "Dan Schult",
+    "Ross Barnowsk",
     "Melissa Mendonça",
   ]
 
