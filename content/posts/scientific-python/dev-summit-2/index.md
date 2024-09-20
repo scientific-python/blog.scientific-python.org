@@ -24,6 +24,7 @@ author:
     "Mridul Seth",
     "Eric Larson",
     "Sanket Verma",
+    "Inessa Pawson",
   ]
 
 resources:
@@ -101,7 +102,7 @@ For example:
 - Nick and Ariel explored using Awkward Array for neuro-tractography.
 - Nick and Mridul explored using [scipp](https://scipp.github.io/index.html) for high-energy physics data.
 - Guen worked on telemetry.
-- Inessa and Sanket discussed community surveys and governance.
+- Inessa and Sanket discussed best practices for community surveys and project governance.
 - Sebastian and Thomas [discussed parallelization APIs](https://hackmd.io/84thx0ucQ2ab17ZYrBhWRw).
 - Inessa, with input from Tim and Thomas, finalized the design of the 2024 scikit-learn user survey.
 
