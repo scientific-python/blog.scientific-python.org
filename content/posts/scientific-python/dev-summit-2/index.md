@@ -20,6 +20,9 @@ author:
     "Melissa Mendonça",
     "Dan McCloy",
     "Lars Grüter",
+    "Sebastian Berg",
+    "Mridul Seth",
+    "Eric Larson",
   ]
 
 resources:
