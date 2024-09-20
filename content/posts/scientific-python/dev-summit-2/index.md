@@ -19,6 +19,7 @@ author:
     "Ross Barnowsk",
     "Melissa Mendonça",
     "Dan McCloy",
+    "Lars Grüter",
   ]
 
 resources:
