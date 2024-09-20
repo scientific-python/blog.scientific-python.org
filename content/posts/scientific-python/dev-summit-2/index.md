@@ -96,9 +96,14 @@ He found a work-around that had been eluding the team for months!
 ### Unplanned collaborations
 
 As is the nature of these events, some collaborations arise spontaneously.
-For example, Nick and Ariel explored using Awkward Array for neuro-tractography, while Nick and Mridul explored using [scipp](https://scipp.github.io/index.html) for high-energy physics data.
-Guen worked on telemetry, while Inessa and Sanket discussed community surveys and governance.
-Sebastian and Thomas [discussed parallelization APIs](https://hackmd.io/84thx0ucQ2ab17ZYrBhWRw).
+For example:
+
+- Nick and Ariel explored using Awkward Array for neuro-tractography.
+- Nick and Mridul explored using [scipp](https://scipp.github.io/index.html) for high-energy physics data.
+- Guen worked on telemetry.
+- Inessa and Sanket discussed community surveys and governance.
+- Sebastian and Thomas [discussed parallelization APIs](https://hackmd.io/84thx0ucQ2ab17ZYrBhWRw).
+- Inessa, with input from Tim and Thomas, finalized the design of the 2024 scikit-learn user survey.
 
 ### Conclusion
 
