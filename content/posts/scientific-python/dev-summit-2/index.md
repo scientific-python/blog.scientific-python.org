@@ -23,6 +23,7 @@ author:
     "Sebastian Berg",
     "Mridul Seth",
     "Eric Larson",
+    "Sanket Verma",
   ]
 
 resources:
@@ -70,7 +71,7 @@ Several new SPECs were started:
 
 - [SPEC-?: Dispatching (`spatch`)](https://hackmd.io/yI1iAqekQIq0a4jLS9WPyw)
 - [SPEC-8: Securing The Release Process](https://scientific-python.org/specs/spec-0008/)
-- [SPEC-9: Governance](https://github.com/scientific-python/specs/pull/323)
+- [SPEC-9: Governance](https://scientific-python.org/specs/spec-0009/)
 - [SPEC-10: Changelog and release documentation](https://github.com/scientific-python/specs/pull/321)
 - [SPEC-12: Formatting mathematical expressions](https://github.com/scientific-python/specs/pull/326)
 - [SPEC-13: Naming conventions](https://github.com/scientific-python/specs/pull/324)
