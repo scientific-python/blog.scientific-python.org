@@ -3,7 +3,6 @@ languageCode: "en-us"
 title: "Blog"
 theme: scientific-python-hugo-theme
 disableKinds: ["RSS", "taxonomy"]
-ignoreErrors: ["error-disable-taxonomy"]
 
 markup:
   highlight:
