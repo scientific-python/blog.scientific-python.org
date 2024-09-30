@@ -108,7 +108,7 @@ For example:
 - Inessa and Sanket discussed best practices for community surveys and project governance.
 - Sebastian and Thomas [discussed parallelization APIs](https://hackmd.io/84thx0ucQ2ab17ZYrBhWRw).
 - Inessa, with input from Tim and Thomas, finalized the design of the 2024 scikit-learn user survey.
-- Erik and Dan discussed index compression options for CSR-like nD sparse arrays.
+- Erik and Dan discussed index compression options for CSR-like N-D sparse arrays.
 
 ### Conclusion
 
