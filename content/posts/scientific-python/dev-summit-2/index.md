@@ -1,6 +1,6 @@
 ---
 title: "Developer Summit 2"
-date: 2024-09-19
+date: 2024-09-29
 draft: false
 description: "Summary of the 2024 Scientific Python Developer summit."
 tags: ["Summit", "Scientific-Python"]
@@ -60,9 +60,10 @@ Broad topics included [SPECs](https://scientific-python.org/specs/), documentati
 
 Documentation was a much more popular topic than anticipated!
 
-- The new [mystmd](https://mystmd.org/guide) tooling generated some excitement, and an [experimental port of the NumPy tutorials](https://github.com/numpy/numpy-tutorials/tree/mystjs) was made.
+- The new [mystmd](https://mystmd.org/guide) tooling generated some excitement, and an [experimental port of the NumPy tutorials](https://github.com/numpy/numpy-tutorials/tree/mystjs) was made by Melissa and Ross.
 - Recommendations on consistent use of [backticks](https://github.com/numpy/numpydoc/pull/525) and [monospaced font](https://github.com/pydata/pydata-sphinx-theme/issues/1852) were submitted to numpydoc and pydata-sphinx-theme, respectively.
 - Madicken, Paul, and Dan worked together to [extend PyData Sphinx Theme's testing infrastructure](https://github.com/pydata/pydata-sphinx-theme/pull/1861), by combining Sphinx Build Factory (for generating small test sites) with Playwright (for browser automation).
+- Eric and Elliott fixed an [intersphinx issue in sphinx-gallery](https://github.com/sphinx-gallery/sphinx-gallery/pull/1320).
 
 ### SPECs
 
@@ -80,6 +81,8 @@ Several new SPECs were started:
 Some existing SPECs were discussed and improved:
 
 - [SPEC-7: Seeding pseudo-random number generation (SPRaNG)](https://scientific-python.org/specs/spec-0007/)
+
+Matplotlib [endorsed](https://scientific-python.org/specs/purpose-and-process/#decision-points) several SPECs.
 
 ### Tooling
 
