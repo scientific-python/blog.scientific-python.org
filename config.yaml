@@ -39,9 +39,8 @@ outputs:
 
 params:
   description: "Posts from the Scientific Python community"
-  analytics:
-    plausible:
-      dataDomain: blog.scientific-python.org
+  plausible:
+    dataDomain: blog.scientific-python.org
   comments:
     discourse_url: https://discuss.scientific-python.org/
   images:
