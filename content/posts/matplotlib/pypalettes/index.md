@@ -1,6 +1,6 @@
 ---
 title: "PyPalettes: all the colors you'll ever need"
-description: "Matplotlib is the go-to library for data visualization in Python. While it offers quality built-in colormaps like viridis and inferno, the limited selection can make Matplotlib charts look similar. To address this, I developed pypalettes, a Python library with over 2,500 high-quality, pre-made color palettes. The library includes a web app for browsing and previewing all of them."
+description: "Matplotlib is the go-to library for data visualization in Python. While it offers quality built-in colormaps like viridis and inferno, the limited selection can make Matplotlib charts look similar. To address this, I developed pypalettes, a Python library with over 2,500 high-quality, pre-made color palettes, based on Paletteer. The library includes a web app for browsing and previewing all of them."
 date: 2024-09-09T21:37:03-04:00
 tags: ["matplotlib", "color", "colormap"]
 displayInList: true
@@ -29,7 +29,7 @@ It provides mainly two things:
 
 <br>
 
-## How it happened
+## From R to Python
 
 In R, there are dozens of packages dedicated to colors for data visualization. Then [Paletteer](https://emilhvitfeldt.github.io/paletteer/) came out to **aggregate** every color palette from those packages into a single one, meaning you **only need one package** to access almost all the color palettes people have created!
 
@@ -37,13 +37,17 @@ While re-crafting the [colors section of the Python Graph Gallery](https://pytho
 
 <center><h3 style="color: lightgray;">That's where PyPalettes comes in.</h3></center>
 
-Basically, I scraped the [Paletteer gallery](https://pmassicotte.github.io/paletteer_gallery/), which contains all palettes from Paletteer with hexadecimal colors, palette names, and package sources. Then, I added all **built-in colors** from `Matplotlib`.
+Paletteer has a community-maintained [gallery](https://pmassicotte.github.io/paletteer_gallery/)—a single page showcasing all its color palettes, along with their original sources and names. With the author’s approval, I scraped this gallery to compile the data.
 
-With these, I was able to create a dataset with around **2500 different palettes**, each with a name and a list of hexadecimal colors.
+While there may have been other ways to obtain this information, using a short Python script to reproduce the dataset ensures both simplicity and reproducibility. To make **pypalettes** more comprehensive, I also incorporated all **built-in colors** from `Matplotlib`.
+
+As a result, I created a dataset containing approximately **2,500 unique palettes**, each with a name, a list of hexadecimal colors, and a source.
 
 At this point, the hardest part was already done. I just had to create a simple API to make them usable in a Python environment and add some additional simple features.
 
 And since [Yan](https://www.yan-holtz.com/) supported the idea, he created this amazing [web app](https://python-graph-gallery.com/color-palette-finder/), making it much easier to browse available palettes.
+
+As a thank-you to `Paletteer`, Yan created a color finder that features only `Paletteer` palettes! If you use R, [check it out here](https://r-graph-gallery.com/color-palette-finder).
 
 <br>
 
@@ -63,7 +67,7 @@ And then you just have to call this function with `name="Esox_lucius"`
 cmap = load_cmap("Esox_lucius")
 ```
 
-The output of `load_cmap()` is either a [matplotlib.colors.ListedColormap](https://matplotlib.org/stable/api/_as_gen/matplotlib.colors.ListedColormap.html) or a [matplotlib.colors.LinearSegmentedColormap](https://matplotlib.org/stable/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html), depending on the value of the `type` argument (default is `"discrete"`, so it's `ListedColormap` in this case).
+The output of `load_cmap()` is either a [matplotlib.colors.ListedColormap](https://matplotlib.org/stable/api/_as_gen/matplotlib.colors.ListedColormap.html) or a [matplotlib.colors.LinearSegmentedColormap](https://matplotlib.org/stable/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html), depending on the value of the `cmap_type` argument (default is `"discrete"`, so it's `ListedColormap` in this case).
 
 Finally, you can create your chart as you normally would:
 
@@ -129,7 +133,7 @@ And once the code is working, you can change the color map name and see straight
 
 PyPalettes is primarily designed for `matplotlib` due to its **high compatibility** with the `cmap` argument, but one can imagine **much more**.
 
-For example, it also provides the `get_hex()` and `get_rgb()` functions that return a list of hexadecimal colors or RGB values that can then be used in **any context**: other Python visualization libraries (plotly, plotnine, altair), colorimetry, image processing, or anything that requires color!
+For example, the output of `load_cmap()` includes attributes like `colors` and `rgb`, which return lists of hexadecimal colors or RGB values. These can be used in **any context**—from Python visualization libraries like Plotly, Plotnine, and Altair to colorimetry, image processing, or any application that requires color!
 
 <br>
 
