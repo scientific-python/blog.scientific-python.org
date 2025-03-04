@@ -39,7 +39,7 @@ While re-crafting the [colors section of the Python Graph Gallery](https://pytho
 
 Paletteer has a community-maintained [gallery](https://pmassicotte.github.io/paletteer_gallery/)—a single page showcasing all its color palettes, along with their original sources and names. With the author’s approval, I scraped this gallery to compile the data.
 
-While there may have been other ways to obtain this information, using a short Python script to reproduce the dataset ensures both simplicity and reproducibility. To make **pypalettes** more comprehensive, I also incorporated all **built-in colors** from `Matplotlib`.
+While there may have been other ways to obtain this information, using a short Python script to reproduce the dataset ensures both simplicity and reproducibility (the script scrapes a page stored locally instead of the web page). To make **pypalettes** more comprehensive, I also incorporated all **built-in colors** from `Matplotlib`.
 
 As a result, I created a dataset containing approximately **2,500 unique palettes**, each with a name, a list of hexadecimal colors, and a source.
 
@@ -47,7 +47,7 @@ At this point, the hardest part was already done. I just had to create a simple 
 
 And since [Yan](https://www.yan-holtz.com/) supported the idea, he created this amazing [web app](https://python-graph-gallery.com/color-palette-finder/), making it much easier to browse available palettes.
 
-As a thank-you to `Paletteer`, Yan created a color finder that features only `Paletteer` palettes! If you use R, [check it out here](https://r-graph-gallery.com/color-palette-finder).
+As a thank-you to `Paletteer`, Yan also created a color finder that features only `Paletteer` palettes! If you use R, [check it out here](https://r-graph-gallery.com/color-palette-finder).
 
 <br>
 
