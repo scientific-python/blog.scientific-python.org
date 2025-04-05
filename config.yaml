@@ -59,6 +59,8 @@ params:
       url: https://learn.scientific-python.org
     - title: Tools
       url: https://tools.scientific-python.org
+    - title: '<span class="fas fa-rss">RSS feed</span>'
+      url: /atom.xml
 
   footer:
     logo: logo.svg
