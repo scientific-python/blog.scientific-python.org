@@ -10,16 +10,56 @@ displayInList: true
 author: ["Peter Fackeldey", "Mihai Maruseac", "Matthew Feickert"]
 ---
 
-### Manipulating tree-like data using functional programming paradigms
+## Manipulating tree-like data using functional programming paradigms
 
 A "PyTree" is a nested collection of python containers (e.g. dicts, (named) tuples, lists, ...), where the leafs are of interest.
-As you can imagine (or even experienced in the past), these arbitrary nested collections can become cumbersome to manipulate _efficiently_.
-Often this requires complex recursive logic, and which usually does not generalize to other PyTree structures.
+As you can imagine (or even experienced in the past), such arbitrary nested collections can be cumbersome to manipulate _efficiently_.
+It often requires complex recursive logic, and which usually does not generalize to other nested Python containers (PyTrees).
 
-#### PyTree Origins
+The core concept of PyTrees is being able to flatten them into a flat collection of leafs and a "blueprint" of the tree structure, and then being able to unflatten them back into the original PyTree.
+This allows to apply generic transformations, e.g. through a `tree_map(fun, pytree)` operation:
 
-Originally, the concept of PyTrees was developed by the [JAX](https://docs.jax.dev/en/latest/) project to make nested collections of JAX arrays work transparently at the "JIT-boundary".
-This was quickly adopted by AI researchers: semantically grouping layers of weights and biases in e.g. a list of named tuples (or dictionaries) is a common pattern in the JAX-AI-world, see the following pseudo-code:
+```python
+import optree as pt
+import numpy as np
+
+# tuple of a list of a dict with an array as value, and an array
+pytree = ([[{"foo": np.array([2.0])}], np.array([3.0])],)
+
+# sqrt of each leaf array
+sqrt_pytree = pt.tree_map(np.sqrt, pytree)
+print(f"{sqrt_pytree=}")
+# >> sqrt_pytree=([[{'foo': array([1.41421356])}], array([1.73205081])],)
+
+# reductions
+all_positive = pt.tree_all(pt.tree_map(lambda x: x > 0.0, pytree))
+print(f"{all_positive=}")
+# >> all_positive=True
+
+summed = pt.tree_reduce(sum, pytree)
+print(f"{summed=}")
+# >> summed=array([5.])
+```
+
+The trick here is that these operations can be implemented in three steps, e.g. `tree_map`:
+
+```python
+# step 1:
+leafs, treedef = pt.tree_flatten(pytree)
+
+# step 2:
+new_leafs = tuple(map(fun, leafs))
+
+# step 3:
+result_pytree = pt.tree_unflatten(treedef, new_leafs)
+```
+
+Here, we use [`optree`](https://github.com/metaopt/optree/tree/main/optree) - a standalone PyTree library - that enables all these manipulations. It focusses on performance, feature richness, minimal dependencies, and got adopted by PyTorch, Keras, and TensorFlow as a core dependency.
+
+### PyTree Origins
+
+Originally, the concept of PyTrees was developed by the [JAX](https://docs.jax.dev/en/latest/) project to make nested collections of JAX arrays work transparently at the "JIT-boundary" (the JAX JIT toolchain does not know about python containers, only about JAX Arrays).
+However, PyTrees were quickly adopted by AI researchers for broader use-cases: semantically grouping layers of weights and biases in e.g. a list of named tuples (or dictionaries) is a common pattern in the JAX-AI-world, see the following (pseudo) Python snippet:
 
 ```python
 from typing import NamedTuple, Callable
@@ -46,19 +86,21 @@ def neural_network(layers: list[Layer], x: jax.Array) -> jax.Array:
     return x
 
 
-pred = neural_network(layers=layers, x=jnp.array(...))
+prediction = neural_network(layers=layers, x=jnp.array(...))
 ```
 
 Here, `layers` is a PyTree - a `list` of multiple `Layer` - and the JIT compiled `neural_network` function _just works_ with this datastructure as input.
 
-#### PyTrees in Scientific Python
+### PyTrees in Scientific Python
 
 Wouldn't it be nice to make workflows in the scientific python ecosystem _just work_ with any PyTree?
-Enabling semantic meaning through PyTrees can be useful for applications outside of AI as well.
+
+Giving semantic meaning to numeric data through PyTrees can be useful for applications outside of AI as well.
 Consider the following minimization of the [Rosenbrock](https://en.wikipedia.org/wiki/Rosenbrock_function) function:
 
-```Python
+```python
 from scipy.optimize import minimize
+
 
 def rosenbrock(params: tuple[float]) -> float:
     """
@@ -73,12 +115,12 @@ def rosenbrock(params: tuple[float]) -> float:
 x0 = (0.9, 1.2)
 res = minimize(rosenbrock, x0)
 print(res.x)
->> [0.99999569 0.99999137]
+# >> [0.99999569 0.99999137]
 ```
 
 Now, let's turn it a minimization that uses a more complex type for the parameters - a NamedTuple that describes our fit parameters:
 
-```Python
+```python
 import optree as pt  # standalone PyTree library
 from typing import NamedTuple, Callable
 from scipy.optimize import minimize as sp_minimize
@@ -100,28 +142,28 @@ def rosenbrock(params: Params) -> float:
 
 def minimize(fun: Callable, params: Params) -> Params:
     # flatten and store PyTree definition
-    flat_params, PyTreeDef = pt.tree_flatten(params)
+    flat_params, treedef = pt.tree_flatten(params)
 
     # wrap fun to work with flat_params
     def wrapped_fun(flat_params):
-    params = pt.tree_unflatten(PyTreeDef, flat_params)
-    return fun(params)
+        params = pt.tree_unflatten(treedef, flat_params)
+        return fun(params)
 
     # actual minimization
     res = sp_minimize(wrapped_fun, flat_params)
 
     # re-wrap the bestfit values into Params with stored PyTree definition
-    return pt.tree_unflatten(PyTreeDef, res.x)
+    return pt.tree_unflatten(treedef, res.x)
 
 
 # scipy minimize that works with any PyTree
 x0 = Params(x=0.9, y=1.2)
 bestfit_params = minimize(rosenbrock, x0)
 print(bestfit_params)
->> Params(x=np.float64(0.999995688776513), y=np.float64(0.9999913673387226))
+# >> Params(x=np.float64(0.999995688776513), y=np.float64(0.9999913673387226))
 ```
 
-This new `minimize` function works with _any_ PyTree, e.g.:
+This new `minimize` function works with _any_ PyTree, let's consider a modified and more complex version of the Rosenbrock function that relies on two sets of `Params` as input:
 
 ```python
 import numpy as np
@@ -135,8 +177,11 @@ def rosenbrock_modified(params: Params) -> float:
       y = sigmoid(x1 - x2)
     """
     p1, p2 = params
+
+    # calculate `x` and `y` from two sources:
     x = np.asin(min(p1.x, p2.x) / max(p1.x, p2.x))
     y = 1.0 / (1.0 + np.exp(-(p1.y / p2.y)))
+
     return (1 - x) ** 2 + 100 * (y - x**2) ** 2
 
 
@@ -148,3 +193,5 @@ print(bestfit_params)
 #     Params(x=np.float64(3.9432263101976073), y=np.float64(0.005146110126174016)),
 # )
 ```
+
+The new `minimize` still works, because a `tuple` of `Params` is just _another_ PyTree!
