@@ -10,26 +10,26 @@ displayInList: true
 author: ["Peter Fackeldey", "Mihai Maruseac", "Matthew Feickert"]
 ---
 
-## Manipulating tree-like data using functional programming paradigms
+## Manipulating Tree-like Data using Functional Programming Paradigms
 
-A "PyTree" is a nested collection of python containers (e.g. dicts, (named) tuples, lists, ...), where the leafs are of interest.
+A "PyTree" is a nested collection of Python containers (e.g. dicts, (named) tuples, lists, ...), where the leafs are of interest.
 As you can imagine (or even experienced in the past), such arbitrary nested collections can be cumbersome to manipulate _efficiently_.
-It often requires complex recursive logic, and which usually does not generalize to other nested Python containers (PyTrees).
+It often requires complex recursive logic which usually does not generalize to other nested Python containers (PyTrees).
 
 The core concept of PyTrees is being able to flatten them into a flat collection of leafs and a "blueprint" of the tree structure, and then being able to unflatten them back into the original PyTree.
-This allows to apply generic transformations, e.g. through a `tree_map(fun, pytree)` operation:
+This allows to apply generic transformations, e.g. taking the square root of each leaf of a PyTree with a `tree_map(np.sqrt, pytree)` operation:
 
 ```python
 import optree as pt
 import numpy as np
 
 # tuple of a list of a dict with an array as value, and an array
-pytree = ([[{"foo": np.array([2.0])}], np.array([3.0])],)
+pytree = ([[{"foo": np.array([4.0])}], np.array([9.0])],)
 
 # sqrt of each leaf array
 sqrt_pytree = pt.tree_map(np.sqrt, pytree)
 print(f"{sqrt_pytree=}")
-# >> sqrt_pytree=([[{'foo': array([1.41421356])}], array([1.73205081])],)
+# >> sqrt_pytree=([[{'foo': array([2.])}], array([3.])],)
 
 # reductions
 all_positive = pt.tree_all(pt.tree_map(lambda x: x > 0.0, pytree))
@@ -38,7 +38,7 @@ print(f"{all_positive=}")
 
 summed = pt.tree_reduce(sum, pytree)
 print(f"{summed=}")
-# >> summed=array([5.])
+# >> summed=array([13.])
 ```
 
 The trick here is that these operations can be implemented in three steps, e.g. `tree_map`:
@@ -54,11 +54,11 @@ new_leafs = tuple(map(fun, leafs))
 result_pytree = pt.tree_unflatten(treedef, new_leafs)
 ```
 
-Here, we use [`optree`](https://github.com/metaopt/optree/tree/main/optree) - a standalone PyTree library - that enables all these manipulations. It focusses on performance, feature richness, minimal dependencies, and got adopted by PyTorch, Keras, and TensorFlow as a core dependency.
+Here, we use [`optree`](https://github.com/metaopt/optree/tree/main/optree) - a standalone PyTree library - that enables all these manipulations. It focusses on performance, feature richness, minimal dependencies, and got adopted by [PyTorch](https://pytorch.org), [Keras](https://keras.io), and [TensorFlow](https://github.com/tensorflow/tensorflow) (through Keras) as a core dependency.
 
 ### PyTree Origins
 
-Originally, the concept of PyTrees was developed by the [JAX](https://docs.jax.dev/en/latest/) project to make nested collections of JAX arrays work transparently at the "JIT-boundary" (the JAX JIT toolchain does not know about python containers, only about JAX Arrays).
+Originally, the concept of PyTrees was developed by the [JAX](https://docs.jax.dev/en/latest/) project to make nested collections of JAX arrays work transparently at the "JIT-boundary" (the JAX JIT toolchain does not know about Python containers, only about JAX Arrays).
 However, PyTrees were quickly adopted by AI researchers for broader use-cases: semantically grouping layers of weights and biases in e.g. a list of named tuples (or dictionaries) is a common pattern in the JAX-AI-world, see the following (pseudo) Python snippet:
 
 ```python
@@ -93,7 +93,7 @@ Here, `layers` is a PyTree - a `list` of multiple `Layer` - and the JIT compiled
 
 ### PyTrees in Scientific Python
 
-Wouldn't it be nice to make workflows in the scientific python ecosystem _just work_ with any PyTree?
+Wouldn't it be nice to make workflows in the scientific Python ecosystem _just work_ with any PyTree?
 
 Giving semantic meaning to numeric data through PyTrees can be useful for applications outside of AI as well.
 Consider the following minimization of the [Rosenbrock](https://en.wikipedia.org/wiki/Rosenbrock_function) function:
@@ -163,7 +163,7 @@ print(bestfit_params)
 # >> Params(x=np.float64(0.999995688776513), y=np.float64(0.9999913673387226))
 ```
 
-This new `minimize` function works with _any_ PyTree, let's consider a modified and more complex version of the Rosenbrock function that relies on two sets of `Params` as input:
+This new `minimize` function works with _any_ PyTree, let's consider a modified and more complex version of the Rosenbrock function that relies on two sets of `Params` as input - a common pattern for hierarchical models:
 
 ```python
 import numpy as np
@@ -180,7 +180,7 @@ def rosenbrock_modified(params: Params) -> float:
 
     # calculate `x` and `y` from two sources:
     x = np.asin(min(p1.x, p2.x) / max(p1.x, p2.x))
-    y = 1.0 / (1.0 + np.exp(-(p1.y / p2.y)))
+    y = 1 / (1 + np.exp(-(p1.y / p2.y)))
 
     return (1 - x) ** 2 + 100 * (y - x**2) ** 2
 
