@@ -121,7 +121,7 @@ print(res.x)
 Now, let's turn it a minimization that uses a more complex type for the parameters - a NamedTuple that describes our fit parameters:
 
 ```python
-import optree as pt  # standalone PyTree library
+import optree as pt
 from typing import NamedTuple, Callable
 from scipy.optimize import minimize as sp_minimize
 
