@@ -169,14 +169,14 @@ This new `minimize` function works with _any_ PyTree, let's consider a modified 
 import numpy as np
 
 
-def rosenbrock_modified(params: Params) -> float:
+def rosenbrock_modified(two_params: tuple[Params, Params]) -> float:
     """
     Modified Rosenbrock where the x and y parameters are determined by
     a non-linear transformations of two versions of each, i.e.:
       x = arcsin(min(x1, x2) / max(x1, x2))
       y = sigmoid(x1 - x2)
     """
-    p1, p2 = params
+    p1, p2 = two_params
 
     # calculate `x` and `y` from two sources:
     x = np.asin(min(p1.x, p2.x) / max(p1.x, p2.x))
