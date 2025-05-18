@@ -195,3 +195,9 @@ print(bestfit_params)
 ```
 
 The new `minimize` still works, because a `tuple` of `Params` is just _another_ PyTree!
+
+### Final Thought
+
+Working with nested data structures doesn’t have to be messy.
+PyTrees let you focus on the data and the transformations you want to apply.
+Whether you're building neural networks, optimizing scientific models, or just deal with complex nested python containers, they make your code cleaner, more flexible, and just nicer to work with.
