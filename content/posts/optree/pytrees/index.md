@@ -89,7 +89,7 @@ def neural_network(layers: list[Layer], x: jax.Array) -> jax.Array:
 prediction = neural_network(layers=layers, x=jnp.array(...))
 ```
 
-Here, `layers` is a PyTree - a `list` of multiple `Layer` - and the JIT compiled `neural_network` function _just works_ with this datastructure as input.
+Here, `layers` is a PyTree &mdash; a `list` of multiple `Layer` &mdash; and the JIT compiled `neural_network` function _just works_ with this data structure as input.
 
 ### PyTrees in Scientific Python
 
