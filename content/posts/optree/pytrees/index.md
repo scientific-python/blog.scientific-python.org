@@ -54,7 +54,7 @@ new_leafs = tuple(map(fun, leafs))
 result_pytree = pt.tree_unflatten(treedef, new_leafs)
 ```
 
-Here, we use [`optree`](https://github.com/metaopt/optree/tree/main/optree) - a standalone PyTree library - that enables all these manipulations. It focusses on performance, feature richness, minimal dependencies, and got adopted by [PyTorch](https://pytorch.org), [Keras](https://keras.io), and [TensorFlow](https://github.com/tensorflow/tensorflow) (through Keras) as a core dependency.
+Here, we use [`optree`](https://github.com/metaopt/optree/tree/main/optree) &mdash; a standalone PyTree library &mdash; that enables all these manipulations. It focuses on performance, is feature rich, has minimal dependencies, and has been adopted by [PyTorch](https://pytorch.org), [Keras](https://keras.io), and [TensorFlow](https://github.com/tensorflow/tensorflow) (through Keras) as a core dependency.
 
 ### PyTree Origins
 
