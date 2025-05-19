@@ -163,7 +163,9 @@ print(bestfit_params)
 # >> Params(x=np.float64(0.999995688776513), y=np.float64(0.9999913673387226))
 ```
 
-This new `minimize` function works with _any_ PyTree, let's consider a modified and more complex version of the Rosenbrock function that relies on two sets of `Params` as input - a common pattern for hierarchical models:
+This new `minimize` function works with _any_ PyTree!
+
+Let's now consider a modified and more complex version of the Rosenbrock function that relies on two sets of `Params` as input &mdash; a common pattern for hierarchical models:
 
 ```python
 import numpy as np
