@@ -118,7 +118,7 @@ print(res.x)
 # >> [0.99999569 0.99999137]
 ```
 
-Now, let's turn it a minimization that uses a more complex type for the parameters - a NamedTuple that describes our fit parameters:
+Now, let's consider a minimization that uses a more complex type for the parameters &mdash; a NamedTuple that describes our fit parameters:
 
 ```python
 import optree as pt
