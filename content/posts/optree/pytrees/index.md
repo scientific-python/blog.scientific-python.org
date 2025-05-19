@@ -201,5 +201,5 @@ The new `minimize` still works, because a `tuple` of `Params` is just _another_ 
 ### Final Thought
 
 Working with nested data structures doesn’t have to be messy.
-PyTrees let you focus on the data and the transformations you want to apply.
+PyTrees let you focus on the data and the transformations you want to apply, in a generic manner.
 Whether you're building neural networks, optimizing scientific models, or just dealing with complex nested Python containers, PyTrees can make your code cleaner, more flexible, and just nicer to work with.
