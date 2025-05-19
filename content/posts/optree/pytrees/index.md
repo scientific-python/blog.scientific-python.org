@@ -3,7 +3,7 @@ title: "Pytrees for Scientific Python"
 date: 2025-05-14T10:27:59-07:00
 draft: false
 description: "
-Introducing PyTrees for Scientific Python. We discuss what PyTrees are, how they're useful in the realm of scientific python, and how to work _efficiently_ with them.
+Introducing PyTrees for Scientific Python. We discuss what PyTrees are, how they're useful in the realm of scientific Python, and how to work _efficiently_ with them.
 "
 tags: ["PyTrees", "Functional Programming", "Tree-like data manipulation"]
 displayInList: true
