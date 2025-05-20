@@ -9,10 +9,7 @@ tags: ["PyTrees", "Functional Programming", "Tree-like data manipulation"]
 displayInList: true
 author: ["Peter Fackeldey", "Mihai Maruseac", "Matthew Feickert"]
 summary: |
-  This blog introduces PyTrees &mdash; nested Python data structures (such as lists, dicts, and tuples) with numerical leaf values &mdash; designed to simplify working with complex, hierarchically organized data.
-  While such structures are often cumbersome to manipulate, PyTrees make them more manageable by allowing them to be flattened into a list of leaves along with a reusable structure blueprint in a _generic_ way.
-  This enables flexible, generic operations like mapping and reducing from functional programming.
-  By bringing those functional paradigms to structured data, PyTrees let you focus on what transformations to apply, not how to traverse the structure &mdash; no matter how deeply nested or complex it is.
+  Add summary here.
 ---
 
 ## Manipulating Tree-like Data using Functional Programming Paradigms
