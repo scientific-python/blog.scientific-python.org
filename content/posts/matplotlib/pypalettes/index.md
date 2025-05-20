@@ -12,6 +12,8 @@ resources:
     params:
       description: "pypalettes library"
       showOnTop: false
+summary: |
+  [PyPalettes](https://github.com/JosephBARBIERDARNAL/pypalettes) is a new Python library designed to simplify the use of color palettes in Python charts.
 ---
 
 ## Finding the right color has never been easier
