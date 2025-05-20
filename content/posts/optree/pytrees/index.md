@@ -8,6 +8,8 @@ Introducing PyTrees for Scientific Python. We discuss what PyTrees are, how they
 tags: ["PyTrees", "Functional Programming", "Tree-like data manipulation"]
 displayInList: true
 author: ["Peter Fackeldey", "Mihai Maruseac", "Matthew Feickert"]
+summary: |
+  Add summary here.
 ---
 
 ## Manipulating Tree-like Data using Functional Programming Paradigms
