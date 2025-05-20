@@ -17,7 +17,7 @@ summary: |
 
 ## Manipulating Tree-like Data using Functional Programming Paradigms
 
-A "PyTree" is a nested collection of Python containers (e.g. dicts, (named) tuples, lists, ...), where the leafs are of interest.
+A "PyTree" is a nested collection of Python containers (e.g. dicts, (named) tuples, lists, ...), where the leaves are of interest.
 As you can imagine (or even experienced in the past), such arbitrary nested collections can be cumbersome to manipulate _efficiently_.
 It often requires complex recursive logic which usually does not generalize to other nested Python containers (PyTrees).
 
