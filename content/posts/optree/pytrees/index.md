@@ -22,7 +22,7 @@ As you can imagine (or even experienced in the past), such arbitrary nested coll
 It often requires complex recursive logic which usually does not generalize to other nested Python containers (PyTrees).
 
 The core concept of PyTrees is being able to flatten them into a flat collection of leaves and a "blueprint" of the tree structure, and then being able to unflatten them back into the original PyTree.
-This allows to apply generic transformations, e.g. taking the square root of each leaf of a PyTree with a `tree_map(np.sqrt, pytree)` operation:
+This allows for the application of generic transformations. For example, on a PyTree with NumPy arrays as leaves, taking the square root of each leaf with `tree_map(np.sqrt, pytree)`:
 
 ```python
 import optree as pt
