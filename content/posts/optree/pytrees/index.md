@@ -37,7 +37,7 @@ print(f"{sqrt_pytree=}")
 # >> sqrt_pytree=([[{'foo': array([2.])}], array([3.])],)
 
 # reductions
-all_positive = pt.tree_all(pt.tree_map(lambda x: x > 0.0, pytree))
+all_positive = all(x > 0.0 for x in pt.tree_iter(pytree))
 print(f"{all_positive=}")
 # >> all_positive=True
 
