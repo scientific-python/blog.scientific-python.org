@@ -23,7 +23,9 @@ Such collections can be cumbersome to manipulate _efficiently_, especially if th
 It often requires complex recursive logic which usually does not generalize to other nested Python containers (PyTrees), e.g. for new measurements.
 
 The core concept of PyTrees is being able to flatten them into a flat collection of leaves and a "blueprint" of the tree structure, and then being able to unflatten them back into the original PyTree.
-This allows for the application of generic transformations. For example, on a PyTree with NumPy arrays as leaves, taking the square root of each leaf with `tree_map(np.sqrt, tree)`:
+This allows for the application of generic transformations.
+In this blog post, we use [`optree`](https://github.com/metaopt/optree/tree/main/optree) &mdash; a standalone PyTree library &mdash; that enables these transformations. It focuses on performance, is feature rich, has minimal dependencies, and has been adopted by [PyTorch](https://pytorch.org), [Keras](https://keras.io), and [TensorFlow](https://github.com/tensorflow/tensorflow) (through Keras) as a core dependency.
+For example, on a PyTree with NumPy arrays as leaves, taking the square root of each leaf with `optree.tree_map(np.sqrt, tree)`:
 
 ```python
 import optree as pt
@@ -59,8 +61,6 @@ new_leafs = tuple(map(fun, leafs))
 # step 3:
 result_tree = pt.tree_unflatten(treedef, new_leafs)
 ```
-
-Here, we use [`optree`](https://github.com/metaopt/optree/tree/main/optree) &mdash; a standalone PyTree library &mdash; that enables all these manipulations. It focuses on performance, is feature rich, has minimal dependencies, and has been adopted by [PyTorch](https://pytorch.org), [Keras](https://keras.io), and [TensorFlow](https://github.com/tensorflow/tensorflow) (through Keras) as a core dependency.
 
 ### PyTree Origins
 
