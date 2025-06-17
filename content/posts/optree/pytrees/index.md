@@ -22,26 +22,26 @@ As you can imagine (or even experienced in the past), such arbitrary nested coll
 It often requires complex recursive logic which usually does not generalize to other nested Python containers (PyTrees).
 
 The core concept of PyTrees is being able to flatten them into a flat collection of leaves and a "blueprint" of the tree structure, and then being able to unflatten them back into the original PyTree.
-This allows for the application of generic transformations. For example, on a PyTree with NumPy arrays as leaves, taking the square root of each leaf with `tree_map(np.sqrt, pytree)`:
+This allows for the application of generic transformations. For example, on a PyTree with NumPy arrays as leaves, taking the square root of each leaf with `tree_map(np.sqrt, tree)`:
 
 ```python
 import optree as pt
 import numpy as np
 
 # tuple of a list of a dict with an array as value, and an array
-pytree = ([[{"foo": np.array([4.0])}], np.array([9.0])],)
+tree = ([[{"foo": np.array([4.0])}], np.array([9.0])],)
 
 # sqrt of each leaf array
-sqrt_pytree = pt.tree_map(np.sqrt, pytree)
-print(f"{sqrt_pytree=}")
-# >> sqrt_pytree=([[{'foo': array([2.])}], array([3.])],)
+sqrt_tree = pt.tree_map(np.sqrt, tree)
+print(f"{sqrt_tree=}")
+# >> sqrt_tree=([[{'foo': array([2.])}], array([3.])],)
 
 # reductions
-all_positive = all(x > 0.0 for x in pt.tree_iter(pytree))
+all_positive = all(x > 0.0 for x in pt.tree_iter(tree))
 print(f"{all_positive=}")
 # >> all_positive=True
 
-summed = pt.tree_reduce(sum, pytree)
+summed = pt.tree_reduce(sum, tree)
 print(f"{summed=}")
 # >> summed=array([13.])
 ```
@@ -50,13 +50,13 @@ The trick here is that these operations can be implemented in three steps, e.g. 
 
 ```python
 # step 1:
-leafs, treedef = pt.tree_flatten(pytree)
+leafs, treedef = pt.tree_flatten(tree)
 
 # step 2:
 new_leafs = tuple(map(fun, leafs))
 
 # step 3:
-result_pytree = pt.tree_unflatten(treedef, new_leafs)
+result_tree = pt.tree_unflatten(treedef, new_leafs)
 ```
 
 Here, we use [`optree`](https://github.com/metaopt/optree/tree/main/optree) &mdash; a standalone PyTree library &mdash; that enables all these manipulations. It focuses on performance, is feature rich, has minimal dependencies, and has been adopted by [PyTorch](https://pytorch.org), [Keras](https://keras.io), and [TensorFlow](https://github.com/tensorflow/tensorflow) (through Keras) as a core dependency.
