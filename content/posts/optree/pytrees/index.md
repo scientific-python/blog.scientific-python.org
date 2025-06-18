@@ -53,13 +53,13 @@ The trick here is that these operations can be implemented in three steps, e.g. 
 
 ```python
 # step 1:
-leafs, treedef = pt.tree_flatten(tree)
+leaves, treedef = pt.tree_flatten(tree)
 
 # step 2:
-new_leafs = tuple(map(fun, leafs))
+new_leaves = tuple(map(fun, leaves))
 
 # step 3:
-result_tree = pt.tree_unflatten(treedef, new_leafs)
+result_tree = pt.tree_unflatten(treedef, new_leaves)
 ```
 
 ### PyTree Origins
