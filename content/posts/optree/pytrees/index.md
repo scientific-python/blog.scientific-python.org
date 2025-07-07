@@ -40,13 +40,13 @@ print(f"{sqrt_tree=}")
 # >> sqrt_tree=([[{'foo': array([2.])}], array([3.])],)
 
 # reductions
-all_positive = all(x > 0.0 for x in pt.tree_iter(tree))
+all_positive = all(np.all(x > 0.0) for x in pt.tree_iter(tree))
 print(f"{all_positive=}")
 # >> all_positive=True
 
-summed = pt.tree_reduce(sum, tree)
+summed = np.sum(pt.tree_reduce(sum, tree))
 print(f"{summed=}")
-# >> summed=array([13.])
+# >> summed=np.float64(13.0)
 ```
 
 The trick here is that these operations can be implemented in three steps, e.g. `tree_map`:
