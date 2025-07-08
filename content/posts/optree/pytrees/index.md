@@ -96,7 +96,7 @@ prediction = neural_network(layers=layers, x=jnp.array(...))
 ```
 
 Here, `layers` is a PyTree &mdash; a `list` of multiple `Layer` &mdash; and the JIT compiled `neural_network` function _just works_ with this data structure as input.
-Although you cannot see what happens inside of `jax.jit`, `layers` is automatically flattened by the `jax.jit` decorator to a flat iterable of arrays, which are understood by the compiler in contrast to a Python `list` of `NamedTuples`.
+Although you cannot see what happens inside of `jax.jit`, `layers` is automatically flattened by the `jax.jit` decorator to a flat iterable of arrays, which are understood by the JAX JIT toolchain in contrast to a Python `list` of `NamedTuples`.
 
 ### PyTrees in Scientific Python
 
