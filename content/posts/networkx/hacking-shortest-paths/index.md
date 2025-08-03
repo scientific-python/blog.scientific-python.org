@@ -1,7 +1,7 @@
 ---
 title: "Hacking Shortest Paths: Solve Harder Problems by Tweaking Graphs"
 description: "Modeling Constraints in Shortest Path Problems using NetworkX and Graph Transformations"
-date: 2025-08-02
+date: 2025-08-04
 draft: false
 tags: ["networkx", "shortest-paths", "dijkstra"]
 displayInList: true
