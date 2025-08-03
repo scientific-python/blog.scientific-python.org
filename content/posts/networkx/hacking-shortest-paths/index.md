@@ -13,13 +13,14 @@ resources:
       showOnTop: false
 ---
 
-Many **real-world shortest path problems** include constraints that classic algorithms don’t directly handle. [NetworkX](https://networkx.org/) provides robust, optimized implementations of [algorithms](https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html) like Dijkstra’s, Bellman-Ford, and A*. But what if your problem doesn’t fit the classic shortest path formulation?
+Many **real-world shortest path problems** include constraints that classic algorithms don’t directly handle. [NetworkX](https://networkx.org/) provides robust, optimized implementations of [algorithms](https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html) like Dijkstra’s, Bellman-Ford, and A\*. But what if your problem doesn’t fit the classic shortest path formulation?
 
 Instead of designing a new algorithm from scratch, a powerful approach is to **transform your problem into a standard shortest path query by modifying the input graph**. This lets you **leverage existing, well-tested tools**.
 
 In this post, I’ll present a few common “tricks” to encode more complex shortest-path-like problems using simple graph modifications. Each trick includes a real-world example and can be implemented with just a few lines of NetworkX code.
 
 ### Trick 1: Multiple Targets with a "Sentinel" Node
+
 _Reach the closest among several goals_
 
 **Problem**: Find the shortest path from a source node to the closest of several target nodes:
@@ -27,7 +28,6 @@ _Reach the closest among several goals_
 $$
 \min_{\substack{p \in \mathcal{P}(s, t) \\ t \in \text{targets}}} \mathrm{length}(p)
 $$
-
 
 **Classic scenario**: You're part of an emergency response team trying to reach the closest hospital. You know the locations of several hospitals across the city, and you want to get to the nearest one as quickly as possible.
 
@@ -46,16 +46,19 @@ ambulance_location = 0
 hospitals = [1, 11]
 
 # Add sentinel node
-G.add_node('sentinel')
+G.add_node("sentinel")
 for h in hospitals:
-    G.add_edge(h, 'sentinel', weight=0)
+    G.add_edge(h, "sentinel", weight=0)
 
 # Find shortest path from ambulance to the closest hospital (via sentinel)
-path = nx.shortest_path(G, source=ambulance_location, target='sentinel', weight='weight')
+path = nx.shortest_path(
+    G, source=ambulance_location, target="sentinel", weight="weight"
+)
 print("Route to closest hospital:", path[:-1])
 ```
 
 **Output:**
+
 ```
 Route to closest hospital: [0, 8, 3, 11]
 ```
@@ -67,6 +70,7 @@ By adding just a single sentinel node and a few zero-weight edges, you can turn 
 While it’s possible to modify Dijkstra’s algorithm to support multiple targets directly—by stopping as soon as one is reached—doing so often requires reimplementing logic already handled efficiently by libraries like NetworkX. In contrast, the sentinel trick keeps your code simple and makes full use of existing, battle-tested tools.
 
 ### Trick 2: Forced Detours — Pass Through a Set of Nodes
+
 _Add Mid-Route Requirements Without Changing the Algorithm_
 
 **Problem**: You want the shortest path from a source to a target, but the path must pass through at least one node from a specific set $C$ (checkpoints):
@@ -74,7 +78,6 @@ _Add Mid-Route Requirements Without Changing the Algorithm_
 $$
 \min_{\substack{p \in \mathcal{P}(s, t) \\ p \cap C \ne \emptyset}} \mathrm{length}(p)
 $$
-
 
 **Scenario**: You're heading home but need to stop at any one of several nearby convenience stores to pick up a specific item (like a prescription, snack, or package). You want the shortest overall route home that includes at least one store stop.
 
@@ -110,7 +113,9 @@ for checkpoint in checkpoints:
     G2.add_edge((checkpoint, False), (checkpoint, True))
 
 # Start from (source, False), end at (target, True)
-path_with_state = nx.shortest_path(G2, source=(source, False), target=(target, True), weight='weight')
+path_with_state = nx.shortest_path(
+    G2, source=(source, False), target=(target, True), weight="weight"
+)
 
 # We remove the state and use `groupby` to drop duplicated consecutive locations
 # because the path in the stateful graph may include the same location multiple times
@@ -122,6 +127,7 @@ print("Shortest Path through checkpoint:", path)
 ```
 
 **Output:**
+
 ```
 Shortest Path through checkpoint: [0, 8, 13, 5, 13, 3, 11, 14]
 ```
