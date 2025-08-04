@@ -78,7 +78,7 @@ $$
 
 **Solution**: Create **two versions of each original node**: one for the **before checkpoint** state and one for **after checkpoint**. Edges from the original graph are duplicated within each state. Next, add the state transition edges: connect the pre-checkpoint version of each checkpoint node to its post-checkpoint version with an edge.
 
-This effectively models the constraint into the graph’s structure. Solution to the problem is equivalent to finding the shortest path from source ("before checkpoint") to target ("after checkpoint").
+This effectively models the constraint into the graph’s structure. The solution to the problem is equivalent to finding the shortest path from source ("before checkpoint") to target ("after checkpoint").
 
 #### Example:
 
