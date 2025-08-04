@@ -153,7 +153,7 @@ One key limitation of this approach is that **modifying the input graph to encod
 
 This size explosion impacts **both memory and runtime performance**. Even if the underlying shortest path algorithm is efficient (e.g., Dijkstra's or A\*), it now operates on a much larger graph, potentially becoming impractical for large scenarios.
 
-Pruning strategies may mitigate this to some extent but there is a trade-off between how accurate we can express constrains vs. the size of the transformed graph.
+Pruning strategies may mitigate this to some extent but there is a trade-off between how accurate we can express constraints vs. the size of the transformed graph.
 
 For instance, in our node-budget state graph example, modeling all different possible budget values can make the stateful graph explode. One possible pruning strategy could be considering only budgets that are multiple of ten. Which reduces the size of the graph by sacrificing accuracy in the final result (solution becomes an approximation).
 
