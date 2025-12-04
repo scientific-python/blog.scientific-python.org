@@ -159,7 +159,7 @@ For instance, in our node-budget state graph example, modeling all different pos
 
 #### Wrapping Up: Transform the Input, Reuse the Algorithm
 
-**Transforming your input data to encode constraints for problem variations is a powerful technique that extends far beyond shortest path problems.** By modifying the input structure you can solve more complex challenges while continue reusing well-established, efficient algorithms.
+**Transforming your input data to encode constraints for problem variations is a powerful technique that extends far beyond shortest path problems.** By modifying the input structure you can solve more complex challenges while reusing well-established, efficient algorithms.
 
 This approach simplifies development, and can lead to cleaner, more maintainable code.
 
