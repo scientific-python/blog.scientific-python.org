@@ -2,7 +2,7 @@
 title: "Hacking Shortest Paths: Solve Harder Problems by Tweaking Graphs"
 description: "Modeling Constraints in Shortest Path Problems using NetworkX and Graph Transformations"
 summary: "Many real-world shortest path problems include constraints that classic algorithms don’t directly handle. NetworkX provides robust, optimized implementations of algorithms like Dijkstra’s, Bellman-Ford, and A*. But what if your problem doesn’t fit the classic shortest path formulation?"
-date: 2025-08-03
+date: 2025-12-04
 draft: false
 tags: ["networkx", "shortest-paths", "dijkstra"]
 displayInList: true
@@ -14,7 +14,7 @@ resources:
       showOnTop: false
 ---
 
-Many **real-world shortest path problems** include constraints that classic algorithms don’t directly handle. [NetworkX](https://networkx.org/) provides robust, optimized implementations of [algorithms](https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html) like Dijkstra’s, Bellman-Ford, and A\*. But what if your problem doesn’t fit the classic shortest path formulation?
+Many **real-world shortest path problems** include constraints that classic algorithms don’t directly handle. [NetworkX](https://networkx.org/) provides robust, optimized implementations of [algorithms](https://networkx.org/documentation/latest/reference/algorithms/shortest_paths.html) like Dijkstra’s, Bellman-Ford, and A\*. But what if your problem doesn’t fit the classic shortest path formulation?
 
 Instead of designing a new algorithm from scratch, a powerful approach is to **transform your problem into a standard shortest path query by modifying the input graph**. This lets you **leverage existing, well-tested tools**.
 
