@@ -153,7 +153,7 @@ $$
 $$
 
 possible combinations of edges which could be arborescences.
-That's a lot of combintation, more than I wanted to check by hand so I wrote a short python script.
+That's a lot of combination, more than I wanted to check by hand so I wrote a short python script.
 
 ```python
 from itertools import combinations
