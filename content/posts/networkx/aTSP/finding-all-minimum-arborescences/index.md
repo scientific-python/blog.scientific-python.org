@@ -110,7 +110,7 @@ Now that we are familiar with the minimum arborescence algorithm, we can discuss
 The changes will be primarily located in step 1.
 Under the normal operation of the algorithm, the consideration which happens at each vertex might look like this.
 
-<center><img src="edmonds-normal.png" alt="Edmonds algrithm selecting edge without restrictions"/></center>
+<center><img src="edmonds-normal.png" alt="Edmonds algorithm selecting edge without restrictions"/></center>
 
 Where the bolded arrow is chosen by the algorithm as it is the incoming arc with minimum weight.
 Now, if we were required to include a different edge, say the weight 6 arc, we would want this behavior even though it is strictly speaking not optimal.
