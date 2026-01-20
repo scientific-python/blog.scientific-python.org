@@ -50,11 +50,12 @@ Of course, we work together already online, but the event allows us to focus our
 This is why, before the summit, we have planning Zoom calls, where we identify topics of interest, which are turned into issues, which are then fleshed out and discussed prior to the event.
 That way, we hoped to hit the ground running—as we did!
 
-{{< figure >}}
-src = "group.jpg"
-alt = "Photo of the summit attendees, in front of a fountain on the University of Washington campus, with a volcano in the background"
-caption = "Our intrepid community developers, with Mt Rainier in the background"
-{{< /figure >}}
+{{< figure
+src="group.jpg"
+alt="Photo of the summit attendees, in front of a fountain on the University of Washington campus, with a volcano in the background"
+caption="Our intrepid community developers, with Mt Rainier in the background"
+
+> }}
 
 ## Topics
 
@@ -118,11 +119,12 @@ For example:
 
 ### Conclusion
 
-{{< figure >}}
-src = "chess.jpg"
-caption = "Nothing like a relaxing game of chess after a long day's work"
-alt = "Members of the team playing chess at Big Time Ale Brewery in Seattle"
-{{< /figure >}}
+{{< figure
+src="chess.jpg"
+caption="Nothing like a relaxing game of chess after a long day's work"
+alt="Members of the team playing chess at Big Time Ale Brewery in Seattle"
+
+> }}
 
 Numerous other PRs were made, of which a number were probably not even captured in the [worklog](https://hackmd.io/wsJVTMYdQGG_Zgz7rgxSzw).
 But, besides the inherent satisfaction of working together with this great group, the best feature of the summit was that we were able to hang out, bonding over our communal joys and struggles—both technical and personal.
