@@ -52,9 +52,9 @@ That way, we hoped to hit the ground running—as we did!
 
 <!-- prettier-ignore-start -->
 {{< figure
-src="group.jpg"
-alt="Photo of the summit attendees, in front of a fountain on the University of Washington campus, with a volcano in the background"
-caption="Our intrepid community developers, with Mt Rainier in the background"
+  src="group.jpg"
+  alt="Photo of the summit attendees, in front of a fountain on the University of Washington campus, with a volcano in the background"
+  caption="Our intrepid community developers, with Mt Rainier in the background"
 >}}
 <!-- prettier-ignore-end -->
 
