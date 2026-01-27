@@ -1,49 +1,49 @@
 [[item]]
 type = 'card'
 classcard = 'text-center'
-body = '''{{< image >}}
-src = 'https://avatars.githubusercontent.com/u/5751519?u=d0ba9771b7c44418826b6ced17b197c703240c52&v=4"'
-alt = 'Avatar of Davide Valeriani'
-{{< /image >}}
+body = '''{{< image
+  src="https://avatars.githubusercontent.com/u/5751519?u=d0ba9771b7c44418826b6ced17b197c703240c52&v=4"
+  alt="Avatar of Davide Valeriani"
+>}}
 Davide Valeriani'''
 link = 'https://github.com/davidevaleriani'
 
 [[item]]
 type = 'card'
 classcard = 'text-center'
-body = '''{{< image >}}
-src = 'https://avatars.githubusercontent.com/u/43481325?u=8c0c0adbf3f2efd2cce72951d3554064c7bbfce3&v=4"'
-alt = 'Avatar of Inessa Pawson'
-{{< /image >}}
+body = '''{{< image
+  src="https://avatars.githubusercontent.com/u/43481325?u=8c0c0adbf3f2efd2cce72951d3554064c7bbfce3&v=4"
+  alt="Avatar of Inessa Pawson"
+>}}
 Inessa Pawson'''
 link = 'https://github.com/InessaPawson'
 
 [[item]]
 type = 'card'
 classcard = 'text-center'
-body = '''{{< image >}}
-src = 'https://avatars.githubusercontent.com/u/123428?v=4"'
-alt = 'Avatar of Jarrod Millman'
-{{< /image >}}
+body = '''{{< image
+  src="https://avatars.githubusercontent.com/u/123428?v=4"
+  alt="Avatar of Jarrod Millman"
+>}}
 Jarrod Millman'''
 link = 'https://github.com/jarrodmillman'
 
 [[item]]
 type = 'card'
 classcard = 'text-center'
-body = '''{{< image >}}
-src = 'https://avatars.githubusercontent.com/u/18587879?u=83f10fabe466ae8e7052c03c5e6e9cde684a4e10&v=4"'
-alt = 'Avatar of Juanita Gomez'
-{{< /image >}}
+body = '''{{< image
+  src="https://avatars.githubusercontent.com/u/18587879?u=83f10fabe466ae8e7052c03c5e6e9cde684a4e10&v=4"
+  alt="Avatar of Juanita Gomez"
+>}}
 Juanita Gomez'''
 link = 'https://github.com/juanis2112'
 
 [[item]]
 type = 'card'
 classcard = 'text-center'
-body = '''{{< image >}}
-src = 'https://avatars.githubusercontent.com/u/23188539?u=64445b52dbf3f75de8006ed4264fdd2afaed97a3&v=4"'
-alt = 'Avatar of Pamphile Roy'
-{{< /image >}}
+body = '''{{< image
+  src="https://avatars.githubusercontent.com/u/23188539?u=64445b52dbf3f75de8006ed4264fdd2afaed97a3&v=4"
+  alt="Avatar of Pamphile Roy"
+>}}
 Pamphile Roy'''
 link = 'https://github.com/tupui'
