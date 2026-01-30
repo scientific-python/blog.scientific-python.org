@@ -8,7 +8,7 @@ Sparse Arrays at the May Developer Summit in Seattle
 "
 tags: ["Summit", "Scientific-Python", "scipy.sparse", "Sparse"]
 displayInList: true
-author: ["Dan Schult", "Stéfan van der Walt"]
+author: ["Dan Schult", "Stéfan van der Walt <stefanv>"]
 summary: |
     The first [Scientific Python Developer Summit](https://blog.scientific-python.org/scientific-python/dev-summit-1/) provided an opportunity
     for core developers from the scientific Python ecosystem to come together to:

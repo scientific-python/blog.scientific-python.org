@@ -13,7 +13,12 @@ tags:
 description: "New Scientific Python grant to focus on common web themes, adopting and promoting access-centered practices, translations, and interactivity of documentation."
 displayInList: true
 author:
-  ["Ralf Gommers", "Stéfan van der Walt", "Tania Allard", "Jarrod Millman"]
+  [
+    "Ralf Gommers",
+    "Stéfan van der Walt <stefanv>",
+    "Tania Allard",
+    "Jarrod Millman",
+  ]
 ---
 
 We are delighted to announce a [two-year grant](https://scientific-python.org/doc/scientific-python-community-and-communications-infrastructure-2022.pdf) from the Chan Zuckerberg Initiative (CZI) in support of the [Scientific Python project](https://scientific-python.org/).

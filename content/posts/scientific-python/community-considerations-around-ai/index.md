@@ -5,7 +5,9 @@ draft: false
 description: "An attempt at exploring risks and impacts of LLMs and agents on our ecosystem, and how we, as a community, may agree upon common cultural norms and standards for integrating such technology into contributor pathways and workflows."
 tags: ["Scientific-Python", "AI"]
 displayInList: true
-author: ["Stéfan van der Walt"]
+author: ["Stéfan van der Walt <stefanv>"]
+summary: |
+  In this post, we explore the risks around and impact of AI contributions on our ecosystem, and how we, as a community, may agree upon common cultural norms and standards for integrating such technologies into contributor pathways and workflows.
 ---
 
 As LLM- / Agent-generated workflows and PRs become commonplace, we, the Scientific Python maintainer community, have to decide how to engage with them. Much of our ecosystem was crafted by hand, with a lot of care and love, so it is unsurprising that the rise in LLM contributions may at first feel threatening.
@@ -18,7 +20,7 @@ Discussing this with a colleague, he rightfully positioned it as follows:
 > _In Rebel Code (Moody, 2001), there is this idea that open-source has always been a movement of rebellion, an attempt at taking back the commons from enclosure. What does the rebellion look like when it loses it social form? What kind of people will we lose?_ — Matthew Brett
 
 It is against this backdrop that I spent a week pacing the corridor, hand-wringing.
-This post is some part of the result: an attempt at exploring risks and impacts of LLMs and agents on our ecosystem, and how we, as a community, may agree upon common cultural norms and standards for integrating such technology into contributor pathways and workflows. It is not a philosophical piece, jumping pretty much directly into pragmatic concerns. I think that conversation, the one that ties into Matthew's concerns above, is also very much worth having.
+This post is some part of the result: an attempt at exploring risks and impacts of LLMs and agents on our ecosystem, and how we, as a community, may agree upon common cultural norms and standards for integrating such technology into contributor pathways and workflows. It is not a philosophical piece, jumping pretty much directly into pragmatic concerns. I think the other conversation, the one that ties more directly into Matthew's concerns above, is also very much worth having.
 
 Admittedly, my initial sense of foreboding around LLMs upending our community's culture of collaboration, while by no means gone, has somewhat dissipated as I've started to also contemplate the other side of the coin: how these changes may benefit maintainers, who have, over the years, increasingly been burdened with more menial tasks, drawing them away from the work that originally attracted them to the ecosystem.
 
