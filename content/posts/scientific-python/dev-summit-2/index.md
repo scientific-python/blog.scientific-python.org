@@ -7,7 +7,7 @@ tags: ["Summit", "Scientific-Python"]
 displayInList: true
 author:
   [
-    "Stéfan van der Walt",
+    "Stéfan van der Walt <stefanv>",
     "Jarrod Millman",
     "Brigitta Sipőcz",
     "Pamphile Roy",

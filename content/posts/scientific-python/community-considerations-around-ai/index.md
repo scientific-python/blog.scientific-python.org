@@ -1,0 +1,180 @@
+---
+title: "Community Considerations Around AI Contributions"
+date: 2026-01-29
+draft: false
+description: "An attempt at exploring risks and impacts of LLMs and agents on our ecosystem, and how we, as a community, may agree upon common cultural norms and standards for integrating such technology into contributor pathways and workflows."
+tags: ["Scientific-Python", "AI"]
+displayInList: true
+author: ["Stéfan van der Walt <stefanv>"]
+summary: |
+  In this post, we explore the risks around and impact of AI contributions on our ecosystem, and how we, as a community, may agree upon common cultural norms and standards for integrating such technologies into contributor pathways and workflows.
+---
+
+As LLM- / Agent-generated workflows and PRs become commonplace, we, the Scientific Python maintainer community, have to decide how to engage with them. Much of our ecosystem was crafted by hand, with a lot of care and love, so it is unsurprising that the rise in LLM contributions may at first feel threatening.
+I know from personal experience that I felt somewhat deflated the first time one of these landed in front of me.
+There was a sense of frustration and loss, and it took me a few days to process the repercussions.
+Discussing this with a colleague, he rightfully positioned it as follows:
+
+> _The reason for the success of projects like NumPy and SciPy is not primarily superior coding ability, or better tooling, but the explosive effect of humans working well together, and enjoying their work. We cannot ignore that human and social element, because if we do, we lose it all, and we really do become lesser versions of programming teams in companies._
+>
+> _In Rebel Code (Moody, 2001), there is this idea that open-source has always been a movement of rebellion, an attempt at taking back the commons from enclosure. What does the rebellion look like when it loses it social form? What kind of people will we lose?_ — Matthew Brett
+
+It is against this backdrop that I spent a week pacing the corridor, hand-wringing.
+This post is some part of the result: an attempt at exploring risks and impacts of LLMs and agents on our ecosystem, and how we, as a community, may agree upon common cultural norms and standards for integrating such technology into contributor pathways and workflows. It is not a philosophical piece, jumping pretty much directly into pragmatic concerns. I think the other conversation, the one that ties more directly into Matthew's concerns above, is also very much worth having.
+
+Admittedly, my initial sense of foreboding around LLMs upending our community's culture of collaboration, while by no means gone, has somewhat dissipated as I've started to also contemplate the other side of the coin: how these changes may benefit maintainers, who have, over the years, increasingly been burdened with more menial tasks, drawing them away from the work that originally attracted them to the ecosystem.
+
+Whether we like it or not, the world has changed irrevocably, and now is a good time to consider how to position ourselves within it.
+
+I start this post outlining concerns, since these have been the topic of most AI conversations within our community.
+I'll follow with a section on proposed guidelines that we may iterate on, and end with a more hopeful section of how we may benefit from the revolution underfoot.
+
+## Maintainer concerns
+
+### Licensing
+
+The earliest concern raised around LLMs was that they almost certainly violate licensing conditions.
+In many cases, they will readily produce material derived from training sources that have licenses incompatible with the library you are contributing to. Being a summarization of a large corpus, an LLM is unlikely to even know that it drew upon a BSD-licensed source when generating code, and as such attribution will not be given.
+
+Of course, it matters _what_ you generate. If you refactor a test suite or correct spelling, you are unlikely to contravene any licenses. If, however, you are implementing a sophisticated algorithm, perhaps one that exists in, say, GPL'd libraries (incompatible with our BSD-based ecosystem), the risk increases significantly.
+
+Colleagues I spoke to prior to writing this post mentioned that they often use LLMs for annoying one-off tasks: generating an `nginx` configuration, writing an OPML-to-YAML converter, or setting up some throwaway experiment. There's little reason to have licensing concerns about such use-cases.
+
+### Introduction of subtle bugs
+
+LLMs typically operate with limited _context_. Problem-specific context needs to be selected and provided by the user, and it is not clear what _optimal_ context entails. Certain categories of prediction mistakes occur frequently, including hallucinations and over-confidence. Even having a "good memory" (i.e., being able to process and reference a lot of material quickly) cannot account for such missing context, and therefore proposed solutions may be sub-optimal.
+It happens, therefore, that contributions generated by LLMs introduce subtle bugs, due to a lack of systems architecture awareness.
+These are bugs which, unfortunately, you—the maintainer—will be responsible for resolving in the future :)
+
+In a (mostly positive) summary of the current (beginning of 2026) state of AI for coding[^karpathy-summary], Andrej Karpathy writes:
+
+> _The mistakes have changed a lot - they are not simple syntax errors anymore, they are subtle conceptual errors that a slightly sloppy, hasty junior dev might do. The most common category is that the models make wrong assumptions on your behalf and just run along with them without checking. They also don’t manage their confusion, they don’t seek clarifications, they don’t surface inconsistencies, they don’t present tradeoffs, they don’t push back when they should, and they are still a little too sycophantic [telling users what they want to hear]._ — Andrej Karpathy[^karpathy-errors]
+
+[^karpathy-summary]: https://x.com/karpathy/status/2015883857489522876?s=20
+[^karpathy-errors]: https://x.com/karpathy/status/2015883857489522876
+
+### Reviewer frustration
+
+LLM contributions can be generated at a staggering pace, but reviews still require careful human attention. And while a first pass LLM review is fine, we're not going to merge changes without looking at and understanding them first.
+After all, that is why the review process exists in the first place—because we've learned the cost of moving forward too hastily, and of making decisions without carefully considering their impact.
+Unless the contributor is attentive and deliberately careful in the follow-up conversation, the interaction may feel hollow and dehumanized, and generate frustration among reviewers.
+There are ways to improve the situation (see "Potential guidelines" below), but the essence of this concern is that it can be very discouraging for "artisans" to have to engage with—and spend time on—code that cost very little to build.
+
+## General concerns
+
+### A reduction in learning
+
+When programmers shift towards relying on LLMs, they will be tempted to focus less on learning. Why go through the pain of figuring out a complex code base, or understanding an algorithm you are working on, when all that can be taken care of on your behalf? The reward is immediate, but over time there is a cost to bear as the contributor's abilities decrease—or never evolve in the first place. This affects, in particular, those who are learning programming and problem-solving skills for the first time.
+
+To be fair, there are good learning opportunities with LLMs as well: they may help you better understand a codebase, advise on subtleties of translating code to a new language, etc. If you apply it with care, you _can_ benefit without succumbing to the risks—but it requires a fair amount of discipline, and humans are better at avoiding suffering than disciplining ourselves.
+
+### Uncertain improved efficiency
+
+Research is still out on whether AI improves coding efficiency, especially when it comes to experienced developers working on open source projects they know well. Preliminary studies of this specific scenario suggest neutral to negative results.[^metr-study]
+
+Somewhat tongue in cheek, software engineer Mike Judge notes:
+
+> _If so many developers are so extraordinarily productive using these tools, where is the flood of shovelware? We should be seeing apps of all shapes and sizes, video games, new websites, mobile apps, software-as-a-service apps — we should be drowning in choice. We should be in the middle of an indie software revolution. We should be seeing 10,000 Tetris clones on Steam._ — Mike Judge[^mike-judge-self-test]
+
+[^metr-study]: https://secondthoughts.ai/p/ai-coding-slowdown
+[^mike-judge-self-test]: https://mikelovesrobots.substack.com/p/wheres-the-shovelware-why-ai-coding
+
+Experiments to determine the "AI efficiency multiplier" are structured as follows: you generate a list of tasks. For each, you estimate how long it will take, and then flip a coin to decide whether you implement the solution using the "classic approach", or by using an agent. You then do the task, estimate how long it took, and note the time it _actually_ took.
+
+What the METR study showed (albeit with low N, so results are uncertain) is that programmers may _feel_ like they're faster with AI when often they're not. It's an easy trap to step into, especially when having to decide between two options where one _requires effort_ and the other does not.
+Again, it's worth noting that "farming out" the task means there is a good chance that you will fail to fully comprehend the solution and its potential impact, unless you deliberately and carefully review the result.
+
+I think the equation clearly shifts when doing tasks you are unfamiliar with. For example, if you spend most of your time building scientific code in Python, having to scaffold a website from scratch will take longer than it would using an agent. But of course you then have the benefit of knowing how to build websites, and so it matters how many times you will be doing that type of task in the future.
+
+### Eroded artistic co-creation
+
+Many of us got into open source because there is a deep satisfaction that comes from productive collaboration with other humans. We enjoy thinking about and talking through hard problems, learning from the best, and sharing our art. The software we build is a culmination and reflection of this culture of collaboration.
+
+Like with any tool, we need to learn whether, when, and how to apply AI.
+If it is used to replace _thinking_, instead of merely to reduce grunt-work, it risks derailing collaboration and sucking the joy out of attentive design and meticulous problem solving.
+
+Given all the concerns above, some projects may well decide that they should not be using it at all.
+We are only starting to engage more with AI contributions, only starting to see its impact on our projects and our collaborative culture. I think 2026 will prove to be highly educational.
+
+## Potential guidelines
+
+Given the above concerns, what should we as a community do to engage with (a) the new tools (b) developers who utilize these tools and (c) the contributions they generate.
+What I'm asking is: instead of being prescriptive around the tools others choose to use to do their work, can we instead formulate guidelines that will allow us to continue enjoying working together?
+
+Here are some initial suggestions:
+
+**1. Be transparent**
+
+Trust would greatly increase if contributors _declared_ their AI use. This would help reviewers decide how they want to engage in the review process, and make them aware of potential risks. Declaring the use of AI sets the stage for honest conversations, improving the likelihood of a good interaction.
+
+> _Kernel contributors have been using tooling to generate contributions for a long time. These tools can increase the volume of contributions. At the same time, reviewer and maintainer bandwidth is a scarce resource. Understanding which portions of a contribution come from humans versus tools is helpful to maintain those resources and keep kernel development healthy._ — Proposed Linux kernel developer guideline[^linux-kernel-guideline]
+
+[^linux-kernel-guideline]: https://lore.kernel.org/ksummit/20251114183528.1239900-1-dave.hansen@linux.intel.com/
+
+Needless to say, if a project has AI guidance (and many already do), it should be followed.
+
+**2. Take responsibility**
+
+When you submit a PR, no matter _what_ tools you use, it is _your_ responsibility to make sure that it addresses the problem _correctly_ and doesn't introduce subtle errors—in that sense, it is no different from contributing code you wrote yourself. In that case, however, you may have a clearer idea about potential pitfalls, and how careful you were in avoiding them. When using LLMs, there should be a _deliberate effort_ to ensure that code conforms to community norms.
+
+For example, when writing tests with an LLM, it may simply generate a large number of very similar tests, instead of using parametrization and fixtures the way the rest of the project does. It would then be up to you to identify that deficiency and refactor your code (or have the LLM refactor the code) to address it.
+
+**3. Gain understanding**
+
+With the assistance of AI, it will happen that contributors venture into territory beyond their technical expertise.
+With the help of LLMs, contributors are able to solve harder problems than before, but it remains crucial that they put in the effort to understand their contribution before submitting.
+We have to appreciate that there are some risks associated with LLM-assisted contributions, both as these models evolve to be "better programmers" and avoid common pitfalls, and as authors work out how to best provide context and assess LLM-generated content.
+Transparency here helps a great deal to set expectations.
+
+For contributors, it is important to keep in mind that reviews remain human conversations between peers.
+Reviewers typically prefer not engaging an LLM directly, but having a knowledgeable exchange around the motivation behind a PR, how various technical choices are justified, and the impact it may have on the rest of the code.
+
+We therefore recommend that contributors work to fully understand the changes they submit, and present it in such a way that reviewers can dive straight into the motivation, design decisions, and technical requirements.
+
+**4. Honor Copyright**
+
+I had a longer section here around copyright and attribution, but I cut most of it, since I fear we may have run out of good options.
+Projects in our ecosystem have been very deliberate about adhering to licensing requirements, and about giving attribution.
+But LLMs are unlikely to ever produce meaningful license updates, and by this stage they've read and assimilated most of our library codebases.
+Patterns that were once copyrighted are now commonly duplicated and fully generic.
+
+Personally, I am pulled in two directions: first, I care about people getting credit for the work they do. On the other hand, and also the reason we do not employ copyleft licenses, is that we really want our work to be used widely and impact as many lives as possible. Credit is important, especially for younger people starting their careers, and we'll have to continue thinking about how to give it justly. Practically speaking, however, I'm not convinced that licenses are an effective mechanism to enforce credit anymore.
+
+I think it is reasonable to expect, still, that when you make a contribution you have a reasonable sense that you are not violating copyright.
+After all, you cannot force contributors to some random GPL library to be OK with your using their code.
+In the case of a test suite refactoring, or contributing to a typical React app, this is unlikely to be a problem.
+But once you start implementing new algorithms in SciPy, e.g., you're running the risk of, e.g., copying algorithms or bringing in copyrighted ideas from other projects.
+
+I'd therefore recommend playing it safe and only making AI-guided contributions that clearly steer clear of copyright infringements. Also see [the Python Developer's Guide](https://devguide.python.org/getting-started/generative-ai/#acceptable-uses) on what they consider reasonable use-cases.
+
+## Potential Benefits
+
+Notwithstanding the above concerns, and pervading sentiments around AI in our community, I think it's worth honestly assessing potential benefits.
+
+When I started writing this blog post, I had dabbled with LLM-generated code from time to time "to keep my finger on the pulse". I was, frankly, quite underwhelmed.
+During a routine re-evaluation in December, however, I noticed a marked shift in how quickly an agent was able to solve a routine coding task. The same caveats as usual applied (the AI sometimes went down rabbit holes, it made up function names, etc.), but it _did_ give me pause.
+
+As I wrestled with the implications of AI for our community, I realized that the Scientific Python project was formed, in part, because of the enormous burdens that maintainers now face. To address those burdens, we build tools, we coordinate, and we explore new solutions. But one thing that is very difficult to increase is _labor_. The existing maintainer community is slow to grow—after all, it takes a very specific kind of person to do (and enjoy doing) the work we do. And there are only 24 hours in a day—substantially fewer for many of us as we move from being students to having families, industry careers, etc.
+
+So, here we are, at a time where we risk being immobilized by our own success: as our libraries grow and are adopted by more and more users, we are unable to add new features because we are so overburdened by maintenance requirements. And now we are presented with a tool that cannot handle the sophisticated thinking and problem solving required to architect libraries and implement novel algorithms, but _that is_ useful for solving common maintenance chores. Then one has to wonder: is this perhaps an opportunity for us to see our maintenance burden lightened, so we can get back to the craft we love—i.e., producing hand-crafted APIs and novel implementations of algorithms that give researchers across the world access to cutting edge methods?
+
+## Conclusion
+
+When it comes to a disruptive technology that has the potential to rapidly reshape the ecosystem that we have built with so much care and attention to detail, how we engage with it demands careful consideration.
+From what I've seen from the current generation of LLMs, they're not ready to provide us with best-in-class solutions, but they may already be useful in reducing some of the tedium involved in contributing.
+Will utilizing AI, due to the risks outlined above, unravel the very tapestry of collaboration that holds our ecosystem together, or can it be harnessed to restore developer bandwidth and preserve the "explosive effect of humans working well together"?
+It is worth exploring how to adjust to and incorporate these changes, and how to best let our different "coding philosophies" and tool choices co-exist—all while preserving the incredible benefit that our open-source scientific software ecosystem provides.
+
+_Please let us know your thoughts in the comments below. This post is part of an effort to come up with a community approach to AI and AI-generated contributions._
+
+## References
+
+- [Fedora AI contribution policy](https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/)
+- [scikit-image AI contribution guidelines](https://github.com/scikit-image/scikit-image/pull/7982)
+- [Gentoo AI policy](https://wiki.gentoo.org/wiki/Project:Council/AI_policy)
+- [Linux Kernel: [PATCH] [v3] Documentation: Provide guidelines for tool-generated content](https://lkml.org/lkml/2025/11/5/1802)
+- [Python Developer's Guide: Generative AI](https://devguide.python.org/getting-started/generative-ai/#acceptable-uses)
+
+## Credit
+
+I would like to thank the following community members for feedback on early drafts: _Matthew Brett, Henry Schreiner, Dan McCloy_. And _Chris Holdgraf, Angus Hollands, Brian Hawthorne_, for conversations on the topic. This post does not necessarily reflect their views.
