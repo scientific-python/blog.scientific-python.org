@@ -2,3 +2,12 @@
   margin-top: 2rem;
   padding-top: 0.5rem;
 }
+
+#discourse-comments a.button {
+  font-size: 150%;
+}
+
+.post-please-comment {
+  display: inline;
+  font-style: italic;
+}
