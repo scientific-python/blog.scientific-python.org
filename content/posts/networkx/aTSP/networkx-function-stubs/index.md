@@ -5,7 +5,7 @@ draft: false
 description: "Draft function stubs for the Asadpour method to use in the NetworkX API"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage

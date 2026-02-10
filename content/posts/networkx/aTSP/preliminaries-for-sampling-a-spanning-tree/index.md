@@ -5,7 +5,7 @@ draft: false
 description: "A close examination of the mathematics required to sample a random spanning tree from a graph"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage

@@ -8,7 +8,7 @@ description of the project.
 "
 tags: ["gsoc", "networkx", "vf2++"]
 displayInList: true
-author: ["Konstantinos Petridis"]
+authors: ["Konstantinos Petridis"]
 
 resources:
 - name: featuredImage

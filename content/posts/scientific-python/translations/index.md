@@ -5,7 +5,7 @@ draft: false
 tags: ["Scientific-Python", "translations", "inclusion", "CZI"]
 description: "Setting up and managing translations for Scientific Python projects."
 displayInList: true
-author: ["Melissa Mendonça", "Albert Steppi"]
+authors: ["Melissa Mendonça", "Albert Steppi"]
 summary: We are happy to announce that we have organized the necessary infrastructure and processes to allow volunteers to start translating multiple project websites. In this blog post, we will discuss how we set up manage translations for Scientific Python projects, and how you can participate in the translation and localization effort.
 ---
 

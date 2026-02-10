@@ -12,7 +12,7 @@ tags:
   ]
 description: "New Scientific Python grant to focus on common web themes, adopting and promoting access-centered practices, translations, and interactivity of documentation."
 displayInList: true
-author:
+authors:
   [
     "Ralf Gommers",
     "Stéfan van der Walt <stefanv>",

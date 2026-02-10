@@ -4,7 +4,7 @@ date: 2019-12-18T09:05:32+01:00
 draft: false
 description: "3D rendering is really easy once you've understood a few concepts. To demonstrate that, we'll design a simple custom 3D engine that with 60 lines of Python and one Matplotlib call. That is, we'll render the bunny without using the 3D axis."
 tags: ["tutorials", "3D", "matplotlib"]
-author: ["Nicolas P. Rougier"]
+authors: ["Nicolas P. Rougier"]
 displayInList: true
 
 resources:

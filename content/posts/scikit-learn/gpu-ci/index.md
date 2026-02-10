@@ -5,7 +5,7 @@ draft: false
 description: "Setting up CI with a GPU to test your code"
 tags: ["scikit-learn", "ci", "gpu", "cuda"]
 displayInList: true
-author: ["Tim Head <timhead>"]
+authors: ["Tim Head <timhead>"]
 canonicalURL: https://betatim.github.io/posts/github-action-with-gpu/
 ---
 

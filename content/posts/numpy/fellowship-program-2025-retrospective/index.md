@@ -6,7 +6,7 @@ description: |
   A Year of Typing: My NumPy Fellowship Retrospective
 tags: ["numpy", "developer-in-residence"]
 displayInList: true
-author: ["Joren Hammudoglu"]
+authors: ["Joren Hammudoglu"]
 ---
 
 It’s been exactly one year since I started my journey as a NumPy Fellow, and looking back, it has honestly been the best job I've ever had. My main goal for 2025 was to push the boundaries of static typing within the Scientific Python ecosystem. I'm happy to report that we didn't just push the boundaries; we reshaped them.

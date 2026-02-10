@@ -6,7 +6,7 @@ description: "Discover the bizarre geometry of the fractals and learn how to mak
 marvels using Python and the Matplotlib's Animation API."
 tags: ["tutorials", "matplotlib"]
 displayInList: true
-author: ["Vladimir Ilievski"]
+authors: ["Vladimir Ilievski"]
 resources:
 - name: featuredImage
   src: "header_image.png"

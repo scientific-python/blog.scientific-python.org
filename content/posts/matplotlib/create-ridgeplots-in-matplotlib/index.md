@@ -5,7 +5,7 @@ draft: false
 description: "This post details how to leverage gridspec to create ridgeplots in Matplotlib"
 tags: ["tutorials", "matplotlib"]
 displayInList: true
-author: ["Peter McKeever"]
+authors: ["Peter McKeever"]
 resources:
   - name: featuredImage
     src: "sample_output.png"

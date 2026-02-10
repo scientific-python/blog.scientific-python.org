@@ -5,7 +5,7 @@ draft: false
 description: "Review of my entire summer implementing the Asadpour ATSP Algorithm"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage

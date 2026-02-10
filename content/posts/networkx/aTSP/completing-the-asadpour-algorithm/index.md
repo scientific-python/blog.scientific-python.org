@@ -5,7 +5,7 @@ draft: false
 description: "Implementation details for asadpour_atsp"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage

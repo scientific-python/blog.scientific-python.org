@@ -7,7 +7,7 @@ Some tips to help you during the contribution phase.
 "
 tags: ["outreachy", "networkx", "first-time-contributor"]
 displayInList: true
-author: ["Paula Pérez Bianchi"]
+authors: ["Paula Pérez Bianchi"]
 
 resources:
 - name: featuredImage

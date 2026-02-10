@@ -7,7 +7,7 @@ Implementing the VF2++ algorithm for the Graph Isomorphism.
 "
 tags: ["gsoc", "networkx", "vf2++"]
 displayInList: true
-author: ["Konstantinos Petridis"]
+authors: ["Konstantinos Petridis"]
 
 ---
 

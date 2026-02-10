@@ -5,7 +5,7 @@ draft: false
 description: "A brief tour through the world of elementary cellular automata"
 tags: ["tutorials", "matplotlib"]
 displayInList: true
-author: ["Eitan Lees"]
+authors: ["Eitan Lees"]
 resources:
   - name: featuredImage
     src: "ca-thumb.png"

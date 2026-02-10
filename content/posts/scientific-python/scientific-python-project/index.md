@@ -8,7 +8,7 @@ description: |
   what it hopes to achieve, and the various mechanisms by which
   it will operate.
 displayInList: true
-author: ["Juanita Gómez"]
+authors: ["Juanita Gómez"]
 
 resources:
   - name: featuredImage

@@ -5,7 +5,7 @@ draft: false
 tags: ["Scientific-Python", "event", "accessibility"]
 description: "Learn more about alt text on the blog and how you can contribute."
 displayInList: true
-author: ["Mars Lee", "Isabela Presedo-Floyd"]
+authors: ["Mars Lee", "Isabela Presedo-Floyd"]
 resources:
   - name: featuredImage
     src: "alt-text-header.png"

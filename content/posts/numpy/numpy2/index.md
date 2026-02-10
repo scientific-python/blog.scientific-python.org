@@ -11,7 +11,7 @@ development process.
 "
 tags: ["News", "numpy"]
 displayInList: true
-author: ["NumPy Developers"]
+authors: ["NumPy Developers"]
 ---
 
 Eighteen years since the release of NumPy 1.0, we are thrilled to announce the

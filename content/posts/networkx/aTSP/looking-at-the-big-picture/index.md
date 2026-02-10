@@ -5,7 +5,7 @@ draft: false
 description: "Prelimiaries for the final Asadpour algorithm function in NetworkX"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage

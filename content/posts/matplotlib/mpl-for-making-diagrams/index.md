@@ -5,7 +5,7 @@ draft: false
 description: "How to use Matplotlib to make diagrams."
 tags: ["tutorials", "matplotlib"]
 displayInList: true
-author: ["Brandon Rohrer"]
+authors: ["Brandon Rohrer"]
 
 resources:
   - name: featuredImage

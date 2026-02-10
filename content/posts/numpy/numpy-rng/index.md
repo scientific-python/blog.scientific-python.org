@@ -7,7 +7,7 @@ Best Practices for Using NumPy's Random Number Generators
 "
 tags: [tutorials, numpy, rng]
 displayInList: true
-author: ["Albert Thomas <albertcthomas>"]
+authors: ["Albert Thomas <albertcthomas>"]
 ---
 
 Given the practical challenges of achieving true randomness, deterministic algorithms, known as Pseudo Random Number Generators (RNGs), are employed in science to create sequences that mimic randomness. These generators are used for simulations, experiments, and analysis where it is essential to have numbers that appear unpredictable. I want to share here what I have learned about best practices with pseudo RNGs and especially the ones available in [NumPy](https://numpy.org/).

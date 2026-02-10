@@ -5,7 +5,7 @@ draft: false
 description: "Applied image manipulation to create procedural art."
 tags: ["tutorials", "art", "matplotlib"]
 displayInList: true
-author: ["Abhishek Sharma"]
+authors: ["Abhishek Sharma"]
 resources:
   - name: featuredImage
     src: "final_image_100.png"
@@ -34,7 +34,6 @@ from matplotlib import cm
 import matplotlib.pyplot as plt
 import matplotlib
 import scipy
-
 
 print(f"Matplotlib:{matplotlib.__version__}")
 print(f"Numpy:{np.__version__}")

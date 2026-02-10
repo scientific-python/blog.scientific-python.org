@@ -5,7 +5,7 @@ draft: false
 tags: ["News", "GSoC", "matplotlib"]
 description: "Progress Report for the first half of the Google Summer of Code 2020 Phase 1 for the Baseline Images Problem"
 displayInList: true
-author: ["Sidharth Bansal"]
+authors: ["Sidharth Bansal"]
 ---
 
 I Sidharth Bansal, was waiting for the coding period to start from the March end so that I can make my hands dirty with the code. Finally, coding period has started. Two weeks have passed. This blog contains information about the progress so far from 1 June to 14 June 2020.

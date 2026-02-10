@@ -1,6 +1,6 @@
 ---
 title: "Using Matplotlib to Advocate for Postdocs"
-author: ["Davide Valeriani"]
+authors: ["Davide Valeriani"]
 description: "Advocating is all about communicating facts clearly. I used Matplotlib to show the financial struggles of postdocs in the Boston area."
 date: 2019-10-23T12:43:23-04:00
 draft: false

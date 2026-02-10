@@ -5,7 +5,7 @@ draft: false
 description: "This guide dives deep into the inner workings of Matplotlib's Figures, Axes, subplots and the very amazing GridSpec!"
 tags: ["tutorials", "matplotlib"]
 displayInList: true
-author: ["Akash Palrecha"]
+authors: ["Akash Palrecha"]
 resources:
   - name: featuredImage
     src: "cover.png"

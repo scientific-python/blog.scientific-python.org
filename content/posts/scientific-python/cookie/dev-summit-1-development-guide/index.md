@@ -6,7 +6,7 @@ description: >
   Introducing the Scientific Python Development Guide!
 tags: ["tutorials", "cookie", "scientific-python", "summit"]
 displayInList: true
-author: ["Henry Schreiner"]
+authors: ["Henry Schreiner"]
 
 resources:
   - name: featuredImage

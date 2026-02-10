@@ -5,7 +5,7 @@ draft: false
 description: "Learn how to create a Tesla Cybertruck with Matplotlib that drives via animation."
 tags: ["tutorials", "matplotlib"]
 displayInList: true
-author: ["Ted Petrou"]
+authors: ["Ted Petrou"]
 resources:
   - name: featuredImage
     src: "output_18_0.png"

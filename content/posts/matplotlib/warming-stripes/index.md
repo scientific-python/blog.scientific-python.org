@@ -5,7 +5,7 @@ draft: false
 description: "Ed Hawkins made this impressively simple plot to show how global temperatures have risen since 1880. Here is how to recreate it using Matplotlib."
 tags: ["tutorials", "academia", "matplotlib"]
 displayInList: true
-author: ["Maximilian Nöthe"]
+authors: ["Maximilian Nöthe"]
 
 resources:
   - name: featuredImage

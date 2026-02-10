@@ -8,7 +8,7 @@ Do you need to use random numbers? Use Quasi-Monte Carlo (QMC) methods instead.
 QMC, what is it? Why you should care? And how to use it?
 "
 displayInList: true
-author: ["Pamphile Roy"]
+authors: ["Pamphile Roy"]
 
 resources:
   - name: featuredImage

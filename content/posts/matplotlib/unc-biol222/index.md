@@ -5,7 +5,7 @@ draft: false
 description: "UNC BIOL222: Art created with Matplotlib"
 tags: ["art", "academia", "matplotlib"]
 displayInList: true
-author: ["Joseph Lucas"]
+authors: ["Joseph Lucas"]
 resources:
   - name: featuredImage
     src: "fox.png"

@@ -5,7 +5,7 @@ draft: false
 description: "Looking for a new method to solve the Held-Karp relaxation from the original Held and Karp paper"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage

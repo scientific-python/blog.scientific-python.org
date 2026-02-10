@@ -5,7 +5,7 @@ draft: false
 description: "Learn about the first Scientific Python Developer Summit."
 tags: ["Summit", "Scientific-Python"]
 displayInList: true
-author: ["Jarrod Millman", "Brigitta Sipőcz", "Mridul Seth", "Juanita Gómez"]
+authors: ["Jarrod Millman", "Brigitta Sipőcz", "Mridul Seth", "Juanita Gómez"]
 
 resources:
   - name: featuredImage

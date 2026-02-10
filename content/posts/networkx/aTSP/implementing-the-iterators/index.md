@@ -5,7 +5,7 @@ draft: false
 description: "Implementation details about SpanningTreeIterator and ArborescenceIterator"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage

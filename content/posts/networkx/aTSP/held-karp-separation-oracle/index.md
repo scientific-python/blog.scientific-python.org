@@ -5,7 +5,7 @@ draft: false
 description: "Considering creating a separation oracle for the Held-Karp relaxation"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage
