@@ -5,7 +5,7 @@ draft: false
 tags: ["News", "GSoC", "matplotlib"]
 description: "Google Summer of Code 2021: Final Report - Aitik Gupta"
 displayInList: true
-author: ["Aitik Gupta"]
+authors: ["Aitik Gupta"]
 
 resources:
   - name: featuredImage

@@ -7,7 +7,7 @@ Introducing PyTrees for Scientific Python. We discuss what PyTrees are, how they
 "
 tags: ["PyTrees", "Functional Programming", "Tree-like data manipulation"]
 displayInList: true
-author: ["Peter Fackeldey", "Mihai Maruseac", "Matthew Feickert"]
+authors: ["Peter Fackeldey", "Mihai Maruseac", "Matthew Feickert"]
 summary: |
   This blog introduces PyTrees &mdash; nested Python data structures (such as lists, dicts, and tuples) with numerical leaf values &mdash; designed to simplify working with complex, hierarchically organized data.
   While such structures are often cumbersome to manipulate, PyTrees make them more manageable by allowing them to be flattened into a list of leaves along with a reusable structure blueprint in a _generic_ way.

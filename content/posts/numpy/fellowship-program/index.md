@@ -8,7 +8,7 @@ description: |
   optimization.
 tags: ["numpy", "developer-in-residence"]
 displayInList: true
-author: ["Ralf Gommers", "Inessa Pawson", "Stéfan van der Walt <stefanv>"]
+authors: ["Ralf Gommers", "Inessa Pawson", "Stéfan van der Walt <stefanv>"]
 ---
 
 The NumPy team is excited to announce the launch of the NumPy Fellowship

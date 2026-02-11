@@ -6,7 +6,7 @@ date: 2025-12-04
 draft: false
 tags: ["networkx", "shortest-paths", "dijkstra"]
 displayInList: true
-author: ["Alejandro Candioti <amcandio>"]
+authors: ["Alejandro Candioti <amcandio>"]
 resources:
   - name: featuredImage
     src: "checkpoint_trick.png"

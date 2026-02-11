@@ -5,7 +5,7 @@ draft: false
 tags: ["News", "GSoC", "matplotlib"]
 description: "Introductory post about Sidharth Bansal, Google Summer of Code 2020 Intern for Baseline Image Problem Project under Numfocus"
 displayInList: true
-author: ["Sidharth Bansal"]
+authors: ["Sidharth Bansal"]
 
 resources:
   - name: featuredImage

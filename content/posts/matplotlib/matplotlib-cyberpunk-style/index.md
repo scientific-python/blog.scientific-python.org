@@ -5,7 +5,7 @@ draft: false
 description: "Futuristic neon glow for your next data visualization"
 tags: ["tutorials", "matplotlib"]
 displayInList: true
-author: ["Dominik Haitz"]
+authors: ["Dominik Haitz"]
 
 resources:
   - name: featuredImage

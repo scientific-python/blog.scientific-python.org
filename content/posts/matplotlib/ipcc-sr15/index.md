@@ -7,7 +7,7 @@ description: |
   The data and open-source notebooks were published to increase the transparency and reproducibility of the analysis.
 tags: ["academia", "tutorials", "matplotlib"]
 displayInList: true
-author: ["Daniel Huppmann"]
+authors: ["Daniel Huppmann"]
 
 resources:
   - name: featuredImage

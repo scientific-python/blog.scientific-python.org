@@ -7,7 +7,7 @@ My experience during the Outreachy intership at NetworkX.
 "
 tags: ["outreachy", "networkx", "first-time-contributor"]
 displayInList: true
-author: ["Paula Pérez Bianchi"]
+authors: ["Paula Pérez Bianchi"]
 ---
 
 This is the second part of a blog series where I talk about my experience during my Outreachy internship at NetworkX. If you haven’t read the first part you can find it [here](../contribution-phase).

@@ -5,7 +5,7 @@ draft: false
 tags: ["GSoD", "Scientific-Python", "proposal"]
 description: "Create educational content for the Scientific Python Blog"
 displayInList: true
-author: ["Jarrod Millman"]
+authors: ["Jarrod Millman"]
 ---
 
 ## Create educational content for the Scientific Python Blog

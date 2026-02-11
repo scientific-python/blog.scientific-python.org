@@ -5,7 +5,7 @@ draft: false
 description: "This is my first post contribution to Matplotlib."
 tags: ["GSoD", "matplotlib"]
 displayInList: true
-author: ["Jerome Villegas"]
+authors: ["Jerome Villegas"]
 ---
 
 # Introduction

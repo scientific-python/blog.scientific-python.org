@@ -4,7 +4,7 @@ date: 2020-05-07T09:05:32+01:00
 draft: false
 description: "A fun project about drawing all possible differently-looking (not isomorphic) graphs of N nodes."
 tags: ["tutorials", "graphs", "matplotlib"]
-author: ["Arseny Khakhalin"]
+authors: ["Arseny Khakhalin"]
 displayInList: true
 
 resources:

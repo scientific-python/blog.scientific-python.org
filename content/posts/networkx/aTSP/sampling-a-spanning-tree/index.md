@@ -5,7 +5,7 @@ draft: false
 description: "Implementation details for sample_spanning_tree"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage

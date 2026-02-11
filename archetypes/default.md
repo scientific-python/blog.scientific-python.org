@@ -7,7 +7,7 @@ This post is awesome read it!
 "
 tags: ["tutorials", [library]]
 displayInList: true
-author: ["Bob"]
+authors: ["Bob"]
 
 resources:
 - name: featuredImage

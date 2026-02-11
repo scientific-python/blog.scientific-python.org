@@ -5,7 +5,7 @@ draft: false
 tags: ["News", "GSoC", "matplotlib"]
 description: "Progress Report for the second half of the Google Summer of Code 2020 Phase 2 for the Baseline Images Problem"
 displayInList: true
-author: ["Sidharth Bansal"]
+authors: ["Sidharth Bansal"]
 ---
 
 Google Summer of Code 2020's second evaluation is about to complete. Now we are about to start with the final coding phase. This post discusses about the progress so far in the last two weeks of the second coding period from 13 July to 26 July 2020.

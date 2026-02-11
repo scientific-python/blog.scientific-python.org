@@ -7,7 +7,7 @@ Information about my progress on two important features of the algorithm.
 "
 tags: ["gsoc", "networkx", "vf2++"]
 displayInList: true
-author: ["Konstantinos Petridis"]
+authors: ["Konstantinos Petridis"]
 
 ---
 

@@ -5,7 +5,7 @@ draft: false
 description: A tutorial on how to show usage rates and more using batteries
 tags: ["tutorials", "matplotlib"]
 displayInList: true
-author: ["Rithwik Rajendran"]
+authors: ["Rithwik Rajendran"]
 resources:
   - name: featuredImage
     src: "Liverpool_Usage_Chart.png"

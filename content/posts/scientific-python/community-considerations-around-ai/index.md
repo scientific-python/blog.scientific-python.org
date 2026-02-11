@@ -5,7 +5,7 @@ draft: false
 description: "An attempt at exploring risks and impacts of LLMs and agents on our ecosystem, and how we, as a community, may agree upon common cultural norms and standards for integrating such technology into contributor pathways and workflows."
 tags: ["Scientific-Python", "AI"]
 displayInList: true
-author: ["Stéfan van der Walt <stefanv>"]
+authors: ["Stéfan van der Walt <stefanv>"]
 summary: |
   In this post, we explore the risks around and impact of AI contributions on our ecosystem, and how we, as a community, may agree upon common cultural norms and standards for integrating such technologies into contributor pathways and workflows.
 ---

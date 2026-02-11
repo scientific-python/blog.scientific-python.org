@@ -6,7 +6,7 @@ tags: ["industry", "matplotlib"]
 draft: false
 displayInMenu: false
 displayInList: true
-author: ["Whites Agency"]
+authors: ["Whites Agency"]
 
 resources:
   - name: featuredImage

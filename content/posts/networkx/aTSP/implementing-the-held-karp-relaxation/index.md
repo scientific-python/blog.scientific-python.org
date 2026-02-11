@@ -5,7 +5,7 @@ draft: false
 description: "Implementation details for the ascent method to solve the Held-Karp relaxation"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage

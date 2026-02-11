@@ -5,7 +5,7 @@ draft: false
 description: "Learn how to create a simple stellar chart, an alternative to the radar chart."
 tags: ["tutorials", "matplotlib"]
 displayInList: true
-author: ["João Palmeiro"]
+authors: ["João Palmeiro"]
 resources:
   - name: featuredImage
     src: "stellar_chart.png"

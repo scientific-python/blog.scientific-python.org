@@ -5,7 +5,7 @@ draft: false
 description: "Preliminaries for the entropy distribution over spanning trees"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage

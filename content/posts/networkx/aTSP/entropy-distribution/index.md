@@ -5,7 +5,7 @@ draft: false
 description: "Details on implementing the entropy distribution"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage

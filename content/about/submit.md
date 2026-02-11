@@ -121,7 +121,7 @@ Specify that you want your post to appear in the list of latest posts and in
 the list of posts of the specified category.
 
 ```
-author: ["Bob"]
+authors: ["Bob"]
 ```
 
 Add your name as author. Multiple authors are separated by commas.

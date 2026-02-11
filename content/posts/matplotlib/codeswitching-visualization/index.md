@@ -3,7 +3,7 @@ title: "Visualizing Code-Switching with Step Charts"
 date: 2020-09-26T19:41:21-07:00
 description: "Learn how to easily create step charts through examining the multilingualism of pop group WayV"
 tags: ["tutorials", "graphs", "matplotlib"]
-author: ["J (a.k.a. WayV Subs & Translations)"]
+authors: ["J (a.k.a. WayV Subs & Translations)"]
 displayInList: true
 draft: false
 

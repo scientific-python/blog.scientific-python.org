@@ -6,7 +6,7 @@ description: |
   Introducing NumPy's second developer in residence, Joren Hammudoglu.
 tags: ["numpy", "developer-in-residence"]
 displayInList: true
-author: ["Ralf Gommers"]
+authors: ["Ralf Gommers"]
 ---
 
 The NumPy team is excited to announce the appointment of Joren Hammudoglu (@jorenham) as the second NumPy Developer in Residence. For the second time, the project is in a position to use its project funds to pay for a full year of maintainer time through the NumPy Fellowship Program.

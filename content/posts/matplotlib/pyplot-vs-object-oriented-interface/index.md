@@ -4,7 +4,7 @@ date: 2020-05-27T20:21:30+05:30
 draft: false
 description: "This post describes the difference between the pyplot and object oriented interface to make plots."
 tags: ["matplotlib"]
-author: ["Tejas Sanap"]
+authors: ["Tejas Sanap"]
 displayInList: true
 resources:
   - name: featuredImage

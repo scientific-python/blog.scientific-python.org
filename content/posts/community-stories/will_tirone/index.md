@@ -5,7 +5,7 @@ draft: false
 tags: ["Open-source", "testimonial", "NASA", "JPL", "scipy", "internship"]
 description: "How I learned to code and contributed to a library used on the Mars 2020 mission."
 displayInList: true
-author: ["Will Tirone"]
+authors: ["Will Tirone"]
 ---
 
 In mid-2018 I started learning Python by reading textbooks and watching online tutorials. I had absolutely zero background in computer science, but it seemed interesting so I continued to try. At some point, I decided I wanted to do a master’s degree in statistics, so I began to work on more statistics-based programming. That’s when I found SciPy. I became (and still am) fascinated by the idea of open-source software that is completely free to use and supported by a community of diligent programmers. <!--more-->With plenty of extra time on my hands during the pandemic, I made it my goal to contribute to a Python library. My first contribution was actually to a project called [first contributions](https://github.com/firstcontributions/first-contributions) which walks you through a very basic commit and push to GitHub. That built up my confidence a bit, so I decided to tackle a SciPy issue.

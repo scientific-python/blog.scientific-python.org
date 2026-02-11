@@ -5,7 +5,7 @@ draft: false
 tags: ["News", "GSoC", "matplotlib"]
 description: "Final Work Product Report for the Google Summer of Code 2020 for the Baseline Images Problem"
 displayInList: true
-author: ["Sidharth Bansal"]
+authors: ["Sidharth Bansal"]
 ---
 
 Google Summer of Code 2020 is completed. Hurray!! This post discusses about the progress so far in the three months of the coding period from 1 June to 24 August 2020 regarding the project `Baseline Images Problem` under `matplotlib` organisation under the umbrella of `NumFOCUS` organization.

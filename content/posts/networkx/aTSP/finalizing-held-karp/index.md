@@ -5,7 +5,7 @@ draft: false
 description: "Picking which method to use for the final implementation of the Asadpour algorithm in NetworkX"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage

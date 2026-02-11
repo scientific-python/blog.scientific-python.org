@@ -4,7 +4,7 @@ description: "Matplotlib is the go-to library for data visualization in Python. 
 date: 2025-04-01
 tags: ["matplotlib", "color", "colormap"]
 displayInList: true
-author: ["Joseph Barbier", "Yan Holtz"]
+authors: ["Joseph Barbier", "Yan Holtz"]
 draft: false
 resources:
   - name: featuredImage

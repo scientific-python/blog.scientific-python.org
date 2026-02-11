@@ -5,7 +5,7 @@ draft: false
 description: "An interview with Mukulika Pahari, a NumPy contributor."
 tags: ["contributor-spotlight", "numpy"]
 displayInList: true
-author: ["Danuta Dzierżanowska"]
+authors: ["Danuta Dzierżanowska"]
 ---
 
 Our first Contributor Spotlight interview is with Mukulika Pahari, our “go-to” person for Numpy documentation.

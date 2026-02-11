@@ -5,7 +5,7 @@ draft: false
 description: "New open access book released"
 tags: ["News", "matplotlib"]
 displayInList: true
-author: ["Nicolas P. Rougier"]
+authors: ["Nicolas P. Rougier"]
 resources:
   - name: featuredImage
     src: "book-cover.png"

@@ -5,7 +5,7 @@ draft: false
 description: "This post describes how to animate some oceanographic measurements in a tweaked polar plot"
 tags: ["tutorials", "matplotlib"]
 displayInList: true
-author: ["Kevin Balem"]
+authors: ["Kevin Balem"]
 resources:
   - name: featuredImage
     src: "thumbnail.png"

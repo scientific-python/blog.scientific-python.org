@@ -5,7 +5,7 @@ draft: false
 description: "Exploring an algorithm to generate arborescences in ascending order"
 tags: ["gsoc", "networkx", "traveling-salesman-problem"]
 displayInList: true
-author: ["mjschwenne"]
+authors: ["mjschwenne"]
 
 resources:
   - name: featuredImage

@@ -5,7 +5,7 @@ draft: false
 tags: ["News", "GSoC", "matplotlib"]
 description: "Introduction about Aitik Gupta, Google Summer of Code 2021 Intern under the parent organisation: NumFOCUS"
 displayInList: true
-author: ["Aitik Gupta"]
+authors: ["Aitik Gupta"]
 
 resources:
   - name: featuredImage

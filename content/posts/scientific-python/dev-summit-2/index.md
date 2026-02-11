@@ -5,7 +5,7 @@ draft: false
 description: "Summary of the 2024 Scientific Python Developer summit."
 tags: ["Summit", "Scientific-Python"]
 displayInList: true
-author:
+authors:
   [
     "Stéfan van der Walt <stefanv>",
     "Jarrod Millman",
