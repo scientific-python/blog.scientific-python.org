@@ -45,6 +45,10 @@ params:
     discourse_url: https://discuss.scientific-python.org/
   images:
     - /images/logo.svg
+  fonts:
+    - name: "Lato"
+      weights: [400, 700]
+
   navbarlogo:
     image: logo.svg
     text: Scientific Python Blog
