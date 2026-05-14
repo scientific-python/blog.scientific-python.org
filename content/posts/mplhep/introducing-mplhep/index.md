@@ -22,11 +22,11 @@ In particle or high energy physics (HEP), by the time you draw a plot the data a
 
 This post walks through three things mplhep contributes: a histogram plotting function for pre-binned data, comparison panels (ratio/pull/efficiency) on top of it, and a set of experiment style sheets that match the conventions ATLAS, CMS, LHCb, ALICE and DUNE publications require.
 
-## Pre-binned histograms: from `plt.stairs` to `mh.histplot`
+## Plotting pre-binned histograms
 
 If you want to plot a histogram matplotlib had a great function for it - `plt.hist`, except in it's convenience it not only serves the plotting, but also wraps the histogramming - `(counts, edges)` from `np.histogram`. But if the histogram you want to visualize is already _made_ you used to have to either "hack" `plt.hist` by filling 1's and passing histogram values as weights, or use `plt.step` and hack your `len(x) = len(y) + 1` input information into the same length or accept `plt.bar` with its own limitations.
 
-To improve this particulare user experience the `mplhep` authors contributed a new distinct primitive [`plt.stairs`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.stairs.html), which was added in matplotlib 3.4 specifically for pre-binned data. This simplifies the syntax for HEP users significantly, but at the same time `plt.stairs` is still just a primitive function compared to the rich functionality of `plt.hist`. To mimic and indeed extend this functionality for the needs of particle physicists and indeed anyone who handles pre-binned histograms, we present the `mplhep` (imported as `mh`) library with `mh.histplot` at its core.
+To improve this particulare user experience the `mplhep` authors contributed a new distinct primitive [`plt.stairs`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.stairs.html), which was added in matplotlib 3.4 specifically for pre-binned data. This simplifies the syntax for HEP users significantly, but at the same time `plt.stairs` is still just a primitive function compared to the rich functionality of `plt.hist`. To mimic and indeed extend this functionality for the needs of particle physicists and indeed anyone who handles pre-binned histograms, we present the `mplhep` (imported as `mh`) library with [`mh.histplot`](https://scikit-hep.org/mplhep/latest/guide_basic_plotting/) at its core (see also the full [docs](https://scikit-hep.org/mplhep/latest/)).
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.5rem; row-gap: 0.5rem; margin: 1.5rem 0; align-items: start;">
 
@@ -87,7 +87,7 @@ plt.legend()
 
 </div>
 
-Same output, half the code (the [basic plotting guide](https://scikit-hep.org/mplhep/latest/guide_basic_plotting/) walks through more variants). And the savings compound once you actually use the keyword arguments. `mh.histplot` accepts a NumPy tuple, a `hist.Hist`, a `boost_histogram.Histogram`, or any object implementing the [PlottableProtocol](https://uhi.readthedocs.io/), so the same call works regardless of what your analysis framework hands you. From there, the keywords most analyses lean on:
+Same output, half the code. And the savings compound once you actually use the keyword arguments. `mh.histplot` accepts a NumPy tuple, a `hist.Hist`, a `boost_histogram.Histogram`, or any object implementing the [PlottableProtocol](https://uhi.readthedocs.io/), so the same call works regardless of what your analysis framework hands you. From there, the keywords most analyses lean on:
 
 - `yerr=True` → Poisson intervals for integer counts; pass a 1D array for symmetric errors, a 2D `(2, N)` array for asymmetric ones, or `yerr=False` to suppress them entirely.
 - `w2=variances` → sum-of-weights-squared propagation for weighted MC. When combined with `yerr=True`, mplhep picks Poisson intervals for integer-like `w2` and `sqrt(w2)` otherwise; `w2method=` lets you force one or the other.
