@@ -37,15 +37,25 @@ It is now a single call to a library primitive:
 import cupy as cp, numpy as np
 from cuda.compute import OpKind, segmented_reduce
 
+
 def awkward_reduce_min(
-    toptr: cp.ndarray, fromptr: cp.ndarray, offsets: cp.ndarray,
-    outlength: int, identity: float,
+    toptr: cp.ndarray,
+    fromptr: cp.ndarray,
+    offsets: cp.ndarray,
+    outlength: int,
+    identity: float,
 ) -> None:
 
     toptr[:outlength] = identity
     segmented_reduce(
-        fromptr, toptr, offsets[:-1], offsets[1:],
-        OpKind.MINIMUM, np.asarray(identity, dtype=fromptr.dtype), outlength)
+        fromptr,
+        toptr,
+        offsets[:-1],
+        offsets[1:],
+        OpKind.MINIMUM,
+        np.asarray(identity, dtype=fromptr.dtype),
+        outlength,
+    )
 ```
 
 `segmented_reduce` performs one reduction per segment, and `offsets[:-1]` and `offsets[1:]` hand it the start and end of each sublist directly. No CUDA C++, no synchronization, no scratch buffers: the library handles all of it.
@@ -70,8 +80,9 @@ The opposite-sign di-muon invariant mass, a standard reconstruction in particle 
 
 ```python
 mu1, mu2 = ak.unzip(ak.combinations(muons, 2))
-mass = np.sqrt(2 * mu1.pt * mu2.pt
-               * (np.cosh(mu1.eta - mu2.eta) - np.cos(mu1.phi - mu2.phi)))
+mass = np.sqrt(
+    2 * mu1.pt * mu2.pt * (np.cosh(mu1.eta - mu2.eta) - np.cos(mu1.phi - mu2.phi))
+)
 ```
 
 Evaluated step by step, that chain of arithmetic and trigonometric operations becomes one or more kernels per step, with every intermediate written out as a full-length array and read back.
