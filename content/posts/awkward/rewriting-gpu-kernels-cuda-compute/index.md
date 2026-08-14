@@ -111,7 +111,7 @@ cuda.compute's time stays approximately constant across those sizes while the ha
 
 ## The result that isn't a number
 
-A stated goal of the Awkward Array project is to let physics and data analysts write high-performance code in Python without GPU expertise. The old backend required contributors to understand CUDA thread hierarchies, atomics, and shared-memory behavior before they could add or fix a kernel. The new one asks for an ordinary Python function and a call to the right primitive. Domain scientists can read it, review it, and unit-test its logic without a GPU.
+A stated goal of the Awkward Array project is to let physicists and data analysts write high-performance code in Python without GPU expertise. The old backend required contributors to understand CUDA thread hierarchies, atomics, and shared-memory behavior before they could add or fix a kernel. The new one asks for an ordinary Python function and a call to the right primitive. Domain scientists can read it, review it, and unit-test its logic without a GPU.
 
 Awkward knows the problem. cuda.compute knows the hardware. The result is Python that's simpler and faster than the CUDA C++ it replaced.
 
