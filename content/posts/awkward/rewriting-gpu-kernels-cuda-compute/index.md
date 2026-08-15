@@ -76,6 +76,8 @@ The first two results came from the migration. For this one, a user drops down t
 
 Awkward evaluates eagerly: every operation returns a real array, so a chain of them writes an intermediate to global memory at each step and reads it back at the next. `cuda.compute` algorithms instead accept **iterators** that are evaluated lazily as the algorithm runs, letting many logical steps ride along inside a single pass. That is [kernel fusion](https://developer.nvidia.com/blog/kernel-fusion-in-nvidia-cuda-optimizing-memory-traffic-and-launch-overhead/), and it saves both the memory traffic and the launch overhead.
 
+### Example: di-muon invariant mass
+
 The opposite-sign di-muon invariant mass, a standard reconstruction in particle physics, combines a few measured quantities for every pair of particles in an event. In Awkward, it is one line:
 
 ```python
