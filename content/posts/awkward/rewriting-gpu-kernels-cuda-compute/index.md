@@ -60,7 +60,7 @@ def awkward_reduce_min(
 
 `segmented_reduce` performs one reduction per segment, and `offsets[:-1]` and `offsets[1:]` hand it the start and end of each sublist directly. No CUDA C++, no synchronization, no scratch buffers: the library handles all of it.
 
-Awkward's user-facing API is unchanged. Underneath, 2.10.0 routes **106 of its 133 GPU kernels (80%)** through `cuda.compute`, up from none in 2.8.11. Every reduction and the sort now run through it with no hand-written implementation remaining. The 27 still in CUDA C++ handle structural work like jagged indexing, padding, and validity checks. Their control flow depends on the ragged layout itself, which fits the segmented primitives less naturally. That migration is ongoing. Counting only code that must actually be maintained, hand-written CUDA C++ fell from **8,288 lines to 2,170, a 74% reduction**.
+Awkward's user-facing API is unchanged. Underneath, 2.10.0 routes **106 of its 133 GPU kernels (80%)** through `cuda.compute`, up from none in 2.8.11. Every reduction and the sort now run through it with no hand-written implementation remaining. The 27 still in CUDA C++ handle structural work like jagged indexing, padding, and validity checks. Their control flow depends on the ragged layout itself, which fits the segmented primitives less naturally. That migration is ongoing. Counting only code that must actually be maintained, the switch to `cuda.compute` has so far cut hand-written CUDA C++ from **8,288 lines to 2,170 — a 74% reduction**.
 
 ## 2. The abstraction made it faster
 
