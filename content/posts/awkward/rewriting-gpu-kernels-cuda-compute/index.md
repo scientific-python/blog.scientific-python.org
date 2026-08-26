@@ -1,6 +1,6 @@
 ---
 title: "Rewriting Awkward Array's GPU kernels in Python with NVIDIA's cuda.compute"
-date: 2026-08-14
+date: 2026-08-26
 draft: false
 description: "How the Awkward Array and NVIDIA teams replaced thousands of lines of hand-written CUDA C++ with Python built on cuda.compute — ending up with less code that runs faster."
 tags: ["Awkward Array", "GPU", "CUDA", "cuda.compute", "Scikit-HEP"]
