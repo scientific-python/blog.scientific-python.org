@@ -214,7 +214,7 @@ This implementation performs one binary search per key, where each search is a f
 
 For large arrays, binary-search reads also tend to be cache-unfriendly, since each step may require a read from a different cache line. Cache misses have a greater impact on the sequential implementation because each step may stall waiting for the previous memory access to complete.
 
-The vectorized implementation performs the same logical step across all queries at once (all queries advance at each step together). With multiple independent searches, the CPU can have several memory accesses in flight at once. This aligns with the observed running time once the array size exceeds the L1 and L2 cache sizes.
+The vectorized implementation performs the same logical step across all queries at once (all queries advance at each step together). **With multiple independent searches, the CPU can have several memory accesses in flight at once.** This aligns with the observed running time once the array size exceeds the L1 and L2 cache sizes.
 
 ### Can we optimize NumPy?
 
@@ -333,9 +333,7 @@ binsearch(const char *arr, const char *key, char *ret, npy_intp arr_len,
 
 Note that we exploited a property of the first iteration of the binary search. Because the initial value of every result entry is implicitly zero, we can skip writing and reading those values during the first iteration. Moreover, in the first iteration all elements are compared against the same median, so we can read its value once instead of `K` times.
 
-This implementation was ported directly into NumPy as part of PR [#30517](https://github.com/numpy/numpy/pull/30517), which was included in the [2.5 release](https://numpy.org/devdocs/release/2.5.0-notes.html#improved-performance-of-numpy-searchsorted).
-
-Now let's do a final comparison between NumPy 2.4 and 2.5, and our vectorized Python implementation:
+This implementation was ported directly into NumPy as part of PR [#30517](https://github.com/numpy/numpy/pull/30517), which was included in the [2.5 release](https://numpy.org/devdocs/release/2.5.0-notes.html#improved-performance-of-numpy-searchsorted). Now let's do a final comparison between NumPy 2.4 and 2.5, and our vectorized Python implementation:
 
 ![](images/figure7-fs8.png)
 
@@ -363,6 +361,6 @@ It would be worth benchmarking whether both techniques could be combined: batchi
 
 We made `np.searchsorted` up to 25x faster in our benchmarks. Given NumPy's reach in the Python ecosystem, this optimization will benefit several libraries that depend on it. Other libraries in the Python ecosystem with their own binary search implementation may also benefit from adopting similar batching techniques.
 
-Interestingly, we used NumPy array primitives to derive an initial Python implementation that outperformed NumPy 2.4's implementation. This shows how powerful NumPy's array primitives can be for implementing highly performant algorithms. A vectorized NumPy implementation in Python can outperform a scalar native implementation by exploiting independent work.
+Interestingly, we used NumPy array primitives to derive an initial Python implementation that outperformed NumPy 2.4's implementation. This shows how powerful NumPy's array primitives can be for implementing highly performant algorithms. **A vectorized NumPy implementation in Python can outperform a scalar native implementation by exploiting independent work**.
 
 Cache-friendly layouts such as the Eytzinger layout are another interesting direction for making `searchsorted` faster. It would be interesting to explore whether the array API could expose such layouts through an interface like `searchsorted(arr, keys, layout="eytzinger")`, although this would require carefully defining the API semantics since the Eytzinger representation is not sorted.
