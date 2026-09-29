@@ -77,7 +77,7 @@ def searchsorted_py_np(a, xs):
         # True for each element position where lo_i < hi_i
         active = lo < hi
         if not np.any(active):
-            # this is basically `while lo < hi:` in pure-python version
+            # this is basically `while lo < hi:` in the pure-Python version
             break
 
         mid = (lo + hi) // 2
@@ -343,7 +343,7 @@ The native 2.5 version is slightly faster than the vectorized Python one and up 
 
 We can compare our optimized NumPy 2.5 against other libraries in the ecosystem. For this experiment, we selected the Python libraries JAX, TensorFlow, and PyTorch.
 
-TensorFlow and PyTorch follow a different approach from JAX and NumPy. While JAX and NumPy leverage vectorized/batched operations to hide memory latency, TensorFlow and PyTorch parallelize independent searches across CPU threads. Search keys are partitioned into batches that are processed by different threads. For more details, see [PyTorch](https://github.com/pytorch/pytorch/blob/b1bb860d3c812371b89a9725407230216e7369b5/aten/src/ATen/native/Bucketization.cpp#L88) and [TensorFlow](https://github.com/tensorflow/tensorflow/blob/bb8d3f2443d70ec8c2aae1288fbf5782c771aa60/tensorflow/core/kernels/searchsorted_op.cc#L67) implementations.
+TensorFlow and PyTorch follow a different approach from JAX and NumPy. While JAX and NumPy leverage vectorized/batched operations to hide memory latency, TensorFlow and PyTorch parallelize independent searches across CPU threads. Search keys are partitioned into batches that are processed by different threads. For more details, see the [PyTorch](https://github.com/pytorch/pytorch/blob/b1bb860d3c812371b89a9725407230216e7369b5/aten/src/ATen/native/Bucketization.cpp#L88) and [TensorFlow](https://github.com/tensorflow/tensorflow/blob/bb8d3f2443d70ec8c2aae1288fbf5782c771aa60/tensorflow/core/kernels/searchsorted_op.cc#L67) implementations.
 
 In the benchmarks, we limited parallelism to 8 cores and we increased the number of query keys from 10,000 to 20,000. This gives the multithreaded implementations enough independent work to amortize thread-scheduling overhead.
 
