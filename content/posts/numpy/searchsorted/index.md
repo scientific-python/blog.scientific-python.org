@@ -1,5 +1,5 @@
 ---
-title: "Making np.searchsorted Up to 25× Faster in NumPy 2.5"
+title: "Making np.searchsorted up to 25× Faster in NumPy 2.5"
 description: "How vectorizing independent binary searches and reducing per-query state can make np.searchsorted up to 25× faster."
 summary: "We explore how to speed up binary search by batching independent searches with NumPy's vectorized operations. We then reformulate the algorithm so all searches progress together with only $O(1)$ additional memory, port it to C++, and achieve up to a 25× speedup over NumPy 2.4's implementation."
 date: 2026-09-29
