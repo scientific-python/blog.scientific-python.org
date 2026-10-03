@@ -1,5 +1,5 @@
 ---
-title: "Hacking Shortest Paths: Solve Harder Problems by Tweaking Graphs"
+title: "Hacking Shortest Paths: Modeling Constrained Shortest Paths"
 description: "Modeling Constraints in Shortest Path Problems using NetworkX and Graph Transformations"
 summary: "Many real-world shortest path problems include constraints that classic algorithms don’t directly handle. NetworkX provides robust, optimized implementations of algorithms like Dijkstra’s, Bellman-Ford, and A*. But what if your problem doesn’t fit the classic shortest path formulation?"
 date: 2025-12-04

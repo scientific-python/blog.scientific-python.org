@@ -337,7 +337,7 @@ This implementation was ported directly into NumPy as part of PR [#30517](https:
 
 ![](images/figure7-fs8.png)
 
-The native 2.5 version is slightly faster than the vectorized Python one and up to 25× faster than NumPy 2.4's implementation in our benchmarks.
+The native 2.5 version is up to 25× faster than NumPy 2.4's implementation in our benchmarks. Compared with the vectorized Python implementation, the C++ implementation can be up to 2× as fast for smaller arrays. This difference becomes less significant as the array size grows. There is also a memory advantage over the vectorized Python implementation: the Python implementation requires additional arrays to store the search state (`low` and `mid`, or `base` and `base + length`), whereas the C++ implementation keeps length as a scalar. As a result, the C++ implementation uses only $O(1)$ additional memory, while the NumPy formulation requires memory proportional to the number of queries.
 
 ### Ecosystem Comparison
 
