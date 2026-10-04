@@ -1,6 +1,8 @@
-# SPDX-License-Identifier: BSD-3-Clause
-# Copyright (c) 2026 dataHabibi
-"""A teaching example; it is not dataHabibi's production implementation."""
+"""A teaching example; it is not dataHabibi's production implementation.
+
+SPDX-License-Identifier: BSD-3-Clause
+Copyright (c) 2026 dataHabibi
+"""
 
 import csv
 import io
