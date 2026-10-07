@@ -59,7 +59,7 @@ Instead, the implementation uses intermediate position information already produ
 
 ![Comparison between a full search range and a smaller useful search region around a previous insertion position.](search-space-reduction.png)
 
-*Figure 1. Positional locality can reduce the effective search space without adding a separate scan of the query array.*
+_Figure 1. Positional locality can reduce the effective search space without adding a separate scan of the query array._
 
 ## Knowing when to use it
 
@@ -107,7 +107,7 @@ The important result was simple: more observations were not consistently better.
 
 ![Flow diagram showing the selector experiment progressing from 8, 16, and 32 observations to later convergence tests using only 16 and 32.](selector-convergence-flow.png)
 
-*Figure 2. The observation-count experiment narrowed the later search space: 8 was dropped, while 16 and 32 were carried forward for convergence testing.*
+_Figure 2. The observation-count experiment narrowed the later search space: 8 was dropped, while 16 and 32 were carried forward for convergence testing._
 
 Those later experiments produced another useful result: once the basic selector was already rejecting random workloads reliably, adding more decision rules did not help. More complicated policies mainly rejected useful local cases.
 
@@ -117,7 +117,7 @@ It was overhead.
 
 ![Random-workload p95 candidate-to-baseline ratios for 8, 16, and 32 selector observations across four hardware profiles.](selector-observations.png)
 
-*Figure 3. Focused selector experiment at level 4. Lower is better; the best observation count varies by hardware profile, so increasing from 16 to 32 was not uniformly beneficial.*
+_Figure 3. Focused selector experiment at level 4. Lower is better; the best observation count varies by hardware profile, so increasing from 16 to 32 was not uniformly beneficial._
 
 ## What the benchmarks showed
 
@@ -135,16 +135,16 @@ The matrix included:
 
 Across the final profiles, strong-locality workloads showed median speedups of roughly **5.3–5.8x**.
 
-| Runner | Strong-locality median | Active-random median | Worst active case |
-| --- | ---: | ---: | ---: |
-| AMD EPYC 7763 / 1 vCPU | 5.61x | 1.27x | 1.08x |
-| Intel Xeon Platinum 8573C / 2 vCPU | 5.33x | 1.20x | 1.06x |
-| AMD EPYC 7763 / 4 vCPU | 5.67x | 1.31x | 1.08x |
-| AMD EPYC 9V45 / 4 vCPU | 5.78x | 1.23x | 1.04x |
+| Runner                             | Strong-locality median | Active-random median | Worst active case |
+| ---------------------------------- | ---------------------: | -------------------: | ----------------: |
+| AMD EPYC 7763 / 1 vCPU             |                  5.61x |                1.27x |             1.08x |
+| Intel Xeon Platinum 8573C / 2 vCPU |                  5.33x |                1.20x |             1.06x |
+| AMD EPYC 7763 / 4 vCPU             |                  5.67x |                1.31x |             1.08x |
+| AMD EPYC 9V45 / 4 vCPU             |                  5.78x |                1.23x |             1.04x |
 
 ![Bar chart of final sign-off speedups across four hardware profiles, comparing strong-locality median, active-random median, and worst active case.](final-signoff-benchmark.png)
 
-*Figure 4. Final sign-off results. Strong-locality workloads gained more than 5x across all four profiles, while active random workloads and the worst active cases remained above baseline.*
+_Figure 4. Final sign-off results. Strong-locality workloads gained more than 5x across all four profiles, while active random workloads and the worst active cases remained above baseline._
 
 Earlier matrices showed the same pattern from another angle:
 
@@ -182,14 +182,13 @@ There is nothing mathematically special about \(2^{20}\). Earlier activation swe
 
 ![Early activation-threshold sweep showing different random-workload p95 behavior across four hardware profiles.](early-activation-threshold-sweep.png)
 
-*Figure 5. Early activation sweeps were hardware-sensitive. Three profiles converged on low candidates in this experiment, while the 1-vCPU / 2-GB profile failed the second-stage stability gate. This exploratory sweep motivated a more conservative portable policy; it does not directly define the final \(2^{20}\) gate.*
+_Figure 5. Early activation sweeps were hardware-sensitive. Three profiles converged on low candidates in this experiment, while the 1-vCPU / 2-GB profile failed the second-stage stability gate. This exploratory sweep motivated a more conservative portable policy; it does not directly define the final \(2^{20}\) gate._
 
 The exact crossover therefore depends on the machine and on the surrounding selector design. The final validation gate was intentionally more conservative than those early exploratory thresholds.
 
 This was a useful reminder:
 
 > A cheaper algorithmic path is not automatically a faster CPU path.
-
 
 ## Then I found the earlier NumPy optimization
 
@@ -199,7 +198,7 @@ What was interesting was that the earlier work and this experiment were optimizi
 
 ![Diagram comparing earlier batched-search work, which improves how searches execute, with this experiment, which reduces how much search work is required.](two-layers-of-optimization.png)
 
-*Figure 6. The earlier batched-search work improves execution efficiency; this experiment reduces the amount of work. The two approaches are complementary and can stack.*
+_Figure 6. The earlier batched-search work improves execution efficiency; this experiment reduces the amount of work. The two approaches are complementary and can stack._
 
 The earlier work improves **how the searches execute**. This experiment focuses on **how much searching is necessary**.
 
