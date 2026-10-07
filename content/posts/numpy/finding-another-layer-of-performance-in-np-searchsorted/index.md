@@ -170,15 +170,9 @@ At smaller query counts, it is possible to remove search work while still increa
 
 This led to a separate activation gate.
 
-For the final validation, I used
+For the final validation, I used $Q \ge 2^{20}$ as a conservative activation gate.
 
-\[
-Q \ge 2^{20}
-\]
-
-as a conservative activation gate.
-
-There is nothing mathematically special about \(2^{20}\). Earlier activation sweeps already showed why a portable gate needed to be conservative: three tested profiles could converge on a low activation candidate in that experimental setup, while the 1-vCPU / 2-GB profile failed the second-stage stability gate entirely.
+There is nothing mathematically special about $2^{20}$. Earlier activation sweeps already showed why a portable gate needed to be conservative: three tested profiles could converge on a low activation candidate in that experimental setup, while the 1-vCPU / 2-GB profile failed the second-stage stability gate entirely.
 
 ![Early activation-threshold sweep showing different random-workload p95 behavior across four hardware profiles.](early-activation-threshold-sweep.png)
 
