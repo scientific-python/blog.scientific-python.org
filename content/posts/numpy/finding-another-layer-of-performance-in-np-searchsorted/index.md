@@ -170,7 +170,7 @@ This led to a separate activation gate.
 
 For the final validation, I used
 
-Q \ge 2^{20}
+$Q \ge 2^{20}$
 
 as a conservative activation gate.
 
