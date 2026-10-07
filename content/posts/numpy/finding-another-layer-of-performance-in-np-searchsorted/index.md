@@ -1,7 +1,7 @@
 ---
 title: "Finding Another Layer of Performance in np.searchsorted"
 date: 2026-10-07T09:11:00+09:00
-draft: true
+draft: false
 description: "A performance investigation into reusing insertion-position locality in NumPy searchsorted, and why reducing work can complement CPU-friendly batched execution."
 tags: ["numpy", "performance"]
 displayInList: true
@@ -170,23 +170,26 @@ At smaller query counts, it is possible to remove search work while still increa
 
 This led to a separate activation gate.
 
-The implementation shown here uses
+For the final validation, I used
 
 \[
 Q \ge 2^{20}
 \]
 
-as a conservative threshold.
+as a conservative activation gate.
 
 There is nothing mathematically special about \(2^{20}\). Earlier activation sweeps already showed why a portable gate needed to be conservative: three tested profiles could converge on a low activation candidate in that experimental setup, while the 1-vCPU / 2-GB profile failed the second-stage stability gate entirely.
 
-The exact crossover therefore depends on the machine and on the surrounding selector design. The final gate is intentionally more conservative than those early exploratory thresholds.
+![Early activation-threshold sweep showing different random-workload p95 behavior across four hardware profiles.](early-activation-threshold-sweep.png)
+
+*Figure 5. Early activation sweeps were hardware-sensitive. Three profiles converged on low candidates in this experiment, while the 1-vCPU / 2-GB profile failed the second-stage stability gate. This exploratory sweep motivated a more conservative portable policy; it does not directly define the final \(2^{20}\) gate.*
+
+The exact crossover therefore depends on the machine and on the surrounding selector design. The final validation gate was intentionally more conservative than those early exploratory thresholds.
 
 This was a useful reminder:
 
 > A cheaper algorithmic path is not automatically a faster CPU path.
 
-<!-- A crossover plot can be added later if the raw activation-sweep artifact is recovered. -->
 
 ## Then I found the earlier NumPy optimization
 
@@ -196,7 +199,7 @@ What was interesting was that the earlier work and this experiment were optimizi
 
 ![Diagram comparing earlier batched-search work, which improves how searches execute, with this experiment, which reduces how much search work is required.](two-layers-of-optimization.png)
 
-*Figure 5. The earlier batched-search work improves execution efficiency; this experiment reduces the amount of work. The two approaches are complementary and can stack.*
+*Figure 6. The earlier batched-search work improves execution efficiency; this experiment reduces the amount of work. The two approaches are complementary and can stack.*
 
 The earlier work improves **how the searches execute**. This experiment focuses on **how much searching is necessary**.
 
@@ -222,4 +225,4 @@ They were structure.
 
 And reusing that structure exposed another layer of performance.
 
-A NumPy implementation of this experiment is currently under review in [PR #32895](https://github.com/numpy/numpy/pull/32895). The article is about the performance idea and the experiments behind it, rather than the outcome of that review.
+A NumPy implementation of this experiment is currently under review in [PR #32895](https://github.com/numpy/numpy/pull/32895). The results discussed here describe the performance experiment itself rather than the outcome of that review.
