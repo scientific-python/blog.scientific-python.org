@@ -12,20 +12,9 @@ markup:
       unsafe: true
     renderHooks:
       image:
-        enableDefault: true
+        useEmbedded: fallback
       link:
-        enableDefault: true
-
-outputFormats:
-  Atom:
-    mediaType: "application/atom"
-    baseName: "atom"
-    isPlainText: false
-
-mediaTypes:
-  application/atom:
-    suffixes:
-      - xml
+        useEmbedded: fallback
 
 frontmatter:
   date: [":filename", ":default"]
